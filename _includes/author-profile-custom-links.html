@@ -5,9 +5,15 @@
     </a>
   </li>
 -->
+{% if author.twitter %}
+        <li>
+          <a href="www.researchgate.net/profile/{{ author.twitter }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fa-brands fa-researchgate" aria-hidden="true"></i> ResearchGate
+          </a>
+        </li>
+      {% endif %}
 
-
-<li>
+<!--<li>
   <a href="https://www.researchgate.net/profile/Angela-Fontan/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
     <i class="fas fa-fw" aria-hidden="true"></i> ResearchGate
-  </a></li>
+  </a></li>-->
