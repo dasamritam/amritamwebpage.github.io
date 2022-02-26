@@ -7,8 +7,16 @@
 -->
 {% if author.researchgate %}
         <li>
-          <a href="https://www.researchgate.net/profile/{{ author.twitter }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
-            <i class="fa-brands fa-researchgate" aria-hidden="true"></i> ResearchGate
+          <a href="https://www.researchgate.net/profile/{{ author.researchgate }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fas fa-brands fa-researchgate" aria-hidden="true"></i> ResearchGate
+          </a>
+        </li>
+      {% endif %}
+
+{% if author.googlescholar %}
+        <li>
+          <a href="https://scholar.google.com//citations?user={{ author.googlescholar }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fas fa-brands fa-google" aria-hidden="true"></i> Google Scholar
           </a>
         </li>
       {% endif %}
