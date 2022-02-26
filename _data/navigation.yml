@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "About me"
+    url: https://fontanangela.github.io/index/
   - title: "Education"
     url: https://fontanangela.github.io/education/
   - title: "Publications"
