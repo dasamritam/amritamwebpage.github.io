@@ -9,8 +9,8 @@ classes: wide
 
 - **Ph.D. in Electrical Engineering with Specialization in Automatic Control**\
 Linköping University, Linköping, Sweden, 2021
-    - Title of Ph.D. Dissertation: Collective decision-making on networked systems in presence of antagonistic interactions.
-    - Supervisor: Prof. Claudio Altafini.
+    - Title: Collective decision-making on networked systems in presence of antagonistic interactions
+    - Supervisor: Prof. Claudio Altafini
 	
 - **Engineering Professional Practice Exam** ("Esame di Stato")\
 University of Padova, Padova, Italy, 2016
