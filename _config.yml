@@ -105,23 +105,23 @@ author:
   name             : "Angela Fontan"
   avatar           : "/assets/AngelaFontan.jpg"
   bio              : "Postdoctoral Researcher"
-  location         : "Division of Decision and Control Systems<br>KTH Royal Institute of Technology<br>SE-100 44 Stockholm<br>Sweden"
+  location         : "Decision and Control Systems<br>KTH Royal Institute of Technology<br>SE-100 44 Stockholm<br>Sweden"
   email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:angfon@kth.se"
-    - label: "Website"
+    - label: "KTH profile"
       icon: "fas fa-fw fa-link"
       url: "https://www.kth.se/profile/angfon"
     - label: "LinkedIn"
-      icon: "fa fa-linkedin-square"
+      icon: "fas fa-fw fa-link"
       url: "https://www.linkedin.com/in/angelafontan"
     - label: "Google Scholar"
-      icon: "ai ai-google-scholar-square ai-3x"
+      icon: "fas fa-fw fa-link"
       url: "https://scholar.google.ca/citations?user=zoh-5V8AAAAJ&amp;hl=en"
     - label: "ResearchGate"
-      icon: "fa-brands fa-researchgate"
+      icon: "fas fa-fw fa-link"
       url: "https://www.researchgate.net/profile/Angela-Fontan"
     #- label: "Twitter"
     #  icon: "fab fa-fw fa-twitter-square"
@@ -227,7 +227,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: "Europe/Stockholm"# https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)
