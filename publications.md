@@ -4,11 +4,13 @@ title: "Publications"
 classes: wide
 ---
 
-** **News** **\
+{% capture notice-2 %}
 The research on government formation processes in parliamentary democracies (see paper below) has been given attention on the LiU university's homepage
 - LiU news: [Forming a government – how long will it take?](https://liu.se/en/news-item/hur-lang-tid-tar-det-att-bilda-regering-efter-ett-val)
 - Paper: [A signed network perspective on the government formation process in parliamentary democracies](https://www.nature.com/articles/s41598-021-84147-3)
+{% endcapture %}
 
+<div class="notice">{{ notice-2 | markdownify }}</div>
 
 ## PhD Thesis 
 >**A. Fontan**, Collective decision-making on networked systems in presence of antagonistic interactions, Linköping Studies in Science and Technology. Dissertations, No. 2166, 2021.
