@@ -12,18 +12,18 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "air" # "default" "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "contrast" # "default" "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
 title                    : "Angela Fontan"
-title_separator          : "-"
+title_separator          : "|"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Angela Fontan"
 description              : ""
 url                      : "https://fontanangela.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "FontanAngela/fontanangela.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -58,7 +58,7 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-  hide                   : # true, false (default)
+  hide                   : true # true, false (default)
 search                   : # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
@@ -103,9 +103,9 @@ analytics:
 # Site Author
 author:
   name             : "Angela Fontan"
-  avatar           : "/assets/images/AngelaFontan.jpg"
-  bio              : ""
-  location         : "Somewhere"
+  avatar           : "/assets/AngelaFontan.jpg"
+  bio              : "Postdoctoral Researcher"
+  location         : "Division of Decision and Control Systems\KTH Royal Institute of Technology\SE-100 44 Stockholm\Sweden"
   email            :
   links:
     - label: "Email"
@@ -114,6 +114,15 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://www.kth.se/profile/angfon"
+    - label: "LinkedIn"
+      icon: "fa fa-linkedin-square"
+      url: "https://www.linkedin.com/in/angelafontan"
+    - label: "Google Scholar"
+      icon: "ai ai-google-scholar-square ai-3x"
+      url: "https://scholar.google.ca/citations?user=zoh-5V8AAAAJ&amp;hl=en"
+    - label: "ResearchGate"
+      icon: "fa-brands fa-researchgate"
+      url: "https://www.researchgate.net/profile/Angela-Fontan"
     #- label: "Twitter"
     #  icon: "fab fa-fw fa-twitter-square"
     #  # url: "https://twitter.com/"
