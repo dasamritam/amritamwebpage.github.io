@@ -1,7 +1,11 @@
 # main links
 main:
   - title: "Education"
-    url: https://fontanangela.github.io/angelaprofile/education/
+    url: https://fontanangela.github.io/education/
+  - title: "Publications"
+    url: https://fontanangela.github.io/publications/
+  - title: "Presentations"
+    url: https://fontanangela.github.io/presentations/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
