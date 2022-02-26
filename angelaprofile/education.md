@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Education"
+classes: wide
 ---
 
 ## Education
