@@ -1,13 +1,13 @@
 # main links
 main:
   - title: "About me"
-    url: https://fontanangela.github.io/
+    url: https://angelafontan.github.io/
   - title: "Education"
-    url: https://fontanangela.github.io/education/
+    url: https://angelafontan.github.io/education/
   - title: "Publications"
-    url: https://fontanangela.github.io/publications/
+    url: https://angelafontan.github.io/publications/
   - title: "Presentations"
-    url: https://fontanangela.github.io/presentations/
+    url: https://angelafontan.github.io/presentations/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
