@@ -1,7 +1,8 @@
 ---
-layout: post
+author_profile: true
 title:  "Forming a government – how long will it take?"
 ---
+
 
 The research on government formation processes in parliamentary democracies (see paper) has been given attention on Linköping University's homepage, see [Forming a government – how long will it take?](https://liu.se/en/news-item/hur-lang-tid-tar-det-att-bilda-regering-efter-ett-val)
 
