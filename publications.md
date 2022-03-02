@@ -5,8 +5,6 @@ title: "Publications"
 classes: wide
 ---
 
->The research on government formation processes in parliamentary democracies (see [Paper - Fontan2021Signed](#Fontan2021Signed)) has been given attention on the LiU university's homepage, see [Forming a government – how long will it take?](https://liu.se/en/news-item/hur-lang-tid-tar-det-att-bilda-regering-efter-ett-val)
-
 ## PhD Thesis 
 **A. Fontan**, Collective decision-making on networked systems in presence of antagonistic interactions, Linköping Studies in Science and Technology. Dissertations, No. 2166, 2021
 [[DiVA](http://liu.diva-portal.org/smash/record.jsf?pid=diva2%3A1585664&dswid=-8741)]
@@ -14,7 +12,7 @@ classes: wide
 ## Journal papers 
 1. **A. Fontan** and C. Altafini, [The role of frustration in collective decision-making dynamical processes on multiagent signed networks](https://ieeexplore.ieee.org/document/9591259), IEEE Transactions on Automatic Control, to appear, 2022, DOI: 10.1109/TAC.2021.3123222
 
-1. <a name="Fontan2021Signed"></a>**A. Fontan** and C. Altafini, [A signed network perspective on the government formation process in parliamentary democracies](https://www.nature.com/articles/s41598-021-84147-3), Scientific Reports, vol. 11 (5134), 2021, DOI: 10.1038/s41598-021-84147-3
+1. **A. Fontan** and C. Altafini, [A signed network perspective on the government formation process in parliamentary democracies](https://www.nature.com/articles/s41598-021-84147-3), Scientific Reports, vol. 11 (5134), 2021, DOI: 10.1038/s41598-021-84147-3
 
 1. **A. Fontan**, G. Shi, X. Hu and C. Altafini, [Interval Consensus for Multiagent Networks](https://ieeexplore.ieee.org/document/8742903), IEEE Transactions on Automatic Control, vol. 65 (5), pp. 1855-1869, 2019,
 DOI: 10.1109/TAC.2019.2924131
