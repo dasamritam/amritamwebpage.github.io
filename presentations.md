@@ -6,7 +6,7 @@ classes: wide
 ---
 
 - *Collective decision-making on networked systems in presence of antagonistic interactions*\
-[Dive Deep with Digital Futures](https://www.digitalfutures.kth.se/event/collective-decision-making-on-networked-systems-in-presence-of-antagonistic-interactions/), Thursday 3 March 2022 [slides](/assets/AF_DF_220303.pdf)
+[Dive Deep with Digital Futures](https://www.digitalfutures.kth.se/event/collective-decision-making-on-networked-systems-in-presence-of-antagonistic-interactions/), Thursday 3 March 2022 [[slides](/assets/AF_DF_220303.pdf)]
 
 
 - *On the properties of Laplacian pseudoinverses*\
