@@ -1,6 +1,6 @@
 ---
 author_profile: true
-title:  EECS Summer Event, June 8 2022
+title:  EECS Summer Event, June 8, 2022
 ---
 
 
