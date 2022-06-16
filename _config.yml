@@ -120,7 +120,7 @@ author:
       url: "https://www.kth.se/profile/angfon"
    - label: "CV"
       icon: "fas fa-fw fa-link"
-      url: "https://angelafontan.github.io/assets/CV-20220616.pdf"
+      url: "[CV](assets/CV-20220616.pdf)"
     # - label: "Google Scholar"
     #  icon: "fas fa-fw fa-link"
     #  url: "https://scholar.google.ca/citations?user=zoh-5V8AAAAJ&amp;hl=en"
