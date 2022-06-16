@@ -5,6 +5,10 @@ title: "Presentations"
 classes: wide
 ---
 
+
+- *On behavioral changes for connected individuals: a networked dynamic decision-making approach*\
+[EECS Summmer Event](https://www.kth.se/eecs-summerevent-2022/), 8 June 2022
+
 - *Collective decision-making on networked systems in presence of antagonistic interactions* [[slides](/assets/AF_DF_220303.pdf)]\
 [Dive Deep with Digital Futures](https://www.digitalfutures.kth.se/event/collective-decision-making-on-networked-systems-in-presence-of-antagonistic-interactions/), Thursday 3 March 2022
 
