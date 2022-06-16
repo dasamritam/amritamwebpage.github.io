@@ -8,7 +8,7 @@ classes: wide
 
 - *On behavioral changes for connected individuals: a networked dynamic decision-making approach*\
 [EECS Summer Event](https://www.kth.se/eecs-summerevent-2022/), 8 June 2022\
-[Reglermöte, Swedish Control Meeting](https://www.ltu.se/research/subjects/control/Reglermote?l=en/), 9 June 2022\
+[Reglermöte, Swedish Control Meeting](https://www.ltu.se/research/subjects/control/Reglermote?l=en/), 9 June 2022
 
 
 - *Collective decision-making on networked systems in presence of antagonistic interactions* [[slides](/assets/AF_DF_220303.pdf)]\
