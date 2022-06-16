@@ -11,3 +11,5 @@ Since December 2021, I am a Postdoctoral researcher at the Division of Decision 
 
 My research interests are in the area of networked systems and nonlinear dynamics over networks, with applications to social networks and collective decision-making processes.
 
+Download my curriculum vitae here: [CV](/assets/CV-20220616.pdf).
+
