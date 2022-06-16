@@ -136,9 +136,8 @@ author:
     #- label: "Instagram"
     #  icon: "fab fa-fw fa-instagram"
     #  # url: "https://instagram.com/"
-
-sidebar:
-  - text: [CV](/assets/CV-20220616.pdf/)
+  sidebar:
+    - text: "[CV](/assets/CV-20220616.pdf/)"
 #- text: "[![your logo](/assets/images/logo.png)](http://home.page.org)"
   
 # Site Footer
