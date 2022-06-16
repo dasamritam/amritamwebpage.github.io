@@ -15,7 +15,7 @@ classes: wide
 [Dive Deep with Digital Futures](https://www.digitalfutures.kth.se/event/collective-decision-making-on-networked-systems-in-presence-of-antagonistic-interactions/), Thursday 3 March 2022
 
 
-- *On the properties of Laplacian pseudoinverses*\
+- *On the properties of Laplacian pseudoinverses* [[slides](/assets/2021CDC_AFCA.pdf)]\
 60th IEEE Conference on Decision and Control (CDC), 
 Austin, Texas, USA, December 2021 (virtual conference)
 
