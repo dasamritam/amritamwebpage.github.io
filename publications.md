@@ -12,6 +12,8 @@ classes: wide
 ## Manuscripts 
 1. **A. Fontan**, L. Wang, Y. Hong, G. Shi, and C. Altafini, Multi-agent consensus over time-invariant and time-varying signed digraphs via eventual positivity, 2022, [arXiv:2203.04215](https://arxiv.org/abs/2203.04215)
 
+1. **A. Fontan**, and C. Altafini, Pseudoinverses of signed Laplacian matrices, 2022
+
 ## Journal papers 
 1. **A. Fontan** and C. Altafini, [The role of frustration in collective decision-making dynamical processes on multiagent signed networks](https://ieeexplore.ieee.org/document/9591259), IEEE Transactions on Automatic Control, to appear, 2022, DOI: 10.1109/TAC.2021.3123222
 
