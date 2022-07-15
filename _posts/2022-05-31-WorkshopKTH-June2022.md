@@ -7,6 +7,7 @@ We are organizing a workshop on *Emerging Topics in Systems and Control* at KTH 
 The workshop will be a great opportunity for the participants to engage in informal research discussions with the speakers and benefit from their ideas.
 
 For the list of speakers, program schedule, and registration, please visit the webpage: [Stockholm Workshop on Emerging Topics in Systems and Control](https://sites.google.com/view/emerging-topics-system-control/home).
+{: style="text-align: justify;"}
 
 -------------------------
 Group photo at the event
