@@ -13,7 +13,7 @@ On September 3, 2021, I nailed my Ph.D. Thesis, and on September 24, 2021, I suc
 </figure>
 
 <figure class="half">
-    <img src="/assets/2021PhDdefense-1.jpg" width="130">
-    <img src="/assets/2021PhDdefense-2.jpg" width="130">
+    <img src="/assets/2021PhDdefense-1.png" width="130">
+    <img src="/assets/2021PhDdefense-2.png" width="130">
     <figcaption>PhD Defense</figcaption>
 </figure>
