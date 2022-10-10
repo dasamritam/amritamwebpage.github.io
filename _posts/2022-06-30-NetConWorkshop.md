@@ -1,6 +1,6 @@
 ---
 author_profile: true
-title:  "NetCon Workshop, 30 June 2022"
+title:  "NetCon Workshop, June 30, 2022"
 ---
 
 The 2022 Netcon Workshop (DCS-KTH) took place on June 30 at the open-air museum Skansen in Stockholm. It consisted of three career sessions (see [LinkedIn Post](https://www.linkedin.com/posts/karl-h-johansson-a1a144a_great-career-discussions-today-at-our-netcon-activity-6948375921712103425-A6e6?utm_source=linkedin_share&utm_medium=member_desktop_web)), with interesting plenaries given by
