@@ -1,11 +1,11 @@
 ---
 layout: single
 author_profile: true
-title: "Presentations and Posters"
+title: "Presentations"
 classes: wide
 ---
 
-# Presentations
+## Presentations
 
 - *On behavioral changes for connected individuals: a networked dynamic decision-making approach*\
 [EECS Summer Event](https://www.kth.se/eecs-summerevent-2022/), 8 June 2022\
@@ -42,7 +42,7 @@ Stockholm, Sweden, June 2018
 56th IEEE Conference on Decision and Control,
 Melbourne, Australia, December 2017
 
-# Posters
+## Posters
 - *The HiSS LiL Social Case Study: Social interactions and sustainable lifestyle*\
 [Workshop on Data, Learning, and Markets](https://c3dti.ai/events/workshops/data-learning-markets/), 
 University of Illinois at Urbana-Champaign, Illinois, USA, October 10–12, 2022
