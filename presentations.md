@@ -1,10 +1,11 @@
 ---
 layout: single
 author_profile: true
-title: "Presentations"
+title: "Presentations and Posters"
 classes: wide
 ---
 
+# Presentations
 
 - *On behavioral changes for connected individuals: a networked dynamic decision-making approach*\
 [EECS Summer Event](https://www.kth.se/eecs-summerevent-2022/), 8 June 2022\
@@ -28,15 +29,20 @@ Lisbon, Portugal, December 2019
 
 - *Decision-making in presence of frustration on multiagent antagonistic networks*\
 SIAM Conference on Applications of Dynamical Systems, 
-Snowbird, Utah, USA, May 2019.
+Snowbird, Utah, USA, May 2019
 
 - *Achieving a decision in antagonistic multiagent networks: frustration determines commitment strength*\
-57th IEEE Conference on Decision and Control, Miami Beach, FL, USA, December 2018.
+57th IEEE Conference on Decision and Control, Miami Beach, FL, USA, December 2018
 
 - *Collective decision-making in multiagent networks*\
 Swedish Control Meeting ("Reglermöte"),
-Stockholm, Sweden, June 2018.
+Stockholm, Sweden, June 2018
 
 - *Investigating mixed-sign equilibria for nonlinear collective decision-making systems*\
 56th IEEE Conference on Decision and Control,
-Melbourne, Australia, December 2017.
+Melbourne, Australia, December 2017
+
+# Posters
+- *The HiSS LiL Social Case Study: Social interactions and sustainable lifestyle*\
+[Workshop on Data, Learning, and Markets](https://c3dti.ai/events/workshops/data-learning-markets/), 
+University of Illinois at Urbana-Champaign, Illinois, USA, October 10–12, 2022
