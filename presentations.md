@@ -1,7 +1,7 @@
 ---
 layout: single
 author_profile: true
-title: "Presentations"
+title: "Presentations and Posters"
 classes: wide
 ---
 
