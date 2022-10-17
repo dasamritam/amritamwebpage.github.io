@@ -13,6 +13,9 @@ The 2022 Netcon Workshop (DCS-KTH) took place on June 30 at the open-air museum 
 [Rafia Inam](https://sites.google.com/site/rafiainaam/home) (Ericsson Research), and
 [Antoine Girard](https://sites.google.com/site/antoinesgirard/) (CNRS).
 
+<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/linkedin.svg" width="20" height="20">
+[Read Post](https://www.linkedin.com/posts/karl-h-johansson-a1a144a_great-career-discussions-today-at-our-netcon-activity-6948375921712103425-A6e6?utm_source=share&utm_medium=member_desktop)
+
 The organizers of the event did a great job, planning also fun social activities!
 
 ![teamphoto](../assets/2022Netcon-teamphoto.jpg)
