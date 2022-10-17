@@ -23,4 +23,9 @@ html {
   @include breakpoint($x-large) {
     font-size: 18px; // change to whatever, originally 22px
   }
+  
+  .archive__item-title {
+    position: relative;
+    font-size: 14px;
 }
+
