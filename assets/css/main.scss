@@ -4,10 +4,10 @@
 
 @charset "utf-8";
 
-$link-color: #3b5998;
+$link-color: #1B66BE;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
-$link-color: #3b5998;
+$link-color: #1B66BE;
 
 html {
   font-size: 14px; // change to whatever
@@ -26,7 +26,8 @@ html {
   
   .archive__item-title {
     position: relative;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.3;
   }
 }
 
