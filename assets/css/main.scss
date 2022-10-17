@@ -3,11 +3,11 @@
 ---
 
 @charset "utf-8";
-$link-color: rouge;
+
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
-
+$link-color: rouge;
 
 html {
   font-size: 14px; // change to whatever
