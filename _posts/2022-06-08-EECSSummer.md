@@ -1,6 +1,7 @@
 ---
 author_profile: true
 title:  EECS Summer Event, June 8, 2022
+excerpt: I have been invited to give a short talk about my research work at the EECS Summer event
 ---
 
 
