@@ -1,7 +1,7 @@
 ---
 author_profile: true
 title:  "Digitalize in Stockholm, October 19-20, 2022"
-excerpt: Presentation of HiSS at Digitalize in Stockholm
+excerpt: Presentation of the HiSS Project at Digitalize in Stockholm
 ---
 
 [Digitalize in Stockholm (DiS)](https://www.digitalfutures.kth.se/event/digitalize-in-stockholm-2022-day-1/) is an annual conference and meeting place for global 
