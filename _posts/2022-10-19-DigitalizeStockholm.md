@@ -12,6 +12,6 @@ during the [RESEARCH BREAK-OUT SESSION 2: Smart Society](https://digitalizeinsth
 {: style="text-align: justify;"}
 
 <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/linkedin.svg" width="20" height="20">
-[Read Post on DiS by Anna Kiefer, the Chief Operating Officer at Digital Futures](https://www.linkedin.com/feed/update/urn:li:activity:6984187532972314624?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A6984187532972314624%29)
+[Read Post](https://www.linkedin.com/posts/angelafontan_digitalizeinstockholm-kth-digitalfutures-activity-6989261911418695680-UJAu?utm_source=share&utm_medium=member_desktop)
 
 ![photo](../assets/2022DiS.jpg)
