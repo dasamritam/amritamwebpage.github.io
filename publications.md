@@ -25,7 +25,7 @@ DOI: 10.1109/TAC.2019.2924131
 
 1. **A. Fontan** and C. Altafini, [Multiequilibria Analysis for a Class of Collective Decision-Making Networked Systems](https://ieeexplore.ieee.org/document/8110687), IEEE Transactions on Control of Network Systems, vol. 5 (4), pp. 1931-1940, 2018, DOI: 10.1109/TCNS.2017.2774014
 
-## Conference papers 
+## Conference papers  (peer-reviewed)
 1. L. Wang, **A. Fontan**, Y. Hong, G. Shi, and Claudio Altafini, Multi-agent consensus over signed graphs with switching topology, 20th European Control Conference (ECC), London, UK, July 2022
 
 1. **A. Fontan** and C. Altafini, [On the properties of Laplacian pseudoinverses](https://ieeexplore.ieee.org/document/9683525), 60th IEEE Conference on Decision and Control (CDC), Austin, Texas, USA, December 2021, DOI: 10.1109/CDC45484.2021.9683525
