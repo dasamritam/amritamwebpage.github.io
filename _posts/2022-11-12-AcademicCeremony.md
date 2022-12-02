@@ -7,8 +7,8 @@ gallery:
     image_path: /assets/2022Promotion1.jpg
     alt: "placeholder image 1"
     title: "Academic Ceremony"
-  - url: /assets/2022Promotion1.jpg
-    image_path: /assets/2022Promotion1.jpg
+  - url: /assets/2022Promotion2.jpg
+    image_path: /assets/2022Promotion2.jpg
     alt: "placeholder image 2"
     title: "Receiving the PhD Diploma at the Academic Ceremony"
   - url: /assets/2022Promotion0.jpg
