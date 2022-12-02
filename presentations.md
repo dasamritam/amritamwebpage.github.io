@@ -6,15 +6,16 @@ classes: wide
 ---
 
 ## Presentations
+- *On behavioral changes for connected individuals*\
+[4th IFAC Workshop on Cyber-Physical Human Systems](https://www.cphs2022.org/), December 1-2, 2022
 
 - *On behavioral changes for connected individuals: a networked dynamic decision-making approach*\
-[EECS Summer Event](https://www.kth.se/eecs-summerevent-2022/), 8 June 2022\
-[Reglermöte - Swedish Control Meeting](https://www.ltu.se/research/subjects/control/Reglermote?l=en/), 9 June 2022
+[EECS Summer Event](https://www.kth.se/eecs-summerevent-2022/), June 8, 2022\
+[Reglermöte - Swedish Control Meeting](https://www.ltu.se/research/subjects/control/Reglermote?l=en/), June 9, 2022
 
 
 - *Collective decision-making on networked systems in presence of antagonistic interactions* [[slides](/assets/AF_DF_220303.pdf)]\
-[Dive Deep with Digital Futures](https://www.digitalfutures.kth.se/event/collective-decision-making-on-networked-systems-in-presence-of-antagonistic-interactions/), Thursday 3 March 2022
-
+[Dive Deep with Digital Futures](https://www.digitalfutures.kth.se/event/collective-decision-making-on-networked-systems-in-presence-of-antagonistic-interactions/), Thursday March 3, 2022
 
 - *On the properties of Laplacian pseudoinverses* [[slides](/assets/2021CDC_AFCA.pdf)]\
 60th IEEE Conference on Decision and Control (CDC), 
