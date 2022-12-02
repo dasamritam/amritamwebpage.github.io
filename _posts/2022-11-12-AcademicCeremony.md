@@ -14,7 +14,7 @@ gallery:
   - url: /assets/2022Promotion0.jpg
     image_path: /assets/2022Promotion0.jpg
     alt: "placeholder image 3"
-    title: "Wering the Doctoral Hat at the Academic Ceremony"
+    title: "Wearing the Doctoral Hat at the Academic Ceremony"
 ---
 
 Finally, I officially received the doctoral Diploma and Doctoral hat during the [Academic Ceremony](https://liu.se/en/article/academic-celebration), held at the De Geer concert hall, Louis De Geer, Norrköping, on November 12, 2022.
