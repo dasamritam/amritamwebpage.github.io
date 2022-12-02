@@ -5,6 +5,7 @@ excerpt: I have finally received my doctoral degree and the doctoral hat!..
 ---
 
 Finally, I officially received the doctoral degree and doctoral hat during the [Academic Cerimony](https://liu.se/en/article/academic-celebration), held at the De Geer concert hall, Louis De Geer, Norrköping, on November 12, 2022.
+{: style="text-align: justify;"}
 
 ![hatphoto](../assets/2022Promotion0.jpg)
 
