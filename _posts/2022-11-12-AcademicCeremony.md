@@ -15,5 +15,5 @@ Finally, I officially received the doctoral Diploma and Doctoral hat during the 
 <figure class="half">
     <img src="/assets/2022Promotion1.jpg" height="100">
     <img src="/assets/2022Promotion2.jpg" height="100">
-    <figcaption>Academic Cerimony</figcaption>
+    <figcaption>Academic Ceremony</figcaption>
 </figure>
