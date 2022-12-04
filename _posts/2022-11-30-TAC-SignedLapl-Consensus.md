@@ -4,7 +4,11 @@ title:  "Multi-agent consensus over time-invariant and time-varying signed digra
 excerpt: I am pleased to announce that our paper has been accepted for publication in the IEEE Transactions on Automatic Control..
 ---
 
-Our paper *Multi-agent consensus over time-invariant and time-varying signed digraphs via eventual positivity*, **A. Fontan**, L. Wang,  Y. Hong, G. Shi, and Claudio Altafini, has been accepted for publication as a Full Paper in the IEEE Transactions on Automatic Control.
+Our paper
+
+*Multi-agent consensus over time-invariant and time-varying signed digraphs via eventual positivity*, **A. Fontan**, L. Wang,  Y. Hong, G. Shi, and Claudio Altafini
+
+has been accepted for publication as a Full Paper in the IEEE Transactions on Automatic Control.
 {: style="text-align: justify;"}
 
 It is now available under the ["Early Access" area](https://ieeexplore.ieee.org/document/9965602) on IEEE Xplore.
