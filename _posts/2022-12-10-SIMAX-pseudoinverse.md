@@ -1,7 +1,8 @@
 ---
 author_profile: true
-title: "<i class="fa-regular fa-file-lines"></i> Pseudoinverses of signed Laplacian matrices"
-excerpt: <i class="fa-regular fa-file-lines"></i> I am pleased to announce that our paper has been accepted for publication in the SIAM Journal on Matrix Analysis and Applications..
+title: "Pseudoinverses of signed Laplacian matrices"
+icon: "cog"
+excerpt: I am pleased to announce that our paper has been accepted for publication in the SIAM Journal on Matrix Analysis and Applications..
 ---
 
 Our paper
