@@ -9,11 +9,13 @@ classes: wide
 **A. Fontan**, Collective decision-making on networked systems in presence of antagonistic interactions, Linköping Studies in Science and Technology. Dissertations, No. 2166, 2021
 [[DiVA](http://liu.diva-portal.org/smash/record.jsf?pid=diva2%3A1585664&dswid=-8741)]
 
-## Manuscripts 
-1. **A. Fontan**, and C. Altafini, Pseudoinverses of signed Laplacian matrices, 2022
+<!-- ## Manuscripts -->
+
 
 ## Journal papers 
-1. **A. Fontan**, L. Wang, Y. Hong, G. Shi, and C. Altafini, [Multi-agent consensus over time-invariant and time-varying signed digraphs via eventual positivity](https://ieeexplore.ieee.org/document/9965602), IEEE Transactions on Automatic Control, 2022 (early access), DOI: 10.1109/TAC.2022.3225472\
+1. **A. Fontan**, and C. Altafini, Pseudoinverses of signed Laplacian matrices, SIAM Journal on Matrix Analysis and Applications (SIMAX), to appear, 2023
+
+1. **A. Fontan**, L. Wang, Y. Hong, G. Shi, and C. Altafini, [Multi-agent consensus over time-invariant and time-varying signed digraphs via eventual positivity](https://ieeexplore.ieee.org/document/9965602), IEEE Transactions on Automatic Control, 2023 (early access), DOI: 10.1109/TAC.2022.3225472\
 [[arXiv:2203.04215]](https://arxiv.org/abs/2203.04215)
 
 1. **A. Fontan** and C. Altafini, [The role of frustration in collective decision-making dynamical processes on multiagent signed networks](https://ieeexplore.ieee.org/document/9591259), IEEE Transactions on Automatic Control, vol. 67 (10), pp. 5191 - 5206, 2022, DOI: 10.1109/TAC.2021.3123222
