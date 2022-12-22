@@ -1,6 +1,6 @@
 ---
 author_profile: true
-title: "<FontAwesomeIcon icon="fa-regular fa-file-lines" />Pseudoinverses of signed Laplacian matrices"
+title: "Pseudoinverses of signed Laplacian matrices"
 icon: "fas fa-regular fa-file-lines"
 excerpt: <FontAwesomeIcon icon="fa-regular fa-file-lines" />I am pleased to announce that our paper has been accepted for publication in the SIAM Journal on Matrix Analysis and Applications..
 ---
