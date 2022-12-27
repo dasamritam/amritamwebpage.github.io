@@ -4,12 +4,16 @@ title:  "Multi-agent consensus over time-invariant and time-varying signed digra
 excerpt: I am pleased to announce that our paper has been accepted for publication in the IEEE Transactions on Automatic Control..
 categories:
   - Accepted papers
+  - IEEE TAC
 tags:
   - signed graphs
+  - signed Laplacian matrix
+  - eventually exponentially positive matrix
   - multi-agent systems
   - consensus
   - time-varying systems
   - network dynamics
+  - IEEE TAC
 ---
 
 Our paper
