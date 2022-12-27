@@ -2,6 +2,14 @@
 author_profile: true
 title: "Pseudoinverses of signed Laplacian matrices"
 excerpt: I am pleased to announce that our paper has been accepted for publication in the SIAM Journal on Matrix Analysis and Applications..
+categories:
+  - Accepted papers
+tags:
+  - signed graphs
+  - signed Laplacian matrix
+  - eventually exponentially positive matrix
+  - Moore-Penrose pseudoinverse
+  - effective resistance
 ---
 
 Our paper
