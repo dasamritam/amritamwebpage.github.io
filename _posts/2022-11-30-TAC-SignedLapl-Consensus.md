@@ -3,7 +3,7 @@ author_profile: true
 title:  "Multi-agent consensus over time-invariant and time-varying signed digraphs via eventual positivity"
 excerpt: I am pleased to announce that our paper has been accepted for publication in the IEEE Transactions on Automatic Control..
 categories:
-  - accepted paper
+  - Accepted papers
 tags:
   - signed graphs
   - multi-agent systems
