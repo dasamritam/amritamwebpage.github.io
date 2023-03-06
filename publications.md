@@ -28,7 +28,7 @@ DOI: 10.1109/TAC.2019.2924131
 1. **A. Fontan** and C. Altafini, [Multiequilibria Analysis for a Class of Collective Decision-Making Networked Systems](https://ieeexplore.ieee.org/document/8110687), IEEE Transactions on Control of Network Systems, vol. 5 (4), pp. 1931-1940, 2018, DOI: 10.1109/TCNS.2017.2774014
 
 ## Conference papers  (peer-reviewed)
-1. **A. Fontan**, M. Farjadnia, J. Llewellyn, C. Katzeff, M. Molinari, V. Cvetkovic, and K. H. Johansson ``Social interactions for a sustainable lifestyle: The design of an experimental case study'', 22nd IFAC World Congress, July 2023
+1. **A. Fontan**, M. Farjadnia, J. Llewellyn, C. Katzeff, M. Molinari, V. Cvetkovic, and K. H. Johansson, Social interactions for a sustainable lifestyle: The design of an experimental case study, 22nd IFAC World Congress, July 2023
 
 1. L. Wang, **A. Fontan**, Y. Hong, G. Shi, and Claudio Altafini, Multi-agent consensus over signed graphs with switching topology, 20th European Control Conference (ECC), London, UK, July 2022
 
