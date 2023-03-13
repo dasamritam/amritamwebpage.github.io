@@ -14,5 +14,5 @@ I received a B.Sc. degree in Information Engineering in 2013 and a M.Sc. degree 
 My research interests are in the area of networked systems and nonlinear dynamics over networks, with applications to social networks and collective decision-making processes.
 {: style="text-align: justify;"}
 
-Download my curriculum vitae here: [CV](/assets/CV-20220616.pdf).
-{: style="text-align: justify;"}
+<!--- Download my curriculum vitae here: [CV](/assets/CV-20220616.pdf). 
+{: style="text-align: justify;"}-->
