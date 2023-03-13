@@ -6,38 +6,29 @@ classes: wide
 ---
 
 ## Education
-<DL>
-<DT>2016-2021
-<DD><STRONG>Ph.D. in Electrical Engineering with Specialization in Automatic Control</STRONG>
-<DD>Linköping University, Linköping, Sweden
-<DD>Title: Collective decision-making on networked systems in presence of antagonistic interactions\
-Supervisor: Prof. Claudio Altafini
-</DL>
+<dl>
+<dt>2016-2021
+<dd><strong>Ph.D. in Electrical Engineering with Specialization in Automatic Control</strong>
+<dd>Linköping University, Linköping, Sweden
+<dd>Title: Collective decision-making on networked systems in presence of antagonistic interactions
+<dd>Supervisor: Prof. Claudio Altafini
 	
-	
-> 2016-2021
-**Ph.D. in Electrical Engineering with Specialization in Automatic Control**\
-Linköping University, Linköping, Sweden\
-Title: Collective decision-making on networked systems in presence of antagonistic interactions\
-Supervisor: Prof. Claudio Altafini
-	
-> 2016
+<dt>2016
+<dd><strong>Engineering Professional Practice Exam</strong> ("Esame di Stato")
+<dd>University of Padova, Padova, Italy
 
-**Engineering Professional Practice Exam** ("Esame di Stato")\
-University of Padova, Padova, Italy
-	
-> 2013-2016
- 
-**M.Sc. in Automation Engineering** ("Laurea Magistrale in Ingegneria dell'Automazione") \
-with the mark 110/110 cum laude\
-University of Padova, Padova, Italy
-	
-> 2010-2013
+<dt>2013-2016
+<dd><strong>M.Sc. in Automation Engineering</strong> ("Laurea Magistrale in Ingegneria dell'Automazione")
+<dd> With the mark 110/110 cum laude
+<dd>University of Padova, Padova, Italy
 
-**B.Sc. in Information Engineering** ("Laurea Triennale in Ingegneria dell'Informazione")\
-with the mark 102/110\
-University of Padova, Padova, Italy
+<dt>2010-2013
+<dd><strong>B.Sc. in Information Engineering</strong> ("Laurea Triennale in Ingegneria dell'Informazione")
+<dd> With the mark 102/110
+<dd>University of Padova, Padova, Italy
+</dl>
 	
+
 
 ## Experience
 
