@@ -7,36 +7,30 @@ classes: wide
 
 ## Education
 
-<dl>
-<dt>2016-2021</dt>
-<dd><strong>Ph.D. in Electrical Engineering with Specialization in Automatic Control</strong>
-<dd>Linköping University, Linköping, Sweden
-<dd>Title: Collective decision-making on networked systems in presence of antagonistic interactions
-<dd>Supervisor: Prof. Claudio Altafini
-<dt>2016</dt>
-<dd><strong>Engineering Professional Practice Exam</strong> ("Esame di Stato")</dd>
-<dd>University of Padova, Padova, Italy</dd>
-<dt>2013-2016</dt>
-<dd><strong>M.Sc. in Automation Engineering</strong> ("Laurea Magistrale in Ingegneria dell'Automazione")</dd>
-<dd> With the mark 110/110 cum laude</dd>
-<dd>University of Padova, Padova, Italy</dd>
-<dt>2010-2013</dt>
-<dd><strong>B.Sc. in Information Engineering</strong> ("Laurea Triennale in Ingegneria dell'Informazione")</dd>
-<dd> With the mark 102/110</dd>
-<dd>University of Padova, Padova, Italy</dd>
-</dl>
-	
+2016-2021 : **Ph.D. in Electrical Engineering with Specialization in Automatic Control**
+: Linköping University, Linköping, Sweden
+: Title: Collective decision-making on networked systems in presence of antagonistic interactions
+: Supervisor: Prof. Claudio Altafini
+
+2016 : **Engineering Professional Practice Exam** ("Esame di Stato")
+: University of Padova, Padova, Italy
+
+2013-2016 : **M.Sc. in Automation Engineering** ("Laurea Magistrale in Ingegneria dell'Automazione")
+: With the mark 110/110 cum laude
+: University of Padova, Padova, Italy
+
+2010-2013 : **B.Sc. in Information Engineering** ("Laurea Triennale in Ingegneria dell'Informazione")
+: With the mark 102/110
+: University of Padova, Padova, Italy
+
 
 
 ## Experience
 
-<dl>
-<dt>Dec 2021-present</dt>
-<dd><strong>Postdoctoral Researcher</strong></dd>
-<dd>Division of Decision and Control Systems, School of Electrical Engineering and Computer Science</dd>
-<dd>KTH Royal Institute of Technology, Stockholm, Sweden</dd>
-<dt>Aug 2016- Nov 2021</dt>
-<dd><strong>Ph.D. Student in Automatic Control</strong></dd>
-<dd>Division of Automatic Control, Department of Electrical Engineering</dd>
-<dd>Linköping University, Sweden</dd>
-</dl>
+Dec 2021-present : **Postdoctoral Researcher**
+: Division of Decision and Control Systems, School of Electrical Engineering and Computer Science
+: KTH Royal Institute of Technology, Stockholm, Sweden</dd>
+
+Aug 2016- Nov 2021 : **Ph.D. Student in Automatic Control**
+: Division of Automatic Control, Department of Electrical Engineering
+: Linköping University, Sweden
