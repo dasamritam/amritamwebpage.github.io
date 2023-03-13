@@ -6,8 +6,16 @@ classes: wide
 ---
 
 ## Education
+<DL>
+<DT>2016-2021
+<DD><STRONG>Ph.D. in Electrical Engineering with Specialization in Automatic Control</STRONG>
+<DD>Linköping University, Linköping, Sweden
+<DD>Title: Collective decision-making on networked systems in presence of antagonistic interactions\
+Supervisor: Prof. Claudio Altafini
+</DL>
+	
+	
 > 2016-2021
-
 **Ph.D. in Electrical Engineering with Specialization in Automatic Control**\
 Linköping University, Linköping, Sweden\
 Title: Collective decision-making on networked systems in presence of antagonistic interactions\
