@@ -2,6 +2,7 @@
 layout: single
 author_profile: true
 title: "Publications"
+toc: true
 classes: wide
 ---
 
