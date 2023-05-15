@@ -11,7 +11,7 @@ I am a Postdoctoral researcher at the [Division of Decision and Control Systems]
 I received a B.Sc. degree in Information Engineering in 2013 and a M.Sc. degree (with honor) in Automation Engineering in 2016, from the University of Padova, Italy. From August 2016 until November 2021, I was a Ph.D. student at the [Division of Automatic Control](https://www.control.isy.liu.se/), Department of Electrical Engineering, Linköping University. My main supervisor was [Prof. Claudio Altafini](https://users.isy.liu.se/en/rt/claal20/). In September 2021 I successfully defended my Ph.D.  dissertation, entitled "Collective decision-making on networked systems in presence of antagonistic interactions".
 {: style="text-align: justify;"}
 
-My research interests are in the area of networked systems and nonlinear dynamics over networks, with applications to social networks and collective decision-making processes.
+My research interests are in the area of networked systems and nonlinear dynamics over networks, with applications to social networks and collective decision-making processes; Signed networks theory; Cyber-physical-human systems (CPHS) and the interactions between cyber-physical systems and humans in the context of smart cities, with applications to Live-in Laboratories.
 {: style="text-align: justify;"}
 
 Download my curriculum vitae here: [CV](/assets/CV-20230315.pdf). 
