@@ -4,9 +4,8 @@ title:  "2022 ECC: Multi-agent consensus over signed graphs with switching topol
 excerpt: Our paper has been been accepted at ECC!..
 excerpt: I am pleased to announce that our paper has been accepted for publication in the SIAM Journal on Matrix Analysis and Applications..
 categories:
-  - Accepted papers
+  - Publications
   - Conference
-  - ECC
 tags:
   - signed graphs
   - signed Laplacian matrix
