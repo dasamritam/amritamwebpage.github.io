@@ -32,7 +32,7 @@ DOI: 10.1109/TAC.2019.2924131
 
 1. M. Farjadnia, **A. Fontan**, A. Russo, K. H. Johansson, and M. Molinari, What influences occupants' behavior in residential buildings? An experimental study on window operation in the KTH Live-In Lab, 7th IEEE Conference on Control Technology and Applications (CCTA), Bridgetown, Barbados, August 16-18, 2023
 
-1. **A. Fontan**, M. Farjadnia, J. Llewellyn, C. Katzeff, M. Molinari, V. Cvetkovic, and K. H. Johansson, Social interactions for a sustainable lifestyle: The design of an experimental case study, 22nd IFAC World Congress, July 2023
+1. **A. Fontan**, M. Farjadnia, J. Llewellyn, C. Katzeff, M. Molinari, V. Cvetkovic, and K. H. Johansson, Social interactions for a sustainable lifestyle: The design of an experimental case study, 22nd IFAC World Congress, Yokohama, Japan, July 2023
 
 1. L. Wang, **A. Fontan**, Y. Hong, G. Shi, and Claudio Altafini, Multi-agent consensus over signed graphs with switching topology, 20th European Control Conference (ECC), London, UK, July 2022
 
@@ -45,3 +45,8 @@ DOI: 10.1109/TAC.2019.2924131
 1. **A. Fontan** and C. Altafini, [Investigating mixed-sign equilibria for nonlinear collective decision-making systems](https://ieeexplore.ieee.org/document/8263755), 56th IEEE Conference on Decision and Control (CDC), Melbourne, Australia, December 2017, DOI: 10.1109/CDC.2017.8263755
 
 1. **A. Fontan**, G. Shi, X. Hu and C. Altafini, [Interval Consensus: a novel class of constrained consensus problems for multiagent networks](https://ieeexplore.ieee.org/document/8264270), 56th IEEE Conference on Decision and Control (CDC), Melbourne, Australia, December 2017, DOI: 10.1109/CDC.2017.8264270
+
+
+## Chapters in Books
+
+1. S. Hirche, A. Ames, T. Samad, **A. Fontan**, F. Lamnabhi-Lagarrigue, *Cyber-physical Human Systems*, Ch. 4.D, *in* Control for Societal-scale Challenges: Road Map 2030, Eds. A. M. Annaswamy, K. H. Johansson, and G. J. Pappas, IEEE Control Systems Society Publication, 2023, [ieeecss.org/control-societal-scale-challenges-roadmap-2030](https://ieeecss.org/control-societal-scale-challenges-road-map-2030)
