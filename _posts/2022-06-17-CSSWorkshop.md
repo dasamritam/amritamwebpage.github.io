@@ -1,6 +1,6 @@
 ---
 author_profile: true
-title:  "2022 IEEE CSS Workshop on Control for Societal-Scale Challenges, Stockholm, June 17-18, 2022"
+title:  "IEEE CSS Workshop on Control for Societal-Scale Challenges, Stockholm, June 17-18, 2022"
 excerpt: I was a local organizer of the 2022 IEEE CSS Workshop on Control for Societal-Scale Challenges
 categories:
 - Workshop
