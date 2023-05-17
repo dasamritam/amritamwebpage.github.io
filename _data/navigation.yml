@@ -2,8 +2,6 @@
 main:
   - title: "About me"
     url: https://angelafontan.github.io/
-  - title: "Education"
-    url: https://angelafontan.github.io/education/
   - title: "Publications"
     url: https://angelafontan.github.io/publications/
   - title: "Presentations"
