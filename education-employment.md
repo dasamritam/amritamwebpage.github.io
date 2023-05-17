@@ -1,7 +1,7 @@
 ---
 layout: single
 author_profile: true
-title: "Education"
+title: "Education & Employment"
 classes: wide
 ---
 
@@ -29,12 +29,12 @@ classes: wide
 
 
 
-## Experience
+## Employment
 
 Dec 2021 - present 
 : **Postdoctoral Researcher**
 : Division of Decision and Control Systems, School of Electrical Engineering and Computer Science
-: KTH Royal Institute of Technology, Stockholm, Sweden</dd>
+: KTH Royal Institute of Technology, Stockholm, Sweden
 
 Aug 2016 - Nov 2021 
 : **Ph.D. Student in Automatic Control**
