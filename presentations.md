@@ -44,6 +44,10 @@ Stockholm, Sweden, June 2018
 Melbourne, Australia, December 2017
 
 ## Posters
+- *THuman behavior and social interactions in complex environments: The case study of the KTH Live-In Lab*\
+[The 2023 Digital Futures HiSS Workshop](https://www.hiss-digitalfutures.se/workshop-series/2023-hiss-workshop), 
+Stockholm, Sweden, May 3-5, 2023
+
 - *The HiSS LiL Social Case Study: Social interactions and sustainable lifestyle*\
 [Workshop on Data, Learning, and Markets](https://c3dti.ai/events/workshops/data-learning-markets/), 
 University of Illinois at Urbana-Champaign, Illinois, USA, October 10–12, 2022
