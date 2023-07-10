@@ -6,8 +6,11 @@ classes: wide
 ---
 
 ## Presentations
+- *Social interactions for a sustainable lifestyle: The design of an experimental case study* [[slides](/assets/2023IFAC_AF_slides.pdf)]\
+[22nd IFAC World Congress](https://www.ifac2023.org/), Yokohama, Japan, July 9-14, 2023
+
 - *On behavioral changes for connected individuals: a networked dynamic decision-making approach*\
-[4th IFAC Workshop on Cyber-Physical Human Systems](https://www.cphs2022.org/), December 1-2, 2022
+[4th IFAC Workshop on Cyber-Physical Human Systems](https://www.cphs2022.org/), Houston, Texas, December 1-2, 2022
 
 - *On behavioral changes for connected individuals*\
 [EECS Summer Event](https://www.kth.se/eecs-summerevent-2022/), June 8, 2022\
