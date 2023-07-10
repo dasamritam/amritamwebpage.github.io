@@ -14,7 +14,7 @@ classes: wide
 
 - *On behavioral changes for connected individuals*\
 [EECS Summer Event](https://www.kth.se/eecs-summerevent-2022/), June 8, 2022\
-[Reglermöte - Swedish Control Meeting](https://www.ltu.se/research/subjects/control/Reglermote?l=en/), June 9, 2022
+[Reglermöte - Swedish Control Meeting](https://www.ltu.se/research/subjects/control/Reglermote?l=en/), Luleå, Sweden, June 9, 2022
 
 
 - *Collective decision-making on networked systems in presence of antagonistic interactions* [[slides](/assets/AF_DF_220303.pdf)]\
@@ -47,7 +47,7 @@ Stockholm, Sweden, June 2018
 Melbourne, Australia, December 2017
 
 ## Posters
-- *THuman behavior and social interactions in complex environments: The case study of the KTH Live-In Lab*\
+- *Human behavior and social interactions in complex environments: The case study of the KTH Live-In Lab*\
 [The 2023 Digital Futures HiSS Workshop](https://www.hiss-digitalfutures.se/workshop-series/2023-hiss-workshop), 
 Stockholm, Sweden, May 3-5, 2023
 
