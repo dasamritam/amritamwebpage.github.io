@@ -14,9 +14,9 @@ classes: wide
 
 
 ## Journal papers 
-1. **A. Fontan**, and C. Altafini, Pseudoinverses of signed Laplacian matrices, SIAM Journal on Matrix Analysis and Applications (SIMAX), to appear, 2023
+1. **A. Fontan**, and C. Altafini, [Pseudoinverses of signed Laplacian matrices](https://doi.org/10.1137/22M1493392), SIAM Journal on Matrix Analysis and Applications (SIMAX), 2023, DOI: 10.1137/22M1493392\
 
-1. **A. Fontan**, L. Wang, Y. Hong, G. Shi, and C. Altafini, [Multi-agent consensus over time-invariant and time-varying signed digraphs via eventual positivity](https://ieeexplore.ieee.org/document/9965602), IEEE Transactions on Automatic Control, 2023 (early access), DOI: 10.1109/TAC.2022.3225472\
+1. **A. Fontan**, L. Wang, Y. Hong, G. Shi, and C. Altafini, [Multi-agent consensus over time-invariant and time-varying signed digraphs via eventual positivity](https://ieeexplore.ieee.org/document/9965602), IEEE Transactions on Automatic Control, 2023, DOI: 10.1109/TAC.2022.3225472\
 [[arXiv:2203.04215]](https://arxiv.org/abs/2203.04215)
 
 1. **A. Fontan** and C. Altafini, [The role of frustration in collective decision-making dynamical processes on multiagent signed networks](https://ieeexplore.ieee.org/document/9591259), IEEE Transactions on Automatic Control, vol. 67 (10), pp. 5191 - 5206, 2022, DOI: 10.1109/TAC.2021.3123222
@@ -30,7 +30,8 @@ DOI: 10.1109/TAC.2019.2924131
 
 ## Conference papers  (peer-reviewed)
 
-1. M. Farjadnia, **A. Fontan**, A. Russo, K. H. Johansson, and M. Molinari, What influences occupants' behavior in residential buildings? An experimental study on window operation in the KTH Live-In Lab, 7th IEEE Conference on Control Technology and Applications (CCTA), Bridgetown, Barbados, August 16-18, 2023
+1. M. Farjadnia, **A. Fontan**, A. Russo, K. H. Johansson, and M. Molinari, What influences occupants' behavior in residential buildings? An experimental study on window operation in the KTH Live-In Lab, 7th IEEE Conference on Control Technology and Applications (CCTA), Bridgetown, Barbados, August 16-18, 2023\
+[[arXiv:2307.08090]](https://arxiv.org/abs/2307.08090)
 
 1. **A. Fontan**, M. Farjadnia, J. Llewellyn, C. Katzeff, M. Molinari, V. Cvetkovic, and K. H. Johansson, Social interactions for a sustainable lifestyle: The design of an experimental case study, 22nd IFAC World Congress, Yokohama, Japan, July 2023
 
