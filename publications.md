@@ -14,7 +14,7 @@ classes: wide
 
 
 ## Journal papers 
-1. **A. Fontan**, and C. Altafini, [Pseudoinverses of signed Laplacian matrices](https://doi.org/10.1137/22M1493392), SIAM Journal on Matrix Analysis and Applications (SIMAX), 2023, DOI: 10.1137/22M1493392\
+1. **A. Fontan**, and C. Altafini, [Pseudoinverses of signed Laplacian matrices](https://doi.org/10.1137/22M1493392), SIAM Journal on Matrix Analysis and Applications (SIMAX), 2023, DOI: 10.1137/22M1493392
 
 1. **A. Fontan**, L. Wang, Y. Hong, G. Shi, and C. Altafini, [Multi-agent consensus over time-invariant and time-varying signed digraphs via eventual positivity](https://ieeexplore.ieee.org/document/9965602), IEEE Transactions on Automatic Control, 2023, DOI: 10.1109/TAC.2022.3225472\
 [[arXiv:2203.04215]](https://arxiv.org/abs/2203.04215)
