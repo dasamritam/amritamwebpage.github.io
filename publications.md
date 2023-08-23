@@ -6,6 +6,24 @@ toc: true
 classes: wide
 ---
 
+ol {
+  counter-reset: item;
+  margin-left: 0;
+  padding-left: 0;
+}
+li {
+  display: block;
+  margin-bottom: .5em;
+  margin-left: 2em;
+}
+li::before {
+  display: inline-block;
+  content: "[C"counter(item) "] ";
+  counter-increment: item;
+  width: 2em;
+  margin-left: -2em;
+}
+
 ## PhD Thesis 
 **A. Fontan**, Collective decision-making on networked systems in presence of antagonistic interactions, Linköping Studies in Science and Technology. Dissertations, No. 2166, 2021
 [[DiVA](http://liu.diva-portal.org/smash/record.jsf?pid=diva2%3A1585664&dswid=-8741)]
@@ -30,23 +48,24 @@ DOI: 10.1109/TAC.2019.2924131
 
 ## Conference papers  (peer-reviewed)
 
-1. M. Farjadnia, **A. Fontan**, A. Russo, K. H. Johansson, and M. Molinari, What influences occupants' behavior in residential buildings? An experimental study on window operation in the KTH Live-In Lab, 7th IEEE Conference on Control Technology and Applications (CCTA), Bridgetown, Barbados, August 16-18, 2023\
-[[arXiv:2307.08090]](https://arxiv.org/abs/2307.08090)
+<ol reversed>
+<li> M. Farjadnia, **A. Fontan**, A. Russo, K. H. Johansson, and M. Molinari, What influences occupants' behavior in residential buildings? An experimental study on window operation in the KTH Live-In Lab, 7th IEEE Conference on Control Technology and Applications (CCTA), Bridgetown, Barbados, August 16-18, 2023\
+[[arXiv:2307.08090]](https://arxiv.org/abs/2307.08090)</li>
 
-1. **A. Fontan**, M. Farjadnia, J. Llewellyn, C. Katzeff, M. Molinari, V. Cvetkovic, and K. H. Johansson, Social interactions for a sustainable lifestyle: The design of an experimental case study, 22nd IFAC World Congress, Yokohama, Japan, July 2023
+<li> **A. Fontan**, M. Farjadnia, J. Llewellyn, C. Katzeff, M. Molinari, V. Cvetkovic, and K. H. Johansson, Social interactions for a sustainable lifestyle: The design of an experimental case study, 22nd IFAC World Congress, Yokohama, Japan, July 2023</li>
 
-1. L. Wang, **A. Fontan**, Y. Hong, G. Shi, and Claudio Altafini, Multi-agent consensus over signed graphs with switching topology, 20th European Control Conference (ECC), London, UK, July 2022
+<li> L. Wang, **A. Fontan**, Y. Hong, G. Shi, and Claudio Altafini, Multi-agent consensus over signed graphs with switching topology, 20th European Control Conference (ECC), London, UK, July 2022</li>
 
-1. **A. Fontan** and C. Altafini, [On the properties of Laplacian pseudoinverses](https://ieeexplore.ieee.org/document/9683525), 60th IEEE Conference on Decision and Control (CDC), Austin, Texas, USA, December 2021, DOI: 10.1109/CDC45484.2021.9683525
+<li> **A. Fontan** and C. Altafini, [On the properties of Laplacian pseudoinverses](https://ieeexplore.ieee.org/document/9683525), 60th IEEE Conference on Decision and Control (CDC), Austin, Texas, USA, December 2021, DOI: 10.1109/CDC45484.2021.9683525</li>
 
-1. **A. Fontan** and C. Altafini, Describing government formation processes through collective multiagent dynamics on signed networks (extended abstract), 1st Virtual IFAC World Congress, July 2020
+<li> **A. Fontan** and C. Altafini, Describing government formation processes through collective multiagent dynamics on signed networks (extended abstract), 1st Virtual IFAC World Congress, July 2020</li>
 
-1. **A. Fontan** and C. Altafini, [Achieving a decision in antagonistic multiagent networks: frustration determined commitment strength](https://ieeexplore.ieee.org/document/8619615), 57th IEEE Conference on Decision and Control (CDC), Miami Beach, FL, USA, December 2018, DOI: 10.1109/CDC.2018.8619615
+<li> **A. Fontan** and C. Altafini, [Achieving a decision in antagonistic multiagent networks: frustration determined commitment strength](https://ieeexplore.ieee.org/document/8619615), 57th IEEE Conference on Decision and Control (CDC), Miami Beach, FL, USA, December 2018, DOI: 10.1109/CDC.2018.8619615</li>
 
-1. **A. Fontan** and C. Altafini, [Investigating mixed-sign equilibria for nonlinear collective decision-making systems](https://ieeexplore.ieee.org/document/8263755), 56th IEEE Conference on Decision and Control (CDC), Melbourne, Australia, December 2017, DOI: 10.1109/CDC.2017.8263755
+<li> **A. Fontan** and C. Altafini, [Investigating mixed-sign equilibria for nonlinear collective decision-making systems](https://ieeexplore.ieee.org/document/8263755), 56th IEEE Conference on Decision and Control (CDC), Melbourne, Australia, December 2017, DOI: 10.1109/CDC.2017.8263755</li>
 
-1. **A. Fontan**, G. Shi, X. Hu and C. Altafini, [Interval Consensus: a novel class of constrained consensus problems for multiagent networks](https://ieeexplore.ieee.org/document/8264270), 56th IEEE Conference on Decision and Control (CDC), Melbourne, Australia, December 2017, DOI: 10.1109/CDC.2017.8264270
-
+<li> **A. Fontan**, G. Shi, X. Hu and C. Altafini, [Interval Consensus: a novel class of constrained consensus problems for multiagent networks](https://ieeexplore.ieee.org/document/8264270), 56th IEEE Conference on Decision and Control (CDC), Melbourne, Australia, December 2017, DOI: 10.1109/CDC.2017.8264270</li>
+</ol>
 
 ## Chapters in Books
 
