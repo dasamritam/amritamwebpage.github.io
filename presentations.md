@@ -7,13 +7,13 @@ classes: wide
 
 ## Presentations
 - *Collective decision-making on networked systems: from social networks to smart homes* [[slides](/presentations/230905-ELLIIT_slides.pdf)]\
-[ELLIIT Focus Period](https://elliit.se/news-and-events/focus-period-linkoping-2023/), Linköping, Sweden, September 04-October 06, 2023
+[ELLIIT Focus Period](https://elliit.se/news-and-events/focus-period-linkoping-2023/), Linköping, Sweden, September 4--October 6, 2023
 
 - *Social interactions for a sustainable lifestyle: The design of an experimental case study* [[slides](/presentations/230710-IFAC_slides.pdf)]\
-[22nd IFAC World Congress](https://www.ifac2023.org/), Yokohama, Japan, July 9-14, 2023
+[22nd IFAC World Congress](https://www.ifac2023.org/), Yokohama, Japan, July 9--14, 2023
 
 - *On behavioral changes for connected individuals: a networked dynamic decision-making approach*\
-[4th IFAC Workshop on Cyber-Physical Human Systems](https://www.cphs2022.org/), Houston, Texas, December 1-2, 2022
+[4th IFAC Workshop on Cyber-Physical Human Systems](https://www.cphs2022.org/), Houston, Texas, December 1--2, 2022
 
 - *On behavioral changes for connected individuals*\
 [EECS Summer Event](https://www.kth.se/eecs-summerevent-2022/), June 8, 2022\
