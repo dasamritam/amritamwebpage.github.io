@@ -20,9 +20,9 @@ classes: wide
 <li> <b>A. Fontan</b>, L. Wang, Y. Hong, G. Shi, and C. Altafini, <a href="https://ieeexplore.ieee.org/document/9965602">Multi-agent consensus over time-invariant and time-varying signed digraphs via eventual positivity</a>, IEEE Transactions on Automatic Control, 2023, DOI: 10.1109/TAC.2022.3225472<br>
 <a href="https://arxiv.org/abs/2203.04215">[arXiv:2203.04215]</a></li>
 
-<li> <b>A. Fontan</b> and C. Altafini, <a href="/assets/papers-journals/Fontan2021RoleFrustration.pdf">The role of frustration in collective decision-making dynamical processes on multiagent signed networks</a>, IEEE Transactions on Automatic Control, vol. 67 (10), pp. 5191 - 5206, 2022, <a href="https://ieeexplore.ieee.org/document/9591259">DOI: 10.1109/TAC.2021.3123222</a></li>
+<li> <b>A. Fontan</b> and C. Altafini, <a href="/papers/journals/Fontan2021RoleFrustration.pdf">The role of frustration in collective decision-making dynamical processes on multiagent signed networks</a>, IEEE Transactions on Automatic Control, vol. 67 (10), pp. 5191 - 5206, 2022, <a href="https://ieeexplore.ieee.org/document/9591259">DOI: 10.1109/TAC.2021.3123222</a></li>
 
-<li> <b>A. Fontan</b> and C. Altafini, <a href="/assets/papers-journals/Fontan2021Signed.pdf">A signed network perspective on the government formation process in parliamentary democracies</a>, Scientific Reports, vol. 11 (5134), 2021, <a href="https://www.nature.com/articles/s41598-021-84147-3">DOI: 10.1038/s41598-021-84147-3</a></li>
+<li> <b>A. Fontan</b> and C. Altafini, <a href="/papers/journals/Fontan2021Signed.pdf">A signed network perspective on the government formation process in parliamentary democracies</a>, Scientific Reports, vol. 11 (5134), 2021, <a href="https://www.nature.com/articles/s41598-021-84147-3">DOI: 10.1038/s41598-021-84147-3</a></li>
 
 <li> <b>A. Fontan</b>, G. Shi, X. Hu and C. Altafini, <a href="https://ieeexplore.ieee.org/document/8742903">Interval Consensus for Multiagent Networks</a>, IEEE Transactions on Automatic Control, vol. 65 (5), pp. 1855-1869, 2019,
 DOI: 10.1109/TAC.2019.2924131</li>
@@ -36,7 +36,7 @@ DOI: 10.1109/TAC.2019.2924131</li>
 <li> M. Farjadnia, <b>A. Fontan</b>, A. Russo, K. H. Johansson, and M. Molinari, What influences occupants' behavior in residential buildings? An experimental study on window operation in the KTH Live-In Lab, 7th IEEE Conference on Control Technology and Applications (CCTA), Bridgetown, Barbados, August 16-18, 2023 <br>
 <a href="https://arxiv.org/abs/2307.08090">[arXiv:2307.08090]</a></li>
 
-<li> <b>A. Fontan</b>, M. Farjadnia, J. Llewellyn, C. Katzeff, M. Molinari, V. Cvetkovic, and K. H. Johansson, Social interactions for a sustainable lifestyle: The design of an experimental case study, 22nd IFAC World Congress, Yokohama, Japan, July 2023</li>
+<li> <b>A. Fontan</b>, M. Farjadnia, J. Llewellyn, C. Katzeff, M. Molinari, V. Cvetkovic, and K. H. Johansson, <a href="/papers/conferences/Fontan2023Social.pdf">Social interactions for a sustainable lifestyle: The design of an experimental case study</a>, 22nd IFAC World Congress, Yokohama, Japan, July 2023</li>
 
 <li> L. Wang, <b>A. Fontan</b>, Y. Hong, G. Shi, and Claudio Altafini, Multi-agent consensus over signed graphs with switching topology, 20th European Control Conference (ECC), London, UK, July 2022</li>
 
