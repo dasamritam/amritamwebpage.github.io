@@ -20,7 +20,7 @@ classes: wide
 <li> <b>A. Fontan</b>, L. Wang, Y. Hong, G. Shi, and C. Altafini, <a href="https://ieeexplore.ieee.org/document/9965602">Multi-agent consensus over time-invariant and time-varying signed digraphs via eventual positivity</a>, IEEE Transactions on Automatic Control, 2023, DOI: 10.1109/TAC.2022.3225472<br>
 <a href="https://arxiv.org/abs/2203.04215">[arXiv:2203.04215]</a></li>
 
-<li> <b>A. Fontan</b> and C. Altafini, <a href="https://ieeexplore.ieee.org/document/9591259">The role of frustration in collective decision-making dynamical processes on multiagent signed networks</a>, IEEE Transactions on Automatic Control, vol. 67 (10), pp. 5191 - 5206, 2022, DOI: 10.1109/TAC.2021.3123222</li>
+<li> <b>A. Fontan</b> and C. Altafini, <a href="/assets/papers-journals/Fontan2021Role.pdf">The role of frustration in collective decision-making dynamical processes on multiagent signed networks</a>, IEEE Transactions on Automatic Control, vol. 67 (10), pp. 5191 - 5206, 2022, <a href="https://ieeexplore.ieee.org/document/9591259">DOI: 10.1109/TAC.2021.3123222</a></li>
 
 <li> <b>A. Fontan</b> and C. Altafini, <a href="https://www.nature.com/articles/s41598-021-84147-3">A signed network perspective on the government formation process in parliamentary democracies</a>, Scientific Reports, vol. 11 (5134), 2021, DOI: 10.1038/s41598-021-84147-3</li>
 
