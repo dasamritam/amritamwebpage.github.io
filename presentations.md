@@ -6,7 +6,10 @@ classes: wide
 ---
 
 ## Presentations
-- *Social interactions for a sustainable lifestyle: The design of an experimental case study* [[slides](/assets/2023IFAC_AF_slides.pdf)]\
+- *Collective decision-making on networked systems: from social networks to smart homes* [[slides](/presentations/230905-ELLIIT_slides.pdf)]\
+[ELLIIT Focus Period](https://elliit.se/news-and-events/focus-period-linkoping-2023/), Linköping, Sweden, September 04-October 06, 2023
+
+- *Social interactions for a sustainable lifestyle: The design of an experimental case study* [[slides](/presentations/230710-IFAC_slides.pdf)]\
 [22nd IFAC World Congress](https://www.ifac2023.org/), Yokohama, Japan, July 9-14, 2023
 
 - *On behavioral changes for connected individuals: a networked dynamic decision-making approach*\
@@ -17,10 +20,10 @@ classes: wide
 [Reglermöte - Swedish Control Meeting](https://www.ltu.se/research/subjects/control/Reglermote?l=en/), Luleå, Sweden, June 9, 2022
 
 
-- *Collective decision-making on networked systems in presence of antagonistic interactions* [[slides](/assets/AF_DF_220303.pdf)]\
+- *Collective decision-making on networked systems in presence of antagonistic interactions* [[slides](/presentations/220303-DF_slides.pdf)]\
 [Dive Deep with Digital Futures](https://www.digitalfutures.kth.se/event/collective-decision-making-on-networked-systems-in-presence-of-antagonistic-interactions/), Thursday March 3, 2022
 
-- *On the properties of Laplacian pseudoinverses* [[slides](/assets/2021CDC_AFCA.pdf)]\
+- *On the properties of Laplacian pseudoinverses* [[slides](/presentations/211209-CDC_slides.pdf)]\
 60th IEEE Conference on Decision and Control (CDC), 
 Austin, Texas, USA, December 2021 (virtual conference)
 
