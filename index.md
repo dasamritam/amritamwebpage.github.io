@@ -14,5 +14,5 @@ I received a B.Sc. degree in Information Engineering in 2013 and a M.Sc. degree 
 My research interests are in the area of networked systems and nonlinear dynamics over networks, with applications to social networks and collective decision-making processes; Signed networks theory; Cyber-physical-human systems (CPHS) and the interactions between cyber-physical systems and humans in the context of smart cities, with applications to Live-in Laboratories.
 {: style="text-align: justify;"}
 
-Download my curriculum vitae here: [CV](/assets/CV-20230315.pdf). 
+Download my curriculum vitae here: [CV](/assets/Fontan_CV_short.pdf). 
 {: style="text-align: justify;"}
