@@ -33,7 +33,7 @@ DOI: <a href="https://ieeexplore.ieee.org/document/8742903" style="color:black">
 
 ## Conference papers  (peer-reviewed)
 
-<ol reversed>
+<ol reversed id="customlistconference">
 <li> M. Farjadnia, <b>A. Fontan</b>, A. Russo, K. H. Johansson, and M. Molinari, What influences occupants' behavior in residential buildings? An experimental study on window operation in the KTH Live-In Lab, 7th IEEE Conference on Control Technology and Applications (CCTA), Bridgetown, Barbados, August 16-18, 2023 <br>
 <a href="https://arxiv.org/abs/2307.08090" style="color:black">[arXiv:2307.08090]</a></li>
 
