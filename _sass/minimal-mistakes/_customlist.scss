@@ -3,7 +3,7 @@
     list-style-type: none;
     /* create custom counter and set it to 0 */
     /* counter-reset: elementcounter; */
-    margin-left:1.6; padding-left:1.3;text-indent: -1.5em;
+    margin-left:2; padding-left:1.3;text-indent: -1.5em;
   }
   
   #customlistjournal>li:before {
@@ -18,7 +18,7 @@
     /* delete default counter */
     list-style-type: none;
     /* create custom counter and set it to 0 */
-    counter-reset: elementcounter;
+    /* counter-reset: elementcounter;*/
     margin-left:1.6; padding-left:1.3;text-indent: -1.5em;
   }
   
@@ -27,5 +27,5 @@
     content: "[C" counter(elementcounter) "]";
     padding-right:0.4em; 
     /* increment counter */
-    counter-increment: elementcounter;
+    counter-increment: elementcounter -1;
   }
