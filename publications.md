@@ -26,12 +26,15 @@ classes: wide
 [<a href="/papers/journals/Fontan2021RoleFrustration.pdf">pdf</a>]
 </li>
 
-<li> <b>A. Fontan</b> and C. Altafini, <a href="/papers/journals/Fontan2021Signed.pdf">A signed network perspective on the government formation process in parliamentary democracies</a>, Scientific Reports, vol. 11 (5134), 2021, DOI: <a href="https://www.nature.com/articles/s41598-021-84147-3" style="color:black">10.1038/s41598-021-84147-3</a></li>
+<li> <b>A. Fontan</b> and C. Altafini, <i>A signed network perspective on the government formation process in parliamentary democracies</i>, Scientific Reports, vol. 11 (5134), 2021, DOI: <a href="https://www.nature.com/articles/s41598-021-84147-3" style="color:black">10.1038/s41598-021-84147-3</a> [<a href="/papers/journals/Fontan2021Signed.pdf">pdf</a>]
+</li>
 
-<li> <b>A. Fontan</b>, G. Shi, X. Hu and C. Altafini, <a href="/papers/journals/Fontan2019Interval.pdf">Interval Consensus for Multiagent Networks</a>, IEEE Transactions on Automatic Control, vol. 65 (5), pp. 1855--1869, 2019,
-DOI: <a href="https://ieeexplore.ieee.org/document/8742903" style="color:black">10.1109/TAC.2019.2924131</a></li>
+<li> <b>A. Fontan</b>, G. Shi, X. Hu and C. Altafini, <i>Interval Consensus for Multiagent Networks</i>, IEEE Transactions on Automatic Control, vol. 65 (5), pp. 1855--1869, 2019,
+DOI: <a href="https://ieeexplore.ieee.org/document/8742903" style="color:black">10.1109/TAC.2019.2924131</a> [<a href="/papers/journals/Fontan2019Interval.pdf">pdf</a>]
+</li>
 
-<li> <b>A. Fontan</b> and C. Altafini, <a href="/papers/journals/Fontan2018MultiEquilibria.pdf">Multiequilibria Analysis for a Class of Collective Decision-Making Networked Systems</a>, IEEE Transactions on Control of Network Systems, vol. 5 (4), pp. 1931--s1940, 2018, DOI: <a href="https://ieeexplore.ieee.org/document/8110687" style="color:black">10.1109/TCNS.2017.2774014</a></li>
+<li> <b>A. Fontan</b> and C. Altafini, <i>Multiequilibria Analysis for a Class of Collective Decision-Making Networked Systems</i>, IEEE Transactions on Control of Network Systems, vol. 5 (4), pp. 1931--s1940, 2018, DOI: <a href="https://ieeexplore.ieee.org/document/8110687" style="color:black">10.1109/TCNS.2017.2774014</a> [<a href="/papers/journals/Fontan2018MultiEquilibria.pdf">pdf</a>
+</li>
 </ol>
 
 
