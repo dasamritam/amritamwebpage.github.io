@@ -15,13 +15,16 @@ classes: wide
 
 ## Journal papers 
 <ol id="customlistjournal" style="counter-reset: elementcounter 7;">
-<li> <b>A. Fontan</b>, and C. Altafini, *Pseudoinverses of signed Laplacian matrices*, SIAM Journal on Matrix Analysis and Applications (SIMAX), vol. 44 (2), pp. 622--647, 2023, DOI: <a href="https://doi.org/10.1137/22M1493392" style="color:black">10.1137/22M1493392</a>
+<li> <b>A. Fontan</b>, and C. Altafini, <i>Pseudoinverses of signed Laplacian matrices</i>, SIAM Journal on Matrix Analysis and Applications (SIMAX), vol. 44 (2), pp. 622--647, 2023, DOI: <a href="https://doi.org/10.1137/22M1493392" style="color:black">10.1137/22M1493392</a>
 [<a href="/papers/journals/Fontan2021Pseudoinverses.pdf">pdf</a>]
 </li>
 
-<li> <b>A. Fontan</b>, L. Wang, Y. Hong, G. Shi, and C. Altafini, <a href="/papers/journals/Fontan2022MAS.pdf">Multi-agent consensus over time-invariant and time-varying signed digraphs via eventual positivity</a>, IEEE Transactions on Automatic Control, vol. 68 (9), pp. 5429--5444, 2023, DOI: <a href="https://ieeexplore.ieee.org/document/9965602" style="color:black">10.1109/TAC.2022.3225472</a>, <a href="https://arxiv.org/abs/2203.04215" style="color:black">[arXiv:2203.04215]</a></li>
+<li> <b>A. Fontan</b>, L. Wang, Y. Hong, G. Shi, and C. Altafini, <i>Multi-agent consensus over time-invariant and time-varying signed digraphs via eventual positivity</i>, IEEE Transactions on Automatic Control, vol. 68 (9), pp. 5429--5444, 2023, DOI: <a href="https://ieeexplore.ieee.org/document/9965602" style="color:black">10.1109/TAC.2022.3225472</a>, [</a><a href="/papers/journals/Fontan2022MAS.pdf">pdf</a>,<a href="https://arxiv.org/abs/2203.04215" style="color:black">arXiv:2203.04215]
+</li>
 
-<li> <b>A. Fontan</b> and C. Altafini, <a href="/papers/journals/Fontan2021RoleFrustration.pdf">The role of frustration in collective decision-making dynamical processes on multiagent signed networks</a>, IEEE Transactions on Automatic Control, vol. 67 (10), pp. 5191--5206, 2022, DOI: <a href="https://ieeexplore.ieee.org/document/9591259" style="color:black">10.1109/TAC.2021.3123222</a></li>
+<li> <b>A. Fontan</b> and C. Altafini, <i>The role of frustration in collective decision-making dynamical processes on multiagent signed networks</i>, IEEE Transactions on Automatic Control, vol. 67 (10), pp. 5191--5206, 2022, DOI: <a href="https://ieeexplore.ieee.org/document/9591259" style="color:black">10.1109/TAC.2021.3123222</a>
+[<a href="/papers/journals/Fontan2021RoleFrustration.pdf">pdf</a>]
+</li>
 
 <li> <b>A. Fontan</b> and C. Altafini, <a href="/papers/journals/Fontan2021Signed.pdf">A signed network perspective on the government formation process in parliamentary democracies</a>, Scientific Reports, vol. 11 (5134), 2021, DOI: <a href="https://www.nature.com/articles/s41598-021-84147-3" style="color:black">10.1038/s41598-021-84147-3</a></li>
 
