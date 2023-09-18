@@ -33,7 +33,7 @@ classes: wide
 DOI: <a href="https://ieeexplore.ieee.org/document/8742903" style="color:black">10.1109/TAC.2019.2924131</a> [<a href="/papers/journals/Fontan2019Interval.pdf">pdf</a>]
 </li>
 
-<li> <b>A. Fontan</b> and C. Altafini, <i>Multiequilibria Analysis for a Class of Collective Decision-Making Networked Systems</i>, IEEE Transactions on Control of Network Systems, vol. 5 (4), pp. 1931--1940, 2018, DOI: <a href="https://ieeexplore.ieee.org/document/8110687" style="color:black">10.1109/TCNS.2017.2774014</a> [<a href="/papers/journals/Fontan2018MultiEquilibria.pdf">pdf</a>
+<li> <b>A. Fontan</b> and C. Altafini, <i>Multiequilibria Analysis for a Class of Collective Decision-Making Networked Systems</i>, IEEE Transactions on Control of Network Systems, vol. 5 (4), pp. 1931--1940, 2018, DOI: <a href="https://ieeexplore.ieee.org/document/8110687" style="color:black">10.1109/TCNS.2017.2774014</a> [<a href="/papers/journals/Fontan2018MultiEquilibria.pdf">pdf</a>]
 </li>
 </ol>
 
