@@ -27,7 +27,7 @@ Snowbird, Utah, USA, May 2019
 - *Investigating mixed-sign equilibria for nonlinear collective decision-making systems*, 56th IEEE Conference on Decision and Control,
 Melbourne, Australia, December 2017
 
-## Invited Talks and seminars
+## Invited talks, panels, and seminars
 <ol id="customlisttalk" style="counter-reset: elementcounter 9;">
 <li> <a href="https://elliit.se/news-and-events/focus-period-linkoping-2023/">ELLIIT Focus Period</a>, Linköping, Sweden, September 4<code>&#8212;</code>October 6, 2023
 [<a href="/presentations/230905-ELLIIT_slides.pdf">slides</a>]
