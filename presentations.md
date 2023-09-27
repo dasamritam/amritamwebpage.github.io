@@ -6,29 +6,41 @@ classes: wide
 ---
 
 ## Conference presentations
-- *Social interactions for a sustainable lifestyle: The design of an experimental case study*, [22nd IFAC World Congress](https://www.ifac2023.org/), Yokohama, Japan, July 9--14, 2023 [[slides](/presentations/230710-IFAC_slides.pdf)]
 
-- *On behavioral changes for connected individuals: a networked dynamic decision-making approach*, [4th IFAC Workshop on Cyber-Physical Human Systems](https://www.cphs2022.org/), Houston, Texas, December 1--2, 2022
+<ol id="customlistpresentation" style="counter-reset: elementcounter 9;">
 
-- *On the properties of Laplacian pseudoinverses*, 
+<li> <i>Social interactions for a sustainable lifestyle: The design of an experimental case study</i>, 22nd IFAC World Congress, Yokohama, Japan, July 9--14, 2023 [<a href="/presentations/230710-IFAC_slides.pdf">slides</a>]
+</li>
+
+<li> <i>On behavioral changes for connected individuals: a networked dynamic decision-making approach</i>, 4th IFAC Workshop on Cyber-Physical Human Systems, Houston, Texas, December 1-2, 2022
+</li>
+
+<li> <i>On the properties of Laplacian pseudoinverses</i>, 
 60th IEEE Conference on Decision and Control (CDC), 
-Austin, Texas, USA, December 2021 (virtual conference) [[slides](/presentations/211209-CDC_slides.pdf)]
+Austin, Texas, USA, December 2021 (virtual conference) [<a href="/presentations/211209-CDC_slides.pdf">slides</a>]
+</li>
 
-- *Describing government formation processes through collective multiagent dynamics on signed networks*, 1st Virtual IFAC World Congress, July 2020
+<li> <i>Describing government formation processes through collective multiagent dynamics on signed networks</i>, 1st Virtual IFAC World Congress, July 2020
+</li>
 
-- *Signed parliamentary networks: how frustration affects the government formation in parliamentary democracies*, The 8th International Conference on Complex Networks and their Applications, Lisbon, Portugal, December 2019
+<li> <i>Signed parliamentary networks: how frustration affects the government formation in parliamentary democracies</i>, The 8th International Conference on Complex Networks and their Applications, Lisbon, Portugal, December 2019
+</li>
 
-- *Decision-making in presence of frustration on multiagent antagonistic networks*, SIAM Conference on Applications of Dynamical Systems, 
+<li> <i>Decision-making in presence of frustration on multiagent antagonistic networks</i>, SIAM Conference on Applications of Dynamical Systems, 
 Snowbird, Utah, USA, May 2019
+</li>
 
-- *Achieving a decision in antagonistic multiagent networks: frustration determines commitment strength*, 
+<li> <i>Achieving a decision in antagonistic multiagent networks: frustration determines commitment strength</i>, 
 57th IEEE Conference on Decision and Control, Miami Beach, FL, USA, December 2018
+</li>
 
-- *Investigating mixed-sign equilibria for nonlinear collective decision-making systems*, 56th IEEE Conference on Decision and Control,
+<li> <i>Investigating mixed-sign equilibria for nonlinear collective decision-making systems</i>, 56th IEEE Conference on Decision and Control,
 Melbourne, Australia, December 2017
+</li>
+</ol>
 
 ## Invited talks, panels, and seminars
-<ol id="customlisttalk" style="counter-reset: elementcounter 9;">
+<ol id="customlisttalk" style="counter-reset: elementcounter 10;">
 <li> <a href="https://elliit.se/news-and-events/focus-period-linkoping-2023/">ELLIIT Focus Period</a>, Linköping, Sweden, September 4<code>&#8212;</code>October 6, 2023
 [<a href="/presentations/230905-ELLIIT_slides.pdf">slides</a>]
 </li>
@@ -54,8 +66,8 @@ Melbourne, Australia, December 2017
 
 <li> <a href="https://www.kth.se/eecs-summerevent-2022/">EECS Summer Event</a>, Stockholm, June 8, 2022</li>
 
-<li> Swedish Control Meeting ("Reglermöte"), Stockholm, Sweden, June, 2018</li>
-
+<li> Swedish Control Meeting ("Reglermöte"), Stockholm, Sweden, June, 2018
+</li>
 </ol>
 
 ## Posters
