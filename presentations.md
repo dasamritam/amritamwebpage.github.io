@@ -48,13 +48,13 @@ Melbourne, Australia, December 2017
 <li> 
 <a href="https://www.digitalfutures.kth.se/event/collective-decision-making-on-networked-systems-in-presence-of-antagonistic-interactions/">Dive Deep with Digital Futures</a>, March 3, 2022
 [<a href="/presentations/220303-DF_slides.pdf">slides</a>]
+</li>
 
 <li> <a href="https://www.ltu.se/research/subjects/control/Reglermote?l=en/">Reglermöte - Swedish Control Meeting</a>, Luleå, Sweden, June 9, 2022</li>
 
 <li> <a href="https://www.kth.se/eecs-summerevent-2022/">EECS Summer Event</a>, Stockholm, June 8, 2022</li>
 
 <li> Swedish Control Meeting ("Reglermöte"), Stockholm, Sweden, June, 2018</li>
-
 
 </ol>
 
