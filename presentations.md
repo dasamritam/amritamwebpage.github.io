@@ -50,7 +50,7 @@ Melbourne, Australia, December 2017
 [<a href="/presentations/220303-DF_slides.pdf">slides</a>]
 </li>
 
-<li> <a href="https://www.ltu.se/research/subjects/control/Reglermote?l=en/">Reglermöte - Swedish Control Meeting</a>, Luleå, Sweden, June 9, 2022</li>
+<li> <a href="https://www.ltu.se/research/subjects/control/Reglermote?l=en/">Swedish Control Meeting</a> ("Reglermöte"), Luleå, Sweden, June 9, 2022</li>
 
 <li> <a href="https://www.kth.se/eecs-summerevent-2022/">EECS Summer Event</a>, Stockholm, June 8, 2022</li>
 
