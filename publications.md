@@ -26,7 +26,7 @@ classes: wide
 [<a href="/papers/journals/Fontan2021RoleFrustration.pdf">pdf</a>]
 </li>
 
-<li> <b>A. Fontan</b> and C. Altafini, <i>A signed network perspective on the government formation process in parliamentary democracies</i>, Scientific Reports, vol. 11 (5134), 2021, DOI: <a href="https://www.nature.com/articles/s41598-021-84147-3" style="color:black">10.1038/s41598-021-84147-3</a> [<a href="/papers/journals/Fontan2021Signed.pdf">pdf</a>]
+<li> <b>A. Fontan</b> and C. Altafini, <i>A signed network perspective on the government formation process in parliamentary democracies</i>, Scientific Reports, vol. 11 (5134), 2021, DOI: <a href="https://www.nature.com/articles/s41598-021-84147-3" style="color:black">10.1038/s41598-021-84147-3</a> [<a href="/papers/journals/Fontan2021Signed.pdf">pdf</a>, <a href="/papers/journals/Fontan2021Signed_SI.pdf">SI</a>]
 </li>
 
 <li> <b>A. Fontan</b>, G. Shi, X. Hu and C. Altafini, <i>Interval Consensus for Multiagent Networks</i>, IEEE Transactions on Automatic Control, vol. 65 (5), pp. 1855--1869, 2019,
