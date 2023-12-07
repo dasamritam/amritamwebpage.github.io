@@ -1,7 +1,7 @@
 ---
 author_profile: true
 title:  "Future Digileaders 2023"
-excerpt: "In September I will be a visiting scholar at the focus period on Networks Dynamics and Control in Linköping.."
+excerpt: ""
 categories:
   - Workshop
 tags:
