@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "dark" # "default" "air", "aqua", "contrast", "dark",
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Angela Fontan"
+title                    : "Amritam Das"
 title_separator          : "|"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Angela Fontan"
+name                     : "dr.ir. Amritam Das"
 description              : ""
 url                      : https://amritamdas.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -102,10 +102,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Angela Fontan"
+  name             : "Amritam Das"
   avatar           : "/assets/amritam.jpg"
-  bio              : "Assistant Professor"
-  location         : "Decision and Control Systems<br>KTH Royal Institute of Technology<br>SE-100 44 Stockholm<br>Sweden"
+  bio              : "Assistant Professor of Spatio-Temporal Control Systems"
+  location         : "ontrol Systems Group,<br>Eindhoven University of Technology"
   email            : "am.das@tue.nl"
   linkedin         : "angelafontan"
   researchgate     : "Angela-Fontan"
@@ -116,7 +116,7 @@ author:
     #  icon: "fas fa-fw fa-envelope-square"
     #  url: "mailto:angfon@kth.se"
     - label: "KTH profile"
-      icon: "fas fa-fw fa-link"
+      icon: "fas fa-address-card"
       url: "https://www.kth.se/profile/angfon"
     # - label: "Google Scholar"
     #  icon: "fas fa-fw fa-link"
