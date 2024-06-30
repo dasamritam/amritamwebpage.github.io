@@ -2,8 +2,6 @@
 main:
   - title: "Home"
     url: https://amritamdas.com/
-  - title: "Research"
-    url: https://amritamdas.com/research/
   - title: "STC Lab"
     url: https://amritamdas.com/stclab/
   - title: "Publications"
