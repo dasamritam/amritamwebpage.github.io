@@ -18,7 +18,6 @@ My research is about *developing control theory on the basis of physics-driven a
 
 # Projects
 
-
 {% include base_path %}
 
 {% assign ordered_pages = site.research | sort:"order_number" %}
