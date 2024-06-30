@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "Amritam Das"
 title_separator          : "|"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "dr. ir. Amritam Das"
+name                     : "Amritam Das"
 description              : ""
 url                      : https://amritamdas.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -102,7 +102,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Amritam Das"
+  name             : "dr. ir. Amritam Das"
   avatar           : "/assets/amritam.jpg"
   bio              : "Assistant Professor of Spatio-Temporal Control Systems"
   location         : "Control Systems Group,<br>Eindhoven University of Technology"
