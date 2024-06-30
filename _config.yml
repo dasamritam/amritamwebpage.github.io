@@ -106,11 +106,11 @@ author:
   avatar           : "/assets/amritam.jpg"
   bio              : "Assistant Professor of Spatio-Temporal Control Systems"
   location         : "Control Systems Group,<br>Eindhoven University of Technology"
-  email            : "am.das@tue.nl"
   linkedin         : "angelafontan"
   researchgate     : "Angela-Fontan"
   # googlescholar    : "zoh-5V8AAAAJ&amp;hl=en"
   twitter          : "AmritamDas3"
+  email            : "am.das@tue.nl"
   links:
     #- label: "Email"
     #  icon: "fas fa-fw fa-envelope-square"
