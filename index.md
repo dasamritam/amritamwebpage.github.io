@@ -1,5 +1,5 @@
 ---
-title: "About me"
+title: "Welcome to my website!"
 layout: home 
 author_profile: true
 classes: wide
