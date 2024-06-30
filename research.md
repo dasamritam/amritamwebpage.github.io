@@ -3,8 +3,6 @@ layout: archive
 title: "Research"
 permalink: /research/
 author_profile: true
-header:
-  og_image: "research/ecdf.png"
 ---
 <img src="/images/research-theme.png" alt="research-theme" width="900" style="display: block; margin: 0 auto"/> 
 
@@ -20,7 +18,6 @@ My research is about *developing control theory on the basis of physics-driven a
 
 # Projects
 
-<nbsp>
 
 {% include base_path %}
 
