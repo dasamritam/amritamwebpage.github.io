@@ -125,7 +125,7 @@ author:
     #  icon: "fas fa-fw fa-link"
     #  url: "https://www.researchgate.net/profile/Angela-Fontan"
     - label: "Twitter"
-      icon: "fab fa-times"
+      icon: "fab fa-xmark"
       url: "https://twitter.com/"
     #- label: "Facebook"
     #  icon: "fab fa-fw fa-facebook-square"
