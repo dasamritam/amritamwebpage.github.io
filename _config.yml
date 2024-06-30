@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "dark" # "default" "air", "aqua", "contrast", "dark",
 
 # Site Settings
 locale                   : "en-US"
-title                    : "dr. ir. Amritam Das"
+title                    : "Amritam Das"
 title_separator          : "|"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Amritam Das"
@@ -139,9 +139,6 @@ author:
     #- label: "Instagram"
     #  icon: "fab fa-fw fa-instagram"
     #  # url: "https://instagram.com/"
-     - label: "Twitter"
-       icon: "fab fa-fw fa-twitter-square"
-       url: "https://twitter.com/"
   sidebar:
     - text: "[CV](/assets/CV-20220616.pdf/)"
 #- text: "[![your logo](/assets/images/logo.png)](http://home.page.org)"
