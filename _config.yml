@@ -112,6 +112,9 @@ author:
   # twitter          : "AmritamDas3"
   # email            : "am.das@tue.nl"
   links:
+    - label: "CS Group, TU Eindhoven"
+      icon: "fas fa-university"
+      url: "https://www.tue.nl/en/research/research-groups/control-systems"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:angfon@kth.se"
