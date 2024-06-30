@@ -115,7 +115,7 @@ author:
     #- label: "Email"
     #  icon: "fas fa-fw fa-envelope-square"
     #  url: "mailto:angfon@kth.se"
-    - label: "Official profile"
+    - label: "University Profile"
       icon: "fas fa-address-card"
       url: "https://www.tue.nl/en/research/researchers/amritam-das"
     # - label: "Google Scholar"
