@@ -4,7 +4,7 @@ title: "Research"
 permalink: /research/
 author_profile: true
 ---
-<img src="/images/research-theme.png" alt="research-theme" width="900" style="display: block; margin: 0 auto"/> 
+<!-- <img src="/images/research-theme.png" alt="research-theme" width="900" style="display: block; margin: 0 auto"/>  -->
 
 My research is about *developing control theory on the basis of physics-driven as well as data-intensive methods that guarentee safe, efficient and cost-effective operations of complex multi-physical systems.* 
 {: style="text-align: justify;"}
@@ -18,12 +18,12 @@ My research is about *developing control theory on the basis of physics-driven a
 
 # Projects
 
-{% include base_path %}
+<!-- {% include base_path %}
 
 {% assign ordered_pages = site.research | sort:"order_number" %}
 
 {% for post in ordered_pages %}
-  {% include archive-single.html type="grid" %}
+  {% include archive-single.html type="grid" %} -->
 {% endfor %}
 
 <!--  type="grid"-->
