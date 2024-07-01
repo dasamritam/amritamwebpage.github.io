@@ -16,7 +16,6 @@ My research is about *developing control theory on the basis of physics-driven a
 * Compared to typical engineering systems, *brain-inspired* devices, such as neuromorphic chips, are quite different. Instead of 1s and 0s, they communicate via spikes. Conventional control theory is unsuitable for such a device since generating spikes requires two feedback-control loops of opposite signs. My research provides methods and tools to design such control systems for modulating spikes over space and time.
 {: style="text-align: justify;"}
 
-<nbsp>
 
 {% include base_path %}
 
