@@ -304,3 +304,12 @@ defaults:
       comments: # true
       share: false # true
       related: true
+  # _research
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
