@@ -3,7 +3,7 @@ title: "Physics-Informed Learning"
 layout: single-portfolio
 excerpt: "<img src='/images/research/sub-theme-pinn.png' alt=''>"
 collection: research
-order_number: 30
+order_number: 2
 header: 
   og_image: "research/sub-theme-pinn.png"
 ---
