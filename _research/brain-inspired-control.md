@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "Neuro Inspired Control"
 excerpt: "<img src='/teaser/neuro.png' alt=''>"
 order_number: 1
