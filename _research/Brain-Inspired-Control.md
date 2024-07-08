@@ -4,8 +4,6 @@ layout: single-portfolio
 excerpt: "<img src='/images/research/sub-theme-neuro.png' alt=''>"
 collection: research
 order_number: 10
-header: 
-  og_image: "research/sub-theme-neuro.png"
 ---
 <img src="/images/research/sub-theme-neuro.png" alt="sub-theme-neuro" width="350" style="display: block; margin: 0 auto"/> 
 
