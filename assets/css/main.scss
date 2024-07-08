@@ -31,3 +31,42 @@ html {
   }
 }
 
+/* assets/css/main.css or your main CSS file */
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.grid__item {
+  width: 100%;
+}
+
+.archive__item {
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.archive__item-teaser img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.archive__item-title {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+.archive__item-excerpt {
+  font-size: 1em;
+  color: #666;
+}
+
+.archive__item-content {
+  padding-top: 8px;
+}
+
+
