@@ -308,4 +308,4 @@ defaults:
 collections:
   research:
     output: true
-    permalink: /:collection/:path/
+    permalink: /research/:path/
