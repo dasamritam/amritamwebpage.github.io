@@ -1,8 +1,7 @@
 ---
 title: "Neuro-Inspired Control"
-layout: single-portfolio
-excerpt: "/path/to/images/research/sub-theme-neuro.png"
-collection: research
+teaser: "/path/to/images/research/sub-theme-neuro.png"
+excerpt: "This is a sample excerpt of Project 1."
 order_number: 1
 ---
 <!-- <img src="/images/research/sub-theme-neuro.png" alt="sub-theme-neuro" width="350" style="display: block; margin: 0 auto"/>  -->
