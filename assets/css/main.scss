@@ -59,7 +59,7 @@ h1 {
 /* Grid layout for research items */
 .research-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(3000px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 2fr));
   gap: 20px;
 }
 
