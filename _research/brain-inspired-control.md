@@ -7,7 +7,7 @@ permalink: /research/brain-inspired-control/
 author_profile: true
 classes: wide
 ---
-<!-- <img src="/images/research/sub-theme-neuro.png" alt="sub-theme-neuro" width="350" style="display: block; margin: 0 auto"/>  -->
+<img src="/images/research/sub-theme-neuro.png" alt="sub-theme-neuro" width="350" style="display: block; margin: 0 auto"/> 
 
 ## Collaborators
 * [prof. Karl H. Johansson](https://scholar.google.com/citations?user=wWCUYdsAAAAJ&hl=en), KTH Royal Institute of Technology
