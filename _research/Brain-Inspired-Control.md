@@ -1,6 +1,6 @@
 ---
 title: "Neuro-Inspired Control"
-teaser: "/path/to/images/research/sub-theme-neuro.png"
+teaser: "/images/research/sub-theme-neuro.png"
 excerpt: "This is a sample excerpt of Project 1."
 order_number: 1
 ---
