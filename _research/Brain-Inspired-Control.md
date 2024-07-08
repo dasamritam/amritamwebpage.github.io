@@ -1,11 +1,11 @@
 ---
 title: "Neuro-Inspired Control"
 layout: single-portfolio
-excerpt: "<img src='/images/research/sub-theme-neuro.png' alt=''>"
+excerpt: "path/to/images/research/sub-theme-neuro.png"
 collection: research
-order_number: 10
+order_number: 1
 ---
-<img src="/images/research/sub-theme-neuro.png" alt="sub-theme-neuro" width="350" style="display: block; margin: 0 auto"/> 
+<!-- <img src="/images/research/sub-theme-neuro.png" alt="sub-theme-neuro" width="350" style="display: block; margin: 0 auto"/>  -->
 
 ## Collaborators
 * [prof. Karl H. Johansson](https://scholar.google.com/citations?user=wWCUYdsAAAAJ&hl=en), KTH Royal Institute of Technology
