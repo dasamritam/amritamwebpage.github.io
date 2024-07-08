@@ -49,3 +49,29 @@ html {
 .grid__item:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.archive__item {
+  padding: 10px;
+}
+
+.archive__item-teaser img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.archive__item-title {
+  font-size: 1.25em;
+  margin: 1em 0 0.5em;
+}
+
+.archive__item-excerpt {
+  font-size: 0.5em;
+  color: #666;
+}
+
+.archive__item-meta {
+  font-size: 0.875em;
+  color: #999;
+  margin-top: 0.5em;
+}
