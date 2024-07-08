@@ -1,7 +1,7 @@
 ---
 title: "Neuro-Inspired Control"
 layout: single-portfolio
-excerpt: "path/to/images/research/sub-theme-neuro.png"
+excerpt: "/path/to/images/research/sub-theme-neuro.png"
 collection: research
 order_number: 1
 ---
