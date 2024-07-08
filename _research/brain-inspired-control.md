@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: archive
 title: "Neuro Inspired Control"
 teaser: "/images/research/sub-theme-neuro.png"
 excerpt: "This is a sample excerpt of Project 1."
