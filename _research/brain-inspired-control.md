@@ -1,5 +1,6 @@
 ---
-title: "Neuro-Inspired Control"
+layout: research_item
+title: "Neuro Inspired Control"
 teaser: "/images/research/sub-theme-neuro.png"
 excerpt: "This is a sample excerpt of Project 1."
 order_number: 1
