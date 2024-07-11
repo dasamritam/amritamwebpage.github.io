@@ -3,6 +3,7 @@ layout: archive
 title: "Talks"
 permalink: /talks/
 author_profile: true
+classes: wide
 ---
 ### PhD Defense Talk 
 * *Digital twin for controlling thermo-fluidic processes.*\

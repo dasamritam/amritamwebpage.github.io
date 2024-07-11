@@ -3,8 +3,7 @@ layout: archive
 title: "STC Lab"
 permalink: /stclab/
 author_profile: true
-redirect_from:
-  - /resume
+classes: wide
 ---
 
 
