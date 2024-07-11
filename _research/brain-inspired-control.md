@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Neuro Inspired Control"
-teaser: "/teaser/neuro.png"
+teaser: "../teaser/neuro.png"
 excerpt: "A brief summary of your research."
 order_number: 1
 permalink: /research/brain-inspired-control/
