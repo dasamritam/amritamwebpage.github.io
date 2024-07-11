@@ -18,4 +18,25 @@
   </ul>
 </div>
 
+<!-- New div for images -->
+<div class="page__footer-images">
+  <img src="/images/logos/tue.png" alt="Image 1">
+  <img src="/images/logos/uiuc.jpg" alt="Image 2">
+  <!-- Add more images as needed -->
+</div>
+
 <div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+<style>
+  .page__footer-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between images */
+    margin-top: 20px; /* Space above images */
+  }
+
+  .page__footer-images img {
+    max-width: 100px; /* Adjust size as needed */
+    height: auto;
+  }
+</style>
