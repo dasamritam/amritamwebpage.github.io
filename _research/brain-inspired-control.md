@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "*Nonlinear Systems and Control*"
+title: "Nonlinear Systems and Control"
 image: "/images/research/sub-theme-neuro.png"
 description: "Applications: space technology, neuro-engineering, high-tech systems"
 author_profile: true
