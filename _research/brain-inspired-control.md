@@ -1,10 +1,8 @@
 ---
 layout: single
-title: "Neuro Inspired Control"
-teaser: "/images/research/sub-theme-neuro.png"
-excerpt: "A brief summary of your research."
-order_number: 1
-permalink: /research/brain-inspired-control/
+title: "Nonlinear Systems and Control"
+image: "/images/research/sub-theme-neuro.png"
+description: "Applications: space technology, neuro-engineering, high-tech systems"
 author_profile: true
 classes: wide
 ---
