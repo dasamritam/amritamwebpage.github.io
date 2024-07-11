@@ -1,11 +1,10 @@
 ---
-title: "Physics-Informed Learning"
-layout: single-portfolio
-excerpt: "<img src='/images/research/sub-theme-pinn.png' alt=''>"
-collection: research
-order_number: 20
-header: 
-  og_image: "research/sub-theme-pinn.png"
+layout: single
+title: "Physics-Informed Learning for Control"
+image: "/images/research/sub-theme-pinn.png"
+description: "Applications: thermo-fluidic processes, neuro-engineering, traffic network"
+author_profile: true
+classes: wide
 ---
 <img src="/images/research/sub-theme-pinn.png" alt="sub-theme-pinn" width="350" style="display: block; margin: 0 auto"/> 
 
