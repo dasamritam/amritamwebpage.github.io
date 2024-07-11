@@ -3,7 +3,6 @@ layout: research
 title: "Research"
 permalink: /research/
 author_profile: true
-class: wide
 ---
 
 
