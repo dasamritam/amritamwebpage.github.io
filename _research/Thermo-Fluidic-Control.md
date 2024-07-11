@@ -1,11 +1,10 @@
 ---
-title: "Multiphysics Digital Twin"
-layout: single-portfolio
-excerpt: "<img src='/images/research/sub-theme-pde.png' alt=''>"
-collection: research
-order_number: 30
-header: 
-  og_image: "research/sub-theme-pde.png"
+title: "Robust Control of Multi-Physics Processes"
+layout: single
+image: "/images/research/sub-theme-pde.png"
+description: "Applications: space technology, nuclear fusion, high-tech systems"
+author_profile: true
+classes: wide
 ---
 <img src="/images/research/sub-theme-pde.png" alt="sub-theme-pde" width="450" style="display: block; margin: 0 auto"/> 
 
@@ -13,7 +12,7 @@ header:
 * [prof. Siep Weiland](https://scholar.google.nl/citations?user=y2DLux4AAAAJ&hl=nl), TU Eindhoven
 * [dr. Matthew Peet](https://scholar.google.com/citations?user=l7umOqMAAAAJ&hl=en), Arizona State University
 * [dr. Matthijs van Berkel](https://scholar.google.com/citations?user=xhmEKnIAAAAJ&hl=en), Dutch Institute for Fundamental Energy Research
-* [Sachin Shivakumar](https://scholar.google.com/citations?user=hnPOWoMAAAAJ&hl=en), Arizona State University
+
 
 ## Summary
 

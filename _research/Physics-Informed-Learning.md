@@ -2,7 +2,7 @@
 layout: single
 title: "Physics-Informed Learning for Control"
 image: "/images/research/sub-theme-pinn.png"
-description: "Applications: thermo-fluidic processes, neuro-engineering, traffic network"
+description: "Applications: thermo-fluidic processes, neuro-engineering, traffic network, power systems"
 author_profile: true
 classes: wide
 ---
