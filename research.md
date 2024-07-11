@@ -7,7 +7,7 @@ class: wide
 ---
 
 
-<!-- My research is about *developing control theory on the basis of physics-driven as well as data-intensive methods that guarentee safe, efficient and cost-effective operations of complex multi-physical systems.* 
+My research is about *developing control theory on the basis of physics-driven as well as data-intensive methods that guarentee safe, efficient and cost-effective operations of complex multi-physical systems.* 
 {: style="text-align: justify;"}
 
 * In multi-physical systems, more than one phase of matter interact with each other and simultaneously obey physical laws from different disciplines of physics and chemistry. Many physical quantities may vary over time as well as space.
@@ -18,7 +18,7 @@ class: wide
 {: style="text-align: justify;"}
 
 
-{% include base_path %}
+<!-- {% include base_path %}
 
 {% assign ordered_pages = site.research | sort: "order_number" %}
 
