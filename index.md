@@ -8,7 +8,7 @@ classes: wide
 I am an assistant professor at [Eindhoven University of Technology](https://www.tue.nl/en/). I am part of the Control Systems (CS) group at the Eletrical Enegineering (EE) department. Previously, I held post-doctoral fellowship at KTH Royal Institute of Technology, Sweden and the University of Cambridge, UK. I recieved MSc. in Systems & Control and PhD in Electrical Engineering from the Eindhoven University of Technology in 2016 and 2020, respectively. 
 {: style="text-align: justify;"}
 
-I am originally from India. Outside work I am passionate about effective altruism, backgammon and cooking.  
+I am originally from West Bengal, India. I feel incredibly privileged growing up with the most diverse culture, deep heritage and exceptional cuisine that India has to offer. Outside work I am passionate about effective altruism, vedic philosophy, and backgammon.  
 {: style="text-align: justify;"}
 
 ### My Research
