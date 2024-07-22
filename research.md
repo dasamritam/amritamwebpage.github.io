@@ -6,8 +6,7 @@ author_profile: true
 classes: wide
 ---
 
-My research seeks answer to the following question:
-_How can we use physics and data together to maximise the long-term efficiency and reliability of engineering systems as they gradually change over time and across different locations?_
+My research seeks answer to the following question: _How can we use physics and data together to maximise the long-term efficiency and reliability of engineering systems as they gradually change over time and across different locations?_
 {: style="text-align: justify;"}
 
 - In multi-physical systems, more than one phase of matter interact with each other and simultaneously obey physical laws from different disciplines of physics and chemistry. Many physical quantities may vary over time as well as space.
