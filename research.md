@@ -6,7 +6,7 @@ author_profile: true
 classes: wide
 ---
 
-My research seeks answer to the follwoing question:
+My research seeks answer to the following question:
 _How can we use physics and data together to maximise the long-term efficiency and reliability of engineering systems as they gradually change over time and across different locations?_
 {: style="text-align: justify;"}
 
