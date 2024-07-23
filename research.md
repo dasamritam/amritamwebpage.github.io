@@ -19,9 +19,7 @@ To tackle these challenges, I develop powerful computational tools grounded on o
 - Smart mobility
 - Nuclear fusion
 
-## Current Research Themes in Our Lab:
-
-My lab currently works on the following research themes.
+## Current research themes in our lab:
 
 <!-- {% include base_path %}
 
