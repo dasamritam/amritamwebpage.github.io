@@ -1,24 +1,25 @@
 ---
 layout: single
-title: "Nonlinear Systems and Control"
+title: "Performance shaping of nonlinear systems"
 image: "/images/research/sub-theme-neuro.png"
 description: "Applications: space technology, neuro-engineering, high-tech systems"
 author_profile: true
 classes: wide
 ---
-<img src="/images/research/sub-theme-neuro.png" alt="sub-theme-neuro" width="350" style="display: block; margin: 0 auto"/> 
+
+<img src="/images/research/sub-theme-neuro.png" alt="sub-theme-neuro" width="350" style="display: block; margin: 0 auto"/>
 
 ## Collaborators
-* [prof. Karl H. Johansson](https://scholar.google.com/citations?user=wWCUYdsAAAAJ&hl=en), KTH Royal Institute of Technology
-* [prof. Rodolphe Sepulchre](https://scholar.google.com/citations?user=e1jfDwMAAAAJ&hl=en), University of Cambridge
-* [Thomas Chaffey](https://scholar.google.nl/citations?user=mpR3WKgAAAAJ&hl=en), University of Cambridge
 
+- [prof. Karl H. Johansson](https://scholar.google.com/citations?user=wWCUYdsAAAAJ&hl=en), KTH Royal Institute of Technology
+- [prof. Rodolphe Sepulchre](https://scholar.google.com/citations?user=e1jfDwMAAAAJ&hl=en), University of Cambridge
+- [Thomas Chaffey](https://scholar.google.nl/citations?user=mpR3WKgAAAAJ&hl=en), University of Cambridge
 
 In this set of projects, I leverage geospatial event data to explore the microlevel dynamics of political violence. What role can violence at the local level serve in advancing broader political ends? What explains patterns of action and reaction between actors engaged in different types of political violence? How do the differing roles the UN peacekeepers play affect the likelihood that rebel fighters will target them?
 
 ## Article
 
-Christian Oswald, Melanie Sauter, Sigrid Weber, and Rob Williams. "Under the Roof of Rebels: Civilian Targeting After Territorial Takeover in Sierra Leone." *International Studies Quarterly*.
+Christian Oswald, Melanie Sauter, Sigrid Weber, and Rob Williams. "Under the Roof of Rebels: Civilian Targeting After Territorial Takeover in Sierra Leone." _International Studies Quarterly_.
 
 > Do rebels target civilians as part of the process of establishing control in their territories? This research note shows that transition periods after rebels gain territorial control are remarkably violent for civilians. Speaking to the civilian victimization and rebel governance literature, we investigate the immediate time period after rebels successfully capture and hold territory. We argue that rebels use violence to gain compliance in newly captured territories until they are able to build up local capacities and institutions for peaceful governance. To test this argument, we draw on methodological advances in integrating event data and combine multiple datasets to study patterns of violence perpetrated by the Revolutionary United Front in Sierra Leone from 1997-2001. The findings of our spatiotemporal analysis show that civilian targeting increases in the period after rebels capture territory from the government compared to areas without territorial takeover, suggesting that life under the roof of rebels is initially more dangerous for civilians.
 
@@ -34,7 +35,7 @@ Patrick Hunnicutt, William G. Nomikos, and Rob Williams. "Non-Combatants or Coun
 
 William G. Nomikos, İpek Ece Şener, and Rob Williams. "Does UN Peacekeeping Protect Civilians? Evidence from the Border between Burkina Faso and Mali."
 
-> Research in political science has shown that UN peacekeeping operations are an important tool for ending civil war violence. However, much less is known about how UN peacekeepers affect civilian victimization. Given that civilians bear the primary costs of intrastate conflict,  understanding how international actors can contribute to the resolution of violence affecting them is a pressing concern. How does the presence of UN peacekeepers affect civilian victimization? We address this question by offering a straightforward empirical test of how UN peacekeeping patrols affect the likelihood that there will be violence against civilians. We build on the existing literature and established practices of peacekeeping to argue that peacekeepers deter violence against violence. To test our argument, we examine the case of Mail, the site of large-scale communal violence managed by UN peacekeepers since  2013. We employ a Geographic Regression Discontinuity Design (GRDD) around the border of Mali and Burkina Faso to estimate the causal effect of deploying peacekeepers to an area with growing communal tensions. Ultimately, our research provides robust causal evidence that UN peacekeeping works at the local level to protect civilians.
+> Research in political science has shown that UN peacekeeping operations are an important tool for ending civil war violence. However, much less is known about how UN peacekeepers affect civilian victimization. Given that civilians bear the primary costs of intrastate conflict, understanding how international actors can contribute to the resolution of violence affecting them is a pressing concern. How does the presence of UN peacekeepers affect civilian victimization? We address this question by offering a straightforward empirical test of how UN peacekeeping patrols affect the likelihood that there will be violence against civilians. We build on the existing literature and established practices of peacekeeping to argue that peacekeepers deter violence against violence. To test our argument, we examine the case of Mail, the site of large-scale communal violence managed by UN peacekeepers since 2013. We employ a Geographic Regression Discontinuity Design (GRDD) around the border of Mali and Burkina Faso to estimate the causal effect of deploying peacekeepers to an area with growing communal tensions. Ultimately, our research provides robust causal evidence that UN peacekeeping works at the local level to protect civilians.
 
 [Working Paper](https://osf.io/preprints/socarxiv/5jmq4/){: .btn--research}
 
