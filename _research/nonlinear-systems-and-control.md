@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Performance shaping of nonlinear systems"
+title: "Nonlinear Performance Shaping"
 image: "/images/research/sub-theme-neuro.png"
 description: "Applications: space technology, neuro-engineering, high-tech systems"
 author_profile: true
