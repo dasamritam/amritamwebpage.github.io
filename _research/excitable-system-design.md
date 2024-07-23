@@ -1,5 +1,5 @@
 ---
-title: "Excitabile System Design"
+title: "Excitable System Design"
 description: "Application: clinical neurology, brain-on-chip devices"
 image: "/images/research/sub-theme-neurology.png"
 layout: single
