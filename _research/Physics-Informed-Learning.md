@@ -9,14 +9,6 @@ classes: wide
 
 <img src="/images/research/sub-theme-pinn.png" alt="sub-theme-pinn" width="350" style="display: block; margin: 0 auto"/>
 
-### Collaborators
-
-- [prof. Karl H. Johansson](https://scholar.google.com/citations?user=wWCUYdsAAAAJ&hl=en), KTH Royal Institute of Technology
-- [dr. Jan Heiland](https://scholar.google.de/citations?user=wkHSeoYAAAAJ&hl=de), Max Planck Institute for Dynamics of Complex Technical Systems
-- [dr. Matthieu Barreau](https://scholar.google.com/citations?user=IaXx5KkAAAAJ&hl=fr), Tobii AB
-- [Miguel Aguiar](https://scholar.google.com/citations?user=9LxTyZMAAAAJ&hl=en), KTH Royal Institute of Technology
-- [dr. Umar Niazi](https://scholar.google.fr/citations?user=Yh_AidoAAAAJ&hl=en), KTH Royal Institute of Technology
-
 In this set of projects, I use advanced quanitative methods to tackle the problem of more accurately measuring concepts of interest in international relations. One uses Bayesian latent variable models to directly assess the strength of peace agreements in civil conflict rather than having to use agreement duration as a proxy for strength. Another harnesses advances in big data and develops new measures of economic interdependence and methods for detecting disruptions of regular economic exchange between states from a product-level trade dataset with over two billion observations.
 
 ## Article
