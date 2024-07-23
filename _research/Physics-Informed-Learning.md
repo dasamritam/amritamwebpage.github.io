@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Interpretable AI"
+title: "Certifiable and Interpretable AI"
 image: "/images/research/sub-theme-pinn.png"
 description: "Applications: thermo-fluidic processes, neuro-engineering, traffic network, power systems"
 author_profile: true
