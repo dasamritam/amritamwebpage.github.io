@@ -6,6 +6,4 @@ toc: false
 classes: wide
 ---
 
-# Publications
-
 <div id="bibtex_display"></div>
