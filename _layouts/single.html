@@ -96,5 +96,7 @@ layout: default
   var bibtex_display = new BibtexDisplay();
   bibtex_display.importBibtexFromFile('/publications.bib', function(){
     bibtex_display.displayBibtex('#bibtex_display');
+  }, function(error) {
+    console.error("Failed to load BibTeX file: ", error);
   });
 </script>
