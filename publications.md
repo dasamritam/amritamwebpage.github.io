@@ -8,8 +8,8 @@ classes: wide
 
 ## PhD Thesis
 
-**A. Fontan**, Collective decision-making on networked systems in presence of antagonistic interactions, Linköping Studies in Science and Technology. Dissertations, No. 2166, 2021
-[[DiVA](http://liu.diva-portal.org/smash/record.jsf?pid=diva2%3A1585664&dswid=-8741)]
+**A. Das**, A digital twin for controlling thermo-fluidic processes, Eindhoven University of Technology. PhD Dissertations, ISBN: 978-90-386-5140-8
+[[pdf](https://research.tue.nl/en/publications/a-digital-twin-for-controlling-thermo-fluidic-processes)]
 
 <!-- ## Manuscripts -->
 
