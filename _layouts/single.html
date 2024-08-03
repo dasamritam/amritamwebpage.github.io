@@ -89,3 +89,12 @@ layout: default
     </div>
   {% endif %}
 </div>
+
+<!-- Include BibTeX display script -->
+<script src="https://cdn.jsdelivr.net/npm/bibtex-js/dist/bibtex.min.js"></script>
+<script>
+  var bibtex_display = new BibtexDisplay();
+  bibtex_display.importBibtexFromFile('/publications.bib', function(){
+    bibtex_display.displayBibtex('#bibtex_display');
+  });
+</script>
