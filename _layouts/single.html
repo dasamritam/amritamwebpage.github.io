@@ -93,10 +93,30 @@ layout: default
 <!-- Include BibTeX display script -->
 <script src="https://cdn.jsdelivr.net/npm/bibtex-js/dist/bibtex.min.js"></script>
 <script>
+  // Inline BibTeX for testing
+  var bibtex = `
+  @article{Fontan2023,
+    author = {A. Fontan and C. Altafini},
+    title = {Pseudoinverses of signed Laplacian matrices},
+    journal = {SIAM Journal on Matrix Analysis and Applications},
+    volume = {44},
+    number = {2},
+    pages = {622--647},
+    year = {2023},
+    doi = {10.1137/22M1493392}
+  }
+
+  @inproceedings{Farjadnia2023,
+    author = {M. Farjadnia and A. Fontan and A. Russo and K. H. Johansson and M. Molinari},
+    title = {What influences occupants' behavior in residential buildings? An experimental study on window operation in the KTH Live-In Lab},
+    booktitle = {7th IEEE Conference on Control Technology and Applications (CCTA)},
+    year = {2023},
+    address = {Bridgetown, Barbados},
+    month = {August},
+    url = {https://arxiv.org/abs/2307.08090}
+  }
+  `;
   var bibtex_display = new BibtexDisplay();
-  bibtex_display.importBibtexFromFile('/publications.bib', function(){
-    bibtex_display.displayBibtex('#bibtex_display');
-  }, function(error) {
-    console.error("Failed to load BibTeX file: ", error);
-  });
+  bibtex_display.displayBibtex(bibtex, '#bibtex_display');
 </script>
+
