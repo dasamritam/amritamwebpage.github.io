@@ -6,6 +6,17 @@ author_profile: true
 classes: wide
 ---
 
-[Article](https://doi.org/10.1017/psrm.2019.23){: .btn--research} [Preprint](/files/pdf/research/Agreement Strength.pdf){: .btn--research} [Supplemental Information](/files/pdf/research/Agreement Strength SI.pdf){: .btn--research} [Replication Archive](https://doi.org/10.7910/DVN/VUY8UI){: .btn--research} [GitHub Repo](https://github.com/jayrobwilliams/Peace-Agreement-Strength){: .btn--research}
+<a href="https://doi.org/10.1093/isq/sqae094" class="btn--research" target="_blank">Article</a>
+
+<style>
+.btn--research {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: blue;
+    text-decoration: none;
+    border-radius: 5px;
+}
+</style>
 
 <!--You can download a PDF copy of my CV [here](/files/AmritamCV.pdf).-->
