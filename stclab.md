@@ -13,7 +13,7 @@ classes: wide
     display: inline-block;
     padding: 10px 20px;
     color: white;
-    background-color: blue;
+    background-color: grey;
     text-decoration: none;
     border-radius: 5px;
 }
