@@ -7,6 +7,7 @@ classes: wide
 ---
 
 <a href="https://doi.org/10.1093/isq/sqae094" class="btn--research" target="_blank">Article</a>
+<a href="https://doi.org/10.1093/isq/sqae094" class="btn--research" target="_blank">Google Scholar</a>
 
 <style>
 .btn--research {
