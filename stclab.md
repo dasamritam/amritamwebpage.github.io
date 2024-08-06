@@ -12,7 +12,7 @@ classes: wide
 <style>
 .btn--research {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 10px;
     color: white;
     background-color: grey;
     text-decoration: none;
