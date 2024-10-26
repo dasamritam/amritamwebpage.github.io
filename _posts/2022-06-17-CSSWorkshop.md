@@ -6,7 +6,7 @@ categories:
 - Workshop
 ---
 
-Together with Dr. [Amritam Das](http://amritamdas.com/), [Linnea Sundling](https://www.kth.se/profile/lsundl?l=en) (Digital Futures), 
+Together with Dr. [Angela Fontan](https://angelafontan.github.io/), [Linnea Sundling](https://www.kth.se/profile/lsundl?l=en) (Digital Futures), 
 Prof. [Dimos V. Dimarogonas](https://people.kth.se/~dimos/) (KTH), Prof. [Henrik Sandberg](https://people.kth.se/~hsan/) (KTH), Prof. [Karl H. Johansson](https://people.kth.se/~kallej/) (KTH, Digital Futures), I was a local organizer of the *[2022 IEEE CSS Workshop on Control for Societal-Scale Challenges](https://sites.google.com/view/ieee-css-societal-challenges22/home)*, Stockholm, Sweden, June 17-18, 2022.
 
 The workshop is an IEEE Control Systems Society Initiative to develop a scientific roadmap for the future of our discipline, 
