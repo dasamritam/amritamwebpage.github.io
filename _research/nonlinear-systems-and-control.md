@@ -15,7 +15,7 @@ classes: wide
 - [prof. Rodolphe Sepulchre](https://scholar.google.com/citations?user=e1jfDwMAAAAJ&hl=en), University of Cambridge
 - [Thomas Chaffey](https://scholar.google.nl/citations?user=mpR3WKgAAAAJ&hl=en), University of Cambridge
 
-In this set of projects, I leverage geospatial event data to explore the microlevel dynamics of political violence. What role can violence at the local level serve in advancing broader political ends? What explains patterns of action and reaction between actors engaged in different types of political violence? How do the differing roles the UN peacekeepers play affect the likelihood that rebel fighters will target them?
+<!-- In this set of projects, I leverage geospatial event data to explore the microlevel dynamics of political violence. What role can violence at the local level serve in advancing broader political ends? What explains patterns of action and reaction between actors engaged in different types of political violence? How do the differing roles the UN peacekeepers play affect the likelihood that rebel fighters will target them?
 
 ## Article
 
@@ -43,4 +43,4 @@ Navin Bapat, Daniel Gustafson, and Rob Williams. "Terrorism, Stealth Aggression,
 
 > Why do governments respond to terrorist attacks with repression, given that terrorism typically produces insignificant damage, and repression often increases popular support for terrorists? This study argues that governments use repression in response to terrorist attacks for both strategic and opportunistic reasons. Strategically, attacks may signal that terrorists are destabilizing the government’s control of its territory. Since state power is endogenous to the territory it controls, these losses may precipitously weaken the government and make it vulnerable to internal and external challengers. Governments therefore turn to violence in an effort to maintain territories that are critical to maintaining power. On the other hand, the specter of destabilization allows opportunistic leaders in quasi-democratic regimes to repress political adversaries and retain office indefinitely in the name of fighting terrorism. We find support for these hypotheses using data on African, Asian, and Middle Eastern states from 1992-2010.
 
-[Working Paper](/files/pdf/research/Terrorism Territorial Aggression.pdf){: .btn--research}
+[Working Paper](/files/pdf/research/Terrorism Territorial Aggression.pdf){: .btn--research} -->

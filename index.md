@@ -20,5 +20,6 @@ Area of my expertise is **control theory** and its application. What excites me 
 My research focuses on *designing controllers for complex multi-physical systems*. I complement new theories with applications of societal and industrial importance. There are two kinds of applications that I work on; as shown in the thematic depiction of my research below:
 {: style="text-align: justify;"}
 
-Download my curriculum vitae here: [CV](/assets/Fontan_CV_short.pdf). 
+<!-- Download my curriculum vitae here: [CV](/assets/Fontan_CV_short.pdf). 
 {: style="text-align: justify;"}
+ -->

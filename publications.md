@@ -15,7 +15,7 @@ classes: wide
 
 ## Journal papers
 
-<ol id="customlistjournal" style="counter-reset: elementcounter 7;">
+<!-- <ol id="customlistjournal" style="counter-reset: elementcounter 7;">
 <li> <b>A. Fontan</b>, and C. Altafini, <i>Pseudoinverses of signed Laplacian matrices</i>, SIAM Journal on Matrix Analysis and Applications (SIMAX), vol. 44 (2), pp. 622--647, 2023, DOI: <a href="https://doi.org/10.1137/22M1493392" style="color:black">10.1137/22M1493392</a>
 [<a href="/papers/journals/Fontan2021Pseudoinverses.pdf">pdf</a>]
 </li>
@@ -62,3 +62,4 @@ DOI: <a href="https://ieeexplore.ieee.org/document/8742903" style="color:black">
 ## Chapters in Books
 
 1. S. Hirche, A. Ames, T. Samad, **A. Fontan**, F. Lamnabhi-Lagarrigue, _Cyber-physical Human Systems_, Ch. 4.D, _in_ Control for Societal-scale Challenges: Road Map 2030, Eds. A. M. Annaswamy, K. H. Johansson, and G. J. Pappas, IEEE Control Systems Society Publication, 2023, [ieeecss.org/control-societal-scale-challenges-roadmap-2030](https://ieeecss.org/control-societal-scale-challenges-road-map-2030)
+ -->
