@@ -5,16 +5,6 @@ permalink: /stclab/
 author_profile: true
 classes: wide
 ---
-## Lab Lead 
-
-  <div class="member">
-    <img src="/assets/2022Illinois.jpg" alt="John Doe" />
-    <h3>dr. ir. Amritam Das</h3>
-  </div>
-
-## Current Members
-
-### Doctoral Candidates
 
 <style>
 .member-container {
@@ -33,7 +23,26 @@ classes: wide
   max-width: 100%; /* Ensure images are responsive */
   height: auto; /* Maintain aspect ratio */
 }
+.name {
+  font-weight: normal; /* Make the font normal, not bold */
+  font-size: 14px; /* Make the font smaller */
+}
 </style>
+
+
+
+## Lab Lead 
+
+  <div class="member">
+    <img src="/assets/2022Illinois.jpg" alt="John Doe" />
+    <h3 class="name">dr. ir. Amritam Das</h3>
+  </div>
+
+## Current Members
+
+### Doctoral Candidates
+
+
 
 <div class="member-container">
   
