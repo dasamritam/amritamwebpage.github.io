@@ -5,8 +5,18 @@ permalink: /stclab/
 author_profile: true
 classes: wide
 ---
+## PI 
 
-# Our Lab Members
+  <div class="member">
+    <img src="/assets/2022Illinois.jpg" alt="John Doe" />
+    <h3>John Doe</h3>
+    <p><strong>Position:</strong> Graduate Student</p>
+    <p><strong>Research Topic:</strong> Machine Learning Applications</p>
+  </div>
+  
+## Current Members
+
+### Doctoral Candidates
 
 <style>
 .member-container {
