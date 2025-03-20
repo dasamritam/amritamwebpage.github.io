@@ -66,8 +66,40 @@ classes: wide
    <h3 class="name">(with Karl H. Johansson, KTH)</h3>
   </div>
 
+  <div class="member">
+    <img src="/assets/members/Shiyuan.jpg" alt="Shiyuan" />
+    <h3 class="name"><a href="https://ieeexplore.ieee.org/author/946276725921753">Shiyuan Piao</a></h3>
+   <h3 class="name"><strong>Topic:</strong> Physics-Guided learning for control</h3>
+   <h3 class="name">(with Roland Tóth)</h3>
+  </div>
   <!-- Add more members as needed -->
 
+
+
 </div>
+
+
+#### MSc. Students
+
+<div class="member-container">
+  
+  <div class="member">
+    <img src="/assets/members/Marijn.png" alt="Marijn" />
+    <h3 class="name"><a href="https://nl.linkedin.com/in/marijn-ruiter-705043252">Marijn Ruiter</a></h3>
+   <h3 class="name"><strong>Topic:</strong> Spatio-Temporal operator learning</h3>
+  </div>
+
+  <div class="member">
+    <img src="/assets/members/Aryan.jpg" alt="Aryan" />
+    <h3 class="name"><a href="https://nl.linkedin.com/in/aryan-shyam-savant-850259157">Aryan Shyam Savant</a></h3>
+   <h3 class="name"><strong>Topic:</strong> Fault diagnosis in EUV lithography machines</h3>
+  </div>
+
+  <!-- Add more members as needed -->
+
+
+
+</div>
+
 
 <!--You can download a PDF copy of my CV [here](/files/AmritamCV.pdf).-->
