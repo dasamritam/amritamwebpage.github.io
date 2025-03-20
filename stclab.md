@@ -16,7 +16,7 @@ classes: wide
 .member {
   text-align: center; /* Center the text below the images */
   margin: 20px; /* Space between each member */
-  width: 100px; /* Set a width for the member boxes */
+  width: 120px; /* Set a width for the member boxes */
 }
 
 .member img {
@@ -36,12 +36,12 @@ classes: wide
 
   <div class="member">
     <img src="/assets/amritam.jpg" alt="John Doe" />
-    <h3 class="name">dr. ir. Amritam Das</h3>
+    <h3 class="name">Amritam Das</h3>
   </div>
 
 ## Current Members
 
-### Doctoral Candidates
+#### Doctoral Candidates
 
 
 
@@ -49,13 +49,13 @@ classes: wide
   
   <div class="member">
     <img src="/assets/members/Javi.jpg" alt="Javi" />
-    <h3>Javi Olucha Delgado</h3>
+    <h3 class="name">Javi Olucha Delgado</h3>
     <p><strong>Research Topic:</strong> Online model surrogation </p>
   </div>
 
   <div class="member">
     <img src="/assets/members/Julius.jpg" alt="Julius" />
-    <h3>Julius Krebbekx</h3>
+    <h3 class="name">Julius Krebbekx</h3>
     <p><strong>Research Topic:</strong> Nonlinear performance shaping</p>
   </div>
 
