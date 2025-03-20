@@ -43,8 +43,6 @@ classes: wide
 
 #### Doctoral Candidates
 
-
-
 <div class="member-container">
   
   <div class="member">
@@ -60,7 +58,7 @@ classes: wide
   </div>
 
   <div class="member">
-    <img src="/assets/2022Illinois.jpg" alt="Mark Wilson" />
+    <img src="/assets/members/Miguel.jpeg" alt="Miguel" />
     <h3 class="name">Miguel Aguiar</h3>
    <h3 class="name"><strong>Topic:</strong> Nonlinear operator learning</h3>
   </div>
