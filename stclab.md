@@ -26,6 +26,7 @@ classes: wide
 .name {
   font-weight: normal; /* Make the font normal, not bold */
   font-size: 14px; /* Make the font smaller */
+  margin-top: 5px; /* Reduce space above the name */
 }
 </style>
 
