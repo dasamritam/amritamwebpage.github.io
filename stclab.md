@@ -5,15 +5,13 @@ permalink: /stclab/
 author_profile: true
 classes: wide
 ---
-## PI 
+## Lab Lead 
 
   <div class="member">
     <img src="/assets/2022Illinois.jpg" alt="John Doe" />
-    <h3>John Doe</h3>
-    <p><strong>Position:</strong> Graduate Student</p>
-    <p><strong>Research Topic:</strong> Machine Learning Applications</p>
+    <h3>dr. ir. Amritam Das</h3>
   </div>
-  
+
 ## Current Members
 
 ### Doctoral Candidates
