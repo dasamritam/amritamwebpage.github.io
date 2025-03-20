@@ -16,7 +16,7 @@ classes: wide
 .member {
   text-align: center; /* Center the text below the images */
   margin: 20px; /* Space between each member */
-  width: 120px; /* Set a width for the member boxes */
+  width: 150px; /* Set a width for the member boxes */
 }
 
 .member img {
@@ -50,7 +50,7 @@ classes: wide
   <div class="member">
     <img src="/assets/members/Javi.jpg" alt="Javi" />
     <h3 class="name">Javi Olucha Delgado</h3>
-    <p><strong>Research Topic:</strong> Online model surrogation </p>
+   <h3 class="name">Topic: Online model surrogation</h3>
   </div>
 
   <div class="member">
