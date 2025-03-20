@@ -1,25 +1,57 @@
 ---
 layout: archive
-title: "STC Lab"
+title: "Systems and Control for Health Lab"
 permalink: /stclab/
 author_profile: true
 classes: wide
 ---
 
-## Current Members
-
-<a href="https://doi.org/10.1093/isq/sqae094" class="btn--research" target="_blank">Article</a>
-<a href="https://doi.org/10.1093/isq/sqae094" class="btn--research" target="_blank">Google Scholar</a>
+# Our Lab Members
 
 <style>
-.btn--research {
-    display: inline-block;
-    padding: 5px 10px;
-    color: white;
-    background-color: grey;
-    text-decoration: none;
-    border-radius: 5px;
+.member-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Adjust spacing as necessary */
+}
+
+.member {
+  text-align: center; /* Center the text below the images */
+  margin: 20px; /* Space between each member */
+  width: 200px; /* Set a width for the member boxes */
+}
+
+.member img {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
 }
 </style>
+
+<div class="member-container">
+  
+  <div class="member">
+    <img src="/assets/2022Illinois.jpg" alt="John Doe" />
+    <h3>John Doe</h3>
+    <p><strong>Position:</strong> Graduate Student</p>
+    <p><strong>Research Topic:</strong> Machine Learning Applications</p>
+  </div>
+
+  <div class="member">
+    <img src="/assets/2022Illinois.jpg" alt="Jane Smith" />
+    <h3>Jane Smith</h3>
+    <p><strong>Position:</strong> Research Scientist</p>
+    <p><strong>Research Topic:</strong> Quantum Computing</p>
+  </div>
+
+  <div class="member">
+    <img src="/assets/2022Illinois.jpg" alt="Mark Wilson" />
+    <h3>Mark Wilson</h3>
+    <p><strong>Position:</strong> Professor</p>
+    <p><strong>Research Topic:</strong> Artificial Intelligence</p>
+  </div>
+
+  <!-- Add more members as needed -->
+
+</div>
 
 <!--You can download a PDF copy of my CV [here](/files/AmritamCV.pdf).-->
