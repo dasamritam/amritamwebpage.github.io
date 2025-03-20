@@ -50,20 +50,19 @@ classes: wide
   <div class="member">
     <img src="/assets/members/Javi.jpg" alt="Javi" />
     <h3 class="name">Javi Olucha Delgado</h3>
-   <h3 class="name"><strong>Research Topic:</strong> Online model surrogation</h3>
+   <h3 class="name"><strong>Topic:</strong> Online model surrogation</h3>
   </div>
 
   <div class="member">
     <img src="/assets/members/Julius.jpg" alt="Julius" />
     <h3 class="name">Julius Krebbekx</h3>
-    <p><strong>Research Topic:</strong> Nonlinear performance shaping</p>
+   <h3 class="name"><strong>Topic:</strong> Nonlinear performance shaping</h3>
   </div>
 
   <div class="member">
     <img src="/assets/2022Illinois.jpg" alt="Mark Wilson" />
-    <h3>Mark Wilson</h3>
-    <p><strong>Position:</strong> Professor</p>
-    <p><strong>Research Topic:</strong> Artificial Intelligence</p>
+    <h3 class="name">Miguel Aguiar</h3>
+   <h3 class="name"><strong>Topic:</strong> Nonlinear operator learning</h3>
   </div>
 
   <!-- Add more members as needed -->
