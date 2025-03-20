@@ -16,7 +16,7 @@ classes: wide
 .member {
   text-align: center; /* Center the text below the images */
   margin: 20px; /* Space between each member */
-  width: 200px; /* Set a width for the member boxes */
+  width: 100px; /* Set a width for the member boxes */
 }
 
 .member img {
@@ -48,17 +48,15 @@ classes: wide
 <div class="member-container">
   
   <div class="member">
-    <img src="/assets/2022Illinois.jpg" alt="John Doe" />
-    <h3>John Doe</h3>
-    <p><strong>Position:</strong> Graduate Student</p>
-    <p><strong>Research Topic:</strong> Machine Learning Applications</p>
+    <img src="/assets/members/Javi.jpg" alt="Javi" />
+    <h3>Javi Olucha Delgado</h3>
+    <p><strong>Research Topic:</strong> Online model surrogation </p>
   </div>
 
   <div class="member">
-    <img src="/assets/2022Illinois.jpg" alt="Jane Smith" />
-    <h3>Jane Smith</h3>
-    <p><strong>Position:</strong> Research Scientist</p>
-    <p><strong>Research Topic:</strong> Quantum Computing</p>
+    <img src="/assets/members/Julius.jpg" alt="Julius" />
+    <h3>Julius Krebbekx</h3>
+    <p><strong>Research Topic:</strong> Nonlinear performance shaping</p>
   </div>
 
   <div class="member">
