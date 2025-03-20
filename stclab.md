@@ -35,7 +35,7 @@ classes: wide
 ## Lab Lead 
 
   <div class="member">
-    <img src="/assets/2022Illinois.jpg" alt="John Doe" />
+    <img src="/assets/amritam.jpg" alt="John Doe" />
     <h3 class="name">dr. ir. Amritam Das</h3>
   </div>
 
