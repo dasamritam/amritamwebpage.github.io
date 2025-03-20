@@ -49,19 +49,21 @@ classes: wide
     <img src="/assets/members/Javi.jpg" alt="Javi" />
     <h3 class="name"><a href="https://scholar.google.com/citations?hl=it&user=zMM1AJ4AAAAJ&view_op=list_works&sortby=pubdate">Javi Olucha Delgado</a></h3>
    <h3 class="name"><strong>Topic:</strong> Online model surrogation</h3>
-   <h3 class="name">(with Roland Tóth</h3>
+   <h3 class="name">(with Roland Tóth)</h3>
   </div>
 
   <div class="member">
     <img src="/assets/members/Julius.jpg" alt="Julius" />
     <h3 class="name"><a href="https://scholar.google.com/citations?user=Fk_c6L4AAAAJ&hl=en">Julius Krebbekx</a></h3>
    <h3 class="name"><strong>Topic:</strong> Nonlinear performance shaping</h3>
+   <h3 class="name">(with Roland Tóth)</h3>
   </div>
 
   <div class="member">
     <img src="/assets/members/Miguel.jpeg" alt="Miguel" />
     <h3 class="name"><a href="https://scholar.google.com/citations?user=9LxTyZMAAAAJ&hl=en">Miguel Aguiar</a></h3>
    <h3 class="name"><strong>Topic:</strong> Nonlinear operator learning</h3>
+   <h3 class="name">(with Karl H. Johansson, KTH)</h3>
   </div>
 
   <!-- Add more members as needed -->
