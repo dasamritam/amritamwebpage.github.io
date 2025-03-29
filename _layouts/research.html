@@ -68,8 +68,16 @@ layout: default
     justify-content: space-between;
     transition: box-shadow 0.3s ease-in-out;
     border-radius: 8px;
-    background-color: #f9f9f9; /* Light background for contrast */
+/*    background-color: #f9f9f9; /* Light background for contrast */*/
   }
+  .research-item:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+}
+.research-item a:hover h3 {
+    color: #007bff; /* Change color on hover */
+    transition: color 0.3s ease;
+}
   .research-item img {
     max-width: 60%;
     height: auto;
