@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Systems and Control for Health Lab"
+title: "Welcome to the Systems and Control for Health (SyCH) Lab!"
 permalink: /sychlab/
 author_profile: true
 classes: wide
@@ -30,7 +30,7 @@ classes: wide
 }
 </style>
 
-
+See the official webpage of SyCH Lab [here](https://www.tue.nl/en/research/research-groups/systems-and-control-for-health)!
 
 ## Lab Lead 
 
