@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "Systems and Control for Health Lab"
-permalink: /stclab/
+permalink: /sychlab/
 author_profile: true
 classes: wide
 ---
