@@ -24,13 +24,14 @@ layout: default
     {{ content }}
     <div class="research-grid">
   {% for item in site.research %}
-  <div class="research-item">
-    <a href="{{ item.url }}">
-      <img src="{{ item.image }}" alt="{{ item.title }}">
-      <h3 style="color: white;font-style: italic;">{{ item.title }}</h3>
-      <p style="color: white;font-size: 14px;">{{ item.description }}</p>
-    </a>
-  </div>
+      <div class="research-item" onclick="toggleDetails(this)">
+        <a href="{{ item.url }}">
+          <img src="{{ item.image }}" alt="{{ item.title }}">
+          <h3 style="color: white; font-style: italic;">{{ item.title }}</h3>
+          <p style="color: white; font-size: 14px;">{{ item.description }}</p>
+        </a>
+        <p class="details" style="display: none; color: white; font-size: 12px;">{{ item.additional_info }}</p> <!-- Additional info -->
+      </div>
   {% endfor %}
 </div>
   </div>
@@ -89,3 +90,10 @@ layout: default
     text-decoration: none; /* Remove underline from all links within .research-item */
   }
 </style>
+
+<script>
+  function toggleDetails(item) {
+      const details = item.querySelector('.details');
+      details.style.display = details.style.display === 'none' ? 'block' : 'none';
+  }
+  </script>
