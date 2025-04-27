@@ -64,40 +64,40 @@ classes: wide
 
  <h2>Conference pre-prints</h2>
   <ol>
-  <li><span class="author-highlight">Amritam Das</span>, Sachin Shivakumar, Siep Weiland, and Matthew Peet. <span class="title-italic">Representation and stability analysis of pde-ode coupled systems</span>. 2018. [<a href="https://arxiv.org/abs/1812.07186">arXiv:1812.07186</a>]</li> 
+   <li>E Javier Olucha, Rajiv Singh, <span class="author-highlight">Amritam Das</span>, and Roland Tóth. <span class="title-italic">On-the-fly surrogation for complex nonlinear dynamics</span>. <span class="venue">Under Review in 64th Conference on Decision and Control (CDC)</span>. 2025. [<a href="https://arxiv.org/abs/2504.00276">arXiv:2504.00276</a>]</li>
+    <li>Julius PJ Krebbekx, Roland Tóth, and <span class="author-highlight">Amritam Das</span>. <span class="title-italic">Nonlinear bandwidth and bode diagrams based on scaled relative graphs</span>. <span class="venue">Under Review in 64th Conference on Decision and Control (CDC)</span>. 2025. [<a href="https://arxiv.org/abs/2504.01585">arXiv:2504.01585</a>]</li>
+    <li>E Javier Olucha, Bogoljub Terzin, <span class="author-highlight">Amritam Das</span>, and Roland Tóth. <span class="title-italic">On the reduction of linear parameter-varying state-space models</span>. 2024. [<a href="https://arxiv.org/abs/2404.01871">arXiv:2404.01871</a>]</li>
+    <li><span class="author-highlight">Amritam Das</span>, Sachin Shivakumar, Siep Weiland, and Matthew Peet. <span class="title-italic">Representation and stability analysis of pde-ode coupled systems</span>. 2018. [<a href="https://arxiv.org/abs/1812.07186">arXiv:1812.07186</a>]</li> 
     </ol>
 
   <h2>Peer-Reviewed Conference Articles</h2>
   <ol>
+  	 <li>E Javier Olucha, Patrick JW Koelewijn, <span class="author-highlight">Amritam Das</span>, and Roland Tóth. <span class="title-italic">Automated linear parameter-varying modeling of nonlinear systems: A global embedding approach</span>. <span class="venue">1th IFAC Symposium on Robust Control Design (ROCOND’25) and 6th IFAC Workshop on Linear Parameter Varying Systems (LPVS’25)</span>. 2025. [<a href="https://arxiv.org/abs/2502.13082">arXiv:2502.13082</a>]</li>
+  	 <li>Julius PJ Krebbekx, Roland Tóth, and <span class="author-highlight">Amritam Das</span>. <span class="title-italic">Scaled relative graph analysis of Lur’e systems and the generalized circle criterion</span>. <span class="venue">22nd European Control Conference (ECC)</span>. 2024. [<a href="https://arxiv.org/abs/2411.18318">arXiv:2411.18318</a>]</li>
     <li>Miguel Aguiar, <span class="author-highlight">Amritam Das</span>, and Karl H. Johansson. <span class="title-italic">Learning flows of control systems</span>. <span class="venue">36th Conference on Neural Information Processing Systems (DLDE Workshop)</span>. OpenReview, 2022.</li>
     <li>Miguel Aguiar, <span class="author-highlight">Amritam Das</span>, and Karl H Johansson. <span class="title-italic">Learning flow functions from data with applications to nonlinear oscillators</span>. <span class="venue">22nd IFAC World Congress, Yokohama, Japan</span>. IFAC-PapersOnLine, 56(2):4088–4093, 2023.</li>
     <li>Miguel Aguiar, <span class="author-highlight">Amritam Das</span>, and Karl H Johansson. <span class="title-italic">Universal approximation of flows of control systems by recurrent neural networks</span>. <span class="venue"> 62nd IEEE Conference on Decision and Control (CDC)</span>. IEEE, pages 2320–2327, 2023.</li>
     <li>Miguel Aguiar, <span class="author-highlight">Amritam Das</span>, and Karl H Johansson. <span class="title-italic">Learning flow functions of spiking systems</span>. <span class="venue">6th Annual Learning for Dynamics &amp; Control Conference</span>. PMLR, pages 591–602, 2024.</li>
     <li><span class="author-highlight">Amritam Das and Jan Heiland</span>. <span class="title-italic">Low-order linear parameter varying approximations for nonlinear controller design for flows</span>. <span class="venue">22nd European Control Conference (ECC)</span>. IEEE, pages 2065–2070, 2024.</li>
     <li><span class="author-highlight">Amritam Das</span>, Sachin Shivakumar, Matthew Peet, and Siep Weiland. <span class="title-italic">Robust analysis of uncertain ode-pde systems using pi multipliers, pies and lpis</span>. <span class="venue">59th IEEE conference on decision and control (CDC)</span>. IEEE, pages 634–639, 2020.</li>
-    <li><span class="author-highlight">Amritam Das, Sachin Shivakumar, Siep Weiland, and Matthew M Peet</span>. <span class="title-italic">h∞-optimal estimation for linear coupled pde systems</span>. 2019 IEEE 58th Conference on Decision and Control (CDC), pages 262–267. IEEE, 2019.</li>
-    <li><span class="author-highlight">Amritam Das and Siep Weiland</span>. <span class="title-italic">Modelgebaseerd regelen van thermische effecten in inkjetprinters</span>, 2019.</li>
-    <li><span class="author-highlight">Amritam Das, Siep Weiland, and Laura Iapichino</span>. <span class="title-italic">Model approximation of thermo-fluidic diffusion processes in spatially interconnected structures</span>. 2018 European Control Conference (ECC), pages 2653–2658. IEEE, 2018.</li>
-    <li><span class="author-highlight">Amritam Das, Siep Weiland, and Matthijs Van Berkel</span>. <span class="title-italic">Frequency domain estimation of spatially varying parameters in heat and mass transport</span>. 2019 American Control Conference (ACC), pages 600–605. IEEE, 2019.</li>
-    <li><span class="author-highlight">Tuan Dat Hoang, Amritam Das, Sjirk Koekebakker, and Siep Weiland</span>. <span class="title-italic">Sensorless field-oriented estimation of hybrid stepper motors in high-performance paper handling</span>. 2019 IEEE Conference on Control Technology and Applications (CCTA), pages 252–257. IEEE, 2019.</li>
-    <li><span class="author-highlight">Muhammad Umar B Niazi, John Cao, Xudong Sun, Amritam Das, and Karl Henrik Johansson</span>. <span class="title-italic">Learning-based design of Luenberger observers for autonomous nonlinear systems</span>. 2023 American Control Conference (ACC), pages 3048–3055. IEEE, 2023.</li>
-    <li><span class="author-highlight">E Javier Olucha, Patrick JW Koelewijn, Amritam Das, and Roland Tóth</span>. <span class="title-italic">Automated linear parameter-varying modeling of nonlinear systems: A global embedding approach</span>. arXiv preprint arXiv:2502.13082, 2025.</li>
-    <li><span class="author-highlight">E Javier Olucha, Rajiv Singh, Amritam Das, and Roland Tóth</span>. <span class="title-italic">On-the-fly surrogation for complex nonlinear dynamics</span>. arXiv preprint arXiv:2504.00276, 2025.</li>
-    <li><span class="author-highlight">E Javier Olucha, Bogoljub Terzin, Amritam Das, and Roland Tóth</span>. <span class="title-italic">On the reduction of linear parameter-varying state-space models</span>. arXiv preprint arXiv:2404.01871, 2024.</li>
+    <li><span class="author-highlight">Amritam Das</span>, Sachin Shivakumar, Siep Weiland, and Matthew M Peet. <span class="title-italic">H∞-optimal estimation for linear coupled pde systems</span>. <span class="venue">58th Conference on Decision and Control (CDC)</span>. IEEE, pages 262–267, 2019.</li>
+    <li><span class="author-highlight">Amritam Das</span>, Siep Weiland, and Laura Iapichino. <span class="title-italic">Model approximation of thermo-fluidic diffusion processes in spatially interconnected structures</span>. <span class="venue">16th European Control Conference (ECC)</span>. IEEE, pages 2653–2658, 2018.</li>
+    <li><span class="author-highlight">Amritam Das</span>, Siep Weiland, and Matthijs Van Berkel. <span class="title-italic">Frequency domain estimation of spatially varying parameters in heat and mass transport</span>. <span class="venue">2019 American Control Conference (ACC)</span>. IEEE, pages 600–605, 2019.</li>
+    <li>Tuan Dat Hoang, <span class="author-highlight">Amritam Das</span>, Sjirk Koekebakker, and Siep Weiland. <span class="title-italic">Sensorless field-oriented estimation of hybrid stepper motors in high-performance paper handling</span>. <span class="venue">2019 IEEE Conference on Control Technology and Applications (CCTA)</span>. IEEE,pages 252–257, 2019.</li>
+    <li>Muhammad Umar B Niazi, John Cao, Xudong Sun, <span class="author-highlight">Amritam Das</span>, and Karl Henrik Johansson. <span class="title-italic">Learning-based design of Luenberger observers for autonomous nonlinear systems</span>. <span class="venue">2023 American Control Conference (ACC)</span>. IEEE, pages 3048–3055, 2023.</li>
     <li>Daniel Selvaratnam, <span class="author-highlight">Amritam Das</span>, and Henrik Sandberg. <span class="title-italic">Electrical fault localisation over a distributed parameter transmission line</span>. <span class="venue">62nd IEEE Conference on Decision and Control (CDC)</span>. IEEE, pages 7088–7093, 2023.</li>
     <li><span class="author-highlight">Amritam Das</span>, Yanin Kasemsinsup, and Siep Weiland. <span class="title-italic">Optimal trajectory tracking control for automated guided vehicles</span>. <span class="venue">20th IFAC World Congress, Toulouse, France</span>. IFAC-PapersOnLine, 50(1):303–308, 2017.</li>
-  </ol>
-
-  <h2>Preprints</h2>
-  <ol>
-    <li><span class="author-highlight">Julius PJ Krebbekx, Roland Tóth, and Amritam Das</span>. <span class="title-italic">Scaled relative graph analysis of Lur’e systems and the generalized circle criterion</span>. <a class="pub-link" href="https://arxiv.org/abs/2411.18318" target="_blank">arXiv:2411.18318</a>, 2024.</li>
-    <li><span class="author-highlight">Julius PJ Krebbekx, Roland Tóth, and Amritam Das</span>. <span class="title-italic">Nonlinear bandwidth and bode diagrams based on scaled relative graphs</span>. <a class="pub-link" href="https://arxiv.org/abs/2504.01585" target="_blank">arXiv:2504.01585</a>, 2025.</li>
   </ol>
 
   <h2>Software and Tools</h2>
   <ol>
     <li><span class="author-highlight">Sachin Shivakumar, Amritam Das, Declan Jagt, and Matthew Peet</span>. <span class="title-italic">Pietools 2021a</span>, 2021.</li>
     <li><span class="author-highlight">Sachin Shivakumar, Declan Jagt, Danilo Braghini, Amritam Das, and Matthew Peet</span>. <span class="title-italic">Pietools 2024: User manual</span>. <a class="pub-link" href="https://arxiv.org/abs/2101.02050" target="_blank">arXiv:2101.02050</a>, 2025.</li>
+  </ol>
+
+  <h2>Popular Science</h2>
+    <ol>
+ <li><span class="author-highlight">Amritam Das</span> and Siep Weiland. <span class="title-italic">Modelgebaseerd regelen van thermische effecten in inkjetprinters</span>, 2019.</li>
   </ol>
 </body>
 </html>
