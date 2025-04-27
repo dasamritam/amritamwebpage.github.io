@@ -25,7 +25,7 @@ classes: wide
     h2 { margin-top: 0; }
     .author-highlight { font-weight: bold; }
     .title-italic { font-style: italic; }
-    .venue, .year { color: #555; }
+    .venue, .year { color: #597; }
     .pub-link { color: #1A0DAB; text-decoration: none; }
   </style>
 </head>
