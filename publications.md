@@ -19,7 +19,7 @@ classes: wide
   <title>Amritam Das - Publication List</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0 40px 40px; }
-    h2 { margin-top: 40px; }
+    h2 { margin-top: 0; }
     .author-highlight { font-weight: bold; }
     .title-italic { font-style: italic; }
     .venue, .year { color: #555; }
