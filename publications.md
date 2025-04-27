@@ -37,7 +37,7 @@ classes: wide
     <span class="title-italic">A digital twin for controlling thermo-fluidic processes</span>. <span class="venue">PhD thesis</span>. Technische Universiteit Eindhoven, ISBN: 978-90-386-5140-8, 2020.[<a href="https://research.tue.nl/files/163401102/20201102_Das.pdf">Link</a>]
   </p>
 
-   <h2>Book Chapters</h2>
+   <h2>Peer-Reviewed Book Chapters</h2>
   <ol> 
     <li><span class="author-highlight">Amritam Das</span>, Ramachandra Rao Kolluri, Iven Mareels. <span class="title-italic">Data industry</span>. <span class="venue">The Impact of Automatic Control Research on Industrial Innovation: Enabling a Sustainable Future</span>, John Wiley & Sons, Inc., pages 13-41, Print ISBN:9781119983613, Online ISBN:9781119983644, 2024. [<a href="DOI:10.1002/9781119983644">DOI:10.1002/9781119983644</a>]</li>
 
@@ -52,7 +52,7 @@ classes: wide
   <li>Daniel Selvaratnam, Alessio Moreschini, <span class="author-highlight">Amritam Das</span>, Thomas Parisini, and Henrik Sandberg</span>. <span class="title-italic">Frequency-domain bounds for the multiconductor telegrapher’s equation</span>. <span class="venue">Under Review in IEEE Transactions on Circuits and Systems II</span>. 2025. [<a href="https://arxiv.org/abs/2504.01599">arXiv:2504.01599</a>]</li> 
   </ol>
 
-  <h2>Journals</h2>
+  <h2>Peer-Reviewed Journal Articles</h2>
   <ol>    
     <li>Valerio Gori, Will Hendrix, <span class="author-highlight">Amritam Das</span>, and Zhiyong Sun. <span class="title-italic">Effect of weight distribution and active safety systems on electric vehicle performance</span>. <span class="venue">Sensors</span>, 24(11):3557, 2024.</li>
     <li>Ricky JR van Kampen, <span class="author-highlight">Amritam Das</span>, Siep Weiland, and Matthijs van Berkel. <span class="title-italic">A closed-form solution to estimate spatially varying parameters in heat and mass transport</span>. <span class="venue">IEEE Control Systems Letters</span>, 5(5):1681–1686, 2020.</li>
@@ -62,7 +62,12 @@ classes: wide
     <li><span class="author-highlight">Amritam Das</span>, Thomas Chaffey, and Rodolphe Sepulchre. <span class="title-italic">Oscillations in mixed-feedback systems</span>. <span class="venue">Systems & Control Letters</span>, Volume 166, 105289, ISSN 0167-6911,2022.</li>
   </ol>
 
-  <h2>Conferences</h2>
+ <h2>Conference pre-prints</h2>
+  <ol>
+  <li><span class="author-highlight">Amritam Das</span>, Sachin Shivakumar, Siep Weiland, and Matthew Peet. <span class="title-italic">Representation and stability analysis of pde-ode coupled systems</span>. 2018. [<a href="https://arxiv.org/abs/1812.07186">arXiv:1812.07186</a>]</li> 
+    </ol>
+
+  <h2>Peer-Reviewed Conference Articles</h2>
   <ol>
     <li>Miguel Aguiar, <span class="author-highlight">Amritam Das</span>, and Karl H. Johansson. <span class="title-italic">Learning flows of control systems</span>. <span class="venue">36th Conference on Neural Information Processing Systems (DLDE Workshop)</span>. OpenReview, 2022.</li>
     <li>Miguel Aguiar, <span class="author-highlight">Amritam Das</span>, and Karl H Johansson. <span class="title-italic">Learning flow functions from data with applications to nonlinear oscillators</span>. <span class="venue">22nd IFAC World Congress, Yokohama, Japan</span>. IFAC-PapersOnLine, 56(2):4088–4093, 2023.</li>
@@ -70,7 +75,6 @@ classes: wide
     <li>Miguel Aguiar, <span class="author-highlight">Amritam Das</span>, and Karl H Johansson. <span class="title-italic">Learning flow functions of spiking systems</span>. <span class="venue">6th Annual Learning for Dynamics &amp; Control Conference</span>. PMLR, pages 591–602, 2024.</li>
     <li><span class="author-highlight">Amritam Das and Jan Heiland</span>. <span class="title-italic">Low-order linear parameter varying approximations for nonlinear controller design for flows</span>. <span class="venue">22nd European Control Conference (ECC)</span>. IEEE, pages 2065–2070, 2024.</li>
     <li><span class="author-highlight">Amritam Das</span>, Sachin Shivakumar, Matthew Peet, and Siep Weiland. <span class="title-italic">Robust analysis of uncertain ode-pde systems using pi multipliers, pies and lpis</span>. <span class="venue">59th IEEE conference on decision and control (CDC)</span>. IEEE, pages 634–639, 2020.</li>
-    <li><span class="author-highlight">Amritam Das</span>, Sachin Shivakumar, Siep Weiland, and Matthew Peet. <span class="title-italic">Representation and stability analysis of pde-ode coupled systems</span>. <a class="pub-link" href="https://arxiv.org/abs/1812.07186" target="_blank">arXiv:1812.07186</a>, 2018.</li>
     <li><span class="author-highlight">Amritam Das, Sachin Shivakumar, Siep Weiland, and Matthew M Peet</span>. <span class="title-italic">h∞-optimal estimation for linear coupled pde systems</span>. 2019 IEEE 58th Conference on Decision and Control (CDC), pages 262–267. IEEE, 2019.</li>
     <li><span class="author-highlight">Amritam Das and Siep Weiland</span>. <span class="title-italic">Modelgebaseerd regelen van thermische effecten in inkjetprinters</span>, 2019.</li>
     <li><span class="author-highlight">Amritam Das, Siep Weiland, and Laura Iapichino</span>. <span class="title-italic">Model approximation of thermo-fluidic diffusion processes in spatially interconnected structures</span>. 2018 European Control Conference (ECC), pages 2653–2658. IEEE, 2018.</li>
