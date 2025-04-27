@@ -18,7 +18,7 @@ classes: wide
   <meta charset="UTF-8">
   <title>Amritam Das - Publication List</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0 40px 40px; }
+    body { font-family: Arial, sans-serif; margin: 0; }
     h2 { margin-top: 0; }
     .author-highlight { font-weight: bold; }
     .title-italic { font-style: italic; }
