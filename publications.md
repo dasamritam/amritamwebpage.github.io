@@ -12,7 +12,7 @@ classes: wide
 [[pdf](https://research.tue.nl/en/publications/a-digital-twin-for-controlling-thermo-fluidic-processes)] -->
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
 <head>
   <meta charset="UTF-8">
@@ -27,7 +27,7 @@ classes: wide
   </style>
 </head>
 <body>
-  <h1>Publication List — Amritam Das</h1>
+  <!-- <h1>Publication List — Amritam Das</h1> -->
 
    <h2>PhD Thesis</h2>
   <p>
