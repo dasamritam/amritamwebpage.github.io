@@ -40,7 +40,10 @@ classes: wide
 
  <h2>Journal Pre-Prints</h2>
   <ol> 
-  <li>Jake Rap and <span class="author-highlight">Amritam Das</span>. <span class="title-italic">On-traffic: An operator learning framework for online traffic flow estimation and uncertainty quantification from Lagrangian sensors</span>. <span class="venue">arXiv preprint</span>. 2025. [<a href="https://arxiv.org/abs/2503.14053">arXiv:2503.14053</a>]</li>
+  <li>Jake Rap and <span class="author-highlight">Amritam Das</span>. <span class="title-italic">On-traffic: An operator learning framework for online traffic flow estimation and uncertainty quantification from Lagrangian sensors</span>. <span class="venue">Under Review in IEEE Transactions on Intelligent Transportation Systems</span>. 2025. [<a href="https://arxiv.org/abs/2503.14053">arXiv:2503.14053</a>]</li>
+  <li>Tomas Meijer, <span class="author-highlight">Amritam Das</span>, and Siep Weiland</span>. <span class="title-italic">Moving-boundary port-hamiltonian systems</span>. <span class="venue">Under Review in Automatica</span>. [<a href="https://arxiv.org/abs/2501.14930">arXiv:2501.14930</a>]</li>
+  <li>Daniel Selvaratnam, Alessio Moreschini, <span class="author-highlight">Amritam Das</span>, Thomas Parisini, and Henrik Sandberg. <span class="title-italic">Fault localisation in infinite-dimensional linear electrical networks</span>. <span class="venue">Under Review in IEEE Transactions on Automatic Control</span>. 2025. [<a href="https://arxiv.org/abs/2504.04910">arXiv:2504.04910</a>]</li> 
+  <li>Daniel Selvaratnam, Alessio Moreschini, <span class="author-highlight">Amritam Das</span>, Thomas Parisini, and Henrik Sandberg</span>. <span class="title-italic">Frequency-domain bounds for the multiconductor telegrapher’s equation</span>. <span class="venue">Under Review in IEEE Transactions on Circuits and Systems II</span>. 2025. [<a href="https://arxiv.org/abs/2504.01599">arXiv:2504.01599</a>]</li> 
   </ol>
 
   <h2>Journals</h2>
@@ -80,9 +83,6 @@ classes: wide
   <ol>
     <li><span class="author-highlight">Julius PJ Krebbekx, Roland Tóth, and Amritam Das</span>. <span class="title-italic">Scaled relative graph analysis of Lur’e systems and the generalized circle criterion</span>. <a class="pub-link" href="https://arxiv.org/abs/2411.18318" target="_blank">arXiv:2411.18318</a>, 2024.</li>
     <li><span class="author-highlight">Julius PJ Krebbekx, Roland Tóth, and Amritam Das</span>. <span class="title-italic">Nonlinear bandwidth and bode diagrams based on scaled relative graphs</span>. <a class="pub-link" href="https://arxiv.org/abs/2504.01585" target="_blank">arXiv:2504.01585</a>, 2025.</li>
-    <li><span class="author-highlight">TJ Meijer, A Das, and S Weiland</span>. <span class="title-italic">Moving-boundary port-hamiltonian systems</span>. <a class="pub-link" href="https://arxiv.org/abs/2501.14930" target="_blank">arXiv:2501.14930</a>, 2025.</li>
-    <li><span class="author-highlight">Daniel Selvaratnam, Alessio Moreschini, Amritam Das, Thomas Parisini, and Henrik Sandberg</span>. <span class="title-italic">Fault localisation in infinite-dimensional linear electrical networks</span>. <a class="pub-link" href="https://arxiv.org/abs/2504.04910" target="_blank">arXiv:2504.04910</a>, 2025.</li>
-    <li><span class="author-highlight">Daniel Selvaratnam, Alessio Moreschini, Amritam Das, Thomas Parisini, and Henrik Sandberg</span>. <span class="title-italic">Frequency-domain bounds for the multiconductor telegrapher’s equation</span>. <a class="pub-link" href="https://arxiv.org/abs/2504.01599" target="_blank">arXiv:2504.01599</a>, 2025.</li>
   </ol>
 
   <h2>Software and Tools</h2>
