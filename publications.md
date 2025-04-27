@@ -21,7 +21,7 @@ classes: wide
   <meta charset="UTF-8">
   <title>Amritam Das - Publication List</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 28px; background: #fff; color: #222; }
+    body { font-family: Arial, sans-serif; margin: 28px;}
     h1 { margin-bottom: 20px; }
     h2 { margin: 32px 0 12px 0; }
     ol, ul { margin-left: 24px; }
@@ -78,4 +78,3 @@ classes: wide
   </ol>
 </body>
 </html>
- -->
