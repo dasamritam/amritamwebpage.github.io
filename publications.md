@@ -37,16 +37,16 @@ classes: wide
     <span class="title-italic">A digital twin for controlling thermo-fluidic processes</span>, 
     PhD thesis, Technische Universiteit Eindhoven, 2020.
   </p>
-  
+
 
   <h2>Journals</h2>
   <ol>
     <li><span class="author-highlight">Amritam Das</span>, et al. <span class="title-italic">Data industry</span>. <span class="venue">The Impact of Automatic Control Research on Industrial Innovation: Enabling a Sustainable Future</span>, 2024.</li>
     <li>Valerio Gori, Will Hendrix, <span class="author-highlight">Amritam Das</span>, and Zhiyong Sun. <span class="title-italic">Effect of weight distribution and active safety systems on electric vehicle performance</span>. <span class="venue">Sensors</span>, 24(11):3557, 2024.</li>
-    <li><span class="author-highlight">Ricky JR van Kampen, Amritam Das</span>, Siep Weiland, and Matthijs van Berkel. <span class="title-italic">A closed-form solution to estimate spatially varying parameters in heat and mass transport</span>. <span class="venue">IEEE Control Systems Letters</span>, 5(5):1681–1686, 2020.</li>
-    <li><span class="author-highlight">Amritam Das, Martijn Princen, Mahnaz Shokrpour</span>, et al. <span class="title-italic">Soft sensing based in situ control of thermo-fluidic processes in dod inkjet printing</span>. <span class="venue">IEEE Transactions on Control Systems Technology</span>, 2020.</li>
-    <li><span class="author-highlight">Sachin Shivakumar, Amritam Das</span>, Siep Weiland, and Matthew Peet. <span class="title-italic">Extension of the partial integral equation representation to gpde input-output systems</span>. <span class="venue">IEEE Transactions on Automatic Control</span>, 2024.</li>
-    <li><span class="author-highlight">Pramod P Khargonekar, Tariq Samad, Saurabh Amin, Amritam Das</span>, et al. <span class="title-italic">Climate change mitigation, adaptation, and resilience: Challenges and opportunities for the control systems community</span>. <span class="venue">IEEE Control Systems Magazine</span>, 44(3):33–51, 2024.</li>
+    <li>Ricky JR van Kampen, <span class="author-highlight">Amritam Das</span>, Siep Weiland, and Matthijs van Berkel. <span class="title-italic">A closed-form solution to estimate spatially varying parameters in heat and mass transport</span>. <span class="venue">IEEE Control Systems Letters</span>, 5(5):1681–1686, 2020.</li>
+    <li><span class="author-highlight">Amritam Das</span>, Martijn Princen, Mahnaz Shokrpour, Amol Khalate, and Siep Weiland. <span class="title-italic">Soft sensing based in situ control of thermo-fluidic processes in dod inkjet printing</span>. <span class="venue">IEEE Transactions on Control Systems Technology</span>, 2020.</li>
+    <li>Sachin Shivakumar, <span class="author-highlight">Amritam Das</span>, Siep Weiland, and Matthew Peet. <span class="title-italic">Extension of the partial integral equation representation to gpde input-output systems</span>. <span class="venue">IEEE Transactions on Automatic Control</span>, 2024.</li>
+    <li>Pramod P Khargonekar, Tariq Samad, Saurabh Amin, <span class="author-highlight">Amritam Das</span>, et al. <span class="title-italic">Climate change mitigation, adaptation, and resilience: Challenges and opportunities for the control systems community</span>. <span class="venue">IEEE Control Systems Magazine</span>, 44(3):33–51, 2024.</li>
   </ol>
 
   <h2>Conferences</h2>
