@@ -1,8 +1,8 @@
 ---
-title: "Multi-Physics Digital Twin"
+title: "Control of PDEs"
 layout: single
 image: "/images/research/sub-theme-pde.png"
-description: "Applications: space technology, nuclear fusion, high-tech systems"
+description: "Approximation-independent control of multi-physics processes"
 author_profile: true
 classes: wide
 ---

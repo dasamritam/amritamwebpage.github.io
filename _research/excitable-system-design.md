@@ -1,6 +1,6 @@
 ---
-title: "Excitable System Design"
-description: "Application: clinical neurology, brain-on-chip devices"
+title: "Nonlinear Control"
+description: "Performance shaping of dynamical systems in nonlinear regime"
 image: "/images/research/sub-theme-neurology.png"
 layout: single
 author_profile: true

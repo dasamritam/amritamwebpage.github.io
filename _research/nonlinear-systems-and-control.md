@@ -1,8 +1,8 @@
 ---
 layout: single
-title: "Nonlinear Performance Shaping"
+title: "Fault Diagnosis"
 image: "/images/research/sub-theme-neuro.png"
-description: "Applications: space technology, neuro-engineering, high-tech systems"
+description: "Data and physics driven fault forecasting, isolation and mitigation"
 author_profile: true
 classes: wide
 ---

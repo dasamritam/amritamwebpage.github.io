@@ -1,8 +1,8 @@
 ---
 layout: single
-title: "Certifiable and Interpretable AI"
+title: "Machine Learning"
 image: "/images/research/sub-theme-pinn.png"
-description: "Applications: thermo-fluidic processes, neuro-engineering, traffic network, power systems"
+description: "certifiable and interpretable model by complementing data with continuum physics "
 author_profile: true
 classes: wide
 ---
