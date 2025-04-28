@@ -17,16 +17,33 @@ classes: wide
     .title-italic { font-style: italic; }
     .venue, .year { color: #597; }
     .pub-link { color: #1A0DAB; text-decoration: none; }
+    .theme-tags { margin-left: 10px; }
+.tag {
+  display: inline-block;
+  background: #e8eaea;
+  color: #356;
+  border-radius: 0.3em;
+  font-size: 0.85em;
+  padding: 1px 6px;
+  margin-right: 4px;
+  font-family: Arial, sans-serif;
+}
+.tag.nonlinear { background: #FFDD99; color: #875300; }
+.tag.pde { background: #CCE5FF; color: #003366; }
+.tag.ml { background: #D4EDDA; color: #155724; }
+.tag.fault { background: #F8D7DA; color: #721c24; }
   </style>
 </head>
 <body>
   
   <h2>PhD Thesis</h2>
+  <ol> 
   <li>
     <span class="author-highlight">Amritam Das</span>. 
     <span class="title-italic">A digital twin for controlling thermo-fluidic processes</span>. <span class="venue">PhD thesis</span>. Technische Universiteit Eindhoven, ISBN: 978-90-386-5140-8, 2020.[<a href="https://research.tue.nl/files/163401102/20201102_Das.pdf">Link</a>]
  </li>
-
+ </ol>
+ 
    <h2>Peer-Reviewed Book Chapters</h2>
   <ol> 
     <li><span class="author-highlight">Amritam Das</span>, Ramachandra Rao Kolluri, Iven Mareels. <span class="title-italic">Data industry</span>. <span class="venue">The Impact of Automatic Control Research on Industrial Innovation: Enabling a Sustainable Future</span>, John Wiley & Sons, Inc., pages 13-41, Print ISBN:9781119983613, Online ISBN:9781119983644, 2024. [<a href="https://doi.org/10.1002/9781119983644">DOI</a>]</li>
@@ -50,7 +67,11 @@ classes: wide
    <li>Pramod P Khargonekar, Tariq Samad, Saurabh Amin, Aranya Chakrabortty, Fabrizio Dabbene, <span class="author-highlight">Amritam Das</span>, Masayuki Fujita, Mario Garcia-Sanz, Dennice F. Gayme, Marija Ilić, Iven Mareels, Kevin L. Moore, Lucy Y. Pao, Akshay Rajhans, Jakob Stoustrup, Junaid Zafar, Margret Bauer. <span class="title-italic">Climate change mitigation, adaptation, and resilience: Challenges and opportunities for the control systems community</span>. <span class="venue">IEEE Control Systems Magazine</span>, 44(3):33–51, 2024. [<a href="https://doi.org/10.1109/MCS.2024.33823774">DOI</a>]</li>
     <li><span class="author-highlight">Amritam Das</span>, Thomas Chaffey, and Rodolphe Sepulchre. <span class="title-italic">Oscillations in mixed-feedback systems</span>. <span class="venue">Systems & Control Letters</span>, Volume 166, 105289, ISSN 0167-6911,2022. [<a href="https://doi.org/10.1016/j.sysconle.2022.105289">DOI</a>]</li>
     <li><span class="author-highlight">Amritam Das</span>, Martijn Princen, Mahnaz Shokrpour, Amol Khalate, and Siep Weiland. <span class="title-italic">Soft sensing based in situ control of thermo-fluidic processes in dod inkjet printing</span>. <span class="venue">IEEE Transactions on Control Systems Technology</span>, vol. 30, no. 3, pages 956-971, 2022. [<a href="https://doi.org/10.1109/TCST.2021.3087576">DOI</a>]</li>
-    <li>Ricky JR van Kampen, <span class="author-highlight">Amritam Das</span>, Siep Weiland, and Matthijs van Berkel. <span class="title-italic">A closed-form solution to estimate spatially varying parameters in heat and mass transport</span>. <span class="venue">IEEE Control Systems Letters</span>, 5(5):1681–1686, 2020. [<a href="https://doi.org/10.1109/LCSYS.2020.3042933">DOI</a>]</li>
+    <li>Ricky JR van Kampen, <span class="author-highlight">Amritam Das</span>, Siep Weiland, and Matthijs van Berkel. <span class="title-italic">A closed-form solution to estimate spatially varying parameters in heat and mass transport</span>. <span class="venue">IEEE Control Systems Letters</span>, 5(5):1681–1686, 2020. [<a href="https://doi.org/10.1109/LCSYS.2020.3042933">DOI</a>]
+      <span class="theme-tags">
+    <span class="tag nonlinear">Nonlinear Control</span>
+    <span class="tag pde">Control of PDEs</span>
+  </span></li>
   </ol>
 
  <h2>Conference pre-prints</h2>
