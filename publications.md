@@ -106,6 +106,9 @@ classes: wide
     <li>E Javier Olucha, Bogoljub Terzin, <span class="author-highlight">Amritam Das</span>, and Roland Tóth. <span class="title-italic">On the reduction of linear parameter-varying state-space models</span>. 2024. [<a href="https://arxiv.org/abs/2404.01871">arXiv:2404.01871</a>] <span class="theme-tags">
     <span class="tag nonlinear">Nonlinear Control</span>
   </span></li>
+    <li>Thomas Chaffey, <span class="author-highlight">Amritam Das</span>, and Rodolphe Sepulchre. <span class="title-italic">Splitting algorithms and circuit analysis</span>. <span class="venue">25th International Symposium on Mathematical Theory of Networks and Systems (MTNS)</span> (non-acrhival). 2022. [<a href="https://arxiv.org/abs/2208.04765">arXiv:2208.04765</a>] <span class="theme-tags">
+    <span class="tag nonlinear">Nonlinear Control</span>
+  </span></li>
     <li><span class="author-highlight">Amritam Das</span>, Sachin Shivakumar, Siep Weiland, and Matthew Peet. <span class="title-italic">Representation and stability analysis of pde-ode coupled systems</span>. 2018. [<a href="https://arxiv.org/abs/1812.07186">arXiv:1812.07186</a>] <span class="theme-tags">
     <span class="tag pde">Control of PDEs</span>
   </span></li> 
