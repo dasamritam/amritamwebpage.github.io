@@ -71,7 +71,7 @@ classes: wide
       <span class="theme-tags">
     <span class="tag nonlinear">Nonlinear Control</span>
     <span class="tag ml">Machine Learning</span>
-    <span class="tag nonlinear">Fault Diagnosis</span>
+    <span class="tag fault">Fault Diagnosis</span>
     <span class="tag pde">Control of PDEs</span>
   </span></li>
   </ol>
