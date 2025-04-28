@@ -70,6 +70,8 @@ classes: wide
     <li>Ricky JR van Kampen, <span class="author-highlight">Amritam Das</span>, Siep Weiland, and Matthijs van Berkel. <span class="title-italic">A closed-form solution to estimate spatially varying parameters in heat and mass transport</span>. <span class="venue">IEEE Control Systems Letters</span>, 5(5):1681–1686, 2020. [<a href="https://doi.org/10.1109/LCSYS.2020.3042933">DOI</a>]
       <span class="theme-tags">
     <span class="tag nonlinear">Nonlinear Control</span>
+    <span class="tag ml">Machine Learning</span>
+    <span class="tag nonlinear">Fault Diagnosis</span>
     <span class="tag pde">Control of PDEs</span>
   </span></li>
   </ol>
