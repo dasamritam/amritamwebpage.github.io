@@ -106,9 +106,6 @@ classes: wide
     <li>E Javier Olucha, Bogoljub Terzin, <span class="author-highlight">Amritam Das</span>, and Roland Tóth. <span class="title-italic">On the reduction of linear parameter-varying state-space models</span>. 2024. [<a href="https://arxiv.org/abs/2404.01871">arXiv:2404.01871</a>] <span class="theme-tags">
     <span class="tag nonlinear">Nonlinear Control</span>
   </span></li>
-    <li>Thomas Chaffey, <span class="author-highlight">Amritam Das</span>, and Rodolphe Sepulchre. <span class="title-italic">Splitting algorithms and circuit analysis</span>. <span class="venue">25th International Symposium on Mathematical Theory of Networks and Systems (MTNS)</span> (non-acrhival). 2022. [<a href="https://arxiv.org/abs/2208.04765">arXiv:2208.04765</a>] <span class="theme-tags">
-    <span class="tag nonlinear">Nonlinear Control</span>
-  </span></li>
     <li><span class="author-highlight">Amritam Das</span>, Sachin Shivakumar, Siep Weiland, and Matthew Peet. <span class="title-italic">Representation and stability analysis of pde-ode coupled systems</span>. 2018. [<a href="https://arxiv.org/abs/1812.07186">arXiv:1812.07186</a>] <span class="theme-tags">
     <span class="tag pde">Control of PDEs</span>
   </span></li> 
@@ -141,11 +138,14 @@ classes: wide
   	 <li>Miguel Aguiar, <span class="author-highlight">Amritam Das</span>, and Karl H Johansson. <span class="title-italic">Universal approximation of flows of control systems by recurrent neural networks</span>. <span class="venue"> 62nd IEEE Conference on Decision and Control (CDC)</span>. IEEE, pages 2320–2327, 2023. [<a href="https://doi.org/10.1109/CDC49753.2023.10383457">DOI</a>] <span class="theme-tags">
     <span class="tag ml">Machine Learning</span>
   </span></li>
+    <li>Miguel Aguiar, <span class="author-highlight">Amritam Das</span>, and Karl H Johansson. <span class="title-italic">Learning flow functions from data with applications to nonlinear oscillators</span>. <span class="venue">22nd IFAC World Congress</span>. IFAC-PapersOnLine, 56(2):4088–4093, 2023. [<a href="https://doi.org/10.1016/j.ifacol.2023.10.1738">DOI</a>] <span class="theme-tags">
+    <span class="tag ml">Machine Learning</span>
+  </span></li>
     <li>Miguel Aguiar, <span class="author-highlight">Amritam Das</span>, and Karl H. Johansson. <span class="title-italic">Learning flows of control systems</span>. <span class="venue">36th Conference on Neural Information Processing Systems (DLDE Workshop)</span>. OpenReview, 2022. [<a href="https://openreview.net/forum?id=JdZHu6VCl1">Link</a>] <span class="theme-tags">
     <span class="tag ml">Machine Learning</span>
   </span></li>
-    <li>Miguel Aguiar, <span class="author-highlight">Amritam Das</span>, and Karl H Johansson. <span class="title-italic">Learning flow functions from data with applications to nonlinear oscillators</span>. <span class="venue">22nd IFAC World Congress</span>. IFAC-PapersOnLine, 56(2):4088–4093, 2023. [<a href="https://doi.org/10.1016/j.ifacol.2023.10.1738">DOI</a>] <span class="theme-tags">
-    <span class="tag ml">Machine Learning</span>
+  <li>Thomas Chaffey, <span class="author-highlight">Amritam Das</span>, and Rodolphe Sepulchre. <span class="title-italic">Splitting algorithms and circuit analysis</span>. <span class="venue">25th International Symposium on Mathematical Theory of Networks and Systems (MTNS)</span> (non-acrhival). 2022. [<a href="https://arxiv.org/abs/2208.04765">arXiv:2208.04765</a>] <span class="theme-tags">
+    <span class="tag nonlinear">Nonlinear Control</span>
   </span></li>
     <li>Ricky JR van Kampen, <span class="author-highlight">Amritam Das</span>, Siep Weiland, and Matthijs van Berkel. <span class="title-italic">A closed-form solution to estimate spatially varying parameters in heat and mass transport</span>. <span class="venue">2021 American Control Conference (ACC)</span>, IEEE, pages 286-291, 2021. [<a href="https://doi.org/10.23919/ACC50511.2021.9482757">DOI</a>] <span class="theme-tags">
     <span class="tag pde">Control of PDEs</span>
