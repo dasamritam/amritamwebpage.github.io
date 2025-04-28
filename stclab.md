@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "Welcome to the Systems and Control for Health (SyCH) Lab!"
-permalink: /sychlab/
+permalink: /lab/
 author_profile: true
 classes: wide
 ---
@@ -32,7 +32,7 @@ classes: wide
 
 See the official webpage of SyCH Lab [here](https://www.tue.nl/en/research/research-groups/systems-and-control-for-health)!
 
-## Lab Lead 
+## Lab Lead
 
   <div class="member">
     <img src="/assets/amritam.jpg" alt="John Doe" />
@@ -74,10 +74,7 @@ See the official webpage of SyCH Lab [here](https://www.tue.nl/en/research/resea
   </div>
   <!-- Add more members as needed -->
 
-
-
 </div>
-
 
 #### MSc. Students
 
@@ -97,9 +94,6 @@ See the official webpage of SyCH Lab [here](https://www.tue.nl/en/research/resea
 
   <!-- Add more members as needed -->
 
-
-
 </div>
-
 
 <!--You can download a PDF copy of my CV [here](/files/AmritamCV.pdf).-->
