@@ -2,7 +2,7 @@
 title: "Control of PDEs"
 layout: single
 image: "/images/research/sub-theme-pde.png"
-description: "Approximation-independent control of multi-physics processes"
+description: "discretization-independent control of multi-physics processes"
 author_profile: true
 classes: wide
 ---
