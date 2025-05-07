@@ -20,6 +20,7 @@ class ScholarSync:
         self.scholar_url = f"https://scholar.google.com/citations?user={scholar_id}&hl=en"
         self.crossref_email = "am.das@tue.nl"  # Required by CrossRef for polite API usage
         self._setup_browser()
+        self._load_publication_overrides()
 
     def _setup_browser(self):
         """Set up Chrome browser for Google Scholar access."""
@@ -58,6 +59,15 @@ class ScholarSync:
         except Exception as e:
             print(f"Error setting up browser: {str(e)}")
             return False
+
+    def _load_publication_overrides(self):
+        """Load publication overrides from JSON file."""
+        try:
+            with open('publication_overrides.json', 'r') as f:
+                self.publication_overrides = json.load(f)
+        except FileNotFoundError:
+            self.publication_overrides = {}
+            print("No publication overrides file found. Using default author lists.")
 
     def _extract_year_from_scholar_data(self, element):
         """Extract year from Google Scholar citation data."""
@@ -126,7 +136,13 @@ class ScholarSync:
 
                     # Get publication details
                     title = self.driver.find_element(By.CLASS_NAME, "gsc_oci_title_link").text
-                    authors = self.driver.find_element(By.CLASS_NAME, "gsc_oci_value").text
+                    
+                    # Check if we have an override for this publication
+                    if title in self.publication_overrides:
+                        authors = self.publication_overrides[title]['authors']
+                    else:
+                        authors = self.driver.find_element(By.CLASS_NAME, "gsc_oci_value").text
+                    
                     venue_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_oci_value")
                     venue = venue_elements[2].text if len(venue_elements) > 2 else ""
                     
