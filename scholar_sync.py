@@ -17,6 +17,7 @@ from selenium.webdriver.support import expected_conditions as EC
 class ScholarSync:
     def __init__(self, scholar_id: str):
         self.scholar_id = scholar_id
+        self.scholar_url = f"https://scholar.google.com/citations?user={scholar_id}&hl=en"
         self.crossref_email = "amritam.das@tue.nl"  # Required by CrossRef for polite API usage
         self._setup_browser()
 
@@ -59,109 +60,105 @@ class ScholarSync:
             return False
 
     def _get_publications_from_scholar(self):
-        """Fetch publications directly from Google Scholar using Selenium."""
-        max_retries = 3
-        retry_delay = 5  # seconds
+        """Get publications from Google Scholar."""
         publications = []
-        page = 0
-        
-        while True:  # Continue until no more pages
-            for attempt in range(max_retries):
+        try:
+            # Navigate to Google Scholar profile page
+            self.driver.get(self.scholar_url)
+            time.sleep(3)  # Wait for page to load
+            
+            # Click "Show more" button until all publications are loaded
+            while True:
                 try:
-                    url = f"https://scholar.google.com/citations?user={self.scholar_id}&hl=en&cstart={page*100}&pagesize=100"
-                    print(f"Attempting to fetch publications page {page + 1} (attempt {attempt + 1}/{max_retries})...")
-                    
-                    self.driver.get(url)
-                    time.sleep(random.uniform(2, 4))  # Random delay before proceeding
-                    
-                    # Wait for publications to load
-                    try:
-                        WebDriverWait(self.driver, 15).until(
-                            EC.presence_of_element_located((By.CLASS_NAME, "gsc_a_tr"))
-                        )
-                    except Exception as e:
-                        print(f"Error waiting for publications to load: {str(e)}")
-                        if "This page appears to be sending automated queries" in self.driver.page_source:
-                            print("Google Scholar detected automated access. Retrying...")
-                            time.sleep(retry_delay * (attempt + 1))
-                        continue
-                        raise e
-                    
-                    pub_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_a_tr")
-                    if not pub_elements:  # No more publications
-                        return publications
-                        
-                    print(f"Found {len(pub_elements)} publications on page {page + 1}")
-                    
-                    for element in pub_elements:
-                        try:
-                            title = element.find_element(By.CLASS_NAME, "gsc_a_at").text
-                            authors = element.find_element(By.CLASS_NAME, "gs_gray").text
-                            venue = element.find_elements(By.CLASS_NAME, "gs_gray")[1].text
-                            year_text = element.find_element(By.CLASS_NAME, "gsc_a_y").text
-                            
-                            # Try to extract year from various sources
-                            year = None
-                            if year_text.isdigit():
-                                year = int(year_text)
-                            else:
-                                # Try to extract year from venue
-                                year_match = re.search(r'\b(19|20)\d{2}\b', venue)
-                                if year_match:
-                                    year = int(year_match.group(0))
-                                else:
-                                    # Try to extract year from title
-                                    year_match = re.search(r'\b(19|20)\d{2}\b', title)
-                                    if year_match:
-                                        year = int(year_match.group(0))
-                                    else:
-                                        print(f"Note: Could not extract year for publication: {title}")
-                                        year = None  # Keep the publication but with no year
-                        
-                            link = element.find_element(By.CLASS_NAME, "gsc_a_at").get_attribute("href")
-                            
-                            if not title or not authors:  # Skip entries with missing essential info
-                                continue
-
-                            pub = {
-                                'title': title,
-                                'authors': authors,
-                                'venue': venue,
-                                'year': year,
-                                'scholar_link': link
-                            }
-                            publications.append(pub)
-                            print(f"Processed: {title[:50]}...")
-                            
-                            # Add a small random delay between publications
-                            time.sleep(random.uniform(0.5, 1))
-                            
-                        except Exception as e:
-                            print(f"Error processing publication element: {str(e)}")
-                            continue
-                    
-                    if pub_elements:  # If we successfully got publications, break the retry loop
+                    show_more = self.driver.find_element(By.ID, "gsc_bpf_more")
+                    if not show_more.is_displayed() or not show_more.is_enabled():
                         break
+                    show_more.click()
+                    time.sleep(2)  # Wait for new publications to load
+                except:
+                    break
+            
+            # Now collect all publication links
+            pub_links = []
+            elements = self.driver.find_elements(By.CLASS_NAME, "gsc_a_tr")
+            print(f"Found {len(elements)} publication elements")
+            
+            for element in elements:
+                try:
+                    link = element.find_element(By.CLASS_NAME, "gsc_a_at").get_attribute("href")
+                    pub_links.append(link)
+                except Exception as e:
+                    print(f"Error getting publication link: {str(e)}")
+                    continue
+
+            print(f"Collected {len(pub_links)} publication links")
+
+            # Now process each publication
+            for link in pub_links:
+                try:
+                    # Navigate to publication page
+                    self.driver.get(link)
+                    time.sleep(2)  # Wait for page to load
+
+                    # Get publication details
+                    title = self.driver.find_element(By.CLASS_NAME, "gsc_oci_title_link").text
+                    authors = self.driver.find_element(By.CLASS_NAME, "gsc_oci_value").text
+                    venue_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_oci_value")
+                    venue = venue_elements[2].text if len(venue_elements) > 2 else ""
+                    
+                    # Try to get year from venue
+                    year = None
+                    year_match = re.search(r'\b(19|20)\d{2}\b', venue)
+                    if year_match:
+                        year = int(year_match.group(0))
+                    
+                    # Get DOI if available
+                    doi = None
+                    try:
+                        doi_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_oci_value")
+                        for element in doi_elements:
+                            if element.text.startswith("10."):
+                                doi = element.text
+                                break
+                    except:
+                        pass
+
+                    # Determine category
+                    category = "Other Publications"
+                    if "thesis" in venue.lower() or "dissertation" in venue.lower():
+                        category = "PhD Thesis"
+                    elif "arxiv" in venue.lower():
+                        category = "Preprints"
+                    elif any(journal in venue.lower() for journal in ["journal", "transactions", "letters"]):
+                        category = "Journals"
+                    else:
+                        category = "Conferences"
+
+                    print(f"Found publication: {title} (Category: {category})")
+                    if doi:
+                        print(f"  Found DOI: {doi}")
+
+                    # Add publication
+                    publications.append({
+                        'title': title,
+                        'authors': authors,
+                        'venue': venue,
+                        'year': year,
+                        'doi': doi,
+                        'category': category
+                    })
+
+                    # Go back to main page
+                    self.driver.get(self.scholar_url)
+                    time.sleep(2)  # Wait for page to load
 
                 except Exception as e:
-                    print(f"Error during attempt {attempt + 1}: {str(e)}")
-                    if attempt < max_retries - 1:
-                        print(f"Retrying in {retry_delay} seconds...")
-                        time.sleep(retry_delay * (attempt + 1))
-                    else:
-                        print("Max retries reached. Unable to fetch publications.")
-                        raise e
-            
-            # Check if there are more pages
-            try:
-                next_button = self.driver.find_element(By.ID, "gsc_bpf_next")
-                if "disabled" in next_button.get_attribute("class"):
-                    break
-                page += 1
-                time.sleep(random.uniform(2, 4))  # Random delay between pages
-            except:
-                break
-                
+                    print(f"Error processing publication: {str(e)}")
+                    continue
+
+        except Exception as e:
+            print(f"Error getting publications from Google Scholar: {str(e)}")
+        
         return publications
 
     def get_publications(self) -> List[Dict]:
