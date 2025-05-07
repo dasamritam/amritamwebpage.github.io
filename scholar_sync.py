@@ -810,7 +810,13 @@ classes: wide
             print(f"Browser verification failed: {str(e)}")
             return False
 
-    def update_publications_file(self):
+    def update_publications_file(self, direct_update=True):
+        """
+        Update the publications file.
+        
+        Args:
+            direct_update (bool): If True, directly update publications.md. If False, create publications_new.md
+        """
         print("Starting publication update...")
         
         # Verify browser setup
@@ -827,11 +833,30 @@ classes: wide
             print("Generating markdown content...")
             markdown_content = self.generate_markdown_content(publications)
             
-            output_file = 'publications_new.md'
+            if direct_update:
+                output_file = 'publications.md'
+                backup_file = 'publications.md.backup'
+                print(f"Creating backup at {backup_file}...")
+                try:
+                    # Create backup of existing file
+                    if os.path.exists(output_file):
+                        import shutil
+                        shutil.copy2(output_file, backup_file)
+                except Exception as e:
+                    print(f"Warning: Could not create backup: {str(e)}")
+            else:
+                output_file = 'publications_new.md'
+            
             print(f"Writing to {output_file}...")
             with open(output_file, 'w', encoding='utf-8') as f:
                 f.write(markdown_content)
-            print(f"Done! New publications file created at {output_file}")
+            
+            if direct_update:
+                print(f"Done! Publications file updated at {output_file}")
+                print(f"Backup created at {backup_file}")
+            else:
+                print(f"Done! New publications file created at {output_file}")
+                print("Please review the new file and rename it to publications.md if everything looks correct")
             return True
             
         except Exception as e:
@@ -865,4 +890,5 @@ if __name__ == "__main__":
         exit(1)
         
     sync = ScholarSync(scholar_id)
+    # Direct update is now the default behavior
     sync.update_publications_file() 
