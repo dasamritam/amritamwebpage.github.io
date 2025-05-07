@@ -59,6 +59,18 @@ class ScholarSync:
             print(f"Error setting up browser: {str(e)}")
             return False
 
+    def _extract_year_from_scholar_data(self, element):
+        """Extract year from Google Scholar citation data."""
+        try:
+            # Try to find the year in the citation data
+            citation_data = element.find_element(By.CLASS_NAME, "gsc_a_t").text
+            year_match = re.search(r'\b(19|20)\d{2}\b', citation_data)
+            if year_match:
+                return int(year_match.group(0))
+        except:
+            pass
+        return None
+
     def _get_publications_from_scholar(self):
         """Get publications from Google Scholar."""
         publications = []
@@ -86,7 +98,7 @@ class ScholarSync:
             for element in elements:
                 try:
                     link = element.find_element(By.CLASS_NAME, "gsc_a_at").get_attribute("href")
-                    pub_links.append(link)
+                    pub_links.append((link, element))  # Store both link and element
                 except Exception as e:
                     print(f"Error getting publication link: {str(e)}")
                     continue
@@ -94,8 +106,11 @@ class ScholarSync:
             print(f"Collected {len(pub_links)} publication links")
 
             # Now process each publication
-            for link in pub_links:
+            for link, element in pub_links:
                 try:
+                    # Get year from the main page first
+                    year = self._extract_year_from_scholar_data(element)
+                    
                     # Navigate to publication page
                     self.driver.get(link)
                     time.sleep(2)  # Wait for page to load
@@ -107,11 +122,11 @@ class ScholarSync:
                     venue = venue_elements[2].text if len(venue_elements) > 2 else ""
                     
                     # Enhanced year extraction
-                    year = None
-                    # Try to get year from venue first
-                    year_match = re.search(r'\b(19|20)\d{2}\b', venue)
-                    if year_match:
-                        year = int(year_match.group(0))
+                    if not year:
+                        # Try to get year from venue first
+                        year_match = re.search(r'\b(19|20)\d{2}\b', venue)
+                        if year_match:
+                            year = int(year_match.group(0))
                     
                     # If no year in venue, try to get it from the publication page
                     if not year:
