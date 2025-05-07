@@ -12,11 +12,26 @@ classes: wide
   <title>Amritam Das - Publication List</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; }
-    h2 { margin-top: 0; font-size: 1.2em; font-weight: normal; color: #333; }
-    h3 { margin-top: 20px; color: #000; font-size: 1.4em; font-weight: bold; }
+    h2 { 
+        margin-top: 0; 
+        font-size: 1.1em; 
+        font-weight: normal; 
+        color: #0066cc;  /* Light blue */
+        border-bottom: 2px solid #3498db;  /* Bright blue */
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+    h3 { 
+        margin-top: 30px; 
+        color: #0066cc;  /* Light blue */
+        font-size: 1.3em; 
+        font-weight: 600;
+        border-left: 4px solid #e74c3c;  /* Bright red */
+        padding-left: 10px;
+    }
     .author-highlight { font-weight: bold; }
     .title-italic { font-style: italic; }
-    .venue { color: #597; }
+    .venue { color: #597; }  /* Original color */
     .pub-link { color: #1A0DAB; text-decoration: none; }
     .theme-tags { margin-left: 10px; }
     .tag {
