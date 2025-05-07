@@ -317,7 +317,14 @@ class ScholarSync:
             return 'PhD Thesis'
             
         # Check for book chapters
-        if 'book' in venue or 'chapter' in venue:
+        book_chapter_indicators = [
+            'book chapter', 'chapter in', 'in book', 'in handbook',
+            'handbook of', 'encyclopedia', 'in encyclopedia',
+            'in edited volume', 'edited volume', 'in proceedings book',
+            'in book series', 'book series', 'in monograph',
+            'monograph series', 'in collection', 'edited collection'
+        ]
+        if any(indicator in venue.lower() or indicator in title.lower() for indicator in book_chapter_indicators):
             return 'Book Chapters'
             
         # Check for preprints
@@ -676,6 +683,7 @@ classes: wide
         # Group publications by category and year
         categories = {
             'PhD Thesis': [],
+            'Book Chapters': [],
             'Preprints': [],
             'Journals': [],
             'Conferences': [],
