@@ -92,3 +92,12 @@ venv.bak/
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Publication update backups and logs
+publication_backups/
+update_publications.log
+
+# OS generated files
+.DS_Store?
+ehthumbs.db
+Thumbs.db
