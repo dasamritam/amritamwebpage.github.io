@@ -1,17 +1,198 @@
 import os
-from serpapi import GoogleSearch
+from scholarly import scholarly
 from typing import List, Dict
 import json
 import re
 import requests
 import time
-from bs4 import BeautifulSoup  # Add BeautifulSoup import
+from bs4 import BeautifulSoup
+import random
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class ScholarSync:
-    def __init__(self, scholar_id: str, api_key: str):
+    def __init__(self, scholar_id: str):
         self.scholar_id = scholar_id
-        self.api_key = api_key
         self.crossref_email = "amritam.das@tue.nl"  # Required by CrossRef for polite API usage
+        self._setup_browser()
+
+    def _setup_browser(self):
+        """Set up Chrome browser for Google Scholar access."""
+        try:
+            chrome_options = Options()
+            chrome_options.add_argument('--headless')
+            chrome_options.add_argument('--no-sandbox')
+            chrome_options.add_argument('--disable-dev-shm-usage')
+            chrome_options.add_argument('--disable-gpu')
+            chrome_options.add_argument('--window-size=1920x1080')
+            
+            # Add more realistic browser configuration
+            chrome_options.add_argument('--disable-blink-features=AutomationControlled')
+            chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+            chrome_options.add_experimental_option('useAutomationExtension', False)
+            
+            # Add more realistic user agent
+            chrome_options.add_argument('--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36')
+            
+            # Add additional headers
+            chrome_options.add_argument('--accept-language=en-US,en;q=0.9')
+            chrome_options.add_argument('--accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8')
+            
+            self.driver = webdriver.Chrome(options=chrome_options)
+            
+            # Execute CDP commands to make automation less detectable
+            self.driver.execute_cdp_cmd('Network.setUserAgentOverride', {
+                "userAgent": 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
+            })
+            
+            # Add additional properties to make automation less detectable
+            self.driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+            
+            print("Browser setup completed successfully")
+            return True
+        except Exception as e:
+            print(f"Error setting up browser: {str(e)}")
+            return False
+
+    def _get_publications_from_scholar(self):
+        """Fetch publications directly from Google Scholar using Selenium."""
+        max_retries = 3
+        retry_delay = 5  # seconds
+        publications = []
+        
+        for attempt in range(max_retries):
+            try:
+                url = f"https://scholar.google.com/citations?user={self.scholar_id}&hl=en"
+                print(f"Attempting to fetch publications (attempt {attempt + 1}/{max_retries})...")
+                
+                self.driver.get(url)
+                time.sleep(random.uniform(2, 4))  # Random delay before proceeding
+                
+                # Wait for publications to load
+                try:
+                    WebDriverWait(self.driver, 15).until(
+                        EC.presence_of_element_located((By.CLASS_NAME, "gsc_a_tr"))
+                    )
+                except Exception as e:
+                    print(f"Error waiting for publications to load: {str(e)}")
+                    if "This page appears to be sending automated queries" in self.driver.page_source:
+                        print("Google Scholar detected automated access. Retrying...")
+                        time.sleep(retry_delay * (attempt + 1))
+                        continue
+                    raise e
+                
+                pub_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_a_tr")
+                print(f"Found {len(pub_elements)} publications")
+                
+                for element in pub_elements:
+                    try:
+                        title = element.find_element(By.CLASS_NAME, "gsc_a_at").text
+                        authors = element.find_element(By.CLASS_NAME, "gs_gray").text
+                        venue = element.find_elements(By.CLASS_NAME, "gs_gray")[1].text
+                        year = element.find_element(By.CLASS_NAME, "gsc_a_y").text
+                        link = element.find_element(By.CLASS_NAME, "gsc_a_at").get_attribute("href")
+                        
+                        if not title or not authors:  # Skip entries with missing essential info
+                            continue
+                            
+                        pub = {
+                            'title': title,
+                            'authors': authors,
+                            'venue': venue,
+                            'year': int(year) if year.isdigit() else 0,
+                            'scholar_link': link
+                        }
+                        publications.append(pub)
+                        print(f"Processed: {title[:50]}...")
+                        
+                        # Add a small random delay between publications
+                        time.sleep(random.uniform(0.5, 1))
+                        
+                    except Exception as e:
+                        print(f"Error processing publication element: {str(e)}")
+                        continue
+                
+                if publications:  # If we successfully got publications, break the retry loop
+                    break
+                    
+            except Exception as e:
+                print(f"Error during attempt {attempt + 1}: {str(e)}")
+                if attempt < max_retries - 1:
+                    print(f"Retrying in {retry_delay} seconds...")
+                    time.sleep(retry_delay * (attempt + 1))
+                else:
+                    print("Max retries reached. Unable to fetch publications.")
+                    raise e
+                
+        return publications
+
+    def get_publications(self) -> List[Dict]:
+        print(f"Fetching publications from Google Scholar...")
+        
+        try:
+            publications = self._get_publications_from_scholar()
+            processed_publications = []
+            
+            for pub in publications:
+                try:
+                    title = pub['title']
+                    venue = pub['venue']
+                    year = str(pub['year'])
+                    doi = None
+                    
+                    # Try to get DOI from CrossRef
+                    doi = self.get_doi_from_crossref(title, year=year, venue=venue)
+                    
+                    # If no DOI found, try to extract from Google Scholar link
+                    if not doi and pub.get('scholar_link'):
+                        doi = self.extract_doi_from_scholar_link(pub['scholar_link'])
+                    
+                    # If still no DOI, try venue-specific patterns
+                    if not doi:
+                        doi = self.get_doi_from_venue(title, venue, year)
+                    
+                    # If still no DOI, check for arXiv
+                    if not doi and 'arxiv' in venue.lower():
+                        arxiv_match = re.search(r'arXiv:(\d{4}\.\d{5})', venue)
+                        if arxiv_match:
+                            arxiv_id = arxiv_match.group(1)
+                            doi = f"arxiv.org/abs/{arxiv_id}"
+                    
+                    pub_data = {
+                        'title': title,
+                        'authors': pub['authors'],
+                        'venue': venue,
+                        'year': int(year) if year.isdigit() else 0,
+                        'doi': doi,
+                        'scholar_link': pub.get('scholar_link', '')
+                    }
+                    
+                    # Add category
+                    pub_data['category'] = self.classify_publication(pub_data)
+                    processed_publications.append(pub_data)
+                    print(f"Found publication: {title} (Category: {pub_data['category']})")
+                    if doi:
+                        print(f"  Found DOI: {doi}")
+                    
+                except Exception as e:
+                    print(f"Error processing publication: {str(e)}")
+                    continue
+
+        except Exception as e:
+            print(f"Error fetching publications: {str(e)}")
+            return []
+        finally:
+            try:
+                self.driver.quit()
+            except:
+                pass
+
+        print(f"Found {len(processed_publications)} publications total.")
+        return processed_publications
 
     def classify_publication(self, pub: Dict) -> str:
         """Classify a publication into its category based on venue and title."""
@@ -138,7 +319,7 @@ class ScholarSync:
         try:
             # Add headers to mimic a browser request
             headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.87 Safari/537.36',
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
                 'Accept-Language': 'en-US,en;q=0.5',
                 'Connection': 'keep-alive',
@@ -147,10 +328,10 @@ class ScholarSync:
             # Follow the link and get the page content
             response = requests.get(link, headers=headers, allow_redirects=True, timeout=30)
             if response.status_code == 200:
-                # Try to parse with BeautifulSoup first
+                # Try to parse with BeautifulSoup
                 soup = BeautifulSoup(response.text, 'lxml')
                 
-                # Try IEEE Xplore first
+                # Try publisher-specific extraction first
                 if 'ieeexplore.ieee.org' in link:
                     try:
                         # Look for metadata in script tags
@@ -163,7 +344,6 @@ class ScholarSync:
                     except Exception as e:
                         print(f"Error parsing IEEE metadata: {str(e)}")
                 
-                # Try ScienceDirect
                 elif 'sciencedirect.com' in link:
                     try:
                         # Look for DOI in meta tags
@@ -174,7 +354,6 @@ class ScholarSync:
                     except Exception as e:
                         print(f"Error parsing ScienceDirect metadata: {str(e)}")
                 
-                # Try ACM Digital Library
                 elif 'dl.acm.org' in link:
                     try:
                         # Look for DOI in meta tags
@@ -218,7 +397,9 @@ class ScholarSync:
                                 doi = match.group(0)
                                 # Clean up the DOI
                                 doi = doi.replace('doi.org/', '').replace('doi:', '')
-                                return doi
+                                # Validate DOI format
+                                if re.match(r'^10\.\d{4,}/[-._;()/:\w]+$', doi):
+                                    return doi
                 
                 # If no DOI found in sections, try to find it anywhere in the content
                 for pattern in doi_patterns:
@@ -227,7 +408,9 @@ class ScholarSync:
                         doi = match.group(0)
                         # Clean up the DOI
                         doi = doi.replace('doi.org/', '').replace('doi:', '')
-                        return doi
+                        # Validate DOI format
+                        if re.match(r'^10\.\d{4,}/[-._;()/:\w]+$', doi):
+                            return doi
                         
             return None
         except Exception as e:
@@ -287,73 +470,6 @@ class ScholarSync:
         except Exception as e:
             print(f"Error querying CrossRef: {str(e)}")
             return None
-
-    def get_publications(self) -> List[Dict]:
-        publications = []
-        print(f"Fetching publications from Google Scholar using SerpApi...")
-        
-        try:
-            # Configure the search parameters
-            params = {
-                "engine": "google_scholar_author",
-                "author_id": self.scholar_id,
-                "api_key": self.api_key,
-                "hl": "en"
-            }
-            
-            # Make the API request
-            search = GoogleSearch(params)
-            results = search.get_dict()
-            
-            # Extract articles from the results
-            if "articles" in results:
-                for article in results["articles"]:
-                    if "title" in article and "authors" in article and "year" in article:
-                        title = article["title"]
-                        venue = article.get("publication", "")
-                        year = article["year"]
-                        doi = None
-                        
-                        # 1. First try CrossRef with just the title
-                        doi = self.get_doi_from_crossref(title, year=year, venue=venue)
-                        
-                        # 2. If no DOI found, try to extract from Google Scholar link
-                        if not doi and "link" in article:
-                            doi = self.extract_doi_from_scholar_link(article["link"])
-                        
-                        # 3. If still no DOI, try venue-specific patterns
-                        if not doi:
-                            doi = self.get_doi_from_venue(title, venue, year)
-                        
-                        # 4. If still no DOI, check for arXiv
-                        if not doi and "arxiv" in venue.lower():
-                            arxiv_match = re.search(r'arXiv:(\d{4}\.\d{5})', venue)
-                            if arxiv_match:
-                                arxiv_id = arxiv_match.group(1)
-                                doi = f"arxiv.org/abs/{arxiv_id}"
-                        
-                        pub = {
-                            'title': article["title"],
-                            'authors': article["authors"],
-                            'venue': article.get("publication", ""),
-                            'year': int(article["year"]),
-                            'doi': doi,
-                            'scholar_link': article.get("link", ""),
-                            'citations': article.get("cited_by", {}).get("total", 0)
-                        }
-                        # Add category
-                        pub['category'] = self.classify_publication(pub)
-                        publications.append(pub)
-                        print(f"Found publication: {article['title']} (Category: {pub['category']})")
-                        if doi:
-                            print(f"  Found DOI: {doi}")
-
-            print(f"Found {len(publications)} publications total.")
-            return publications
-            
-        except Exception as e:
-            print(f"Error fetching publications: {str(e)}")
-            return []
 
     def generate_markdown_content(self, publications):
         """Generate markdown content with proper HTML formatting."""
@@ -442,9 +558,22 @@ classes: wide
                 # Format links
                 links = []
                 if pub.get('doi'):
-                    links.append(f'[<a href="https://doi.org/{pub["doi"]}">DOI</a>]')
-                elif pub.get('arxiv'):
-                    links.append(f'[<a href="https://arxiv.org/abs/{pub["arxiv"]}">arXiv</a>]')
+                    # Check if it's an arXiv ID
+                    if pub['doi'].startswith('arxiv.org/abs/'):
+                        arxiv_id = pub['doi'].replace('arxiv.org/abs/', '')
+                        links.append(f'[<a href="https://arxiv.org/abs/{arxiv_id}">arXiv</a>]')
+                    # Check if it's a placeholder DOI
+                    elif 'XXXXXXX' in pub['doi']:
+                        # Try to get the actual DOI from CrossRef
+                        actual_doi = self.get_doi_from_crossref(pub['title'], year=str(pub['year']), venue=pub['venue'])
+                        if actual_doi:
+                            links.append(f'[<a href="https://doi.org/{actual_doi}">DOI</a>]')
+                        else:
+                            links.append(f'[<a href="{pub.get("scholar_link", "#")}">Google Scholar</a>]')
+                    else:
+                        # Clean up the DOI
+                        doi = pub['doi'].replace('doi.org/', '').replace('doi:', '')
+                        links.append(f'[<a href="https://doi.org/{doi}">DOI</a>]')
                 elif pub.get('scholar_link'):
                     links.append(f'[<a href="{pub["scholar_link"]}">Google Scholar</a>]')
                 links_str = ' '.join(links)
@@ -473,41 +602,76 @@ classes: wide
 
         return content
 
+    def _verify_browser_setup(self):
+        """Verify that the browser is properly set up and can access web pages."""
+        try:
+            # Try to access a simple page first
+            self.driver.get("https://www.google.com")
+            time.sleep(2)
+            
+            if "google" in self.driver.title.lower():
+                print("Browser verification successful")
+                return True
+            else:
+                print("Browser verification failed: Unexpected page title")
+                return False
+        except Exception as e:
+            print(f"Browser verification failed: {str(e)}")
+            return False
+
     def update_publications_file(self):
         print("Starting publication update...")
-        publications = self.get_publications()
-        print("Generating markdown content...")
-        markdown_content = self.generate_markdown_content(publications)
         
-        output_file = 'publications_new.md'
-        print(f"Writing to {output_file}...")
-        with open(output_file, 'w', encoding='utf-8') as f:
-            f.write(markdown_content)
-        print(f"Done! New publications file created at {output_file}")
+        # Verify browser setup
+        if not self._verify_browser_setup():
+            print("Failed to verify browser setup. Exiting...")
+            return False
+            
+        try:
+            publications = self.get_publications()
+            if not publications:
+                print("No publications were fetched. Exiting...")
+                return False
+                
+            print("Generating markdown content...")
+            markdown_content = self.generate_markdown_content(publications)
+            
+            output_file = 'publications_new.md'
+            print(f"Writing to {output_file}...")
+            with open(output_file, 'w', encoding='utf-8') as f:
+                f.write(markdown_content)
+            print(f"Done! New publications file created at {output_file}")
+            return True
+            
+        except Exception as e:
+            print(f"Error updating publications: {str(e)}")
+            return False
+        finally:
+            try:
+                self.driver.quit()
+            except:
+                pass
 
 def load_config():
     try:
         with open('config.json', 'r') as f:
             config = json.load(f)
-            return config.get('serpapi_key')
+            return config.get('scholar_id')
     except FileNotFoundError:
         print("Error: config.json not found")
-        print("Please create a config.json file with your SerpApi key:")
-        print('{\n    "serpapi_key": "your-api-key-here"\n}')
+        print("Please create a config.json file with your Google Scholar ID:")
+        print('{\n    "scholar_id": "your-scholar-id-here"\n}')
         exit(1)
     except json.JSONDecodeError:
         print("Error: Invalid JSON in config.json")
         exit(1)
 
 if __name__ == "__main__":
-    # Replace with your Google Scholar ID
-    scholar_id = "dZ1NkwoAAAAJ"
-    
-    # Load API key from config
-    api_key = load_config()
-    if not api_key:
-        print("Error: No API key found in config.json")
+    # Load Scholar ID from config
+    scholar_id = load_config()
+    if not scholar_id:
+        print("Error: No Scholar ID found in config.json")
         exit(1)
         
-    sync = ScholarSync(scholar_id, api_key)
+    sync = ScholarSync(scholar_id)
     sync.update_publications_file() 
