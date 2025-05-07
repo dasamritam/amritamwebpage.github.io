@@ -87,9 +87,5 @@ classes: wide
 <ol><li><span class="author-highlight">A. Das</span>, S. Weiland, L. Iapichino. <span class="title-italic">Model approximation of thermo-fluidic diffusion processes in spatially interconnected structures</span>. <span class="venue">2018 European Control Conference (ECC), 2018</span>. [<a href="https://doi.org/10.23919/ecc.2018.8550146">DOI</a>] <span class="theme-tags"><span class="tag pde">Control of PDEs</span></span></li></ol>
 <h2>2017</h2>
 <ol><li><span class="author-highlight">A. Das</span>, Y. Kasemsinsup, S. Weiland. <span class="title-italic">Optimal trajectory tracking control for automated guided vehicles</span>. <span class="venue">IFAC-PapersOnLine, 2017</span>. [<a href="https://doi.org/10.1016/j.ifacol.2017.08.050">DOI</a>] </li></ol>
-<h3>Other Publications</h3>
-<ol><li>S. Toolhally, J. Roelofs, <span class="author-highlight">A. Das</span>. <span class="title-italic">A Digital Twin of Evaporative Thermo-Fluidic Process in Fixation Unit of DoD inkjet printers</span>. <span class="venue">A Digital Twin of Evaporative Thermo-Fluidic Process in Fixation Unit of DoD inkjet printers
-S Toolhally, J Roelofs, A Das
-Related articles</span>. [<a href="https://doi.org/10.20944/preprints202003.0355.v1">DOI</a>] </li></ol>
 </body>
 </html>
