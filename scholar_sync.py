@@ -611,8 +611,8 @@ classes: wide
   <title>Amritam Das - Publication List</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; }
-    h2 { margin-top: 0; }
-    h3 { margin-top: 20px; color: #333; }
+    h2 { margin-top: 0; font-size: 1.2em; font-weight: normal; color: #333; }
+    h3 { margin-top: 20px; color: #000; font-size: 1.4em; font-weight: bold; }
     .author-highlight { font-weight: bold; }
     .title-italic { font-style: italic; }
     .venue { color: #597; }
