@@ -87,36 +87,6 @@ class ScholarSync:
             print(f"Error extracting year from scholar data: {str(e)}")
         return None
 
-    def _standardize_author_name(self, author: str) -> str:
-        """Standardize author name format to always use initials for first and middle names."""
-        # Remove any extra spaces
-        author = ' '.join(author.split())
-        
-        # Split into parts
-        parts = author.split()
-        
-        # If it's just one word, return as is
-        if len(parts) == 1:
-            return author
-            
-        # If it's two words, convert first name to initial
-        if len(parts) == 2:
-            return f"{parts[0][0]}. {parts[1]}"
-            
-        # For three or more words
-        if len(parts) >= 3:
-            # Convert all but last name to initials
-            initials = [part[0] + '.' for part in parts[:-1]]
-            return ' '.join(initials + [parts[-1]])
-            
-        return author
-
-    def _standardize_author_list(self, authors: str) -> str:
-        """Standardize a list of author names."""
-        author_list = [author.strip() for author in authors.split(',')]
-        standardized_authors = [self._standardize_author_name(author) for author in author_list]
-        return ', '.join(standardized_authors)
-
     def _get_publications_from_scholar(self):
         """Get publications from Google Scholar."""
         publications = []
@@ -170,11 +140,12 @@ class ScholarSync:
                     # Check if we have an override for this publication
                     if title in self.publication_overrides:
                         authors = self.publication_overrides[title]['authors']
+                        # Standardize authors from overrides
+                        authors = ', '.join([self._standardize_author_name(author.strip()) for author in authors.split(',')])
                     else:
                         authors = self.driver.find_element(By.CLASS_NAME, "gsc_oci_value").text
-                    
-                    # Standardize author names
-                    authors = self._standardize_author_list(authors)
+                        # Standardize authors from Google Scholar
+                        authors = ', '.join([self._standardize_author_name(author.strip()) for author in authors.split(',')])
                     
                     venue_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_oci_value")
                     venue = venue_elements[2].text if len(venue_elements) > 2 else ""
@@ -644,7 +615,7 @@ class ScholarSync:
             print(f"Error querying CrossRef: {str(e)}")
             return None
 
-    def _generate_markdown_content(self, publications):
+    def generate_markdown_content(self, publications):
         """Generate markdown content with proper HTML formatting."""
         content = """---
 layout: single
@@ -678,7 +649,6 @@ classes: wide
         padding-left: 10px;
     }
     .author-highlight { font-weight: bold; }
-    .author-underline { text-decoration: underline; }
     .title-italic { font-style: italic; }
     .venue { color: #597; }  /* Original color */
     .pub-link { color: #1A0DAB; text-decoration: none; }
@@ -746,7 +716,9 @@ classes: wide
                     authors = pub['authors'].split(', ')
                     # Remove any ellipsis (...) from the author list
                     authors = [author for author in authors if author != '...']
-                    authors = [f'<span class="author-highlight author-underline">{author}</span>' if 'A Das' in author else f'<span class="author-highlight">{author}</span>' for author in authors]
+                    # Standardize each author's name
+                    authors = [self._standardize_author_name(author) for author in authors]
+                    authors = [f'<span class="author-highlight">A. Das</span>' if 'A. Das' in author else author for author in authors]
                     authors_str = ', '.join(authors)
 
                     # Format title
@@ -808,7 +780,9 @@ classes: wide
                     authors = pub['authors'].split(', ')
                     # Remove any ellipsis (...) from the author list
                     authors = [author for author in authors if author != '...']
-                    authors = [f'<span class="author-highlight author-underline">{author}</span>' if 'A Das' in author else f'<span class="author-highlight">{author}</span>' for author in authors]
+                    # Standardize each author's name
+                    authors = [self._standardize_author_name(author) for author in authors]
+                    authors = [f'<span class="author-highlight">A. Das</span>' if 'A. Das' in author else author for author in authors]
                     authors_str = ', '.join(authors)
 
                     # Format title
@@ -860,7 +834,8 @@ classes: wide
                     content += entry
                 content += "</ol>"
 
-        content += "</body></html>"
+        content += "\n</body>\n</html>"
+
         return content
 
     def _verify_browser_setup(self):
@@ -901,7 +876,7 @@ classes: wide
                 return False
                 
             print("Generating markdown content...")
-            markdown_content = self._generate_markdown_content(publications)
+            markdown_content = self.generate_markdown_content(publications)
             
             if direct_update:
                 output_file = 'publications.md'
@@ -938,27 +913,27 @@ classes: wide
             except:
                 pass
 
-    def _format_authors(self, authors):
-        """Format authors with proper highlighting."""
-        if not authors:
-            return ""
-            
-        # Split authors and remove any empty strings
-        author_list = [a.strip() for a in authors.split(',') if a.strip()]
+    def _standardize_author_name(self, author: str) -> str:
+        """Standardize author name format to 'F. Last'."""
+        # Remove any extra spaces
+        author = ' '.join(author.split())
         
-        # Format each author
-        formatted_authors = []
-        for author in author_list:
-            # Standardize the author name
-            author = self._standardize_author_name(author)
-            
-            # Check if this is A. Das
-            if author == "A. Das":
-                formatted_authors.append(f'<span class="author-highlight author-underline">{author}</span>')
-            else:
-                formatted_authors.append(f'<span class="author-highlight">{author}</span>')
+        # Split into parts
+        parts = author.split()
         
-        return ', '.join(formatted_authors)
+        # If it's just one word, return as is
+        if len(parts) == 1:
+            return author
+            
+        # For two or more words
+        if len(parts) >= 2:
+            # Take first letter of each part except the last one
+            initials = [part[0] + '.' for part in parts[:-1]]
+            # Add the last name
+            result = ' '.join(initials + [parts[-1]])
+            return result
+            
+        return author
 
 def load_config():
     try:
