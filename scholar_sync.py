@@ -88,7 +88,7 @@ class ScholarSync:
         return None
 
     def _standardize_author_name(self, author: str) -> str:
-        """Standardize author name format to 'First Last' or 'F Last'."""
+        """Standardize author name format to always use initials for first and middle names."""
         # Remove any extra spaces
         author = ' '.join(author.split())
         
@@ -99,30 +99,15 @@ class ScholarSync:
         if len(parts) == 1:
             return author
             
-        # If it's two words, assume it's already in correct format
+        # If it's two words, convert first name to initial
         if len(parts) == 2:
-            return author
+            return f"{parts[0][0]}. {parts[1]}"
             
         # For three or more words
         if len(parts) >= 3:
-            # Check if it's in "First Middle Last" format
-            if not any(len(p) == 1 for p in parts[:-1]):  # No single letters except possibly the last word
-                return author
-                
-            # Check if it's in "F M Last" format
-            if all(len(p) == 1 for p in parts[:-1]):  # All but last are single letters
-                return ' '.join(parts)
-                
-            # Handle mixed format (e.g., "First M Last" or "F Middle Last")
-            result = []
-            for i, part in enumerate(parts):
-                if i == len(parts) - 1:  # Last name
-                    result.append(part)
-                elif len(part) == 1:  # Initial
-                    result.append(part + '.')
-                else:  # Full name
-                    result.append(part)
-            return ' '.join(result)
+            # Convert all but last name to initials
+            initials = [part[0] + '.' for part in parts[:-1]]
+            return ' '.join(initials + [parts[-1]])
             
         return author
 
