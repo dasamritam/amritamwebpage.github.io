@@ -1,2 +1,2 @@
 # Run publication update every Sunday at 2 AM
-0 2 * * 0 cd /Users/amdas/Library/CloudStorage/OneDrive-TUEindhoven/amritamwebpage.github.io && ./update_publications.sh >> update_publications.log 2>&1 
+0 2 * * 0 cd /Users/amdas/Library/CloudStorage/OneDrive-TUEindhoven/amritamwebpage.github.io && ./update_publications.sh >> update_log.txt 2>&1 

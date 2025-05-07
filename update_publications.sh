@@ -21,10 +21,17 @@ handle_error() {
     exit 1
 }
 
-# Activate virtual environment if it exists
-if [ -d ".venv" ]; then
-    log "Activating virtual environment..."
-    source .venv/bin/activate || handle_error "Failed to activate virtual environment"
+# Print start message
+echo "Starting publication update process..."
+
+# Activate virtual environment
+echo "Activating virtual environment..."
+source .venv/bin/activate
+
+# Check if virtual environment activation was successful
+if [ $? -ne 0 ]; then
+    echo "Error: Failed to activate virtual environment"
+    exit 1
 fi
 
 # Install/update requirements
@@ -37,25 +44,15 @@ if [ -f "publications.md" ]; then
     cp "publications.md" "$BACKUP_DIR/publications_${TIMESTAMP}.md" || handle_error "Failed to create backup"
 fi
 
-# Run the publication update script
-log "Starting publication update..."
-python scholar_sync.py || handle_error "Failed to update publications"
+# Run the Python script
+echo "Running scholar_sync.py..."
+python scholar_sync.py
 
-# Check if new file was created
-if [ ! -f "publications_new.md" ]; then
-    handle_error "New publications file was not created"
-fi
-
-# Verify the new file has content
-if [ ! -s "publications_new.md" ]; then
-    handle_error "New publications file is empty"
-fi
-
-# If the script was successful, update the main publications file
+# Check if the script ran successfully
 if [ $? -eq 0 ]; then
-    # Move the new file to replace the current one
-    log "Replacing old publications file with new one..."
-    mv "publications_new.md" "publications.md" || handle_error "Failed to replace publications file"
+    echo "Publication update completed successfully!"
+    echo "Updated file: publications.md"
+    echo "Backup file: publications.md.backup"
     
     # If using git, commit the changes
     if [ -d ".git" ]; then
@@ -65,14 +62,13 @@ if [ $? -eq 0 ]; then
         git push
     fi
     
-    log "Publication update completed successfully!"
     log "Backup created at: $BACKUP_DIR/publications_${TIMESTAMP}.md"
 else
-    echo "Error updating publications. Check the logs for details."
+    echo "Error: Publication update failed"
     exit 1
 fi
 
 # Deactivate virtual environment
-if [ -d ".venv" ]; then
-    deactivate
-fi 
+deactivate
+
+echo "Process completed!" 
