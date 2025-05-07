@@ -13,16 +13,12 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import shutil
 
 class ScholarSync:
     def __init__(self, scholar_id: str):
-        """Initialize with Google Scholar ID."""
         self.scholar_id = scholar_id
         self.scholar_url = f"https://scholar.google.com/citations?user={scholar_id}&hl=en"
         self.crossref_email = "am.das@tue.nl"  # Required by CrossRef for polite API usage
-        self.driver = None
-        self.overrides = self._load_publication_overrides()
         self._setup_browser()
 
     def _setup_browser(self):
@@ -131,42 +127,8 @@ class ScholarSync:
                     # Get publication details
                     title = self.driver.find_element(By.CLASS_NAME, "gsc_oci_title_link").text
                     authors = self.driver.find_element(By.CLASS_NAME, "gsc_oci_value").text
-                    
-                    # Enhanced venue extraction
-                    venue = ""
-                    try:
-                        # Try to get venue from the publication details
-                        venue_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_oci_value")
-                        for element in venue_elements:
-                            text = element.text.lower()
-                            # Skip if it's the authors or DOI
-                            if "10." in text or authors.lower() in text:
-                                continue
-                            # Check if it contains venue indicators
-                            if any(indicator in text for indicator in ["journal", "transactions", "letters", "magazine", "conference", "symposium", "workshop", "proceedings", "arxiv", "preprint", "thesis", "dissertation"]):
-                                venue = element.text
-                                break
-                    except Exception as e:
-                        print(f"Error extracting venue: {str(e)}")
-                    
-                    # If no venue found, try to get it from the title
-                    if not venue:
-                        try:
-                            title_element = self.driver.find_element(By.CLASS_NAME, "gsc_oci_title_link")
-                            if title_element:
-                                venue = title_element.get_attribute("data-href")
-                                if venue:
-                                    # Extract venue from URL
-                                    if "ieeexplore.ieee.org" in venue:
-                                        venue = "IEEE Transactions"
-                                    elif "sciencedirect.com" in venue:
-                                        venue = "Elsevier Journal"
-                                    elif "springer.com" in venue:
-                                        venue = "Springer Journal"
-                                    elif "arxiv.org" in venue:
-                                        venue = "arXiv"
-                        except:
-                            pass
+                    venue_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_oci_value")
+                    venue = venue_elements[2].text if len(venue_elements) > 2 else ""
                     
                     # Enhanced year extraction if not found on main page
                     if not year:
@@ -220,10 +182,15 @@ class ScholarSync:
                         pass
 
                     # Determine category
-                    category = self.classify_publication({
-                        'title': title,
-                        'venue': venue
-                    })
+                    category = "Other Publications"
+                    if "thesis" in venue.lower() or "dissertation" in venue.lower():
+                        category = "PhD Thesis"
+                    elif "arxiv" in venue.lower():
+                        category = "Preprints"
+                    elif any(journal in venue.lower() for journal in ["journal", "transactions", "letters"]):
+                        category = "Journals"
+                    else:
+                        category = "Conferences"
 
                     print(f"Found publication: {title} (Category: {category}, Year: {year})")
                     if doi:
@@ -253,115 +220,70 @@ class ScholarSync:
         
         return publications
 
-    def get_publications(self):
-        """Get all publications from Google Scholar."""
-        processed_publications = []
+    def get_publications(self) -> List[Dict]:
+        print(f"Fetching publications from Google Scholar...")
+        
         try:
-            # Navigate to Google Scholar
-            self.driver.get('https://scholar.google.com')
-            time.sleep(2)
+            publications = self._get_publications_from_scholar()
+            processed_publications = []
             
-            # Navigate to user's profile
-            self.driver.get(self.scholar_url)
-            time.sleep(2)
-            
-            # Click "Show more" button multiple times to load all publications
-            for _ in range(5):  # Adjust number based on your publication count
+            for pub in publications:
                 try:
-                    show_more = self.driver.find_element(By.ID, 'gsc_bpf_more')
-                    if not show_more.is_enabled():
-                        break
-                    show_more.click()
-                    time.sleep(2)
-                except:
-                    break
-            
-            # Get all publication elements
-            pub_elements = self.driver.find_elements(By.CLASS_NAME, 'gsc_a_tr')
-            print(f"Found {len(pub_elements)} publication elements")
-            
-            # Extract publication details
-            for element in pub_elements:
-                try:
-                    # Get title and link
-                    title_element = element.find_element(By.CLASS_NAME, 'gsc_a_t')
-                    title = title_element.find_element(By.TAG_NAME, 'a').text
-                    scholar_link = title_element.find_element(By.TAG_NAME, 'a').get_attribute('href')
-                    
-                    # Get authors
-                    authors = title_element.find_element(By.CLASS_NAME, 'gs_gray').text
-                    
-                    # Get venue and year
-                    venue_element = title_element.find_elements(By.CLASS_NAME, 'gs_gray')
-                    venue = venue_element[1].text if len(venue_element) > 1 else ""
-                    
-                    # Extract year
-                    year = None
-                    year_element = element.find_element(By.CLASS_NAME, 'gsc_a_y')
-                    if year_element:
-                        year_text = year_element.text.strip()
-                        if year_text and year_text.isdigit():
-                            year = int(year_text)
-                    
-                    # Get DOI if available
+                    title = pub['title']
+                    venue = pub['venue']
+                    year = pub['year']
                     doi = None
-                    if scholar_link:
-                        self.driver.get(scholar_link)
-                        time.sleep(2)
-                        try:
-                            doi_elements = self.driver.find_elements(By.CLASS_NAME, 'gsc_oci_value')
-                            for element in doi_elements:
-                                text = element.text
-                                if text.startswith('10.'):
-                                    doi = text
-                                    break
-                        except:
-                            pass
-                        
-                        # Also try to get a better venue from the detailed page
-                        try:
-                            venue_elements = self.driver.find_elements(By.CLASS_NAME, 'gsc_oci_value')
-                            for element in venue_elements:
-                                text = element.text
-                                if any(indicator in text.lower() for indicator in ['journal', 'conference', 'arxiv', 'thesis']):
-                                    venue = text
-                                    break
-                        except:
-                            pass
-                        
-                        # Go back to the main page
-                        self.driver.get(self.scholar_url)
-                        time.sleep(2)
                     
-                    # Determine category using the classify_publication method
+                    # Try to get DOI from CrossRef
+                    doi = self.get_doi_from_crossref(title, year=str(year) if year else None, venue=venue)
+                    
+                    # If no DOI found, try to extract from Google Scholar link
+                    if not doi and pub.get('scholar_link'):
+                        doi = self.extract_doi_from_scholar_link(pub['scholar_link'])
+                    
+                    # If still no DOI, try venue-specific patterns
+                    if not doi:
+                        doi = self.get_doi_from_venue(title, venue, str(year) if year else None)
+                    
+                    # If still no DOI, check for arXiv
+                    if not doi and 'arxiv' in venue.lower():
+                        arxiv_match = re.search(r'arXiv:(\d{4}\.\d{5})', venue)
+                        if arxiv_match:
+                            arxiv_id = arxiv_match.group(1)
+                            doi = f"arxiv.org/abs/{arxiv_id}"
+                    
                     pub_data = {
                         'title': title,
+                        'authors': pub['authors'],
                         'venue': venue,
-                        'authors': authors,
                         'year': year,
                         'doi': doi,
-                        'scholar_link': scholar_link
+                        'scholar_link': pub.get('scholar_link', '')
                     }
                     
-                    # Classify publication and add tags
+                    # Add category and tags
                     pub_data['category'] = self.classify_publication(pub_data)
                     pub_data['tags'] = self.classify_tags(pub_data)
-                    
-                    # Apply any overrides
-                    pub_data = self._apply_publication_overrides(pub_data)
-                    
                     processed_publications.append(pub_data)
                     print(f"Found publication: {title} (Category: {pub_data['category']}, Year: {year})")
                     if doi:
                         print(f"  Found DOI: {doi}")
+                    if pub_data['tags']:
+                        print(f"  Tags: {', '.join(pub_data['tags'])}")
                     
                 except Exception as e:
                     print(f"Error processing publication: {str(e)}")
                     continue
-                    
+
         except Exception as e:
-            print(f"Error getting publications from Google Scholar: {str(e)}")
-        
+            print(f"Error fetching publications: {str(e)}")
+            return []
+        finally:
+            try:
+                self.driver.quit()
+            except:
+                pass
+
         print(f"Found {len(processed_publications)} publications total.")
         return processed_publications
 
@@ -967,30 +889,6 @@ classes: wide
             except:
                 pass
 
-    def _load_publication_overrides(self):
-        """Load publication overrides from a JSON file."""
-        try:
-            if os.path.exists('publication_overrides.json'):
-                with open('publication_overrides.json', 'r') as f:
-                    return json.load(f)
-            return {}
-        except Exception as e:
-            print(f"Error loading publication overrides: {str(e)}")
-            return {}
-
-    def _apply_publication_overrides(self, pub):
-        """Apply any overrides for this publication."""
-        # Use title as the key to match publications
-        title = pub['title']
-        if title in self.overrides:
-            override = self.overrides[title]
-            # Apply each override field
-            for field, value in override.items():
-                if field in pub:
-                    pub[field] = value
-            print(f"Applied overrides for publication: {title}")
-        return pub
-
 def load_config():
     try:
         with open('config.json', 'r') as f:
@@ -1005,46 +903,13 @@ def load_config():
         print("Error: Invalid JSON in config.json")
         exit(1)
 
-def main():
-    # Load configuration
-    config = load_config()
-    if not config:
+if __name__ == "__main__":
+    # Load Scholar ID from config
+    scholar_id = load_config()
+    if not scholar_id:
         print("Error: No Scholar ID found in config.json")
         exit(1)
-    
-    # Initialize ScholarSync
-    sync = ScholarSync(config)
-    
-    try:
-        # Get publications
-        publications = sync.get_publications()
-        if not publications:
-            print("No publications were fetched. Exiting...")
-            return
         
-        # Generate markdown content
-        markdown_content = sync.generate_markdown_content(publications)
-        
-        # Create backup of current file
-        if os.path.exists('publications.md'):
-            backup_dir = 'publication_backups'
-            os.makedirs(backup_dir, exist_ok=True)
-            timestamp = time.strftime("%Y%m%d_%H%M%S")
-            backup_file = os.path.join(backup_dir, f'publications_{timestamp}.md')
-            shutil.copy2('publications.md', backup_file)
-            print(f"Created backup: {backup_file}")
-        
-        # Write to file
-        with open('publications.md', 'w') as f:
-            f.write(markdown_content)
-            
-        print("Publication update completed successfully!")
-        print(f"Updated file: publications.md")
-        print(f"Backup file: publications.md.backup")
-        
-    except Exception as e:
-        print(f"Error in main process: {str(e)}")
-        exit(1)
-
-if __name__ == "__main__":
-    main() 
+    sync = ScholarSync(scholar_id)
+    # Direct update is now the default behavior
+    sync.update_publications_file() 
