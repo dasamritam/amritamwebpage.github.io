@@ -63,70 +63,85 @@ class ScholarSync:
         max_retries = 3
         retry_delay = 5  # seconds
         publications = []
+        page = 0
         
-        for attempt in range(max_retries):
-            try:
-                url = f"https://scholar.google.com/citations?user={self.scholar_id}&hl=en"
-                print(f"Attempting to fetch publications (attempt {attempt + 1}/{max_retries})...")
-                
-                self.driver.get(url)
-                time.sleep(random.uniform(2, 4))  # Random delay before proceeding
-                
-                # Wait for publications to load
+        while True:  # Continue until no more pages
+            for attempt in range(max_retries):
                 try:
-                    WebDriverWait(self.driver, 15).until(
-                        EC.presence_of_element_located((By.CLASS_NAME, "gsc_a_tr"))
-                    )
-                except Exception as e:
-                    print(f"Error waiting for publications to load: {str(e)}")
-                    if "This page appears to be sending automated queries" in self.driver.page_source:
-                        print("Google Scholar detected automated access. Retrying...")
-                        time.sleep(retry_delay * (attempt + 1))
-                        continue
-                    raise e
-                
-                pub_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_a_tr")
-                print(f"Found {len(pub_elements)} publications")
-                
-                for element in pub_elements:
-                    try:
-                        title = element.find_element(By.CLASS_NAME, "gsc_a_at").text
-                        authors = element.find_element(By.CLASS_NAME, "gs_gray").text
-                        venue = element.find_elements(By.CLASS_NAME, "gs_gray")[1].text
-                        year = element.find_element(By.CLASS_NAME, "gsc_a_y").text
-                        link = element.find_element(By.CLASS_NAME, "gsc_a_at").get_attribute("href")
-                        
-                        if not title or not authors:  # Skip entries with missing essential info
-                            continue
-                            
-                        pub = {
-                            'title': title,
-                            'authors': authors,
-                            'venue': venue,
-                            'year': int(year) if year.isdigit() else 0,
-                            'scholar_link': link
-                        }
-                        publications.append(pub)
-                        print(f"Processed: {title[:50]}...")
-                        
-                        # Add a small random delay between publications
-                        time.sleep(random.uniform(0.5, 1))
-                        
-                    except Exception as e:
-                        print(f"Error processing publication element: {str(e)}")
-                        continue
-                
-                if publications:  # If we successfully got publications, break the retry loop
-                    break
+                    url = f"https://scholar.google.com/citations?user={self.scholar_id}&hl=en&cstart={page*100}&pagesize=100"
+                    print(f"Attempting to fetch publications page {page + 1} (attempt {attempt + 1}/{max_retries})...")
                     
-            except Exception as e:
-                print(f"Error during attempt {attempt + 1}: {str(e)}")
-                if attempt < max_retries - 1:
-                    print(f"Retrying in {retry_delay} seconds...")
-                    time.sleep(retry_delay * (attempt + 1))
-                else:
-                    print("Max retries reached. Unable to fetch publications.")
-                    raise e
+                    self.driver.get(url)
+                    time.sleep(random.uniform(2, 4))  # Random delay before proceeding
+                    
+                    # Wait for publications to load
+                    try:
+                        WebDriverWait(self.driver, 15).until(
+                            EC.presence_of_element_located((By.CLASS_NAME, "gsc_a_tr"))
+                        )
+                    except Exception as e:
+                        print(f"Error waiting for publications to load: {str(e)}")
+                        if "This page appears to be sending automated queries" in self.driver.page_source:
+                            print("Google Scholar detected automated access. Retrying...")
+                            time.sleep(retry_delay * (attempt + 1))
+                            continue
+                        raise e
+                    
+                    pub_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_a_tr")
+                    if not pub_elements:  # No more publications
+                        return publications
+                        
+                    print(f"Found {len(pub_elements)} publications on page {page + 1}")
+                    
+                    for element in pub_elements:
+                        try:
+                            title = element.find_element(By.CLASS_NAME, "gsc_a_at").text
+                            authors = element.find_element(By.CLASS_NAME, "gs_gray").text
+                            venue = element.find_elements(By.CLASS_NAME, "gs_gray")[1].text
+                            year = element.find_element(By.CLASS_NAME, "gsc_a_y").text
+                            link = element.find_element(By.CLASS_NAME, "gsc_a_at").get_attribute("href")
+                            
+                            if not title or not authors:  # Skip entries with missing essential info
+                                continue
+                                
+                            pub = {
+                                'title': title,
+                                'authors': authors,
+                                'venue': venue,
+                                'year': int(year) if year.isdigit() else 0,
+                                'scholar_link': link
+                            }
+                            publications.append(pub)
+                            print(f"Processed: {title[:50]}...")
+                            
+                            # Add a small random delay between publications
+                            time.sleep(random.uniform(0.5, 1))
+                            
+                        except Exception as e:
+                            print(f"Error processing publication element: {str(e)}")
+                            continue
+                    
+                    if pub_elements:  # If we successfully got publications, break the retry loop
+                        break
+                        
+                except Exception as e:
+                    print(f"Error during attempt {attempt + 1}: {str(e)}")
+                    if attempt < max_retries - 1:
+                        print(f"Retrying in {retry_delay} seconds...")
+                        time.sleep(retry_delay * (attempt + 1))
+                    else:
+                        print("Max retries reached. Unable to fetch publications.")
+                        raise e
+            
+            # Check if there are more pages
+            try:
+                next_button = self.driver.find_element(By.ID, "gsc_bpf_next")
+                if "disabled" in next_button.get_attribute("class"):
+                    break
+                page += 1
+                time.sleep(random.uniform(2, 4))  # Random delay between pages
+            except:
+                break
                 
         return publications
 
