@@ -375,7 +375,7 @@ classes: wide
     h3 { margin-top: 20px; color: #333; }
     .author-highlight { font-weight: bold; }
     .title-italic { font-style: italic; }
-    .venue, .year { color: #597; }
+    .venue { color: #597; }
     .pub-link { color: #1A0DAB; text-decoration: none; }
     .theme-tags { margin-left: 10px; }
     .tag {
@@ -439,9 +439,6 @@ classes: wide
                 # Format venue
                 venue = f'<span class="venue">{pub["venue"]}</span>'
 
-                # Format year
-                year = f'<span class="year">{pub["year"]}</span>'
-
                 # Format links
                 links = []
                 if pub.get('doi'):
@@ -465,7 +462,7 @@ classes: wide
                 tags_str = f'<span class="theme-tags">{" ".join(tags)}</span>' if tags else ''
 
                 # Combine all parts
-                entry = f'<li>{authors_str}. {title}. {venue}. {year}. {links_str} {tags_str}</li>'
+                entry = f'<li>{authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
                 content += entry
 
             # Close the last year's list
