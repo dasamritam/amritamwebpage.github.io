@@ -21,7 +21,7 @@ handle_error() {
     exit 1
 }
 
-# Start message
+# Print start message
 echo "Starting publication update process..."
 
 # Activate virtual environment
@@ -54,11 +54,13 @@ if [ $? -eq 0 ]; then
     echo "Updated file: publications.md"
     echo "Backup file: publications.md.backup"
     
-    # Add and commit changes to git
-    echo "Committing changes to git..."
-    git add publications.md
-    git commit -m "Update publications [automated]"
-    git push
+    # If using git, commit the changes
+    if [ -d ".git" ]; then
+        log "Committing changes to git..."
+        git add publications.md
+        git commit -m "Update publications [automated]"
+        git push
+    fi
     
     log "Backup created at: $BACKUP_DIR/publications_${TIMESTAMP}.md"
 else

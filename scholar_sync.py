@@ -595,80 +595,224 @@ class ScholarSync:
             print(f"Error querying CrossRef: {str(e)}")
             return None
 
-    def load_custom_publications(self):
-        """Load custom publication entries from custom_publications.md"""
-        custom_entries = {}
-        try:
-            with open('custom_publications.md', 'r') as f:
-                content = f.read()
-                # Use regex to find all custom entries with a more robust pattern
-                pattern = r'"([^"]+)":\s*\|\s*\n\s*(<li>.*?<\/li>)'
-                matches = re.finditer(pattern, content, re.MULTILINE | re.DOTALL)
-                for match in matches:
-                    title = match.group(1)
-                    content = match.group(2).strip()
-                    custom_entries[title] = content
-            print(f"Loaded {len(custom_entries)} custom entries")
-        except FileNotFoundError:
-            print("No custom_publications.md file found, using default entries")
-        return custom_entries
-
     def generate_markdown_content(self, publications):
-        """Generate markdown content for publications"""
-        # Load custom entries
-        custom_entries = self.load_custom_publications()
-        
-        # Group publications by category
+        """Generate markdown content with proper HTML formatting."""
+        content = """---
+layout: single
+author_profile: true
+title: "Publications"
+toc: false
+classes: wide
+---
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Amritam Das - Publication List</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; }
+    h2 { 
+        margin-top: 0; 
+        font-size: 1.1em; 
+        font-weight: normal; 
+        color: #0066cc;  /* Light blue */
+        border-bottom: 2px solid #3498db;  /* Bright blue */
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+    h3 { 
+        margin-top: 30px; 
+        color: #0066cc;  /* Light blue */
+        font-size: 1.3em; 
+        font-weight: 600;
+        border-left: 4px solid #e74c3c;  /* Bright red */
+        padding-left: 10px;
+    }
+    .author-highlight { font-weight: bold; }
+    .title-italic { font-style: italic; }
+    .venue { color: #597; }  /* Original color */
+    .pub-link { color: #1A0DAB; text-decoration: none; }
+    .theme-tags { margin-left: 10px; }
+    .tag {
+      display: inline-block;
+      background: #e8eaea;
+      color: #356;
+      border-radius: 0.3em;
+      font-size: 0.85em;
+      padding: 1px 6px;
+      margin-right: 4px;
+      font-family: Arial, sans-serif;
+    }
+    .tag.nonlinear { background: #FFDD99; color: #875300; }
+    .tag.pde { background: #CCE5FF; color: #003366; }
+    .tag.ml { background: #D4EDDA; color: #155724; }
+    .tag.fault { background: #F8D7DA; color: #721c24; }
+    ol { margin: 0; padding: 0; }
+    li { margin: 0; padding: 0; }
+  </style>
+</head>
+<body>"""
+
+        # Group publications by category and year
         categories = {
             'PhD Thesis': [],
             'Preprints': [],
             'Journals': [],
             'Conferences': [],
-            'Other Publications': []
+            'Other Publications': []  # New category for publications without year
         }
-        
+
         for pub in publications:
-            category = pub.get('category', 'Other Publications')
-            if category not in categories:
-                category = 'Other Publications'
-            categories[category].append(pub)
-        
+            if pub['year'] is None:
+                categories['Other Publications'].append(pub)
+            else:
+                categories[pub['category']].append(pub)
+
         # Sort publications within each category by year (descending)
         for category in categories:
-            categories[category].sort(key=lambda x: x.get('year', 0) or 0, reverse=True)
-        
-        # Generate markdown content
-        markdown_content = "# Publications\n\n"
-        
-        # Add each category
+            if category != 'Other Publications':
+                categories[category].sort(key=lambda x: x['year'], reverse=True)
+            else:
+                # Sort other publications alphabetically by title
+                categories[category].sort(key=lambda x: x['title'].lower())
+
+        # Generate content for each category
         for category, pubs in categories.items():
-            if pubs:  # Only add category if it has publications
-                markdown_content += f"## {category}\n\n"
+            if not pubs:
+                continue
+
+            content += f"\n<h3>{category}</h3>"
+            
+            if category != 'Other Publications':
+                current_year = None
                 for pub in pubs:
-                    # Check if there's a custom entry for this publication
-                    title = pub['title']
-                    if title in custom_entries:
-                        markdown_content += f"<li>{custom_entries[title]}</li>\n"
-                    else:
-                        # Generate standard entry
-                        authors = pub.get('authors', '')
-                        venue = pub.get('venue', '')
-                        year = pub.get('year', '')
-                        doi = pub.get('doi', '')
-                        tags = pub.get('tags', [])
-                        
-                        entry = f"<li>{authors}, <strong>{title}</strong>, {venue}"
-                        if year:
-                            entry += f", {year}"
-                        if doi:
-                            entry += f", <a href='https://doi.org/{doi}'>DOI</a>"
-                        if tags:
-                            entry += f" [{', '.join(tags)}]"
-                        entry += "</li>\n"
-                        markdown_content += entry
-                markdown_content += "\n"
-        
-        return markdown_content
+                    if pub['year'] != current_year:
+                        if current_year is not None:
+                            content += "</ol>"
+                        current_year = pub['year']
+                        content += f"\n<h2>{current_year}</h2>\n<ol>"
+
+                    # Format authors
+                    authors = pub['authors'].split(', ')
+                    # Remove any ellipsis (...) from the author list
+                    authors = [author for author in authors if author != '...']
+                    authors = [f'<span class="author-highlight">A Das</span>' if 'A Das' in author else author for author in authors]
+                    authors_str = ', '.join(authors)
+
+                    # Format title
+                    title = f'<span class="title-italic">{pub["title"]}</span>'
+
+                    # Format venue
+                    venue = f'<span class="venue">{pub["venue"]}'
+                    if category != 'Other Publications' and pub['year']:
+                        venue += f', {pub["year"]}'
+                    venue += '</span>'
+
+                    # Format links
+                    links = []
+                    if pub.get('doi'):
+                        # Check if it's an arXiv ID
+                        if pub['doi'].startswith('arxiv.org/abs/'):
+                            arxiv_id = pub['doi'].replace('arxiv.org/abs/', '')
+                            links.append(f'[<a href="https://arxiv.org/abs/{arxiv_id}">arXiv</a>]')
+                        # Check if it's a placeholder DOI
+                        elif 'XXXXXXX' in pub['doi']:
+                            # Try to get the actual DOI from CrossRef
+                            actual_doi = self.get_doi_from_crossref(pub['title'], year=str(pub['year']), venue=pub['venue'])
+                            if actual_doi:
+                                links.append(f'[<a href="https://doi.org/{actual_doi}">DOI</a>]')
+                            else:
+                                links.append(f'[<a href="{pub.get("scholar_link", "#")}">Google Scholar</a>]')
+                        else:
+                            # Clean up the DOI
+                            doi = pub['doi'].replace('doi.org/', '').replace('doi:', '')
+                            links.append(f'[<a href="https://doi.org/{doi}">DOI</a>]')
+                    elif pub.get('scholar_link'):
+                        links.append(f'[<a href="{pub["scholar_link"]}">Google Scholar</a>]')
+                    links_str = ' '.join(links)
+
+                    # Format tags
+                    tags = []
+                    if 'Control of PDEs' in pub.get('tags', []):
+                        tags.append('<span class="tag pde">Control of PDEs</span>')
+                    if 'Nonlinear Control' in pub.get('tags', []):
+                        tags.append('<span class="tag nonlinear">Nonlinear Control</span>')
+                    if 'Machine Learning' in pub.get('tags', []):
+                        tags.append('<span class="tag ml">Machine Learning</span>')
+                    if 'Fault Diagnosis' in pub.get('tags', []):
+                        tags.append('<span class="tag fault">Fault Diagnosis</span>')
+                    tags_str = f'<span class="theme-tags">{" ".join(tags)}</span>' if tags else ''
+
+                    # Combine all parts
+                    entry = f'<li>{authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
+                    content += entry
+
+                # Close the last year's list
+                if current_year is not None:
+                    content += "</ol>"
+            else:
+                # Handle Other Publications (no year)
+                content += "\n<ol>"
+                for pub in pubs:
+                    # Format authors
+                    authors = pub['authors'].split(', ')
+                    # Remove any ellipsis (...) from the author list
+                    authors = [author for author in authors if author != '...']
+                    authors = [f'<span class="author-highlight">A Das</span>' if 'A Das' in author else author for author in authors]
+                    authors_str = ', '.join(authors)
+
+                    # Format title
+                    title = f'<span class="title-italic">{pub["title"]}</span>'
+
+                    # Format venue
+                    venue = f'<span class="venue">{pub["venue"]}'
+                    if category != 'Other Publications' and pub['year']:
+                        venue += f', {pub["year"]}'
+                    venue += '</span>'
+
+                    # Format links
+                    links = []
+                    if pub.get('doi'):
+                        # Check if it's an arXiv ID
+                        if pub['doi'].startswith('arxiv.org/abs/'):
+                            arxiv_id = pub['doi'].replace('arxiv.org/abs/', '')
+                            links.append(f'[<a href="https://arxiv.org/abs/{arxiv_id}">arXiv</a>]')
+                        # Check if it's a placeholder DOI
+                        elif 'XXXXXXX' in pub['doi']:
+                            # Try to get the actual DOI from CrossRef
+                            actual_doi = self.get_doi_from_crossref(pub['title'], venue=pub['venue'])
+                            if actual_doi:
+                                links.append(f'[<a href="https://doi.org/{actual_doi}">DOI</a>]')
+                            else:
+                                links.append(f'[<a href="{pub.get("scholar_link", "#")}">Google Scholar</a>]')
+                        else:
+                            # Clean up the DOI
+                            doi = pub['doi'].replace('doi.org/', '').replace('doi:', '')
+                            links.append(f'[<a href="https://doi.org/{doi}">DOI</a>]')
+                    elif pub.get('scholar_link'):
+                        links.append(f'[<a href="{pub["scholar_link"]}">Google Scholar</a>]')
+                    links_str = ' '.join(links)
+
+                    # Format tags
+                    tags = []
+                    if 'Control of PDEs' in pub.get('tags', []):
+                        tags.append('<span class="tag pde">Control of PDEs</span>')
+                    if 'Nonlinear Control' in pub.get('tags', []):
+                        tags.append('<span class="tag nonlinear">Nonlinear Control</span>')
+                    if 'Machine Learning' in pub.get('tags', []):
+                        tags.append('<span class="tag ml">Machine Learning</span>')
+                    if 'Fault Diagnosis' in pub.get('tags', []):
+                        tags.append('<span class="tag fault">Fault Diagnosis</span>')
+                    tags_str = f'<span class="theme-tags">{" ".join(tags)}</span>' if tags else ''
+
+                    # Combine all parts
+                    entry = f'<li>{authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
+                    content += entry
+                content += "</ol>"
+
+        content += "\n</body>\n</html>"
+
+        return content
 
     def _verify_browser_setup(self):
         """Verify that the browser is properly set up and can access web pages."""
