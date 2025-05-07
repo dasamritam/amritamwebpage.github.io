@@ -623,6 +623,8 @@ classes: wide
 
                     # Format authors
                     authors = pub['authors'].split(', ')
+                    # Remove any ellipsis (...) from the author list
+                    authors = [author for author in authors if author != '...']
                     authors = [f'<span class="author-highlight">A Das</span>' if 'A Das' in author else author for author in authors]
                     authors_str = ', '.join(authors)
 
@@ -680,6 +682,8 @@ classes: wide
                 for pub in pubs:
                     # Format authors
                     authors = pub['authors'].split(', ')
+                    # Remove any ellipsis (...) from the author list
+                    authors = [author for author in authors if author != '...']
                     authors = [f'<span class="author-highlight">A Das</span>' if 'A Das' in author else author for author in authors]
                     authors_str = ', '.join(authors)
 
