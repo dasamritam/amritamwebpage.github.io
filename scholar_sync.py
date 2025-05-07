@@ -688,7 +688,10 @@ classes: wide
                     title = f'<span class="title-italic">{pub["title"]}</span>'
 
                     # Format venue
-                    venue = f'<span class="venue">{pub["venue"]}</span>'
+                    venue = f'<span class="venue">{pub["venue"]}'
+                    if category != 'Other Publications' and pub['year']:
+                        venue += f', {pub["year"]}'
+                    venue += '</span>'
 
                     # Format links
                     links = []
@@ -747,7 +750,10 @@ classes: wide
                     title = f'<span class="title-italic">{pub["title"]}</span>'
 
                     # Format venue
-                    venue = f'<span class="venue">{pub["venue"]}</span>'
+                    venue = f'<span class="venue">{pub["venue"]}'
+                    if category != 'Other Publications' and pub['year']:
+                        venue += f', {pub["year"]}'
+                    venue += '</span>'
 
                     # Format links
                     links = []
