@@ -106,11 +106,41 @@ class ScholarSync:
                     venue_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_oci_value")
                     venue = venue_elements[2].text if len(venue_elements) > 2 else ""
                     
-                    # Try to get year from venue
+                    # Enhanced year extraction
                     year = None
+                    # Try to get year from venue first
                     year_match = re.search(r'\b(19|20)\d{2}\b', venue)
                     if year_match:
                         year = int(year_match.group(0))
+                    
+                    # If no year in venue, try to get it from the publication page
+                    if not year:
+                        try:
+                            # Look for year in all text elements
+                            all_text = self.driver.find_element(By.CLASS_NAME, "gsc_oci_value").text
+                            year_match = re.search(r'\b(19|20)\d{2}\b', all_text)
+                            if year_match:
+                                year = int(year_match.group(0))
+                        except:
+                            pass
+                    
+                    # If still no year, try to get it from the title
+                    if not year:
+                        year_match = re.search(r'\b(19|20)\d{2}\b', title)
+                        if year_match:
+                            year = int(year_match.group(0))
+                    
+                    # If still no year, try to get it from the publication date if available
+                    if not year:
+                        try:
+                            date_element = self.driver.find_element(By.CLASS_NAME, "gsc_oci_value")
+                            if date_element:
+                                date_text = date_element.text
+                                year_match = re.search(r'\b(19|20)\d{2}\b', date_text)
+                                if year_match:
+                                    year = int(year_match.group(0))
+                        except:
+                            pass
                     
                     # Get DOI if available
                     doi = None
