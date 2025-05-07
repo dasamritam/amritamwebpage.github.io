@@ -17,16 +17,20 @@ class ScholarSync:
     def get_publications(self) -> List[Dict]:
         publications = []
         page = 1
+        print(f"Fetching publications from Google Scholar...")
         while True:
             url = f"{self.base_url}&view_op=list_works&sortby=pubdate&cstart={(page-1)*20}"
+            print(f"Fetching page {page}...")
             response = requests.get(url, headers=self.headers)
             if response.status_code != 200:
+                print(f"Error: Got status code {response.status_code}")
                 break
 
             soup = BeautifulSoup(response.text, 'html.parser')
             pub_items = soup.find_all('tr', class_='gsc_a_tr')
 
             if not pub_items:
+                print("No more publications found.")
                 break
 
             for item in pub_items:
@@ -48,10 +52,15 @@ class ScholarSync:
                     'venue': venue,
                     'year': int(year)
                 })
+                print(f"Found publication: {title}")
+
+            # For testing, only fetch one page
+            break
 
             page += 1
             time.sleep(2)  # Be nice to Google Scholar
 
+        print(f"Found {len(publications)} publications total.")
         return publications
 
     def generate_markdown(self, publications: List[Dict]) -> str:
@@ -112,7 +121,31 @@ classes: wide
                 # Highlight your name in authors
                 authors = pub['authors'].replace('Amritam Das', '<span class="author-highlight">Amritam Das</span>')
                 
-                markdown += f"""    <li>{authors}. <span class="title-italic">{pub['title']}</span>. <span class="venue">{pub['venue']}</span>. <span class="year">{year}</span>.</li>\n"""
+                # Extract DOI if available in venue
+                doi = ""
+                if "doi.org" in pub['venue']:
+                    doi_match = re.search(r'doi\.org/([^\s]+)', pub['venue'])
+                    if doi_match:
+                        doi = doi_match.group(1)
+                        pub['venue'] = pub['venue'].replace(f"doi.org/{doi}", "").strip()
+                
+                # Add DOI link if available
+                doi_link = f' [<a href="https://doi.org/{doi}">DOI</a>]' if doi else ""
+                
+                # Add theme tags based on keywords in title and venue
+                theme_tags = []
+                if any(word in pub['title'].lower() for word in ['nonlinear', 'oscillation', 'trajectory']):
+                    theme_tags.append('<span class="tag nonlinear">Nonlinear Control</span>')
+                if any(word in pub['title'].lower() for word in ['pde', 'partial', 'distributed']):
+                    theme_tags.append('<span class="tag pde">Control of PDEs</span>')
+                if any(word in pub['title'].lower() for word in ['learning', 'neural', 'ml']):
+                    theme_tags.append('<span class="tag ml">Machine Learning</span>')
+                if any(word in pub['title'].lower() for word in ['fault', 'diagnosis']):
+                    theme_tags.append('<span class="tag fault">Fault Diagnosis</span>')
+                
+                theme_tags_html = f' <span class="theme-tags">{" ".join(theme_tags)}</span>' if theme_tags else ""
+                
+                markdown += f"""    <li>{authors}. <span class="title-italic">{pub['title']}</span>. <span class="venue">{pub['venue']}</span>. {year}.{doi_link}{theme_tags_html}</li>\n"""
             
             markdown += "  </ol>\n"
 
@@ -122,11 +155,16 @@ classes: wide
         return markdown
 
     def update_publications_file(self):
+        print("Starting publication update...")
         publications = self.get_publications()
+        print("Generating markdown content...")
         markdown_content = self.generate_markdown(publications)
         
-        with open('publications.md', 'w', encoding='utf-8') as f:
+        output_file = 'publications_new.md'
+        print(f"Writing to {output_file}...")
+        with open(output_file, 'w', encoding='utf-8') as f:
             f.write(markdown_content)
+        print(f"Done! New publications file created at {output_file}")
 
 if __name__ == "__main__":
     # Replace with your Google Scholar ID
