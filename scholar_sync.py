@@ -322,7 +322,9 @@ class ScholarSync:
             'handbook of', 'encyclopedia', 'in encyclopedia',
             'in edited volume', 'edited volume', 'in proceedings book',
             'in book series', 'book series', 'in monograph',
-            'monograph series', 'in collection', 'edited collection'
+            'monograph series', 'in collection', 'edited collection',
+            'road map', 'roadmap', 'data industry',  # Added specific cases
+            'ieee control systems society publication'  # Added for roadmap
         ]
         if any(indicator in venue.lower() or indicator in title.lower() for indicator in book_chapter_indicators):
             return 'Book Chapters'
