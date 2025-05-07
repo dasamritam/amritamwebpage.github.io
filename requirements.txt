@@ -1,2 +1,4 @@
-requests==2.31.0
-beautifulsoup4==4.12.2 
+google-search-results
+beautifulsoup4
+lxml
+requests==2.31.0 
