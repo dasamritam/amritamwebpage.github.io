@@ -644,7 +644,7 @@ class ScholarSync:
             print(f"Error querying CrossRef: {str(e)}")
             return None
 
-    def generate_markdown_content(self, publications):
+    def _generate_markdown_content(self, publications):
         """Generate markdown content with proper HTML formatting."""
         content = """---
 layout: single
@@ -678,6 +678,7 @@ classes: wide
         padding-left: 10px;
     }
     .author-highlight { font-weight: bold; }
+    .author-underline { text-decoration: underline; }
     .title-italic { font-style: italic; }
     .venue { color: #597; }  /* Original color */
     .pub-link { color: #1A0DAB; text-decoration: none; }
@@ -745,7 +746,7 @@ classes: wide
                     authors = pub['authors'].split(', ')
                     # Remove any ellipsis (...) from the author list
                     authors = [author for author in authors if author != '...']
-                    authors = [f'<span class="author-highlight">A Das</span>' if 'A Das' in author else author for author in authors]
+                    authors = [f'<span class="author-highlight author-underline">{author}</span>' if 'A Das' in author else f'<span class="author-highlight">{author}</span>' for author in authors]
                     authors_str = ', '.join(authors)
 
                     # Format title
@@ -807,7 +808,7 @@ classes: wide
                     authors = pub['authors'].split(', ')
                     # Remove any ellipsis (...) from the author list
                     authors = [author for author in authors if author != '...']
-                    authors = [f'<span class="author-highlight">A Das</span>' if 'A Das' in author else author for author in authors]
+                    authors = [f'<span class="author-highlight author-underline">{author}</span>' if 'A Das' in author else f'<span class="author-highlight">{author}</span>' for author in authors]
                     authors_str = ', '.join(authors)
 
                     # Format title
@@ -859,8 +860,7 @@ classes: wide
                     content += entry
                 content += "</ol>"
 
-        content += "\n</body>\n</html>"
-
+        content += "</body></html>"
         return content
 
     def _verify_browser_setup(self):
@@ -901,7 +901,7 @@ classes: wide
                 return False
                 
             print("Generating markdown content...")
-            markdown_content = self.generate_markdown_content(publications)
+            markdown_content = self._generate_markdown_content(publications)
             
             if direct_update:
                 output_file = 'publications.md'
@@ -937,6 +937,28 @@ classes: wide
                 self.driver.quit()
             except:
                 pass
+
+    def _format_authors(self, authors):
+        """Format authors with proper highlighting."""
+        if not authors:
+            return ""
+            
+        # Split authors and remove any empty strings
+        author_list = [a.strip() for a in authors.split(',') if a.strip()]
+        
+        # Format each author
+        formatted_authors = []
+        for author in author_list:
+            # Standardize the author name
+            author = self._standardize_author_name(author)
+            
+            # Check if this is A. Das
+            if author == "A. Das":
+                formatted_authors.append(f'<span class="author-highlight author-underline">{author}</span>')
+            else:
+                formatted_authors.append(f'<span class="author-highlight">{author}</span>')
+        
+        return ', '.join(formatted_authors)
 
 def load_config():
     try:
