@@ -179,7 +179,7 @@ class ScholarSync:
                     else:
                         category = "Conferences"
 
-                    print(f"Found publication: {title} (Category: {category})")
+                    print(f"Found publication: {title} (Category: {category}, Year: {year})")
                     if doi:
                         print(f"  Found DOI: {doi}")
 
@@ -190,7 +190,8 @@ class ScholarSync:
                         'venue': venue,
                         'year': year,
                         'doi': doi,
-                        'category': category
+                        'category': category,
+                        'scholar_link': link
                     })
 
                     # Go back to main page
@@ -217,11 +218,11 @@ class ScholarSync:
                 try:
                     title = pub['title']
                     venue = pub['venue']
-                    year = str(pub['year'])
+                    year = pub['year']
                     doi = None
                     
                     # Try to get DOI from CrossRef
-                    doi = self.get_doi_from_crossref(title, year=year, venue=venue)
+                    doi = self.get_doi_from_crossref(title, year=str(year) if year else None, venue=venue)
                     
                     # If no DOI found, try to extract from Google Scholar link
                     if not doi and pub.get('scholar_link'):
@@ -229,7 +230,7 @@ class ScholarSync:
                     
                     # If still no DOI, try venue-specific patterns
                     if not doi:
-                        doi = self.get_doi_from_venue(title, venue, year)
+                        doi = self.get_doi_from_venue(title, venue, str(year) if year else None)
                     
                     # If still no DOI, check for arXiv
                     if not doi and 'arxiv' in venue.lower():
@@ -242,7 +243,7 @@ class ScholarSync:
                         'title': title,
                         'authors': pub['authors'],
                         'venue': venue,
-                        'year': int(year) if year.isdigit() else 0,
+                        'year': year,
                         'doi': doi,
                         'scholar_link': pub.get('scholar_link', '')
                     }
@@ -251,7 +252,7 @@ class ScholarSync:
                     pub_data['category'] = self.classify_publication(pub_data)
                     pub_data['tags'] = self.classify_tags(pub_data)
                     processed_publications.append(pub_data)
-                    print(f"Found publication: {title} (Category: {pub_data['category']})")
+                    print(f"Found publication: {title} (Category: {pub_data['category']}, Year: {year})")
                     if doi:
                         print(f"  Found DOI: {doi}")
                     if pub_data['tags']:
