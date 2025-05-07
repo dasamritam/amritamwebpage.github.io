@@ -84,7 +84,7 @@ class ScholarSync:
                         if "This page appears to be sending automated queries" in self.driver.page_source:
                             print("Google Scholar detected automated access. Retrying...")
                             time.sleep(retry_delay * (attempt + 1))
-                            continue
+                        continue
                         raise e
                     
                     pub_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_a_tr")
@@ -98,17 +98,36 @@ class ScholarSync:
                             title = element.find_element(By.CLASS_NAME, "gsc_a_at").text
                             authors = element.find_element(By.CLASS_NAME, "gs_gray").text
                             venue = element.find_elements(By.CLASS_NAME, "gs_gray")[1].text
-                            year = element.find_element(By.CLASS_NAME, "gsc_a_y").text
+                            year_text = element.find_element(By.CLASS_NAME, "gsc_a_y").text
+                            
+                            # Try to extract year from various sources
+                            year = None
+                            if year_text.isdigit():
+                                year = int(year_text)
+                            else:
+                                # Try to extract year from venue
+                                year_match = re.search(r'\b(19|20)\d{2}\b', venue)
+                                if year_match:
+                                    year = int(year_match.group(0))
+                                else:
+                                    # Try to extract year from title
+                                    year_match = re.search(r'\b(19|20)\d{2}\b', title)
+                                    if year_match:
+                                        year = int(year_match.group(0))
+                                    else:
+                                        print(f"Note: Could not extract year for publication: {title}")
+                                        year = None  # Keep the publication but with no year
+                        
                             link = element.find_element(By.CLASS_NAME, "gsc_a_at").get_attribute("href")
                             
                             if not title or not authors:  # Skip entries with missing essential info
                                 continue
-                                
+
                             pub = {
                                 'title': title,
                                 'authors': authors,
                                 'venue': venue,
-                                'year': int(year) if year.isdigit() else 0,
+                                'year': year,
                                 'scholar_link': link
                             }
                             publications.append(pub)
@@ -123,7 +142,7 @@ class ScholarSync:
                     
                     if pub_elements:  # If we successfully got publications, break the retry loop
                         break
-                        
+
                 except Exception as e:
                     print(f"Error during attempt {attempt + 1}: {str(e)}")
                     if attempt < max_retries - 1:
@@ -186,12 +205,15 @@ class ScholarSync:
                         'scholar_link': pub.get('scholar_link', '')
                     }
                     
-                    # Add category
+                    # Add category and tags
                     pub_data['category'] = self.classify_publication(pub_data)
+                    pub_data['tags'] = self.classify_tags(pub_data)
                     processed_publications.append(pub_data)
                     print(f"Found publication: {title} (Category: {pub_data['category']})")
                     if doi:
                         print(f"  Found DOI: {doi}")
+                    if pub_data['tags']:
+                        print(f"  Tags: {', '.join(pub_data['tags'])}")
                     
                 except Exception as e:
                     print(f"Error processing publication: {str(e)}")
@@ -243,6 +265,37 @@ class ScholarSync:
             
         # Default to conferences if no other category matches
         return 'Conferences'
+
+    def classify_tags(self, pub: Dict) -> List[str]:
+        """Classify a publication with appropriate tags based on its content."""
+        title = pub['title'].lower()
+        venue = pub['venue'].lower()
+        tags = []
+
+        # PDE-related keywords
+        pde_keywords = ['pde', 'partial differential', 'distributed parameter', 'infinite-dimensional', 
+                       'spatial', 'spatially varying', 'heat transport', 'mass transport', 'thermal']
+        if any(keyword in title or keyword in venue for keyword in pde_keywords):
+            tags.append('Control of PDEs')
+
+        # Nonlinear-related keywords
+        nonlinear_keywords = ['nonlinear', 'oscillation', 'mixed-feedback', 'lur\'e', 'lur\'e system',
+                            'scaled relative graph', 'srg', 'circle criterion']
+        if any(keyword in title or keyword in venue for keyword in nonlinear_keywords):
+            tags.append('Nonlinear Control')
+
+        # Machine Learning-related keywords
+        ml_keywords = ['learning', 'neural', 'data-driven', 'surrogation', 'operator learning', 
+                      'gaussian process', 'estimation', 'uncertainty']
+        if any(keyword in title or keyword in venue for keyword in ml_keywords):
+            tags.append('Machine Learning')
+
+        # Fault-related keywords
+        fault_keywords = ['fault', 'diagnosis', 'localisation', 'detection', 'monitoring']
+        if any(keyword in title or keyword in venue for keyword in fault_keywords):
+            tags.append('Fault Diagnosis')
+
+        return tags
 
     def get_publication_details(self, citation_id: str) -> Dict:
         """Fetch detailed information about a publication using its citation ID."""
@@ -534,15 +587,23 @@ classes: wide
             'PhD Thesis': [],
             'Preprints': [],
             'Journals': [],
-            'Conferences': []
+            'Conferences': [],
+            'Other Publications': []  # New category for publications without year
         }
 
         for pub in publications:
-            categories[pub['category']].append(pub)
+            if pub['year'] is None:
+                categories['Other Publications'].append(pub)
+            else:
+                categories[pub['category']].append(pub)
 
         # Sort publications within each category by year (descending)
         for category in categories:
-            categories[category].sort(key=lambda x: x['year'], reverse=True)
+            if category != 'Other Publications':
+                categories[category].sort(key=lambda x: x['year'], reverse=True)
+            else:
+                # Sort other publications alphabetically by title
+                categories[category].sort(key=lambda x: x['title'].lower())
 
         # Generate content for each category
         for category, pubs in categories.items():
@@ -550,67 +611,122 @@ classes: wide
                 continue
 
             content += f"\n<h3>{category}</h3>"
-            current_year = None
+            
+            if category != 'Other Publications':
+                current_year = None
+                for pub in pubs:
+                    if pub['year'] != current_year:
+                        if current_year is not None:
+                            content += "</ol>"
+                        current_year = pub['year']
+                        content += f"\n<h2>{current_year}</h2>\n<ol>"
 
-            for pub in pubs:
-                if pub['year'] != current_year:
-                    if current_year is not None:
-                        content += "</ol>"
-                    current_year = pub['year']
-                    content += f"\n<h2>{current_year}</h2>\n<ol>"
+                    # Format authors
+                    authors = pub['authors'].split(', ')
+                    authors = [f'<span class="author-highlight">A Das</span>' if 'A Das' in author else author for author in authors]
+                    authors_str = ', '.join(authors)
 
-                # Format authors
-                authors = pub['authors'].split(', ')
-                authors = [f'<span class="author-highlight">A Das</span>' if 'A Das' in author else author for author in authors]
-                authors_str = ', '.join(authors)
+                    # Format title
+                    title = f'<span class="title-italic">{pub["title"]}</span>'
 
-                # Format title
-                title = f'<span class="title-italic">{pub["title"]}</span>'
+                    # Format venue
+                    venue = f'<span class="venue">{pub["venue"]}</span>'
 
-                # Format venue
-                venue = f'<span class="venue">{pub["venue"]}</span>'
-
-                # Format links
-                links = []
-                if pub.get('doi'):
-                    # Check if it's an arXiv ID
-                    if pub['doi'].startswith('arxiv.org/abs/'):
-                        arxiv_id = pub['doi'].replace('arxiv.org/abs/', '')
-                        links.append(f'[<a href="https://arxiv.org/abs/{arxiv_id}">arXiv</a>]')
-                    # Check if it's a placeholder DOI
-                    elif 'XXXXXXX' in pub['doi']:
-                        # Try to get the actual DOI from CrossRef
-                        actual_doi = self.get_doi_from_crossref(pub['title'], year=str(pub['year']), venue=pub['venue'])
-                        if actual_doi:
-                            links.append(f'[<a href="https://doi.org/{actual_doi}">DOI</a>]')
+                    # Format links
+                    links = []
+                    if pub.get('doi'):
+                        # Check if it's an arXiv ID
+                        if pub['doi'].startswith('arxiv.org/abs/'):
+                            arxiv_id = pub['doi'].replace('arxiv.org/abs/', '')
+                            links.append(f'[<a href="https://arxiv.org/abs/{arxiv_id}">arXiv</a>]')
+                        # Check if it's a placeholder DOI
+                        elif 'XXXXXXX' in pub['doi']:
+                            # Try to get the actual DOI from CrossRef
+                            actual_doi = self.get_doi_from_crossref(pub['title'], year=str(pub['year']), venue=pub['venue'])
+                            if actual_doi:
+                                links.append(f'[<a href="https://doi.org/{actual_doi}">DOI</a>]')
+                            else:
+                                links.append(f'[<a href="{pub.get("scholar_link", "#")}">Google Scholar</a>]')
                         else:
-                            links.append(f'[<a href="{pub.get("scholar_link", "#")}">Google Scholar</a>]')
-                    else:
-                        # Clean up the DOI
-                        doi = pub['doi'].replace('doi.org/', '').replace('doi:', '')
-                        links.append(f'[<a href="https://doi.org/{doi}">DOI</a>]')
-                elif pub.get('scholar_link'):
-                    links.append(f'[<a href="{pub["scholar_link"]}">Google Scholar</a>]')
-                links_str = ' '.join(links)
+                            # Clean up the DOI
+                            doi = pub['doi'].replace('doi.org/', '').replace('doi:', '')
+                            links.append(f'[<a href="https://doi.org/{doi}">DOI</a>]')
+                    elif pub.get('scholar_link'):
+                        links.append(f'[<a href="{pub["scholar_link"]}">Google Scholar</a>]')
+                    links_str = ' '.join(links)
 
-                # Format tags
-                tags = []
-                if 'Control of PDEs' in pub.get('tags', []):
-                    tags.append('<span class="tag pde">Control of PDEs</span>')
-                if 'Nonlinear Control' in pub.get('tags', []):
-                    tags.append('<span class="tag nonlinear">Nonlinear Control</span>')
-                if 'Machine Learning' in pub.get('tags', []):
-                    tags.append('<span class="tag ml">Machine Learning</span>')
-                if 'Fault Diagnosis' in pub.get('tags', []):
-                    tags.append('<span class="tag fault">Fault Diagnosis</span>')
-                tags_str = f'<span class="theme-tags">{" ".join(tags)}</span>' if tags else ''
+                    # Format tags
+                    tags = []
+                    if 'Control of PDEs' in pub.get('tags', []):
+                        tags.append('<span class="tag pde">Control of PDEs</span>')
+                    if 'Nonlinear Control' in pub.get('tags', []):
+                        tags.append('<span class="tag nonlinear">Nonlinear Control</span>')
+                    if 'Machine Learning' in pub.get('tags', []):
+                        tags.append('<span class="tag ml">Machine Learning</span>')
+                    if 'Fault Diagnosis' in pub.get('tags', []):
+                        tags.append('<span class="tag fault">Fault Diagnosis</span>')
+                    tags_str = f'<span class="theme-tags">{" ".join(tags)}</span>' if tags else ''
 
-                # Combine all parts
-                entry = f'<li>{authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
-                content += entry
+                    # Combine all parts
+                    entry = f'<li>{authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
+                    content += entry
 
-            # Close the last year's list
-            if current_year is not None:
+                # Close the last year's list
+                if current_year is not None:
+                    content += "</ol>"
+            else:
+                # Handle Other Publications (no year)
+                content += "\n<ol>"
+                for pub in pubs:
+                    # Format authors
+                    authors = pub['authors'].split(', ')
+                    authors = [f'<span class="author-highlight">A Das</span>' if 'A Das' in author else author for author in authors]
+                    authors_str = ', '.join(authors)
+
+                    # Format title
+                    title = f'<span class="title-italic">{pub["title"]}</span>'
+
+                    # Format venue
+                    venue = f'<span class="venue">{pub["venue"]}</span>'
+
+                    # Format links
+                    links = []
+                    if pub.get('doi'):
+                        # Check if it's an arXiv ID
+                        if pub['doi'].startswith('arxiv.org/abs/'):
+                            arxiv_id = pub['doi'].replace('arxiv.org/abs/', '')
+                            links.append(f'[<a href="https://arxiv.org/abs/{arxiv_id}">arXiv</a>]')
+                        # Check if it's a placeholder DOI
+                        elif 'XXXXXXX' in pub['doi']:
+                            # Try to get the actual DOI from CrossRef
+                            actual_doi = self.get_doi_from_crossref(pub['title'], venue=pub['venue'])
+                            if actual_doi:
+                                links.append(f'[<a href="https://doi.org/{actual_doi}">DOI</a>]')
+                            else:
+                                links.append(f'[<a href="{pub.get("scholar_link", "#")}">Google Scholar</a>]')
+                        else:
+                            # Clean up the DOI
+                            doi = pub['doi'].replace('doi.org/', '').replace('doi:', '')
+                            links.append(f'[<a href="https://doi.org/{doi}">DOI</a>]')
+                    elif pub.get('scholar_link'):
+                        links.append(f'[<a href="{pub["scholar_link"]}">Google Scholar</a>]')
+                    links_str = ' '.join(links)
+
+                    # Format tags
+                    tags = []
+                    if 'Control of PDEs' in pub.get('tags', []):
+                        tags.append('<span class="tag pde">Control of PDEs</span>')
+                    if 'Nonlinear Control' in pub.get('tags', []):
+                        tags.append('<span class="tag nonlinear">Nonlinear Control</span>')
+                    if 'Machine Learning' in pub.get('tags', []):
+                        tags.append('<span class="tag ml">Machine Learning</span>')
+                    if 'Fault Diagnosis' in pub.get('tags', []):
+                        tags.append('<span class="tag fault">Fault Diagnosis</span>')
+                    tags_str = f'<span class="theme-tags">{" ".join(tags)}</span>' if tags else ''
+
+                    # Combine all parts
+                    entry = f'<li>{authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
+                    content += entry
                 content += "</ol>"
 
         content += "\n</body>\n</html>"
