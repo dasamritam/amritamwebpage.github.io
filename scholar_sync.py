@@ -63,12 +63,18 @@ class ScholarSync:
         """Extract year from Google Scholar citation data."""
         try:
             # Try to find the year in the citation data
+            citation_data = element.find_element(By.CLASS_NAME, "gsc_a_y").text
+            year_match = re.search(r'\b(19|20)\d{2}\b', citation_data)
+            if year_match:
+                return int(year_match.group(0))
+            
+            # If not found in gsc_a_y, try gsc_a_t
             citation_data = element.find_element(By.CLASS_NAME, "gsc_a_t").text
             year_match = re.search(r'\b(19|20)\d{2}\b', citation_data)
             if year_match:
                 return int(year_match.group(0))
-        except:
-            pass
+        except Exception as e:
+            print(f"Error extracting year from scholar data: {str(e)}")
         return None
 
     def _get_publications_from_scholar(self):
@@ -98,7 +104,10 @@ class ScholarSync:
             for element in elements:
                 try:
                     link = element.find_element(By.CLASS_NAME, "gsc_a_at").get_attribute("href")
-                    pub_links.append((link, element))  # Store both link and element
+                    # Get year from the main page first
+                    year = self._extract_year_from_scholar_data(element)
+                    print(f"Extracted year from main page: {year}")
+                    pub_links.append((link, element, year))  # Store link, element, and year
                 except Exception as e:
                     print(f"Error getting publication link: {str(e)}")
                     continue
@@ -106,10 +115,10 @@ class ScholarSync:
             print(f"Collected {len(pub_links)} publication links")
 
             # Now process each publication
-            for link, element in pub_links:
+            for link, element, main_page_year in pub_links:
                 try:
-                    # Get year from the main page first
-                    year = self._extract_year_from_scholar_data(element)
+                    # Start with the year from main page
+                    year = main_page_year
                     
                     # Navigate to publication page
                     self.driver.get(link)
@@ -121,12 +130,13 @@ class ScholarSync:
                     venue_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_oci_value")
                     venue = venue_elements[2].text if len(venue_elements) > 2 else ""
                     
-                    # Enhanced year extraction
+                    # Enhanced year extraction if not found on main page
                     if not year:
                         # Try to get year from venue first
                         year_match = re.search(r'\b(19|20)\d{2}\b', venue)
                         if year_match:
                             year = int(year_match.group(0))
+                            print(f"Found year in venue: {year}")
                     
                     # If no year in venue, try to get it from the publication page
                     if not year:
@@ -136,6 +146,7 @@ class ScholarSync:
                             year_match = re.search(r'\b(19|20)\d{2}\b', all_text)
                             if year_match:
                                 year = int(year_match.group(0))
+                                print(f"Found year in publication page: {year}")
                         except:
                             pass
                     
@@ -144,6 +155,7 @@ class ScholarSync:
                         year_match = re.search(r'\b(19|20)\d{2}\b', title)
                         if year_match:
                             year = int(year_match.group(0))
+                            print(f"Found year in title: {year}")
                     
                     # If still no year, try to get it from the publication date if available
                     if not year:
@@ -154,6 +166,7 @@ class ScholarSync:
                                 year_match = re.search(r'\b(19|20)\d{2}\b', date_text)
                                 if year_match:
                                     year = int(year_match.group(0))
+                                    print(f"Found year in date: {year}")
                         except:
                             pass
                     
