@@ -44,12 +44,6 @@ if [ -f "publications.md" ]; then
     cp "publications.md" "$BACKUP_DIR/publications_${TIMESTAMP}.md" || handle_error "Failed to create backup"
 fi
 
-# Create backup of custom overrides if it exists
-if [ -f "custom_publications.json" ]; then
-    log "Creating backup of custom overrides..."
-    cp "custom_publications.json" "$BACKUP_DIR/custom_publications_${TIMESTAMP}.json" || handle_error "Failed to create backup"
-fi
-
 # Run the Python script
 echo "Running scholar_sync.py..."
 python scholar_sync.py
@@ -58,7 +52,7 @@ python scholar_sync.py
 if [ $? -eq 0 ]; then
     echo "Publication update completed successfully!"
     echo "Updated file: publications.md"
-    echo "Backup file: $BACKUP_DIR/publications_${TIMESTAMP}.md"
+    echo "Backup file: publications.md.backup"
     
     # If using git, commit the changes
     if [ -d ".git" ]; then
@@ -66,17 +60,11 @@ if [ $? -eq 0 ]; then
         git add publications.md
         git commit -m "Update publications [automated]"
         git push
-        echo "Changes committed to git repository"
     fi
     
     log "Backup created at: $BACKUP_DIR/publications_${TIMESTAMP}.md"
 else
     echo "Error: Publication update failed"
-    # Restore from backup if update failed
-    if [ -f "$BACKUP_DIR/publications_${TIMESTAMP}.md" ]; then
-        cp "$BACKUP_DIR/publications_${TIMESTAMP}.md" publications.md
-        echo "Restored from backup"
-    fi
     exit 1
 fi
 
