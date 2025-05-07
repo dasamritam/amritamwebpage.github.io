@@ -355,25 +355,9 @@ class ScholarSync:
             print(f"Error fetching publications: {str(e)}")
             return []
 
-    def generate_markdown(self, publications: List[Dict]) -> str:
-        # Group publications by category and year
-        publications_by_category = {
-            'PhD Thesis': [],
-            'Book Chapters': [],
-            'Preprints': [],
-            'Journals': [],
-            'Conferences': [],
-            'Popular Articles': []
-        }
-        
-        for pub in publications:
-            publications_by_category[pub['category']].append(pub)
-            
-        # Sort publications within each category by year (descending)
-        for category in publications_by_category:
-            publications_by_category[category].sort(key=lambda x: x['year'], reverse=True)
-
-        markdown = """---
+    def generate_markdown_content(self, publications):
+        """Generate markdown content with proper HTML formatting."""
+        content = """---
 layout: single
 author_profile: true
 title: "Publications"
@@ -394,82 +378,109 @@ classes: wide
     .venue, .year { color: #597; }
     .pub-link { color: #1A0DAB; text-decoration: none; }
     .theme-tags { margin-left: 10px; }
-.tag {
-  display: inline-block;
-  background: #e8eaea;
-  color: #356;
-  border-radius: 0.3em;
-  font-size: 0.85em;
-  padding: 1px 6px;
-  margin-right: 4px;
-  font-family: Arial, sans-serif;
-}
-.tag.nonlinear { background: #FFDD99; color: #875300; }
-.tag.pde { background: #CCE5FF; color: #003366; }
-.tag.ml { background: #D4EDDA; color: #155724; }
-.tag.fault { background: #F8D7DA; color: #721c24; }
+    .tag {
+      display: inline-block;
+      background: #e8eaea;
+      color: #356;
+      border-radius: 0.3em;
+      font-size: 0.85em;
+      padding: 1px 6px;
+      margin-right: 4px;
+      font-family: Arial, sans-serif;
+    }
+    .tag.nonlinear { background: #FFDD99; color: #875300; }
+    .tag.pde { background: #CCE5FF; color: #003366; }
+    .tag.ml { background: #D4EDDA; color: #155724; }
+    .tag.fault { background: #F8D7DA; color: #721c24; }
+    ol { margin: 0; padding: 0; }
+    li { margin: 0; padding: 0; }
   </style>
 </head>
-<body>
-"""
+<body>"""
 
-        # Add publications by category
-        for category, pubs in publications_by_category.items():
-            if pubs:  # Only add category if it has publications
-                markdown += f"\n  <h3>{category}</h3>\n"
-                current_year = None
-                
-                for pub in pubs:
-                    # Add year header if it's a new year
-                    if pub['year'] != current_year:
-                        current_year = pub['year']
-                        markdown += f"\n  <h2>{current_year}</h2>\n  <ol>\n"
-                    
-                    # Highlight your name in authors
-                    authors = pub['authors']
-                    authors = authors.replace('Amritam Das', '<span class="author-highlight">Amritam Das</span>')
-                    authors = authors.replace('A Das', '<span class="author-highlight">A Das</span>')
-                    
-                    # Add DOI link if available
-                    doi_link = ""
-                    if pub.get('doi'):
-                        if 'arxiv.org' in pub['doi']:
-                            doi_link = f' [<a href="https://{pub["doi"]}">arXiv</a>]'
-                        else:
-                            doi_link = f' [<a href="https://doi.org/{pub["doi"]}">DOI</a>]'
-                    elif pub.get('scholar_link'):
-                        doi_link = f' [<a href="{pub["scholar_link"]}">Google Scholar</a>]'
-                    
-                    # Add citations if available
-                    citations = f' [Citations: {pub["citations"]}]' if pub.get('citations', 0) > 0 else ""
-                    
-                    # Add theme tags based on keywords in title and venue
-                    theme_tags = []
-                    if any(word in pub['title'].lower() for word in ['nonlinear', 'oscillation', 'trajectory']):
-                        theme_tags.append('<span class="tag nonlinear">Nonlinear Control</span>')
-                    if any(word in pub['title'].lower() for word in ['pde', 'partial', 'distributed']):
-                        theme_tags.append('<span class="tag pde">Control of PDEs</span>')
-                    if any(word in pub['title'].lower() for word in ['learning', 'neural', 'ml']):
-                        theme_tags.append('<span class="tag ml">Machine Learning</span>')
-                    if any(word in pub['title'].lower() for word in ['fault', 'diagnosis']):
-                        theme_tags.append('<span class="tag fault">Fault Diagnosis</span>')
-                    
-                    theme_tags_html = f' <span class="theme-tags">{" ".join(theme_tags)}</span>' if theme_tags else ""
-                    
-                    markdown += f"""    <li>{authors}. <span class="title-italic">{pub['title']}</span>. <span class="venue">{pub['venue']}</span>. {pub['year']}.{doi_link}{citations}{theme_tags_html}</li>\n"""
-                
-                markdown += "  </ol>\n"
+        # Group publications by category and year
+        categories = {
+            'PhD Thesis': [],
+            'Preprints': [],
+            'Journals': [],
+            'Conferences': []
+        }
 
-        markdown += """</body>
-</html>"""
+        for pub in publications:
+            categories[pub['category']].append(pub)
 
-        return markdown
+        # Sort publications within each category by year (descending)
+        for category in categories:
+            categories[category].sort(key=lambda x: x['year'], reverse=True)
+
+        # Generate content for each category
+        for category, pubs in categories.items():
+            if not pubs:
+                continue
+
+            content += f"\n<h3>{category}</h3>"
+            current_year = None
+
+            for pub in pubs:
+                if pub['year'] != current_year:
+                    if current_year is not None:
+                        content += "</ol>"
+                    current_year = pub['year']
+                    content += f"\n<h2>{current_year}</h2>\n<ol>"
+
+                # Format authors
+                authors = pub['authors'].split(', ')
+                authors = [f'<span class="author-highlight">A Das</span>' if 'A Das' in author else author for author in authors]
+                authors_str = ', '.join(authors)
+
+                # Format title
+                title = f'<span class="title-italic">{pub["title"]}</span>'
+
+                # Format venue
+                venue = f'<span class="venue">{pub["venue"]}</span>'
+
+                # Format year
+                year = f'<span class="year">{pub["year"]}</span>'
+
+                # Format links
+                links = []
+                if pub.get('doi'):
+                    links.append(f'[<a href="https://doi.org/{pub["doi"]}">DOI</a>]')
+                elif pub.get('arxiv'):
+                    links.append(f'[<a href="https://arxiv.org/abs/{pub["arxiv"]}">arXiv</a>]')
+                elif pub.get('scholar_link'):
+                    links.append(f'[<a href="{pub["scholar_link"]}">Google Scholar</a>]')
+                links_str = ' '.join(links)
+
+                # Format tags
+                tags = []
+                if 'Control of PDEs' in pub.get('tags', []):
+                    tags.append('<span class="tag pde">Control of PDEs</span>')
+                if 'Nonlinear Control' in pub.get('tags', []):
+                    tags.append('<span class="tag nonlinear">Nonlinear Control</span>')
+                if 'Machine Learning' in pub.get('tags', []):
+                    tags.append('<span class="tag ml">Machine Learning</span>')
+                if 'Fault Diagnosis' in pub.get('tags', []):
+                    tags.append('<span class="tag fault">Fault Diagnosis</span>')
+                tags_str = f'<span class="theme-tags">{" ".join(tags)}</span>' if tags else ''
+
+                # Combine all parts
+                entry = f'<li>{authors_str}. {title}. {venue}. {year}. {links_str} {tags_str}</li>'
+                content += entry
+
+            # Close the last year's list
+            if current_year is not None:
+                content += "</ol>"
+
+        content += "\n</body>\n</html>"
+
+        return content
 
     def update_publications_file(self):
         print("Starting publication update...")
         publications = self.get_publications()
         print("Generating markdown content...")
-        markdown_content = self.generate_markdown(publications)
+        markdown_content = self.generate_markdown_content(publications)
         
         output_file = 'publications_new.md'
         print(f"Writing to {output_file}...")
