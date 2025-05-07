@@ -903,13 +903,120 @@ def load_config():
         print("Error: Invalid JSON in config.json")
         exit(1)
 
-if __name__ == "__main__":
-    # Load Scholar ID from config
-    scholar_id = load_config()
-    if not scholar_id:
-        print("Error: No Scholar ID found in config.json")
-        exit(1)
+def load_custom_overrides():
+    """Load custom publication overrides from JSON file."""
+    try:
+        with open('custom_publications.json', 'r') as f:
+            return json.load(f)['overrides']
+    except FileNotFoundError:
+        return {}
+    except json.JSONDecodeError:
+        print("Warning: custom_publications.json is not valid JSON")
+        return {}
+
+def apply_custom_overrides(publications):
+    """Apply custom overrides to publications."""
+    overrides = load_custom_overrides()
+    for pub in publications:
+        if pub['title'] in overrides:
+            override = overrides[pub['title']]
+            pub.update(override)
+    return publications
+
+def main():
+    # Load configuration
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    
+    # Initialize browser
+    browser = setup_browser()
+    
+    try:
+        # Navigate to Google Scholar
+        browser.get('https://scholar.google.com')
+        time.sleep(2)
         
-    sync = ScholarSync(scholar_id)
-    # Direct update is now the default behavior
-    sync.update_publications_file() 
+        # Navigate to user's profile
+        profile_url = f"https://scholar.google.com/citations?user={config['scholar_id']}&hl=en"
+        browser.get(profile_url)
+        time.sleep(2)
+        
+        # Click "Show more" button multiple times to load all publications
+        for _ in range(5):  # Adjust number based on your publication count
+            try:
+                show_more = browser.find_element(By.ID, 'gsc_bpf_more')
+                if not show_more.is_enabled():
+                    break
+                show_more.click()
+                time.sleep(2)
+            except:
+                break
+        
+        # Get all publication elements
+        pub_elements = browser.find_elements(By.CLASS_NAME, 'gsc_a_tr')
+        print(f"Found {len(pub_elements)} publication elements")
+        
+        # Extract publication details
+        publications = []
+        for element in pub_elements:
+            try:
+                title_element = element.find_element(By.CLASS_NAME, 'gsc_a_t')
+                title = title_element.find_element(By.TAG_NAME, 'a').text
+                authors = title_element.find_element(By.CLASS_NAME, 'gs_gray').text
+                venue_element = element.find_element(By.CLASS_NAME, 'gsc_a_y')
+                venue = venue_element.text
+                
+                # Extract year and DOI
+                year = None
+                doi = None
+                if venue:
+                    year_match = re.search(r'\b(19|20)\d{2}\b', venue)
+                    if year_match:
+                        year = int(year_match.group())
+                    doi_match = re.search(r'10\.\d{4,9}/[-._;()/:A-Z0-9]+', venue, re.IGNORECASE)
+                    if doi_match:
+                        doi = doi_match.group()
+                
+                # Get Google Scholar link
+                scholar_link = title_element.find_element(By.TAG_NAME, 'a').get_attribute('href')
+                
+                # Determine category and tags
+                category, tags = classify_publication(title, venue)
+                
+                publications.append({
+                    'title': title,
+                    'authors': authors,
+                    'venue': venue,
+                    'year': year,
+                    'doi': doi,
+                    'scholar_link': scholar_link,
+                    'category': category,
+                    'tags': tags
+                })
+            except Exception as e:
+                print(f"Error processing publication: {str(e)}")
+                continue
+        
+        # Apply custom overrides
+        publications = apply_custom_overrides(publications)
+        
+        # Sort publications by year and category
+        publications.sort(key=lambda x: (
+            x['year'] if x['year'] else float('inf'),
+            CATEGORY_ORDER.get(x['category'], 999)
+        ), reverse=True)
+        
+        # Generate markdown content
+        markdown_content = generate_markdown(publications)
+        
+        # Write to file
+        with open('publications.md', 'w') as f:
+            f.write(markdown_content)
+            
+        print("Publication update completed successfully")
+        
+    finally:
+        browser.quit()
+
+if __name__ == "__main__":
+    main() 
