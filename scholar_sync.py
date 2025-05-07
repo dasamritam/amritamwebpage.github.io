@@ -87,6 +87,51 @@ class ScholarSync:
             print(f"Error extracting year from scholar data: {str(e)}")
         return None
 
+    def _standardize_author_name(self, author: str) -> str:
+        """Standardize author name format to 'First Last' or 'F Last'."""
+        # Remove any extra spaces
+        author = ' '.join(author.split())
+        
+        # Split into parts
+        parts = author.split()
+        
+        # If it's just one word, return as is
+        if len(parts) == 1:
+            return author
+            
+        # If it's two words, assume it's already in correct format
+        if len(parts) == 2:
+            return author
+            
+        # For three or more words
+        if len(parts) >= 3:
+            # Check if it's in "First Middle Last" format
+            if not any(len(p) == 1 for p in parts[:-1]):  # No single letters except possibly the last word
+                return author
+                
+            # Check if it's in "F M Last" format
+            if all(len(p) == 1 for p in parts[:-1]):  # All but last are single letters
+                return ' '.join(parts)
+                
+            # Handle mixed format (e.g., "First M Last" or "F Middle Last")
+            result = []
+            for i, part in enumerate(parts):
+                if i == len(parts) - 1:  # Last name
+                    result.append(part)
+                elif len(part) == 1:  # Initial
+                    result.append(part + '.')
+                else:  # Full name
+                    result.append(part)
+            return ' '.join(result)
+            
+        return author
+
+    def _standardize_author_list(self, authors: str) -> str:
+        """Standardize a list of author names."""
+        author_list = [author.strip() for author in authors.split(',')]
+        standardized_authors = [self._standardize_author_name(author) for author in author_list]
+        return ', '.join(standardized_authors)
+
     def _get_publications_from_scholar(self):
         """Get publications from Google Scholar."""
         publications = []
@@ -142,6 +187,9 @@ class ScholarSync:
                         authors = self.publication_overrides[title]['authors']
                     else:
                         authors = self.driver.find_element(By.CLASS_NAME, "gsc_oci_value").text
+                    
+                    # Standardize author names
+                    authors = self._standardize_author_list(authors)
                     
                     venue_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_oci_value")
                     venue = venue_elements[2].text if len(venue_elements) > 2 else ""
