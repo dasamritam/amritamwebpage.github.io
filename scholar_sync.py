@@ -18,7 +18,7 @@ class ScholarSync:
     def __init__(self, scholar_id: str):
         self.scholar_id = scholar_id
         self.scholar_url = f"https://scholar.google.com/citations?user={scholar_id}&hl=en"
-        self.crossref_email = "amritam.das@tue.nl"  # Required by CrossRef for polite API usage
+        self.crossref_email = "am.das@tue.nl"  # Required by CrossRef for polite API usage
         self._setup_browser()
 
     def _setup_browser(self):
