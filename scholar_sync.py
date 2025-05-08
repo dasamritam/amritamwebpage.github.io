@@ -685,8 +685,8 @@ classes: wide
         # Group publications by category and year
         categories = {
             'PhD Thesis': [],
-            'Book Chapters': [],
             'Preprints': [],
+            'Book Chapters': [],
             'Journals': [],
             'Conferences': [],
             'Other Publications': []  # New category for publications without year
