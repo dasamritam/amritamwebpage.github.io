@@ -44,6 +44,7 @@ class ScholarSync:
             chrome_options.add_argument('--accept-language=en-US,en;q=0.9')
             chrome_options.add_argument('--accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8')
             
+            print("Initializing Chrome browser...")
             self.driver = webdriver.Chrome(options=chrome_options)
             
             # Execute CDP commands to make automation less detectable
@@ -91,23 +92,32 @@ class ScholarSync:
         """Get publications from Google Scholar."""
         publications = []
         try:
+            print(f"Navigating to Google Scholar profile: {self.scholar_url}")
             # Navigate to Google Scholar profile page
             self.driver.get(self.scholar_url)
-            time.sleep(3)  # Wait for page to load
+            print("Waiting for page to load...")
+            time.sleep(5)  # Increased wait time
             
             # Click "Show more" button until all publications are loaded
-            while True:
+            show_more_attempts = 0
+            max_attempts = 10  # Limit the number of attempts
+            
+            while show_more_attempts < max_attempts:
                 try:
                     show_more = self.driver.find_element(By.ID, "gsc_bpf_more")
                     if not show_more.is_displayed() or not show_more.is_enabled():
+                        print("No more publications to load")
                         break
+                    print(f"Clicking 'Show more' (attempt {show_more_attempts + 1})")
                     show_more.click()
-                    time.sleep(2)  # Wait for new publications to load
-                except:
+                    time.sleep(3)  # Increased wait time
+                    show_more_attempts += 1
+                except Exception as e:
+                    print(f"Error clicking 'Show more': {str(e)}")
                     break
             
             # Now collect all publication links
-            pub_links = []
+            print("Collecting publication links...")
             elements = self.driver.find_elements(By.CLASS_NAME, "gsc_a_tr")
             print(f"Found {len(elements)} publication elements")
             
@@ -117,15 +127,15 @@ class ScholarSync:
                     # Get year from the main page first
                     year = self._extract_year_from_scholar_data(element)
                     print(f"Extracted year from main page: {year}")
-                    pub_links.append((link, element, year))  # Store link, element, and year
+                    publications.append((link, element, year))  # Store link, element, and year
                 except Exception as e:
                     print(f"Error getting publication link: {str(e)}")
                     continue
 
-            print(f"Collected {len(pub_links)} publication links")
+            print(f"Collected {len(publications)} publication links")
 
             # Now process each publication
-            for link, element, main_page_year in pub_links:
+            for link, element, main_page_year in publications:
                 try:
                     # Start with the year from main page
                     year = main_page_year
