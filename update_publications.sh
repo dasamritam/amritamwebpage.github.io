@@ -22,16 +22,24 @@ handle_error() {
 }
 
 # Print start message
-echo "Starting publication update process..."
+log "Starting publication update process..."
+
+# Check if we're in the right directory
+if [ ! -f "scholar_sync.py" ]; then
+    handle_error "scholar_sync.py not found. Please run this script from the correct directory."
+fi
 
 # Activate virtual environment
-echo "Activating virtual environment..."
+log "Activating virtual environment..."
+if [ ! -d ".venv" ]; then
+    handle_error "Virtual environment .venv not found"
+fi
+
 source .venv/bin/activate
 
 # Check if virtual environment activation was successful
 if [ $? -ne 0 ]; then
-    echo "Error: Failed to activate virtual environment"
-    exit 1
+    handle_error "Failed to activate virtual environment"
 fi
 
 # Install/update requirements
@@ -45,14 +53,14 @@ if [ -f "publications.md" ]; then
 fi
 
 # Run the Python script
-echo "Running scholar_sync.py..."
+log "Running scholar_sync.py..."
 python scholar_sync.py
 
 # Check if the script ran successfully
 if [ $? -eq 0 ]; then
-    echo "Publication update completed successfully!"
-    echo "Updated file: publications.md"
-    echo "Backup file: publications.md.backup"
+    log "Publication update completed successfully!"
+    log "Updated file: publications.md"
+    log "Backup file: publications.md.backup"
     
     # If using git, commit the changes
     if [ -d ".git" ]; then
@@ -64,11 +72,10 @@ if [ $? -eq 0 ]; then
     
     log "Backup created at: $BACKUP_DIR/publications_${TIMESTAMP}.md"
 else
-    echo "Error: Publication update failed"
-    exit 1
+    handle_error "Publication update failed"
 fi
 
 # Deactivate virtual environment
 deactivate
 
-echo "Process completed!" 
+log "Process completed!" 

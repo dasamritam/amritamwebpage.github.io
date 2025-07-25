@@ -15,10 +15,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 class ScholarSync:
-    def __init__(self, scholar_id: str):
+    def __init__(self, scholar_id: str, fast_mode=True):
         self.scholar_id = scholar_id
         self.scholar_url = f"https://scholar.google.com/citations?user={scholar_id}&hl=en"
         self.crossref_email = "am.das@tue.nl"  # Required by CrossRef for polite API usage
+        self.fast_mode = fast_mode  # Skip individual page visits for speed
         self._setup_browser()
         self._load_publication_overrides()
 
@@ -96,11 +97,11 @@ class ScholarSync:
             # Navigate to Google Scholar profile page
             self.driver.get(self.scholar_url)
             print("Waiting for page to load...")
-            time.sleep(5)  # Increased wait time
+            time.sleep(2)  # Reduced wait time for speed
             
             # Click "Show more" button until all publications are loaded
             show_more_attempts = 0
-            max_attempts = 10  # Limit the number of attempts
+            max_attempts = 5  # Reduced attempts for speed
             
             while show_more_attempts < max_attempts:
                 try:
@@ -110,7 +111,7 @@ class ScholarSync:
                         break
                     print(f"Clicking 'Show more' (attempt {show_more_attempts + 1})")
                     show_more.click()
-                    time.sleep(3)  # Increased wait time
+                    time.sleep(1)  # Reduced wait time
                     show_more_attempts += 1
                 except Exception as e:
                     print(f"Error clicking 'Show more': {str(e)}")
@@ -134,18 +135,96 @@ class ScholarSync:
 
             print(f"Collected {len(publications)} publication links")
 
-            # Now process each publication
-            for link, element, main_page_year in publications:
+            # Fast mode: get data from main page only
+            if self.fast_mode:
+                print("Using fast mode - extracting data from main page only")
+                processed_publications = []
+                
+                for pub_data in publications:
+                    try:
+                        link = pub_data[0]
+                        element = pub_data[1]
+                        year = pub_data[2]
+                        
+                        # Get title from main page
+                        title_element = element.find_element(By.CLASS_NAME, "gsc_a_at")
+                        title = title_element.text
+                        
+                        # Get authors from main page (if available)
+                        try:
+                            authors_element = element.find_element(By.CLASS_NAME, "gsc_a_au")
+                            authors = authors_element.text
+                        except:
+                            authors = "Unknown Authors"
+                        
+                        # Get venue from main page (if available)
+                        try:
+                            venue_element = element.find_element(By.CLASS_NAME, "gsc_a_ab")
+                            venue = venue_element.text
+                        except:
+                            venue = "Unknown Venue"
+                        
+                        # Check for overrides
+                        if title in self.publication_overrides:
+                            authors = self.publication_overrides[title]['authors']
+                        
+                        # Standardize authors
+                        authors = ', '.join([self._standardize_author_name(author.strip()) for author in authors.split(',')])
+                        
+                        # Determine category
+                        category = "Other Publications"
+                        if "thesis" in venue.lower() or "dissertation" in venue.lower():
+                            category = "PhD Thesis"
+                        elif "arxiv" in venue.lower():
+                            category = "Preprints"
+                        elif any(journal in venue.lower() for journal in ["journal", "transactions", "letters"]):
+                            category = "Journals"
+                        else:
+                            category = "Conferences"
+                        
+                        pub_dict = {
+                            'title': title,
+                            'authors': authors,
+                            'venue': venue,
+                            'year': year,
+                            'doi': None,  # Will be filled later
+                            'category': category,
+                            'scholar_link': link
+                        }
+                        
+                        processed_publications.append(pub_dict)
+                        print(f"Found publication: {title} (Category: {category}, Year: {year})")
+                        
+                    except Exception as e:
+                        print(f"Error processing publication in fast mode: {str(e)}")
+                        continue
+                
+                return processed_publications
+
+            # Slow mode: visit each publication page
+            print("Using detailed mode - visiting each publication page")
+            for pub_data in publications:
+                link = pub_data[0]
+                element = pub_data[1] 
+                main_page_year = pub_data[2]
                 try:
                     # Start with the year from main page
                     year = main_page_year
                     
                     # Navigate to publication page
                     self.driver.get(link)
-                    time.sleep(2)  # Wait for page to load
+                    time.sleep(0.5)  # Reduced wait time for speed
 
-                    # Get publication details
-                    title = self.driver.find_element(By.CLASS_NAME, "gsc_oci_title_link").text
+                    # Get publication details with error handling
+                    try:
+                        title_element = self.driver.find_element(By.CLASS_NAME, "gsc_oci_title_link")
+                        title = title_element.text
+                    except:
+                        # Fallback: try to get title from the main page element
+                        try:
+                            title = element.find_element(By.CLASS_NAME, "gsc_a_at").text
+                        except:
+                            title = "Unknown Title"
                     
                     # Check if we have an override for this publication
                     if title in self.publication_overrides:
@@ -153,12 +232,19 @@ class ScholarSync:
                         # Standardize authors from overrides
                         authors = ', '.join([self._standardize_author_name(author.strip()) for author in authors.split(',')])
                     else:
-                        authors = self.driver.find_element(By.CLASS_NAME, "gsc_oci_value").text
-                        # Standardize authors from Google Scholar
-                        authors = ', '.join([self._standardize_author_name(author.strip()) for author in authors.split(',')])
+                        try:
+                            authors_element = self.driver.find_element(By.CLASS_NAME, "gsc_oci_value")
+                            authors = authors_element.text
+                            # Standardize authors from Google Scholar
+                            authors = ', '.join([self._standardize_author_name(author.strip()) for author in authors.split(',')])
+                        except:
+                            authors = "Unknown Authors"
                     
-                    venue_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_oci_value")
-                    venue = venue_elements[2].text if len(venue_elements) > 2 else ""
+                    try:
+                        venue_elements = self.driver.find_elements(By.CLASS_NAME, "gsc_oci_value")
+                        venue = venue_elements[2].text if len(venue_elements) > 2 else ""
+                    except:
+                        venue = "Unknown Venue"
                     
                     # Enhanced year extraction if not found on main page
                     if not year:
@@ -239,7 +325,7 @@ class ScholarSync:
 
                     # Go back to main page
                     self.driver.get(self.scholar_url)
-                    time.sleep(2)  # Wait for page to load
+                    time.sleep(0.5)  # Reduced wait time for speed
 
                 except Exception as e:
                     print(f"Error processing publication: {str(e)}")
@@ -264,23 +350,33 @@ class ScholarSync:
                     year = pub['year']
                     doi = None
                     
-                    # Try to get DOI from CrossRef
-                    doi = self.get_doi_from_crossref(title, year=str(year) if year else None, venue=venue)
-                    
-                    # If no DOI found, try to extract from Google Scholar link
-                    if not doi and pub.get('scholar_link'):
-                        doi = self.extract_doi_from_scholar_link(pub['scholar_link'])
-                    
-                    # If still no DOI, try venue-specific patterns
-                    if not doi:
-                        doi = self.get_doi_from_venue(title, venue, str(year) if year else None)
-                    
-                    # If still no DOI, check for arXiv
-                    if not doi and 'arxiv' in venue.lower():
-                        arxiv_match = re.search(r'arXiv:(\d{4}\.\d{5})', venue)
-                        if arxiv_match:
-                            arxiv_id = arxiv_match.group(1)
-                            doi = f"arxiv.org/abs/{arxiv_id}"
+                    # Fast mode: skip DOI lookup for speed
+                    doi = None
+                    if not self.fast_mode:
+                        # Try to get DOI from CrossRef
+                        doi = self.get_doi_from_crossref(title, year=str(year) if year else None, venue=venue)
+                        
+                        # If no DOI found, try to extract from Google Scholar link
+                        if not doi and pub.get('scholar_link'):
+                            doi = self.extract_doi_from_scholar_link(pub['scholar_link'])
+                        
+                        # If still no DOI, try venue-specific patterns
+                        if not doi:
+                            doi = self.get_doi_from_venue(title, venue, str(year) if year else None)
+                        
+                        # If still no DOI, check for arXiv
+                        if not doi and 'arxiv' in venue.lower():
+                            arxiv_match = re.search(r'arXiv:(\d{4}\.\d{5})', venue)
+                            if arxiv_match:
+                                arxiv_id = arxiv_match.group(1)
+                                doi = f"arxiv.org/abs/{arxiv_id}"
+                    else:
+                        # Fast mode: only check for arXiv DOIs
+                        if 'arxiv' in venue.lower():
+                            arxiv_match = re.search(r'arXiv:(\d{4}\.\d{5})', venue)
+                            if arxiv_match:
+                                arxiv_id = arxiv_match.group(1)
+                                doi = f"arxiv.org/abs/{arxiv_id}"
                     
                     pub_data = {
                         'title': title,
@@ -530,6 +626,16 @@ class ScholarSync:
                 # If no specific publisher found or parsing failed, try general methods
                 content = response.text.lower()
                 
+                # Define DOI patterns once
+                doi_patterns = [
+                    r'10\.\d{4,}/[-._;()/:\w]+',  # General DOI pattern
+                    r'doi\.org/10\.\d{4,}/[-._;()/:\w]+',  # DOI.org pattern
+                    r'doi:10\.\d{4,}/[-._;()/:\w]+',  # DOI: pattern
+                    r'10\.1109/[a-z]+\.\d{4}\.\d{6,}',  # IEEE pattern
+                    r'10\.1016/j\.[a-z]+\.\d{4}\.\d{6,}',  # Elsevier pattern
+                    r'10\.23919/[a-z]+\.\d{4}\.\d{6,}'  # IEEE conference pattern
+                ]
+                
                 # Look for DOI in specific sections
                 doi_sections = [
                     'doi:', 'digital object identifier:', 'doi link:', 'doi url:',
@@ -543,16 +649,6 @@ class ScholarSync:
                         # Get the text after the DOI section
                         section_index = content.find(section)
                         section_text = content[section_index:section_index + 200]  # Look at next 200 chars
-                        
-                        # Look for DOI patterns in this section
-                        doi_patterns = [
-                            r'10\.\d{4,}/[-._;()/:\w]+',  # General DOI pattern
-                            r'doi\.org/10\.\d{4,}/[-._;()/:\w]+',  # DOI.org pattern
-                            r'doi:10\.\d{4,}/[-._;()/:\w]+',  # DOI: pattern
-                            r'10\.1109/[a-z]+\.\d{4}\.\d{6,}',  # IEEE pattern
-                            r'10\.1016/j\.[a-z]+\.\d{4}\.\d{6,}',  # Elsevier pattern
-                            r'10\.23919/[a-z]+\.\d{4}\.\d{6,}'  # IEEE conference pattern
-                        ]
                         
                         for pattern in doi_patterns:
                             match = re.search(pattern, section_text)
