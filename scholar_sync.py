@@ -727,16 +727,17 @@ classes: wide
             if not pubs:
                 continue
 
-            content += f"\n<h3>{category}</h3>"
+            # Add publication count to category header
+            content += f"\n<h3>{category} ({len(pubs)})</h3>"
             
             if category != 'Other Publications':
                 current_year = None
                 for pub in pubs:
                     if pub['year'] != current_year:
                         if current_year is not None:
-                            content += "</ol>"
+                            content += "</ul>"
                         current_year = pub['year']
-                        content += f"\n<h2>{current_year}</h2>\n<ol>"
+                        content += f"\n<h2>{current_year}</h2>\n<ul>"
 
                     # Format authors and check for overrides
                     pub_title = pub['title']
@@ -828,10 +829,10 @@ classes: wide
 
                 # Close the last year's list
                 if current_year is not None:
-                    content += "</ol>"
+                    content += "</ul>"
             else:
                 # Handle Other Publications (no year)
-                content += "\n<ol>"
+                content += "\n<ul>"
                 for pub in pubs:
                     # Format authors and check for overrides
                     pub_title = pub['title']
@@ -920,7 +921,7 @@ classes: wide
                     # Combine all parts
                     entry = f'<li>{authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
                     content += entry
-                content += "</ol>"
+                content += "</ul>"
 
         content += "\n</body>\n</html>"
 
