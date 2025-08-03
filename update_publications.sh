@@ -29,12 +29,14 @@ if [ ! -f "scholar_sync.py" ]; then
     handle_error "scholar_sync.py not found. Please run this script from the correct directory."
 fi
 
-# Activate virtual environment
-log "Activating virtual environment..."
+# Check if virtual environment exists
 if [ ! -d ".venv" ]; then
-    handle_error "Virtual environment .venv not found"
+    log "Virtual environment not found. Creating one..."
+    python3 -m venv .venv
 fi
 
+# Activate virtual environment
+log "Activating virtual environment..."
 source .venv/bin/activate
 
 # Check if virtual environment activation was successful
@@ -65,9 +67,9 @@ if [ $? -eq 0 ]; then
     # If using git, commit the changes
     if [ -d ".git" ]; then
         log "Committing changes to git..."
-        git add publications.md
-        git commit -m "Update publications [automated]"
-        git push
+        git add publications.md || log "Warning: Failed to add publications.md to git"
+        git commit -m "Update publications [automated]" || log "Warning: Failed to commit changes"
+        git push || log "Warning: Failed to push changes"
     fi
     
     log "Backup created at: $BACKUP_DIR/publications_${TIMESTAMP}.md"
