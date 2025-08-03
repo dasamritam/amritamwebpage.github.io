@@ -6,17 +6,9 @@
         "category": "Book Chapters",
         "doi": "10.1109/mcs.2024.3382377"
     },
-    "Example Publication with Year Override": {
-        "year": 2025,
-        "venue": "Updated Journal Name",
-        "doi": "10.1000/example.2025.001"
-    },
-    "Example Publication with DOI Override": {
-        "doi": "10.1000/correct.doi.2024.001"
-    },
     "Custom Publication Not in Google Scholar": {
         "authors": "A. Das, J. Smith, M. Johnson",
-        "title": "Custom Publication Title",
+        "title": "New Publication Title",
         "year": 2024,
         "venue": "Custom Journal",
         "category": "Journals",
