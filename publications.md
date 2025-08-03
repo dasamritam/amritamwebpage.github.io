@@ -50,6 +50,23 @@ classes: wide
     .tag.fault { background: #F8D7DA; color: #721c24; }
     ol { margin: 0; padding: 0; }
     li { margin: 0; padding: 0; }
+    ul { 
+      list-style-type: none; 
+      margin: 0; 
+      padding: 0; 
+    }
+    ul li { 
+      position: relative; 
+      padding-left: 20px; 
+      margin-bottom: 8px;
+    }
+    ul li:before { 
+      content: "📄"; 
+      position: absolute; 
+      left: 0; 
+      color: #0066cc;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
