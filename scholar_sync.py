@@ -295,8 +295,33 @@ class ScholarSync:
             except:
                 pass
 
+        # Add custom publications from overrides
+        custom_publications = self._get_custom_publications()
+        processed_publications.extend(custom_publications)
+        
         print(f"Found {len(processed_publications)} publications total.")
         return processed_publications
+
+    def _get_custom_publications(self) -> List[Dict]:
+        """Extract custom publications from overrides that have all required fields."""
+        custom_pubs = []
+        for title, override in self.publication_overrides.items():
+            # Check if this is a complete custom publication (has title, authors, year, venue)
+            if all(key in override for key in ['title', 'authors', 'year', 'venue']):
+                custom_pub = {
+                    'title': override['title'],
+                    'authors': override['authors'],
+                    'year': override['year'],
+                    'venue': override['venue'],
+                    'category': override.get('category', 'Other Publications'),
+                    'doi': override.get('doi'),
+                    'scholar_link': override.get('scholar_link'),
+                    'tags': override.get('tags', [])
+                }
+                custom_pubs.append(custom_pub)
+                print(f"Added custom publication: {override['title']}")
+        
+        return custom_pubs
 
     def classify_publication(self, pub: Dict) -> str:
         """Classify a publication into its category based on venue and title."""
@@ -713,17 +738,48 @@ classes: wide
                         current_year = pub['year']
                         content += f"\n<h2>{current_year}</h2>\n<ol>"
 
-                    # Format authors
-                    authors = pub['authors'].split(', ')
-                    # Remove any ellipsis (...) from the author list
-                    authors = [author for author in authors if author != '...']
-                    # Standardize each author's name
-                    authors = [self._standardize_author_name(author) for author in authors]
-                    authors = [f'<span class="author-highlight">A. Das</span>' if 'A. Das' in author else author for author in authors]
-                    authors_str = ', '.join(authors)
+                    # Format authors and check for overrides
+                    pub_title = pub['title']
+                    override = self.publication_overrides.get(pub_title, {})
+                    
+                    # Handle authors
+                    if 'authors' in override:
+                        # Use override authors
+                        authors_str = override['authors']
+                        # Highlight your name in the override
+                        authors_str = authors_str.replace('A. Das', '<span class="author-highlight">A. Das</span>')
+                    else:
+                        # Use original authors
+                        authors = pub['authors'].split(', ')
+                        # Remove any ellipsis (...) from the author list
+                        authors = [author for author in authors if author != '...']
+                        # Standardize each author's name
+                        authors = [self._standardize_author_name(author) for author in authors]
+                        authors = [f'<span class="author-highlight">A. Das</span>' if 'A. Das' in author else author for author in authors]
+                        authors_str = ', '.join(authors)
+
+                    # Handle year override
+                    if 'year' in override:
+                        pub['year'] = override['year']
+                    
+                    # Handle venue override
+                    if 'venue' in override:
+                        pub['venue'] = override['venue']
+                    
+                    # Handle category override
+                    if 'category' in override:
+                        pub['category'] = override['category']
+                    
+                    # Handle DOI override
+                    if 'doi' in override:
+                        pub['doi'] = override['doi']
+                    
+                    # Handle tags override
+                    if 'tags' in override:
+                        pub['tags'] = override['tags']
 
                     # Format title
-                    title = f'<span class="title-italic">{pub["title"]}</span>'
+                    title = f'<span class="title-italic">{pub_title}</span>'
 
                     # Format venue
                     venue = f'<span class="venue">{pub["venue"]}'
@@ -777,17 +833,48 @@ classes: wide
                 # Handle Other Publications (no year)
                 content += "\n<ol>"
                 for pub in pubs:
-                    # Format authors
-                    authors = pub['authors'].split(', ')
-                    # Remove any ellipsis (...) from the author list
-                    authors = [author for author in authors if author != '...']
-                    # Standardize each author's name
-                    authors = [self._standardize_author_name(author) for author in authors]
-                    authors = [f'<span class="author-highlight">A. Das</span>' if 'A. Das' in author else author for author in authors]
-                    authors_str = ', '.join(authors)
+                    # Format authors and check for overrides
+                    pub_title = pub['title']
+                    override = self.publication_overrides.get(pub_title, {})
+                    
+                    # Handle authors
+                    if 'authors' in override:
+                        # Use override authors
+                        authors_str = override['authors']
+                        # Highlight your name in the override
+                        authors_str = authors_str.replace('A. Das', '<span class="author-highlight">A. Das</span>')
+                    else:
+                        # Use original authors
+                        authors = pub['authors'].split(', ')
+                        # Remove any ellipsis (...) from the author list
+                        authors = [author for author in authors if author != '...']
+                        # Standardize each author's name
+                        authors = [self._standardize_author_name(author) for author in authors]
+                        authors = [f'<span class="author-highlight">A. Das</span>' if 'A. Das' in author else author for author in authors]
+                        authors_str = ', '.join(authors)
+
+                    # Handle year override
+                    if 'year' in override:
+                        pub['year'] = override['year']
+                    
+                    # Handle venue override
+                    if 'venue' in override:
+                        pub['venue'] = override['venue']
+                    
+                    # Handle category override
+                    if 'category' in override:
+                        pub['category'] = override['category']
+                    
+                    # Handle DOI override
+                    if 'doi' in override:
+                        pub['doi'] = override['doi']
+                    
+                    # Handle tags override
+                    if 'tags' in override:
+                        pub['tags'] = override['tags']
 
                     # Format title
-                    title = f'<span class="title-italic">{pub["title"]}</span>'
+                    title = f'<span class="title-italic">{pub_title}</span>'
 
                     # Format venue
                     venue = f'<span class="venue">{pub["venue"]}'

@@ -1,5 +1,27 @@
 {
     "Control for societal-scale challenges: Road map 2030": {
-        "authors": "Andrew Alleyne, Frank Allgöwer, Aaron D Ames, Saurabh Amin, James Anderson, Anuradha M Annaswamy, Panos J Antsaklis, Neda Bagheri, Hamsa Balakrishnan, Bassam Bamieh, John Baras, Margret Bauer, Alexandre Bayen, Paul Bogdan, Steven L Brunton, Francesco Bullo, Etienne Burdet, Joel Burdick, Laurent Burlion, Carlos Canudas de Wit, Ming Cao, Christos G Cassandras, Aranya Chakrabortty, Giacomo Como, Marie Csete, Fabrizio Dabbene, Munther Dahleh, Amritam Das, Eyal Dassau, Claudio De Persis, Mario di Bernardo, Stefano Di Cairano, Dimos Dimarogonas, Florian Dörfler, John C Doyle, Francis J Doyle III, Anca Dragan, Magnus Egerstedt, Johan Eker, Sarah Fay, Dimitar Filev, Angela Fontan, Elisa Franco, Masayuki Fujita, Mario Garcia-Sanz, Dennice Gayme, WPMH Heemels, João P Hespanha, Sandra Hirche, Anette Hosoi, Jonathan P How, Gabriela Hug, Marija Ilić, Hideaki Ishii, Ali Jadbabaie, Matin Jafarian, Samuel Qing-Shan Jia, Tor Johansen, Karl Henrik Johansson"
+        "authors": "Andrew Alleyne, Frank Allgöwer, Aaron D Ames, Saurabh Amin, James Anderson, Anuradha M Annaswamy, Panos J Antsaklis, Neda Bagheri, Hamsa Balakrishnan, Bassam Bamieh, John Baras, Margret Bauer, Alexandre Bayen, Paul Bogdan, Steven L Brunton, Francesco Bullo, Etienne Burdet, Joel Burdick, Laurent Burlion, Carlos Canudas de Wit, Ming Cao, Christos G Cassandras, Aranya Chakrabortty, Giacomo Como, Marie Csete, Fabrizio Dabbene, Munther Dahleh, Amritam Das, Eyal Dassau, Claudio De Persis, Mario di Bernardo, Stefano Di Cairano, Dimos Dimarogonas, Florian Dörfler, John C Doyle, Francis J Doyle III, Anca Dragan, Magnus Egerstedt, Johan Eker, Sarah Fay, Dimitar Filev, Angela Fontan, Elisa Franco, Masayuki Fujita, Mario Garcia-Sanz, Dennice Gayme, WPMH Heemels, João P Hespanha, Sandra Hirche, Anette Hosoi, Jonathan P How, Gabriela Hug, Marija Ilić, Hideaki Ishii, Ali Jadbabaie, Matin Jafarian, Samuel Qing-Shan Jia, Tor Johansen, Karl Henrik Johansson",
+        "year": 2023,
+        "venue": "IEEE Control Systems Society",
+        "category": "Book Chapters",
+        "doi": "10.1109/mcs.2024.3382377"
+    },
+    "Example Publication with Year Override": {
+        "year": 2025,
+        "venue": "Updated Journal Name",
+        "doi": "10.1000/example.2025.001"
+    },
+    "Example Publication with DOI Override": {
+        "doi": "10.1000/correct.doi.2024.001"
+    },
+    "Custom Publication Not in Google Scholar": {
+        "authors": "A. Das, J. Smith, M. Johnson",
+        "title": "Custom Publication Title",
+        "year": 2024,
+        "venue": "Custom Journal",
+        "category": "Journals",
+        "doi": "10.1000/custom.2024.001",
+        "scholar_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dZ1NkwoAAAAJ&citation_for_view=dZ1NkwoAAAAJ:example",
+        "tags": ["Control of PDEs", "Machine Learning"]
     }
 } 
