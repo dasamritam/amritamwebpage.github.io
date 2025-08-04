@@ -6,14 +6,7 @@
         "category": "Book Chapters",
         "doi": "10.1109/mcs.2024.3382377"
     },
-    "Custom Publication Not in Google Scholar": {
-        "authors": "A. Das, J. Smith, M. Johnson",
-        "title": "New Publication Title",
-        "year": 2024,
-        "venue": "Custom Journal",
-        "category": "Journals",
-        "doi": "10.1000/custom.2024.001",
-        "scholar_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dZ1NkwoAAAAJ&citation_for_view=dZ1NkwoAAAAJ:example",
-        "tags": ["Control of PDEs", "Machine Learning"]
-    }
+    "Extension of the partial integral equation representation to GPDE input-output systems": {
+            "doi": "10.1109/TAC.2024.35059547"
+        }
 } 
