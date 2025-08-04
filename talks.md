@@ -47,7 +47,7 @@ classes: wide
 
 ## Talk Locations Map
 
-       <div id="talk-map" style="height: 400px; width: 100%; margin: 20px 0;"></div>
+<div id="talk-map" style="height: 400px; width: 100%; margin: 20px 0;"></div>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
