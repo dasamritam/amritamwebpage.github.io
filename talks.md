@@ -47,7 +47,7 @@ classes: wide
 
 ## Talk Locations Map
 
-<div id="talk-map" style="height: 500px; width: 100%; margin: 20px 0;"></div>
+       <div id="talk-map" style="height: 400px; width: 100%; margin: 20px 0;"></div>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -193,12 +193,12 @@ talkLocations.forEach(talk => {
     marker.bindPopup(popupContent);
     
     // Color code the markers
-    const icon = L.divIcon({
-        className: 'custom-div-icon',
-        html: `<div style="background-color: ${colors[talk.type]}; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 4px rgba(0,0,0,0.3);"></div>`,
-        iconSize: [12, 12],
-        iconAnchor: [6, 6]
-    });
+               const icon = L.divIcon({
+               className: 'custom-div-icon',
+               html: `<div style="background-color: ${colors[talk.type]}; width: 18px; height: 18px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 4px rgba(0,0,0,0.3);"></div>`,
+               iconSize: [18, 18],
+               iconAnchor: [9, 9]
+           });
     
     marker.setIcon(icon);
 });
@@ -213,18 +213,18 @@ legend.onAdd = function(map) {
     div.style.boxShadow = '0 0 10px rgba(0,0,0,0.1)';
     div.innerHTML = `
         <h4 style="margin: 0 0 8px 0;">Talk Types</h4>
-        <div style="display: flex; align-items: center; margin: 4px 0;">
-            <div style="background-color: ${colors['PhD Defense']}; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px;"></div>
-            <span>PhD Defense</span>
-        </div>
-        <div style="display: flex; align-items: center; margin: 4px 0;">
-            <div style="background-color: ${colors['Invited Seminar']}; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px;"></div>
-            <span>Invited Seminar</span>
-        </div>
-        <div style="display: flex; align-items: center; margin: 4px 0;">
-            <div style="background-color: ${colors['Conference']}; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px;"></div>
-            <span>Conference</span>
-        </div>
+                       <div style="display: flex; align-items: center; margin: 4px 0;">
+                   <div style="background-color: ${colors['PhD Defense']}; width: 18px; height: 18px; border-radius: 50%; margin-right: 8px;"></div>
+                   <span>PhD Defense</span>
+               </div>
+               <div style="display: flex; align-items: center; margin: 4px 0;">
+                   <div style="background-color: ${colors['Invited Seminar']}; width: 18px; height: 18px; border-radius: 50%; margin-right: 8px;"></div>
+                   <span>Invited Seminar</span>
+               </div>
+               <div style="display: flex; align-items: center; margin: 4px 0;">
+                   <div style="background-color: ${colors['Conference']}; width: 18px; height: 18px; border-radius: 50%; margin-right: 8px;"></div>
+                   <span>Conference</span>
+               </div>
     `;
     return div;
 };
