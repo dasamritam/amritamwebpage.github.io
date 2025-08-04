@@ -701,19 +701,8 @@ classes: wide
     }
     .publications-list li { 
       position: relative; 
-      padding-left: 20px; 
+      padding-left: 35px; 
       margin-bottom: 8px;
-    }
-    .publications-list li:before { 
-      content: "📄"; 
-      position: absolute; 
-      left: 0; 
-      color: #0066cc;
-      font-size: 0.9em;
-      cursor: pointer;
-    }
-    .publications-list li:before:hover { 
-      color: #003366;
     }
   </style>
 </head>
@@ -803,8 +792,13 @@ classes: wide
                     # Format title
                     title = f'<span class="title-italic">{pub_title}</span>'
 
-                    # Format venue
-                    venue = f'<span class="venue">{pub["venue"]}'
+                    # Format venue (remove arXiv ID from venue text)
+                    venue_text = pub["venue"]
+                    if venue_text.startswith('arXiv preprint arXiv:'):
+                        # Extract just "arXiv preprint" without the ID
+                        venue_text = 'arXiv preprint'
+                    
+                    venue = f'<span class="venue">{venue_text}'
                     if category != 'Other Publications' and pub['year']:
                         venue += f', {pub["year"]}'
                     venue += '</span>'
@@ -848,9 +842,9 @@ classes: wide
 
                     # Combine all parts with clickable paper icon
                     if paper_link:
-                        entry = f'<li><a href="{paper_link}" style="text-decoration: none; color: inherit;">📄</a> {authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
+                        entry = f'<li><a href="{paper_link}" target="_blank" style="text-decoration: none; color: #0066cc; font-size: 1.2em; margin-right: 8px;">📄</a> {authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
                     else:
-                        entry = f'<li>📄 {authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
+                        entry = f'<li><span style="color: #0066cc; font-size: 1.2em; margin-right: 8px;">📄</span> {authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
                     content += entry
 
                 # Close the last year's list
@@ -903,8 +897,13 @@ classes: wide
                     # Format title
                     title = f'<span class="title-italic">{pub_title}</span>'
 
-                    # Format venue
-                    venue = f'<span class="venue">{pub["venue"]}'
+                    # Format venue (remove arXiv ID from venue text)
+                    venue_text = pub["venue"]
+                    if venue_text.startswith('arXiv preprint arXiv:'):
+                        # Extract just "arXiv preprint" without the ID
+                        venue_text = 'arXiv preprint'
+                    
+                    venue = f'<span class="venue">{venue_text}'
                     if category != 'Other Publications' and pub['year']:
                         venue += f', {pub["year"]}'
                     venue += '</span>'
@@ -948,9 +947,9 @@ classes: wide
 
                     # Combine all parts with clickable paper icon
                     if paper_link:
-                        entry = f'<li><a href="{paper_link}" style="text-decoration: none; color: inherit;">📄</a> {authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
+                        entry = f'<li><a href="{paper_link}" target="_blank" style="text-decoration: none; color: #0066cc; font-size: 1.2em; margin-right: 8px;">📄</a> {authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
                     else:
-                        entry = f'<li>📄 {authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
+                        entry = f'<li><span style="color: #0066cc; font-size: 1.2em; margin-right: 8px;">📄</span> {authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
                     content += entry
                 content += "</ul>"
 
