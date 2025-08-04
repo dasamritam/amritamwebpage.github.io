@@ -694,6 +694,27 @@ classes: wide
     .tag.fault { background: #F8D7DA; color: #721c24; }
     ol { margin: 0; padding: 0; }
     li { margin: 0; padding: 0; }
+    .publications-list { 
+      list-style-type: none; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .publications-list li { 
+      position: relative; 
+      padding-left: 20px; 
+      margin-bottom: 8px;
+    }
+    .publications-list li:before { 
+      content: "📄"; 
+      position: absolute; 
+      left: 0; 
+      color: #0066cc;
+      font-size: 0.9em;
+      cursor: pointer;
+    }
+    .publications-list li:before:hover { 
+      color: #003366;
+    }
   </style>
 </head>
 <body>"""
@@ -737,7 +758,7 @@ classes: wide
                         if current_year is not None:
                             content += "</ul>"
                         current_year = pub['year']
-                        content += f"\n<h2>{current_year}</h2>\n<ul>"
+                        content += f"\n<h2>{current_year}</h2>\n<ul class=\"publications-list\">"
 
                     # Format authors and check for overrides
                     pub_title = pub['title']
@@ -788,28 +809,30 @@ classes: wide
                         venue += f', {pub["year"]}'
                     venue += '</span>'
 
-                    # Format links
-                    links = []
+                    # Get the link URL for the paper icon
+                    paper_link = ""
                     if pub.get('doi'):
                         # Check if it's an arXiv ID
                         if pub['doi'].startswith('arxiv.org/abs/'):
                             arxiv_id = pub['doi'].replace('arxiv.org/abs/', '')
-                            links.append(f'[<a href="https://arxiv.org/abs/{arxiv_id}">arXiv</a>]')
+                            paper_link = f'https://arxiv.org/abs/{arxiv_id}'
                         # Check if it's a placeholder DOI
                         elif 'XXXXXXX' in pub['doi']:
                             # Try to get the actual DOI from CrossRef
                             actual_doi = self.get_doi_from_crossref(pub['title'], year=str(pub['year']), venue=pub['venue'])
                             if actual_doi:
-                                links.append(f'[<a href="https://doi.org/{actual_doi}">DOI</a>]')
+                                paper_link = f'https://doi.org/{actual_doi}'
                             else:
-                                links.append(f'[<a href="{pub.get("scholar_link", "#")}">Google Scholar</a>]')
+                                paper_link = pub.get("scholar_link", "#")
                         else:
                             # Clean up the DOI
                             doi = pub['doi'].replace('doi.org/', '').replace('doi:', '')
-                            links.append(f'[<a href="https://doi.org/{doi}">DOI</a>]')
+                            paper_link = f'https://doi.org/{doi}'
                     elif pub.get('scholar_link'):
-                        links.append(f'[<a href="{pub["scholar_link"]}">Google Scholar</a>]')
-                    links_str = ' '.join(links)
+                        paper_link = pub["scholar_link"]
+                    
+                    # No links in text anymore
+                    links_str = ""
 
                     # Format tags
                     tags = []
@@ -823,8 +846,11 @@ classes: wide
                         tags.append('<span class="tag fault">Fault Diagnosis</span>')
                     tags_str = f'<span class="theme-tags">{" ".join(tags)}</span>' if tags else ''
 
-                    # Combine all parts
-                    entry = f'<li>{authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
+                    # Combine all parts with clickable paper icon
+                    if paper_link:
+                        entry = f'<li><a href="{paper_link}" style="text-decoration: none; color: inherit;">📄</a> {authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
+                    else:
+                        entry = f'<li>📄 {authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
                     content += entry
 
                 # Close the last year's list
@@ -832,7 +858,7 @@ classes: wide
                     content += "</ul>"
             else:
                 # Handle Other Publications (no year)
-                content += "\n<ul>"
+                content += "\n<ul class=\"publications-list\">"
                 for pub in pubs:
                     # Format authors and check for overrides
                     pub_title = pub['title']
@@ -883,28 +909,30 @@ classes: wide
                         venue += f', {pub["year"]}'
                     venue += '</span>'
 
-                    # Format links
-                    links = []
+                    # Get the link URL for the paper icon
+                    paper_link = ""
                     if pub.get('doi'):
                         # Check if it's an arXiv ID
                         if pub['doi'].startswith('arxiv.org/abs/'):
                             arxiv_id = pub['doi'].replace('arxiv.org/abs/', '')
-                            links.append(f'[<a href="https://arxiv.org/abs/{arxiv_id}">arXiv</a>]')
+                            paper_link = f'https://arxiv.org/abs/{arxiv_id}'
                         # Check if it's a placeholder DOI
                         elif 'XXXXXXX' in pub['doi']:
                             # Try to get the actual DOI from CrossRef
                             actual_doi = self.get_doi_from_crossref(pub['title'], venue=pub['venue'])
                             if actual_doi:
-                                links.append(f'[<a href="https://doi.org/{actual_doi}">DOI</a>]')
+                                paper_link = f'https://doi.org/{actual_doi}'
                             else:
-                                links.append(f'[<a href="{pub.get("scholar_link", "#")}">Google Scholar</a>]')
+                                paper_link = pub.get("scholar_link", "#")
                         else:
                             # Clean up the DOI
                             doi = pub['doi'].replace('doi.org/', '').replace('doi:', '')
-                            links.append(f'[<a href="https://doi.org/{doi}">DOI</a>]')
+                            paper_link = f'https://doi.org/{doi}'
                     elif pub.get('scholar_link'):
-                        links.append(f'[<a href="{pub["scholar_link"]}">Google Scholar</a>]')
-                    links_str = ' '.join(links)
+                        paper_link = pub["scholar_link"]
+                    
+                    # No links in text anymore
+                    links_str = ""
 
                     # Format tags
                     tags = []
@@ -918,8 +946,11 @@ classes: wide
                         tags.append('<span class="tag fault">Fault Diagnosis</span>')
                     tags_str = f'<span class="theme-tags">{" ".join(tags)}</span>' if tags else ''
 
-                    # Combine all parts
-                    entry = f'<li>{authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
+                    # Combine all parts with clickable paper icon
+                    if paper_link:
+                        entry = f'<li><a href="{paper_link}" style="text-decoration: none; color: inherit;">📄</a> {authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
+                    else:
+                        entry = f'<li>📄 {authors_str}. {title}. {venue}. {links_str} {tags_str}</li>'
                     content += entry
                 content += "</ul>"
 
