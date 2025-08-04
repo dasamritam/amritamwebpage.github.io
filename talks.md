@@ -34,7 +34,7 @@ classes: wide
   Reglermöte'22, Luleå, Sweden, June 2022. [[Slides](/files/Slides/Slides-ltu.pdf)]
 - _Robust analysis of uncertain ODE-PDE systems using PIEs._\
   CDC'20, Jeju Island, South Korea, December 2020. [[Slides](/files/Slides/Slides-jeju.pdf)]
-- _$H_{\infty}$ optimal estimation of linear coupled PDE systems.\_\
+- _H∞ optimal estimation of linear coupled PDE systems._\
   CDC'19, Nice, France, December 2019. [[Slides](/files/Slides/Slides-nice.pdf)]
 - _Sensorless field-oriented estimation of hybrid stepper motors in high-performance paper handling._\
   CCTA'19, City of Hong Kong, Hong Kong, August 2019. [[Slides](/files/Slides/Slides-ccta.pdf)]
