@@ -1,42 +1,5 @@
 // Hero Section Animations
 document.addEventListener('DOMContentLoaded', function() {
-    // Animated counters
-    const counters = document.querySelectorAll('.stat-number');
-    
-    const animateCounter = (counter) => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const duration = 2000; // 2 seconds
-        const step = target / (duration / 16); // 60fps
-        let current = 0;
-        
-        const timer = setInterval(() => {
-            current += step;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            counter.textContent = Math.floor(current);
-        }, 16);
-    };
-    
-    // Intersection Observer for counters
-    const observerOptions = {
-        threshold: 0.5,
-        rootMargin: '0px 0px -100px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    counters.forEach(counter => {
-        observer.observe(counter);
-    });
     
     // Smooth scroll for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
