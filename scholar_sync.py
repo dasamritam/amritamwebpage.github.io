@@ -806,8 +806,11 @@ classes: wide
                     # Get the link URL for the paper icon
                     paper_link = ""
                     if pub.get('doi'):
+                        # Check if it's a full URL (starts with http)
+                        if pub['doi'].startswith('http://') or pub['doi'].startswith('https://'):
+                            paper_link = pub['doi']
                         # Check if it's an arXiv ID
-                        if pub['doi'].startswith('arxiv.org/abs/'):
+                        elif pub['doi'].startswith('arxiv.org/abs/'):
                             arxiv_id = pub['doi'].replace('arxiv.org/abs/', '')
                             paper_link = f'https://arxiv.org/abs/{arxiv_id}'
                         # Check if it's a placeholder DOI
@@ -911,8 +914,11 @@ classes: wide
                     # Get the link URL for the paper icon
                     paper_link = ""
                     if pub.get('doi'):
+                        # Check if it's a full URL (starts with http)
+                        if pub['doi'].startswith('http://') or pub['doi'].startswith('https://'):
+                            paper_link = pub['doi']
                         # Check if it's an arXiv ID
-                        if pub['doi'].startswith('arxiv.org/abs/'):
+                        elif pub['doi'].startswith('arxiv.org/abs/'):
                             arxiv_id = pub['doi'].replace('arxiv.org/abs/', '')
                             paper_link = f'https://arxiv.org/abs/{arxiv_id}'
                         # Check if it's a placeholder DOI
