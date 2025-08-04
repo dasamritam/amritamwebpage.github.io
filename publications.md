@@ -64,7 +64,7 @@ classes: wide
       content: "📄"; 
       position: absolute; 
       left: 0; 
-      color: #0066cc;
+      color: #003366;
       font-size: 0.9em;
     }
   </style>
