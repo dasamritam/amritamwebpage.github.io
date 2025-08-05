@@ -286,7 +286,7 @@ classes: wide
 
 <div class="personal-note">
   <div class="personal-note-icon">
-    <i class="fas fa-heart"></i>
+    <i class="fas fa-flag"></i>
   </div>
   <div class="personal-note-title">A Personal Note</div>
   <div class="personal-note-content">
