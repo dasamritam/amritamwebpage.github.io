@@ -135,6 +135,57 @@ classes: wide
     grid-template-columns: 1fr;
   }
 }
+
+/* Anecdote card style */
+.anecdote-card {
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  color: #4a5568;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 2rem auto;
+  border-left: 4px solid #e2e8f0;
+}
+
+.anecdote-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.anecdote-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e2e8f0, #cbd5e0);
+}
+
+.anecdote-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  color: #718096;
+  animation: bounceIn 1s ease-out 0.5s both;
+}
+
+.anecdote-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #2d3748;
+  font-style: italic;
+}
+
+.anecdote-content {
+  line-height: 1.5;
+  color: #4a5568;
+  font-size: 0.95rem;
+}
 </style>
 
 <div class="intro-section">
@@ -178,14 +229,12 @@ classes: wide
   </div>
 </div>
 
-<div class="info-cards">
-  <div class="info-card">
-    <div class="card-icon">
-      <i class="fas fa-globe-asia"></i>
-    </div>
-    <div class="card-title">Cultural Heritage</div>
-    <div class="card-content">
-      I am originally from <strong>West Bengal, India</strong>. I feel incredibly privileged growing up with the most diverse culture, profound sense of values, and exceptional cuisine that India has to offer. Outside work, I am passionate about <strong>effective altruism</strong>, <strong>vedic philosophy</strong>, and <strong>backgammon</strong>.
-    </div>
+<div class="anecdote-card">
+  <div class="anecdote-icon">
+    <i class="fas fa-heart"></i>
+  </div>
+  <div class="anecdote-title">A Personal Note</div>
+  <div class="anecdote-content">
+    I am originally from <strong>West Bengal, India</strong>. I feel incredibly privileged growing up with the most diverse culture, profound sense of values, and exceptional cuisine that India has to offer. Outside work, I am passionate about <strong>effective altruism</strong>, <strong>vedic philosophy</strong>, and <strong>backgammon</strong>.
   </div>
 </div>
