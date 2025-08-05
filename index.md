@@ -5,20 +5,180 @@ author_profile: true
 classes: wide
 ---
 
-I am an assistant professor at [Eindhoven University of Technology](https://www.tue.nl/en/). I am part of the Control Systems (CS) group at the Eletrical Enegineering (EE) department. Previously, I held post-doctoral fellowship at KTH Royal Institute of Technology, Sweden and the University of Cambridge, UK. I recieved MSc. in Systems & Control and PhD in Electrical Engineering from the Eindhoven University of Technology in 2016 and 2020, respectively.
-{: style="text-align: justify;"}
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-I am originally from West Bengal, India. I feel incredibly privileged growing up with the most diverse culture, profound sense of values and exceptional cuisine that India has to offer. Outside work I am passionate about effective altruism, vedic philosophy, and backgammon.  
-{: style="text-align: justify;"}
+<style>
+.intro-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
 
-### My Research
+.intro-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
 
-Area of my expertise is **control theory** and its application. What excites me most about control theory is that despite of being a part of applied mathematics, control theory is always inspired by a concrete, real-world application. In control theory, I specialize in Control of PDEs, Physics Informed Leanring, Passivity theory, and Model Reduction.
-{: style="text-align: justify;"}
+.intro-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
 
-My research focuses on _designing controllers for complex multi-physical systems_. I complement new theories with applications of societal and industrial importance. There are two kinds of applications that I work on; as shown in the thematic depiction of my research below:
-{: style="text-align: justify;"}
+.catchy-oneliner {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out;
+}
 
-<!-- Download my curriculum vitae here: [CV](/assets/Fontan_CV_short.pdf).
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #667eea;
+  animation: bounceIn 1s ease-out 0.5s both;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+.card-content {
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .catchy-oneliner {
+    font-size: 2rem;
+  }
+  
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="intro-section">
+  <div class="intro-content">
+    <div class="catchy-oneliner">
+      <i class="fas fa-rocket" style="margin-right: 1rem; color: #ffd700;"></i>
+      Advancing Control Theory for Real-World Impact
+    </div>
+  </div>
+</div>
+
+<div class="info-cards">
+  <div class="info-card">
+    <div class="card-icon">
+      <i class="fas fa-microscope"></i>
+    </div>
+    <div class="card-title">Research Focus</div>
+    <div class="card-content">
+      I conduct cutting-edge research in <strong>control theory</strong> and its applications. My expertise spans <strong>Control of PDEs</strong>, <strong>Physics Informed Learning</strong>, <strong>Passivity Theory</strong>, and <strong>Model Reduction</strong>. What excites me most is that control theory, despite being applied mathematics, is always inspired by concrete, real-world applications.
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="card-icon">
+      <i class="fas fa-graduation-cap"></i>
+    </div>
+    <div class="card-title">Academic Background</div>
+    <div class="card-content">
+      I am an <strong>Assistant Professor</strong> at <a href="https://www.tue.nl/en/" style="color: #667eea; text-decoration: none;">Eindhoven University of Technology</a>, part of the Control Systems (CS) group. Previously, I held post-doctoral fellowships at <strong>KTH Royal Institute of Technology</strong>, Sweden and the <strong>University of Cambridge</strong>, UK. I received my <strong>PhD in Electrical Engineering (2020)</strong> and <strong>MSc in Systems & Control (2016)</strong> from TU Eindhoven.
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="card-icon">
+      <i class="fas fa-globe-asia"></i>
+    </div>
+    <div class="card-title">Cultural Heritage</div>
+    <div class="card-content">
+      I am originally from <strong>West Bengal, India</strong>. I feel incredibly privileged growing up with the most diverse culture, profound sense of values, and exceptional cuisine that India has to offer. Outside work, I am passionate about <strong>effective altruism</strong>, <strong>vedic philosophy</strong>, and <strong>backgammon</strong>.
+    </div>
+  </div>
+</div>
+
+### Research Applications
+
+My research focuses on <em>designing controllers for complex multi-physical systems</em>. I complement new theories with applications of societal and industrial importance. There are two kinds of applications that I work on, as shown in the thematic depiction of my research below:
 {: style="text-align: justify;"}
- -->
