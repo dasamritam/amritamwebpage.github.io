@@ -136,55 +136,65 @@ classes: wide
   }
 }
 
-/* Anecdote card style */
-.anecdote-card {
-  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+/* Picture frame card style */
+.picture-frame-card {
+  background: linear-gradient(135deg, #fef5e7 0%, #fed7aa 100%);
   color: #4a5568;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
   max-width: 600px;
   margin: 2rem auto;
-  border-left: 4px solid #e2e8f0;
+  border: 8px solid #d69e2e;
+  transform: rotate(-1deg);
 }
 
-.anecdote-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+.picture-frame-card:hover {
+  transform: rotate(0deg) translateY(-5px);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.anecdote-card::before {
+.picture-frame-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #e2e8f0, #cbd5e0);
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #d69e2e, #f6ad55, #d69e2e);
+  border-radius: 12px;
+  z-index: -1;
 }
 
-.anecdote-icon {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-  color: #718096;
+.picture-frame-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #d69e2e;
   animation: bounceIn 1s ease-out 0.5s both;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.anecdote-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  color: #2d3748;
-  font-style: italic;
+.picture-frame-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #744210;
+  font-family: 'Georgia', serif;
+  text-align: center;
 }
 
-.anecdote-content {
-  line-height: 1.5;
+.picture-frame-content {
+  line-height: 1.6;
   color: #4a5568;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-family: 'Georgia', serif;
+  text-align: center;
 }
 </style>
 
@@ -229,12 +239,12 @@ classes: wide
   </div>
 </div>
 
-<div class="anecdote-card">
-  <div class="anecdote-icon">
-    <i class="fas fa-heart"></i>
+<div class="picture-frame-card">
+  <div class="picture-frame-icon">
+    <i class="fas fa-image"></i>
   </div>
-  <div class="anecdote-title">A Personal Note</div>
-  <div class="anecdote-content">
+  <div class="picture-frame-title">A Personal Note</div>
+  <div class="picture-frame-content">
     I am originally from <strong>West Bengal, India</strong>. I feel incredibly privileged growing up with the most diverse culture, profound sense of values, and exceptional cuisine that India has to offer. Outside work, I am passionate about <strong>effective altruism</strong>, <strong>vedic philosophy</strong>, and <strong>backgammon</strong>.
   </div>
 </div>
