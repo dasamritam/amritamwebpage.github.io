@@ -169,7 +169,7 @@ classes: wide
 
   <div class="info-card">
     <div class="card-icon">
-      <i class="fas fa-globe-asia"></i>
+      <i class="fas fa-cogs"></i>
     </div>
     <div class="card-title">Cultural Heritage</div>
     <div class="card-content">
@@ -180,7 +180,7 @@ classes: wide
 
   <div class="info-card">
     <div class="card-icon">
-      <i class="fas fa-cogs"></i>
+      <i class="fas fa-globe-asia"></i>
     </div>
     <div class="card-title">Research Applications</div>
     <div class="card-content">
