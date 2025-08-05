@@ -7,7 +7,6 @@
 $link-color: #1B66BE;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
-@import "hero-styles"; // hero section styles
 $link-color: #1B66BE;
 
 html {

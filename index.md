@@ -5,8 +5,6 @@ author_profile: true
 classes: wide
 ---
 
-{% include hero-section.html %}
-
 I am an assistant professor at [Eindhoven University of Technology](https://www.tue.nl/en/). I am part of the Control Systems (CS) group at the Eletrical Enegineering (EE) department. Previously, I held post-doctoral fellowship at KTH Royal Institute of Technology, Sweden and the University of Cambridge, UK. I recieved MSc. in Systems & Control and PhD in Electrical Engineering from the Eindhoven University of Technology in 2016 and 2020, respectively.
 {: style="text-align: justify;"}
 
