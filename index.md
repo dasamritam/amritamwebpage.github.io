@@ -136,65 +136,110 @@ classes: wide
   }
 }
 
-/* Picture frame card style */
-.picture-frame-card {
-  background: linear-gradient(135deg, #fef5e7 0%, #fed7aa 100%);
-  color: #4a5568;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 
-    0 8px 25px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
+/* Elegant personal note style */
+.personal-note {
+  text-align: center;
+  margin: 3rem auto;
+  max-width: 700px;
   position: relative;
-  max-width: 600px;
-  margin: 2rem auto;
-  border: 8px solid #d69e2e;
-  transform: rotate(-1deg);
+  padding: 2rem 0;
 }
 
-.picture-frame-card:hover {
-  transform: rotate(0deg) translateY(-5px);
-  box-shadow: 
-    0 15px 35px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.picture-frame-card::before {
+.personal-note::before {
   content: '';
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #d69e2e, #f6ad55, #d69e2e);
-  border-radius: 12px;
-  z-index: -1;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #667eea, transparent);
+  border-radius: 2px;
 }
 
-.picture-frame-icon {
+.personal-note::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #764ba2, transparent);
+  border-radius: 1px;
+}
+
+.personal-note-icon {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #d69e2e;
-  animation: bounceIn 1s ease-out 0.5s both;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  color: #667eea;
+  margin-bottom: 1.5rem;
+  animation: float 3s ease-in-out infinite;
+  display: inline-block;
 }
 
-.picture-frame-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #744210;
+.personal-note-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
   font-family: 'Georgia', serif;
-  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.8;
 }
 
-.picture-frame-content {
-  line-height: 1.6;
+.personal-note-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
   color: #4a5568;
-  font-size: 1rem;
   font-family: 'Georgia', serif;
-  text-align: center;
+  font-style: italic;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.personal-note-content::before {
+  content: '"';
+  font-size: 3rem;
+  color: #667eea;
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  font-family: 'Georgia', serif;
+  opacity: 0.3;
+}
+
+.personal-note-content::after {
+  content: '"';
+  font-size: 3rem;
+  color: #667eea;
+  position: absolute;
+  right: -20px;
+  bottom: -30px;
+  font-family: 'Georgia', serif;
+  opacity: 0.3;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.personal-note:hover .personal-note-icon {
+  animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 </style>
 
@@ -239,12 +284,12 @@ classes: wide
   </div>
 </div>
 
-<div class="picture-frame-card">
-  <div class="picture-frame-icon">
-    <i class="fas fa-image"></i>
+<div class="personal-note">
+  <div class="personal-note-icon">
+    <i class="fas fa-heart"></i>
   </div>
-  <div class="picture-frame-title">A Personal Note</div>
-  <div class="picture-frame-content">
+  <div class="personal-note-title">A Personal Note</div>
+  <div class="personal-note-content">
     I am originally from <strong>West Bengal, India</strong>. I feel incredibly privileged growing up with the most diverse culture, profound sense of values, and exceptional cuisine that India has to offer. Outside work, I am passionate about <strong>effective altruism</strong>, <strong>vedic philosophy</strong>, and <strong>backgammon</strong>.
   </div>
 </div>
