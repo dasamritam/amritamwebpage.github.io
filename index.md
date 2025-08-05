@@ -178,7 +178,13 @@ classes: wide
   </div>
 </div>
 
-### Research Applications
-
-My research focuses on <em>designing controllers for complex multi-physical systems</em>. I complement new theories with applications of societal and industrial importance. There are two kinds of applications that I work on, as shown in the thematic depiction of my research below:
-{: style="text-align: justify;"}
+  <div class="info-card">
+    <div class="card-icon">
+      <i class="fas fa-cogs"></i>
+    </div>
+    <div class="card-title">Research Applications</div>
+    <div class="card-content">
+      My research focuses on <em>designing controllers for complex multi-physical systems</em>. I complement new theories with applications of societal and industrial importance. There are two kinds of applications that I work on, as shown in the thematic depiction of my research below:
+    </div>
+  </div>
+</div>
