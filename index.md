@@ -171,20 +171,19 @@ classes: wide
     <div class="card-icon">
       <i class="fas fa-cogs"></i>
     </div>
-    <div class="card-title">Cultural Heritage</div>
+    <div class="card-title">Research Applications</div>
     <div class="card-content">
-      I am originally from <strong>West Bengal, India</strong>. I feel incredibly privileged growing up with the most diverse culture, profound sense of values, and exceptional cuisine that India has to offer. Outside work, I am passionate about <strong>effective altruism</strong>, <strong>vedic philosophy</strong>, and <strong>backgammon</strong>.
+      My research focuses on <em>designing controllers for complex multi-physical systems</em>. I complement new theories with applications of societal and industrial importance. There are two kinds of applications that I work on, as shown in the thematic depiction of my research below:
     </div>
   </div>
-</div>
 
   <div class="info-card">
     <div class="card-icon">
       <i class="fas fa-globe-asia"></i>
     </div>
-    <div class="card-title">Research Applications</div>
+    <div class="card-title">Cultural Heritage</div>
     <div class="card-content">
-      My research focuses on <em>designing controllers for complex multi-physical systems</em>. I complement new theories with applications of societal and industrial importance. There are two kinds of applications that I work on, as shown in the thematic depiction of my research below:
+      I am originally from <strong>West Bengal, India</strong>. I feel incredibly privileged growing up with the most diverse culture, profound sense of values, and exceptional cuisine that India has to offer. Outside work, I am passionate about <strong>effective altruism</strong>, <strong>vedic philosophy</strong>, and <strong>backgammon</strong>.
     </div>
   </div>
 </div>
