@@ -269,7 +269,7 @@ classes: wide
     </div>
     <div class="card-title">Academic Background</div>
     <div class="card-content">
-      I am an <strong>Assistant Professor</strong> at <a href="https://www.tue.nl/en/" style="color: #667eea; text-decoration: none;">Eindhoven University of Technology</a>, part of the Control Systems (CS) group. Previously, I held post-doctoral fellowships at <strong>KTH Royal Institute of Technology</strong>, Sweden and the <strong>University of Cambridge</strong>, UK. I received my <strong>PhD in Electrical Engineering (2020)</strong> and <strong>MSc in Systems & Control (2016)</strong> from TU Eindhoven.
+      My undergraduate study (2010-2014) was in Mechatronics. My completed both masters (2014-2016) and PhD (2016-2020) in <strong> in Systems & Control </strong> from <a href="https://www.tue.nl/en/" style="color: #667eea; text-decoration: none;">Eindhoven University of Technology</a>. After PhD, I held post-doctoral fellowships at <strong>KTH Royal Institute of Technology</strong>, Sweden and the <strong>University of Cambridge</strong>, UK. 
     </div>
   </div>
 
