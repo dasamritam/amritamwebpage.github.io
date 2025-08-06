@@ -44,6 +44,10 @@ html, body {
 /* Layout elements - NO boxes, just transparent */
 .greedy-nav,
 .masthead,
+.masthead__inner-wrap,
+.masthead__menu,
+.masthead__menu-item,
+.masthead__menu-item a,
 .search-content,
 .page__footer,
 .initial-content,
@@ -56,7 +60,11 @@ html, body {
 .author__urls-social-icons li,
 .author__urls-social-icons a,
 .author__urls-social-icons i,
-.author__urls-social-icons .svg-inline--fa {
+.author__urls-social-icons .svg-inline--fa,
+.site__title,
+.site__subtitle,
+.site__logo,
+.site__logo img {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
