@@ -2,21 +2,21 @@
    Dark skin
    ========================================================================== */
 
-/* Colors */
-$background-color: #252a34 !default;
+/* Colors - Updated to match gradient theme */
+$background-color: #1a1a2e !default;
 $text-color: #eaeaea !default;
 $primary-color: #00adb5 !default;
-$border-color: mix(#fff, $background-color, 20%) !default;
-$code-background-color: mix(#000, $background-color, 15%) !default;
-$code-background-color-dark: mix(#000, $background-color, 20%) !default;
-$form-background-color: mix(#000, $background-color, 15%) !default;
-$footer-background-color: mix(#000, $background-color, 30%) !default;
+$border-color: rgba(255, 255, 255, 0.2) !default;
+$code-background-color: rgba(26, 26, 46, 0.8) !default;
+$code-background-color-dark: rgba(26, 26, 46, 0.9) !default;
+$form-background-color: rgba(26, 26, 46, 0.8) !default;
+$footer-background-color: rgba(26, 26, 46, 0.9) !default;
 $link-color: mix($primary-color, $text-color, 40%) !default;
 $link-color-hover: mix(#fff, $link-color, 25%) !default;
 $link-color-visited: mix(#000, $link-color, 25%) !default;
 $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: mix(#000, $text-color, 20%) !default;
-$navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
+$navicon-link-color-hover: rgba(255, 255, 255, 0.3) !default;
 
 /* Sophisticated Gradient Background */
 html, body {
@@ -27,7 +27,7 @@ html, body {
   padding: 0;
 }
 
-/* Enhanced content backgrounds for readability */
+/* Override all background elements to use gradient theme */
 .initial-content,
 .page__content,
 .archive__item,
@@ -36,30 +36,24 @@ html, body {
 .notice--info,
 .notice--warning,
 .notice--success,
-.notice--danger {
-  background: rgba(37, 42, 52, 0.85);
-  backdrop-filter: blur(10px);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Sophisticated navigation */
-.greedy-nav {
-  background: rgba(37, 42, 52, 0.95);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Enhanced search */
-.search-content {
-  background: rgba(37, 42, 52, 0.98);
-  backdrop-filter: blur(15px);
-}
-
-/* Sophisticated footer */
-.page__footer {
-  background: linear-gradient(135deg, rgba(15, 52, 96, 0.9) 0%, rgba(83, 52, 131, 0.9) 100%);
-  backdrop-filter: blur(10px);
+.notice--danger,
+.sidebar,
+.sidebar__right,
+.sidebar__left,
+.greedy-nav,
+.masthead,
+.search-content,
+.page__footer,
+.highlight,
+pre,
+code,
+input,
+textarea,
+select,
+table,
+.pagination {
+  background: rgba(26, 26, 46, 0.8) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 .author__urls.social-icons i,
@@ -70,5 +64,5 @@ html, body {
 }
 
 .ais-search-box .ais-search-box--input {
-  background-color: $form-background-color;
+  background-color: rgba(26, 26, 46, 0.8) !important;
 }
