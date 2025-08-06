@@ -191,7 +191,7 @@ classes: wide
 .personal-note-content {
   font-size: 0.95rem;
   line-height: 1.8;
-  color: #4a5568;
+  color: #6b7fa6;
   font-family: 'Georgia', serif;
   font-style: italic;
   position: relative;
