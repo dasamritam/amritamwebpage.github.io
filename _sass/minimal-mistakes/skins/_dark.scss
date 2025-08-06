@@ -45,15 +45,25 @@ html, body {
 .greedy-nav,
 .masthead,
 .search-content,
-.page__footer {
+.page__footer,
+.initial-content,
+.author__avatar,
+.author__bio,
+.author__urls,
+.author__urls-wrapper,
+.author__urls-social,
+.author__urls-social-icons,
+.author__urls-social-icons li,
+.author__urls-social-icons a,
+.author__urls-social-icons i,
+.author__urls-social-icons .svg-inline--fa {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   backdrop-filter: none;
 }
 
-/* Content areas - Glass-morphism boxes ONLY for content */
-.initial-content,
+/* Content areas - Glass-morphism boxes ONLY for actual content */
 .page__content,
 .archive__item,
 .notice,
