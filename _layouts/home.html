@@ -5,14 +5,14 @@ layout: archive
 {{ content }}
 
 <style>
-.rolling-posts-container {
+.carousel-posts-container {
   margin: 3rem 0;
   position: relative;
   overflow: hidden;
   height: 200px;
 }
 
-.rolling-posts-title {
+.carousel-posts-title {
   text-align: center;
   font-size: 1.8rem;
   font-weight: 600;
@@ -21,7 +21,7 @@ layout: archive
   position: relative;
 }
 
-.rolling-posts-title::after {
+.carousel-posts-title::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -33,32 +33,39 @@ layout: archive
   border-radius: 2px;
 }
 
-.rolling-posts {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  animation: rollPosts 15s linear infinite;
+.carousel-posts {
+  position: relative;
+  width: 100%;
+  height: 140px;
 }
 
-.rolling-post {
+.carousel-post {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1);
+  z-index: 1;
   background: rgba(255, 255, 255, 0.95);
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border-left: 4px solid #667eea;
-  transition: all 0.3s ease;
   min-height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  pointer-events: none;
 }
 
-.rolling-post:hover {
-  transform: translateX(10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+.carousel-post.active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
 }
 
-.rolling-post-title {
+.carousel-post-title {
   font-size: 1.2rem;
   font-weight: 600;
   color: #2d3748;
@@ -66,73 +73,56 @@ layout: archive
   text-decoration: none;
 }
 
-.rolling-post-title:hover {
+.carousel-post-title:hover {
   color: #667eea;
 }
 
-.rolling-post-excerpt {
+.carousel-post-excerpt {
   color: #4a5568;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
-.rolling-post-date {
+.carousel-post-date {
   color: #718096;
   font-size: 0.85rem;
   margin-top: 0.5rem;
 }
-
-@keyframes rollPosts {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
-
-.rolling-posts:hover {
-  animation-play-state: paused;
-}
 </style>
 
-<div class="rolling-posts-container">
-  <h3 class="rolling-posts-title">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent News" }}</h3>
-  
-  <div class="rolling-posts">
+<div class="carousel-posts-container">
+  <h3 class="carousel-posts-title">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent News" }}</h3>
+  <div class="carousel-posts" id="carousel-posts">
     {% if paginator %}
       {% assign posts = paginator.posts %}
     {% else %}
       {% assign posts = site.posts %}
     {% endif %}
-    
     {% for post in posts limit:10 %}
-      <div class="rolling-post">
-        <a href="{{ post.url | relative_url }}" class="rolling-post-title">
+      <div class="carousel-post{% if forloop.first %} active{% endif %}">
+        <a href="{{ post.url | relative_url }}" class="carousel-post-title">
           {{ post.title }}
         </a>
-        <div class="rolling-post-excerpt">
+        <div class="carousel-post-excerpt">
           {{ post.excerpt | strip_html | truncatewords: 20 }}
         </div>
-        <div class="rolling-post-date">
-          {{ post.date | date: "%B %d, %Y" }}
-        </div>
-      </div>
-    {% endfor %}
-    
-    <!-- Duplicate posts for seamless loop -->
-    {% for post in posts limit:5 %}
-      <div class="rolling-post">
-        <a href="{{ post.url | relative_url }}" class="rolling-post-title">
-          {{ post.title }}
-        </a>
-        <div class="rolling-post-excerpt">
-          {{ post.excerpt | strip_html | truncatewords: 20 }}
-        </div>
-        <div class="rolling-post-date">
+        <div class="carousel-post-date">
           {{ post.date | date: "%B %d, %Y" }}
         </div>
       </div>
     {% endfor %}
   </div>
 </div>
+
+<script>
+(function() {
+  var posts = document.querySelectorAll('.carousel-post');
+  var current = 0;
+  if (posts.length < 2) return;
+  setInterval(function() {
+    posts[current].classList.remove('active');
+    current = (current + 1) % posts.length;
+    posts[current].classList.add('active');
+  }, 4000);
+})();
+</script>
