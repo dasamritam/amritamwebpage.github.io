@@ -170,7 +170,7 @@ classes: wide
 }
 
 .personal-note-icon {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #667eea;
   margin-bottom: 1.5rem;
   animation: float 3s ease-in-out infinite;
@@ -189,35 +189,13 @@ classes: wide
 }
 
 .personal-note-content {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   line-height: 1.8;
   color: #4a5568;
   font-family: 'Georgia', serif;
   font-style: italic;
   position: relative;
   padding: 0 1rem;
-}
-
-.personal-note-content::before {
-  content: '"';
-  font-size: 3rem;
-  color: #667eea;
-  position: absolute;
-  left: -20px;
-  top: -10px;
-  font-family: 'Georgia', serif;
-  opacity: 0.3;
-}
-
-.personal-note-content::after {
-  content: '"';
-  font-size: 3rem;
-  color: #667eea;
-  position: absolute;
-  right: -20px;
-  bottom: -30px;
-  font-family: 'Georgia', serif;
-  opacity: 0.3;
 }
 
 @keyframes float {
