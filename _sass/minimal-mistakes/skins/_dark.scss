@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Dark skin with sophisticated gradients
+   Dark skin
    ========================================================================== */
 
 /* Colors */
@@ -19,18 +19,12 @@ $masthead-link-color-hover: mix(#000, $text-color, 20%) !default;
 $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 
 /* Sophisticated Gradient Background */
-body {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #1a1a2e 100%);
+html, body {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   background-attachment: fixed;
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-}
-
-/* Gradient Animation */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 /* Enhanced content backgrounds for readability */
