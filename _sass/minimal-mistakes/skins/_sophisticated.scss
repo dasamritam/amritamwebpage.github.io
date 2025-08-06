@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Sophisticated skin - Modern and elegant
+   ========================================================================== */
+
+/* Colors */
+$background-color: #f8f9fa !default;  /* Light sophisticated gray */
+$text-color: #2c3e50 !default;        /* Dark blue-gray for readability */
+$muted-text-color: #6c757d !default;  /* Medium gray for secondary text */
+$primary-color: #3498db !default;      /* Modern blue */
+$border-color: mix(#fff, #2c3e50, 85%) !default;
+$code-background-color: #f1f3f4 !default;
+$code-background-color-dark: #e9ecef !default;
+$form-background-color: #ffffff !default;
+$footer-background-color: #2c3e50 !default;
+$link-color: #3498db !default;
+$link-color-hover: #2980b9 !default;
+$link-color-visited: #8e44ad !default;
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $primary-color !default;
+$navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
+
+/* Dark mode variant - uncomment to use */
+/*
+$background-color: #1a1a2e !default;  /* Deep navy */
+$text-color: #e8e8e8 !default;        /* Light gray */
+$muted-text-color: #b8b8b8 !default;  /* Medium light gray */
+$primary-color: #4ecdc4 !default;      /* Teal accent */
+$border-color: mix(#fff, #1a1a2e, 20%) !default;
+$code-background-color: #16213e !default;
+$code-background-color-dark: #0f3460 !default;
+$form-background-color: #16213e !default;
+$footer-background-color: #0f3460 !default;
+$link-color: #4ecdc4 !default;
+$link-color-hover: #45b7aa !default;
+$link-color-visited: #a8e6cf !default;
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $primary-color !default;
+$navicon-link-color-hover: mix(#000, $text-color, 20%) !default;
+*/
+
+/* Enhanced styling for modern look */
+.page__footer {
+  color: #fff !important;
+}
+
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: inherit;
+}
+
+/* Sophisticated card styling */
+.archive__item,
+.notice,
+.notice--primary,
+.notice--info,
+.notice--warning,
+.notice--success,
+.notice--danger {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid $border-color;
+}
+
+/* Enhanced typography */
+body {
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: $text-color;
+}
+
+/* Modern button styling */
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn--primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
+.btn--primary:hover {
+  background-color: $link-color-hover;
+  border-color: $link-color-hover;
+}
+
+/* Sophisticated navigation */
+.greedy-nav {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $border-color;
+}
+
+/* Enhanced search styling */
+.search-content {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+}
+
+/* Modern form styling */
+input, textarea, select {
+  border-radius: 6px;
+  border: 1px solid $border-color;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: $primary-color;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+} 
