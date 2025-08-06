@@ -37,13 +37,33 @@ html, body {
 /* Header and Footer to match gradient */
 .greedy-nav,
 .masthead,
-.page__footer {
+.masthead *,
+.page__footer,
+.page__footer *,
+.author__avatar,
+.author__avatar *,
+.author__bio,
+.author__bio *,
+.author__urls,
+.author__urls *,
+.author__urls-wrapper,
+.author__urls-wrapper *,
+.author__urls-social,
+.author__urls-social *,
+.author__urls-social-icons,
+.author__urls-social-icons *,
+.site__title,
+.site__title *,
+.site__subtitle,
+.site__subtitle *,
+.site__logo,
+.site__logo * {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
 }
 
-/* Content boxes - Automatically coherent with gradient */
+/* Content boxes - ONLY for actual content areas, NOT profile info */
 .archive__item,
 .notice,
 .notice--primary,
