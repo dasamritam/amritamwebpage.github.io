@@ -27,6 +27,15 @@ html, body {
   padding: 0;
 }
 
+/* Header and Footer to match gradient */
+.greedy-nav,
+.masthead,
+.page__footer {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 .author__urls.social-icons i,
 .author__urls.social-icons .svg-inline--fa,
 .page__footer-follow .social-icons i,
@@ -35,5 +44,6 @@ html, body {
 }
 
 .ais-search-box .ais-search-box--input {
-  background-color: $form-background-color;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
 }
