@@ -119,11 +119,7 @@ layout: archive
           {% endif %}
         </div>
         <div class="carousel-post-date">
-          {% if post.date %}
-            {{ post.date | date: "%B %d, %Y" }}
-          {% else %}
-            Recent Post
-          {% endif %}
+          {{ post.date | date: "%B %d, %Y" }}
         </div>
       </div>
     {% endfor %}
