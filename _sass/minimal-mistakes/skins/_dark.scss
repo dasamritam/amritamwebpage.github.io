@@ -18,9 +18,9 @@ $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: mix(#000, $text-color, 20%) !default;
 $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 
-/* Sophisticated Cream Gradient Background */
+/* Sophisticated Dark Blue Gradient Background */
 html, body {
-  background: linear-gradient(135deg, #f7f7f7 0%, #e8d5b7 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   background-attachment: fixed;
   min-height: 100vh;
   margin: 0;
