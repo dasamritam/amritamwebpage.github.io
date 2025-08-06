@@ -66,7 +66,7 @@ layout: archive
 }
 
 .carousel-post-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #2d3748;
   margin-bottom: 0.5rem;
@@ -79,13 +79,13 @@ layout: archive
 
 .carousel-post-excerpt {
   color: #4a5568;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
 
 .carousel-post-date {
   color: #718096;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   margin-top: 0.5rem;
 }
 </style>
@@ -104,7 +104,11 @@ layout: archive
           {{ post.title }}
         </a>
         <div class="carousel-post-excerpt">
-          {{ post.excerpt | strip_html | truncatewords: 20 }}
+          {% if post.excerpt and post.excerpt != '' %}
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          {% else %}
+            {{ post.content | strip_html | truncatewords: 30 }}
+          {% endif %}
         </div>
         <div class="carousel-post-date">
           {{ post.date | date: "%B %d, %Y" }}
