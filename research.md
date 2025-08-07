@@ -119,23 +119,28 @@ classes: wide
 /* Enhanced research grid styling */
 .research-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
   margin: 3rem 0;
 }
 
 .research-item {
-  background: linear-gradient(135deg, rgba(37, 46, 44, 0.95) 0%, rgba(58, 74, 71, 0.9) 100%);
-  padding: 2.5rem;
-  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(37, 46, 44, 0.95) 0%, rgba(58, 74, 71, 0.9) 50%, rgba(37, 46, 44, 0.95) 100%);
+  padding: 3rem 2.5rem;
+  border-radius: 25px;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 15px 35px rgba(37, 46, 44, 0.3);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  box-shadow: 
+    0 20px 40px rgba(37, 46, 44, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .research-item::before {
@@ -144,85 +149,179 @@ classes: wide
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #252E2C, #3a4a47, #252E2C);
-  background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
+  height: 4px;
+  background: linear-gradient(90deg, #252E2C, #3a4a47, #667eea, #764ba2, #252E2C);
+  background-size: 300% 100%;
+  animation: shimmer 4s ease-in-out infinite;
 }
 
 .research-item::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: left 0.6s ease;
-}
-
-.research-item:hover::after {
-  left: 100%;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+  animation: researchRotate 30s linear infinite;
+  opacity: 0.3;
 }
 
 .research-item:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(37, 46, 44, 0.4);
-  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-12px) scale(1.03) rotateX(2deg);
+  box-shadow: 
+    0 35px 70px rgba(37, 46, 44, 0.5),
+    0 15px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.research-item:hover::after {
+  animation: researchRotate 8s linear infinite;
 }
 
 .research-item img {
-  max-width: 70%;
+  max-width: 80%;
   height: auto;
-  margin-bottom: 1.5rem;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    0 5px 15px rgba(37, 46, 44, 0.2);
+  filter: brightness(0.9) contrast(1.1);
 }
 
 .research-item:hover img {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: scale(1.08) translateY(-5px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 10px 25px rgba(37, 46, 44, 0.3);
+  filter: brightness(1.1) contrast(1.2);
 }
 
 .research-item h3 {
   color: #f8f9fa !important;
   font-style: italic;
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  transition: color 0.3s ease;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.research-item h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.4s ease;
+  border-radius: 1px;
+}
+
+.research-item:hover h3::after {
+  width: 60px;
 }
 
 .research-item:hover h3 {
-  color: #252E2C !important;
+  color: #ffffff !important;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transform: scale(1.02);
 }
 
 .research-item p {
   color: #e8f0f0 !important;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.7;
   opacity: 0.9;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.research-item:hover p {
+  opacity: 1;
+  color: #f8f9fa !important;
 }
 
 .research-item .details {
   color: #cbd5e0 !important;
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  line-height: 1.6;
   opacity: 0.8;
-  margin-top: 1rem;
-  padding: 1rem;
-  background: rgba(37, 46, 44, 0.3);
-  border-radius: 8px;
-  backdrop-filter: blur(5px);
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(37, 46, 44, 0.4) 0%, rgba(58, 74, 71, 0.3) 100%);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
 }
 
+.research-item .details.show {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 500px;
+}
+
+/* Unique floating animation for research cards */
+@keyframes researchFloat {
+  0%, 100% { transform: translateY(0px) rotateX(0deg); }
+  50% { transform: translateY(-8px) rotateX(1deg); }
+}
+
+.research-item {
+  animation: researchFloat 6s ease-in-out infinite;
+}
+
+.research-item:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.research-item:nth-child(3) {
+  animation-delay: 3s;
+}
+
+.research-item:nth-child(4) {
+  animation-delay: 4.5s;
+}
+
+/* Enhanced shimmer effect */
 @keyframes shimmer {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+/* Particle effect for research cards */
+.research-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #252E2C, #3a4a47, #667eea, #764ba2, #252E2C);
+  background-size: 300% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* Glow effect on hover */
+.research-item:hover {
+  box-shadow: 
+    0 35px 70px rgba(37, 46, 44, 0.5),
+    0 15px 30px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(102, 126, 234, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 </style>
 

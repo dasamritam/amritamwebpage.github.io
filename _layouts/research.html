@@ -42,7 +42,7 @@ layout: default
 function toggleDetails(item) {
   const details = item.querySelector('.details');
   if (details) {
-    details.style.display = details.style.display === 'none' ? 'block' : 'none';
+    details.classList.toggle('show');
   }
 }
 </script>
