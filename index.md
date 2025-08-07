@@ -362,6 +362,67 @@ classes: wide
     transform: scale(1.1);
   }
 }
+
+/* Applications grid styling for home page */
+.applications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.application-item {
+  background: linear-gradient(135deg, rgba(37, 46, 44, 0.9) 0%, rgba(58, 74, 71, 0.8) 100%);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+.application-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.application-item:hover::before {
+  left: 100%;
+}
+
+.application-item:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(37, 46, 44, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.application-icon {
+  font-size: 1.8rem;
+  color: #252E2C;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(37, 46, 44, 0.3);
+  transition: all 0.3s ease;
+}
+
+.application-item:hover .application-icon {
+  transform: scale(1.1);
+  color: #3a4a47;
+}
+
+.application-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f8f9fa;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
 </style>
 
 <div class="intro-section">
@@ -400,7 +461,36 @@ classes: wide
     </div>
     <div class="card-title">Research Applications</div>
     <div class="card-content">
-      My research focuses on <em>designing controllers for complex multi-physical systems</em>. I complement new theories with applications of societal and industrial importance. There are two kinds of applications that I work on, as shown in the thematic depiction of my research below:
+      Our research has exciting applications in:
+    </div>
+    <div class="applications-grid">
+      <div class="application-item">
+        <div class="application-icon">
+          <i class="fas fa-microchip"></i>
+        </div>
+        <div class="application-name">High-tech systems</div>
+      </div>
+      
+      <div class="application-item">
+        <div class="application-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div class="application-name">Neuro-engineering</div>
+      </div>
+      
+      <div class="application-item">
+        <div class="application-icon">
+          <i class="fas fa-car"></i>
+        </div>
+        <div class="application-name">Smart mobility</div>
+      </div>
+      
+      <div class="application-item">
+        <div class="application-icon">
+          <i class="fas fa-atom"></i>
+        </div>
+        <div class="application-name">Nuclear fusion</div>
+      </div>
     </div>
   </div>
 </div>
