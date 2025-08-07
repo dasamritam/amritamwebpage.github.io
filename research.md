@@ -220,7 +220,7 @@ classes: wide
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, #00adb5, #393e46);
   transition: width 0.4s ease;
   border-radius: 1px;
 }
@@ -310,7 +310,7 @@ classes: wide
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #252E2C, #3a4a47, #667eea, #764ba2, #252E2C);
+  background: linear-gradient(90deg, #252E2C, #3a4a47, #00adb5, #393e46, #252E2C);
   background-size: 300% 100%;
   animation: shimmer 4s ease-in-out infinite;
 }
@@ -320,7 +320,7 @@ classes: wide
   box-shadow: 
     0 35px 70px rgba(37, 46, 44, 0.5),
     0 15px 30px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(102, 126, 234, 0.2),
+    0 0 30px rgba(0, 173, 181, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 </style>
