@@ -36,6 +36,13 @@ html, body {
   box-shadow: none !important;
 }
 
+/* Target only the specific box with grey color */
+.archive__item-title,
+.archive__item-title a,
+.archive__item-title a:hover {
+  color: #6c757d !important;
+}
+
 .author__urls.social-icons i,
 .author__urls.social-icons .svg-inline--fa,
 .page__footer-follow .social-icons i,
