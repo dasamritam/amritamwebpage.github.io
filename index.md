@@ -10,14 +10,17 @@ classes: wide
 
 <style>
 .intro-section {
-  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  background: linear-gradient(135deg, rgba(37, 46, 44, 0.98) 0%, rgba(58, 74, 71, 0.95) 50%, rgba(37, 46, 44, 0.98) 100%);
   color: white;
-  padding: 3rem 2rem;
-  border-radius: 20px;
-  margin-bottom: 3rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 4rem 3rem;
+  border-radius: 25px;
+  margin-bottom: 4rem;
+  box-shadow: 0 25px 60px rgba(37, 46, 44, 0.4), 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: introFloat 6s ease-in-out infinite;
 }
 
 .intro-section::before {
@@ -27,22 +30,43 @@ classes: wide
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(37, 46, 44, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(58, 74, 71, 0.3) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+  animation: backgroundShift 8s ease-in-out infinite;
+}
+
+.intro-section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.1), transparent, rgba(255, 255, 255, 0.05), transparent);
+  animation: rotate 20s linear infinite;
   opacity: 0.3;
 }
 
 .intro-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
 }
 
 .catchy-oneliner {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  animation: fadeInUp 1s ease-out;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(37, 46, 44, 0.3);
+  animation: textGlow 4s ease-in-out infinite;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e8f0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .info-cards {
@@ -160,6 +184,26 @@ classes: wide
 @keyframes shimmer {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+@keyframes introFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes backgroundShift {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes textGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.1); }
 }
 
 @media (max-width: 768px) {
