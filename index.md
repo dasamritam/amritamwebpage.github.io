@@ -53,19 +53,22 @@ classes: wide
 }
 
 .info-card {
-  background: rgba(255, 255, 255, 0.95);
-  color: #333;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(37, 46, 44, 0.95) 0%, rgba(58, 74, 71, 0.9) 100%);
+  color: #e8f0f0;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(37, 46, 44, 0.3), 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(37, 46, 44, 0.2);
 }
 
 .info-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(37, 46, 44, 0.4), 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(37, 46, 44, 0.4);
 }
 
 .info-card::before {
@@ -74,27 +77,55 @@ classes: wide
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #252E2C, #3a4a47);
+  height: 3px;
+  background: linear-gradient(90deg, #252E2C, #3a4a47, #252E2C);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.info-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.info-card:hover::after {
+  left: 100%;
 }
 
 .card-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
   color: #252E2C;
   animation: bounceIn 1s ease-out 0.5s both;
+  text-shadow: 0 2px 4px rgba(37, 46, 44, 0.3);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover .card-icon {
+  transform: scale(1.1);
+  color: #3a4a47;
 }
 
 .card-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: #2d3748;
+  margin-bottom: 1.2rem;
+  color: #f8f9fa;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .card-content {
-  line-height: 1.6;
-  color: #4a5568;
+  line-height: 1.7;
+  color: #e8f0f0;
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
 @keyframes fadeInUp {
@@ -124,6 +155,11 @@ classes: wide
     opacity: 1;
     transform: scale(1);
   }
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 @media (max-width: 768px) {
