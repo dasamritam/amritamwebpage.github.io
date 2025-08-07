@@ -233,7 +233,7 @@ classes: wide
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #667eea, transparent);
+  background: linear-gradient(90deg, transparent, #252E2C, transparent);
   border-radius: 2px;
 }
 
@@ -245,7 +245,7 @@ classes: wide
   transform: translateX(-50%);
   width: 40px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #764ba2, transparent);
+  background: linear-gradient(90deg, transparent, #3a4a47, transparent);
   border-radius: 1px;
 }
 
@@ -255,27 +255,90 @@ classes: wide
   margin-bottom: 1.5rem;
   animation: float 3s ease-in-out infinite;
   display: inline-block;
+  text-shadow: 0 2px 4px rgba(37, 46, 44, 0.3);
 }
 
 .personal-note-title {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #2d3748;
+  color: #f8f9fa;
   margin-bottom: 1.5rem;
   font-family: 'Georgia', serif;
   letter-spacing: 1px;
   text-transform: uppercase;
-  opacity: 0.8;
+  opacity: 0.9;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .personal-note-content {
   font-size: 0.95rem;
   line-height: 1.8;
-  color: #6b7fa6;
+  color: #e8f0f0;
   font-family: 'Georgia', serif;
   font-style: italic;
   position: relative;
   padding: 0 1rem;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-posts-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #f8f9fa;
+  margin-bottom: 2rem;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+}
+
+.carousel-posts-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #252E2C, #3a4a47);
+  border-radius: 2px;
+}
+
+.carousel-post-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f8f9fa;
+  text-decoration: none;
+  display: block;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease;
+}
+
+.carousel-post-title:hover {
+  color: #252E2C;
+}
+
+.carousel-post-excerpt {
+  color: #e8f0f0;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  display: block;
+  margin-bottom: 0.3rem;
+  opacity: 0.9;
+}
+
+.carousel-post-date {
+  color: #cbd5e0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
+  background: rgba(37, 46, 44, 0.3);
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(37, 46, 44, 0.2);
 }
 
 @keyframes float {
