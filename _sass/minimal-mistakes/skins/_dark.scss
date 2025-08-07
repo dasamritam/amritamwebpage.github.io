@@ -20,7 +20,7 @@ $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 
 /* Sophisticated Gradient Background */
 html, body {
-  background: linear-gradient(135deg, #252E2C 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #252E2C 0%, #1a1f1e 50%, #0f1413 100%);
   background-attachment: fixed;
   min-height: 100vh;
   margin: 0;
