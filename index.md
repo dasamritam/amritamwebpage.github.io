@@ -460,9 +460,6 @@ classes: wide
       <i class="fas fa-cogs"></i>
     </div>
     <div class="card-title">Research Applications</div>
-    <div class="card-content">
-      Our research has exciting applications in:
-    </div>
     <div class="applications-grid">
       <div class="application-item">
         <div class="application-icon">
