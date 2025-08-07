@@ -36,10 +36,11 @@ html, body {
   box-shadow: none !important;
 }
 
-/* Target only the specific box with grey color */
-.archive__item-title,
-.archive__item-title a,
-.archive__item-title a:hover {
+/* Target ONLY the catchy oneliner box */
+.page__hero,
+.page__hero .page__title,
+.page__hero .page__title a,
+.page__hero .page__title a:hover {
   color: #6c757d !important;
 }
 
