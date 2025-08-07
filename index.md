@@ -75,13 +75,13 @@ classes: wide
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, #252E2C, #3a4a47);
 }
 
 .card-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #667eea;
+  color: #252E2C;
   animation: bounceIn 1s ease-out 0.5s both;
 }
 
@@ -171,7 +171,7 @@ classes: wide
 
 .personal-note-icon {
   font-size: 1.5rem;
-  color: #667eea;
+  color: #252E2C;
   margin-bottom: 1.5rem;
   animation: float 3s ease-in-out infinite;
   display: inline-block;
@@ -224,7 +224,7 @@ classes: wide
 <div class="intro-section">
   <div class="intro-content">
     <div class="catchy-oneliner">
-      <i class="fas fa-rocket" style="margin-right: 1rem; color: #ffd700;"></i>
+      <i class="fas fa-rocket" style="margin-right: 1rem; color: #252E2C;"></i>
       Advancing Control Theory for Real-World Impact
     </div>
   </div>
