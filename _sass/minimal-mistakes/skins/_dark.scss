@@ -36,18 +36,10 @@ html, body {
   box-shadow: none !important;
 }
 
-/* Target ONLY the intro-section (catchy oneliner) */
-.intro-section,
-.intro-section *,
-.intro-section h1,
-.intro-section h2,
-.intro-section h3,
-.intro-section h4,
-.intro-section h5,
-.intro-section h6,
-.intro-section a,
-.intro-section a:hover {
-  color: #6c757d !important;
+/* Target ONLY the intro-section BOX background/border */
+.intro-section {
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
 }
 
 .author__urls.social-icons i,
