@@ -10,7 +10,7 @@ classes: wide
 
 <style>
 .intro-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
   color: white;
   padding: 3rem 2rem;
   border-radius: 20px;
