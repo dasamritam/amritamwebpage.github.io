@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Dark skin
+   Dark skin with gradient
    ========================================================================== */
 
 /* Colors */
@@ -18,6 +18,24 @@ $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: mix(#000, $text-color, 20%) !default;
 $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 
+/* Sophisticated Gradient Background */
+html, body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header and Footer to match gradient */
+.greedy-nav,
+.masthead,
+.page__footer {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 .author__urls.social-icons i,
 .author__urls.social-icons .svg-inline--fa,
 .page__footer-follow .social-icons i,
@@ -26,5 +44,6 @@ $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 }
 
 .ais-search-box .ais-search-box--input {
-  background-color: $form-background-color;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
 }
