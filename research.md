@@ -75,85 +75,7 @@ classes: wide
   opacity: 0.95;
 }
 
-.applications-section {
-  margin: 3rem 0;
-  padding: 2rem;
-  background: linear-gradient(135deg, rgba(37, 46, 44, 0.8) 0%, rgba(58, 74, 71, 0.7) 100%);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 15px 35px rgba(37, 46, 44, 0.3);
-}
 
-.applications-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #f8f9fa;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.applications-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.application-item {
-  background: linear-gradient(135deg, rgba(37, 46, 44, 0.9) 0%, rgba(58, 74, 71, 0.8) 100%);
-  padding: 1.5rem;
-  border-radius: 15px;
-  text-align: center;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  position: relative;
-  overflow: hidden;
-}
-
-.application-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: left 0.6s ease;
-}
-
-.application-item:hover::before {
-  left: 100%;
-}
-
-.application-item:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(37, 46, 44, 0.4);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.application-icon {
-  font-size: 2.5rem;
-  color: #252E2C;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(37, 46, 44, 0.3);
-  transition: all 0.3s ease;
-}
-
-.application-item:hover .application-icon {
-  transform: scale(1.1);
-  color: #3a4a47;
-}
-
-.application-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #f8f9fa;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
 
 .themes-section {
   margin: 3rem 0;
@@ -314,40 +236,6 @@ classes: wide
     
     <div class="research-description">
       To tackle these challenges, I develop powerful computational tools grounded on optimization, control theory, and machine learning.
-    </div>
-  </div>
-</div>
-
-<div class="applications-section">
-  <h2 class="applications-title">Our research has exciting applications in:</h2>
-  
-  <div class="applications-grid">
-    <div class="application-item">
-      <div class="application-icon">
-        <i class="fas fa-microchip"></i>
-      </div>
-      <div class="application-name">High-tech systems</div>
-    </div>
-    
-    <div class="application-item">
-      <div class="application-icon">
-        <i class="fas fa-brain"></i>
-      </div>
-      <div class="application-name">Neuro-engineering</div>
-    </div>
-    
-    <div class="application-item">
-      <div class="application-icon">
-        <i class="fas fa-car"></i>
-      </div>
-      <div class="application-name">Smart mobility</div>
-    </div>
-    
-    <div class="application-item">
-      <div class="application-icon">
-        <i class="fas fa-atom"></i>
-      </div>
-      <div class="application-name">Nuclear fusion</div>
     </div>
   </div>
 </div>
