@@ -309,16 +309,10 @@ classes: wide
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  border: 4px solid transparent;
-  background: linear-gradient(90deg, #252E2C, #3a4a47, #00adb5, #393e46, #252E2C) border-box;
+  height: 4px;
+  background: linear-gradient(90deg, #252E2C, #3a4a47, #00adb5, #393e46, #252E2C);
   background-size: 300% 100%;
   animation: shimmer 4s ease-in-out infinite;
-  border-radius: 25px;
-  mask: 
-    linear-gradient(#fff 0 0) padding-box, 
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
 }
 
 /* Glow effect on hover */
