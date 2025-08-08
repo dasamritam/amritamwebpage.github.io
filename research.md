@@ -230,30 +230,13 @@ classes: wide
 }
 
 .research-item.clicked {
-  animation: cardClick 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation: cardClick 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes cardClick {
-  0% { 
-    transform: translateY(-12px) scale(1.03) rotateX(2deg);
-    box-shadow: 0 35px 70px rgba(37, 46, 44, 0.5), 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 173, 181, 0.2);
-  }
-  25% { 
-    transform: translateY(-20px) scale(0.95) rotateX(4deg);
-    box-shadow: 0 45px 90px rgba(37, 46, 44, 0.7), 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 50px rgba(0, 173, 181, 0.4);
-  }
-  50% { 
-    transform: translateY(-8px) scale(1.05) rotateX(1deg);
-    box-shadow: 0 30px 60px rgba(37, 46, 44, 0.4), 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 25px rgba(0, 173, 181, 0.1);
-  }
-  75% { 
-    transform: translateY(-18px) scale(0.98) rotateX(3deg);
-    box-shadow: 0 40px 80px rgba(37, 46, 44, 0.6), 0 18px 35px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 173, 181, 0.3);
-  }
-  100% { 
-    transform: translateY(-12px) scale(1.03) rotateX(2deg);
-    box-shadow: 0 35px 70px rgba(37, 46, 44, 0.5), 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 173, 181, 0.2);
-  }
+  0% { transform: translateY(-12px) scale(1.03) rotateX(2deg); }
+  50% { transform: translateY(-15px) scale(0.97) rotateX(3deg); }
+  100% { transform: translateY(-12px) scale(1.03) rotateX(2deg); }
 }
 
 /* Enhanced hover effects for clickable elements */

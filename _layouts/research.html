@@ -40,22 +40,12 @@ layout: default
 
 <script>
 function toggleDetails(item) {
-  // First pop effect
+  // Single pop effect
   item.classList.add('clicked');
   
-  // Remove first pop after 300ms
+  // Remove pop after animation completes
   setTimeout(() => {
     item.classList.remove('clicked');
-    
-    // Second pop effect after 150ms
-    setTimeout(() => {
-      item.classList.add('clicked');
-      
-      // Remove second pop after 300ms
-      setTimeout(() => {
-        item.classList.remove('clicked');
-      }, 300);
-    }, 150);
   }, 300);
   
   // Toggle details
@@ -82,17 +72,17 @@ document.addEventListener('DOMContentLoaded', function() {
       // Prevent default link behavior
       e.preventDefault();
       
-      // Add sophisticated double-pop click effect
+      // Add sophisticated single-pop click effect
       toggleDetails(this);
       addClickSound();
       
-      // Navigate to the link after the double-pop animation completes
+      // Navigate to the link after the single pop animation completes
       setTimeout(() => {
         const link = this.querySelector('a');
         if (link) {
           window.location.href = link.href;
         }
-      }, 750); // Increased delay to allow for double-pop
+      }, 400); // Shorter delay for single pop
     });
   });
 });
