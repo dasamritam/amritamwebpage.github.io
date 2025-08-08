@@ -370,6 +370,22 @@ classes: wide
     0 0 30px rgba(0, 173, 181, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
+
+/* Remove all underlines from research content */
+.research-item a,
+.research-item a:hover,
+.research-item a:visited,
+.research-item a:active {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.research-item p a,
+.research-item h3 a,
+.research-item .details a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
 </style>
 
 <div class="research-hero">
