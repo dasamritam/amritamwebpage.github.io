@@ -26,8 +26,6 @@ layout: default
     <div class="research-grid">
       {% for item in site.research %}
         <div class="research-item" onclick="toggleDetails(this)">
-          <div class="left-border"></div>
-          <div class="right-border"></div>
           <a href="{{ item.url }}">
             <img src="{{ item.image }}" alt="{{ item.title }}">
             <h3>{{ item.title }}</h3>
