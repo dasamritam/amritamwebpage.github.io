@@ -40,13 +40,23 @@ layout: default
 
 <script>
 function toggleDetails(item) {
-  // Add click animation class
+  // First pop effect
   item.classList.add('clicked');
   
-  // Remove the class after animation completes
+  // Remove first pop after 300ms
   setTimeout(() => {
     item.classList.remove('clicked');
-  }, 600);
+    
+    // Second pop effect after 150ms
+    setTimeout(() => {
+      item.classList.add('clicked');
+      
+      // Remove second pop after 300ms
+      setTimeout(() => {
+        item.classList.remove('clicked');
+      }, 300);
+    }, 150);
+  }, 300);
   
   // Toggle details
   const details = item.querySelector('.details');
@@ -63,7 +73,7 @@ function addClickSound() {
   // audio.play();
 }
 
-// Enhanced click handling
+// Enhanced click handling with double-pop effect
 document.addEventListener('DOMContentLoaded', function() {
   const researchItems = document.querySelectorAll('.research-item');
   
@@ -72,17 +82,17 @@ document.addEventListener('DOMContentLoaded', function() {
       // Prevent default link behavior
       e.preventDefault();
       
-      // Add sophisticated click effect
+      // Add sophisticated double-pop click effect
       toggleDetails(this);
       addClickSound();
       
-      // Navigate to the link after a brief delay for animation
+      // Navigate to the link after the double-pop animation completes
       setTimeout(() => {
         const link = this.querySelector('a');
         if (link) {
           window.location.href = link.href;
         }
-      }, 300);
+      }, 750); // Increased delay to allow for double-pop
     });
   });
 });
