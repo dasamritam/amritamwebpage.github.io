@@ -229,6 +229,64 @@ classes: wide
   width: 60px;
 }
 
+/* Sophisticated clickable effects */
+.research-item {
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.research-item:active {
+  transform: translateY(-8px) scale(0.98) rotateX(1deg);
+  box-shadow: 
+    0 25px 50px rgba(37, 46, 44, 0.6),
+    0 10px 25px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(0, 173, 181, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.research-item.clicked {
+  animation: cardClick 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes cardClick {
+  0% { transform: translateY(-12px) scale(1.03) rotateX(2deg); }
+  25% { transform: translateY(-15px) scale(0.97) rotateX(3deg); }
+  50% { transform: translateY(-10px) scale(1.01) rotateX(1deg); }
+  75% { transform: translateY(-13px) scale(0.99) rotateX(2deg); }
+  100% { transform: translateY(-12px) scale(1.03) rotateX(2deg); }
+}
+
+/* Enhanced hover effects for clickable elements */
+.research-item:hover h3 {
+  color: #ffffff !important;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.research-item:hover img {
+  transform: scale(1.08) translateY(-5px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 10px 25px rgba(37, 46, 44, 0.3);
+  filter: brightness(1.1) contrast(1.2);
+  transition: all 0.4s ease;
+}
+
+/* Pulse effect on click */
+.research-item:active::before {
+  animation: shimmer 1s ease-in-out;
+}
+
+.research-item:active h3 {
+  animation: titlePulse 0.6s ease-in-out;
+}
+
+@keyframes titlePulse {
+  0%, 100% { transform: scale(1.02); }
+  50% { transform: scale(1.05); }
+}
+
 .research-item:hover h3 {
   color: #ffffff !important;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);

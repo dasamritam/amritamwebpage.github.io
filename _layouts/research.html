@@ -40,9 +40,50 @@ layout: default
 
 <script>
 function toggleDetails(item) {
+  // Add click animation class
+  item.classList.add('clicked');
+  
+  // Remove the class after animation completes
+  setTimeout(() => {
+    item.classList.remove('clicked');
+  }, 600);
+  
+  // Toggle details
   const details = item.querySelector('.details');
   if (details) {
     details.classList.toggle('show');
   }
 }
+
+// Add click sound effect (optional)
+function addClickSound() {
+  // You can add a subtle click sound here if desired
+  // const audio = new Audio('path/to/click-sound.mp3');
+  // audio.volume = 0.1;
+  // audio.play();
+}
+
+// Enhanced click handling
+document.addEventListener('DOMContentLoaded', function() {
+  const researchItems = document.querySelectorAll('.research-item');
+  
+  researchItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+      // Prevent default link behavior
+      e.preventDefault();
+      
+      // Add sophisticated click effect
+      toggleDetails(this);
+      addClickSound();
+      
+      // Navigate to the link after a brief delay for animation
+      setTimeout(() => {
+        const link = this.querySelector('a');
+        if (link) {
+          window.location.href = link.href;
+        }
+      }, 300);
+    });
+  });
+});
 </script>
