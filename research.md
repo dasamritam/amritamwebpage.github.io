@@ -243,10 +243,19 @@ classes: wide
 
 /* Enhanced hover effects for clickable elements */
 .research-item:hover h3 {
-  color: #ffffff !important;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  transform: scale(1.02);
-  transition: all 0.3s ease;
+  color: #00adb5 !important;
+  text-shadow: 0 4px 8px rgba(0, 173, 181, 0.3);
+  transform: scale(1.05) translateY(-3px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.5px;
+}
+
+.research-item:hover p {
+  color: #f8f9fa !important;
+  opacity: 1;
+  transform: translateY(-2px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 
