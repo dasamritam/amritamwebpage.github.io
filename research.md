@@ -212,22 +212,7 @@ classes: wide
   position: relative;
 }
 
-.research-item h3::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #00adb5, #393e46);
-  transition: width 0.4s ease;
-  border-radius: 1px;
-}
 
-.research-item:hover h3::after {
-  width: 60px;
-}
 
 /* Sophisticated clickable effects */
 .research-item {
@@ -262,6 +247,34 @@ classes: wide
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   transform: scale(1.02);
   transition: all 0.3s ease;
+}
+
+/* Elegant title highlight effect */
+.research-item h3 {
+  position: relative;
+  background: linear-gradient(135deg, transparent 0%, transparent 70%, rgba(0, 173, 181, 0.1) 100%);
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  transition: all 0.4s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin: 0 -1rem;
+}
+
+.research-item:hover h3 {
+  background-position: 100% 0%;
+  box-shadow: 
+    0 4px 15px rgba(0, 173, 181, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: scale(1.02) translateY(-2px);
+}
+
+.research-item:active h3 {
+  background-position: 100% 0%;
+  box-shadow: 
+    0 6px 20px rgba(0, 173, 181, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: scale(1.03) translateY(-3px);
 }
 
 .research-item:hover img {
