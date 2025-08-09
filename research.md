@@ -230,7 +230,9 @@ classes: wide
 }
 
 .research-item.clicked {
-  animation: cardClick 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: cardClick 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  /* Override any existing animations during click */
+  animation-fill-mode: both;
 }
 
 @keyframes cardClick {
@@ -336,16 +338,11 @@ classes: wide
   animation: researchFloat 6s ease-in-out infinite;
 }
 
-.research-item:nth-child(2) {
-  animation-delay: 1.5s;
-}
-
-.research-item:nth-child(3) {
-  animation-delay: 3s;
-}
-
+/* All cards start floating at the same time for consistent behavior */
+.research-item:nth-child(2),
+.research-item:nth-child(3),
 .research-item:nth-child(4) {
-  animation-delay: 4.5s;
+  animation-delay: 0s;
 }
 
 /* Enhanced shimmer effect */
