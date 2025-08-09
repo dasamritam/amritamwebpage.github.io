@@ -192,6 +192,27 @@ classes: wide
   filter: brightness(0.9) contrast(1.1);
 }
 
+/* Special styling for SVG icons to prevent blurriness */
+.research-item img[src^="data:image/svg+xml"] {
+  filter: none;
+  image-rendering: optimizeQuality;
+  shape-rendering: geometricPrecision;
+  text-rendering: optimizeLegibility;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.research-item:hover img[src^="data:image/svg+xml"] {
+  filter: none;
+  transform: scale(1.05) translateY(-5px) translateZ(0);
+  -webkit-transform: scale(1.05) translateY(-5px) translateZ(0);
+  box-shadow: 0 15px 30px rgba(0, 173, 181, 0.3);
+}
+
 .research-item:hover img {
   transform: scale(1.08) translateY(-5px);
   box-shadow: 
