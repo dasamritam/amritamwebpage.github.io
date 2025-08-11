@@ -204,13 +204,19 @@ classes: wide
   backface-visibility: hidden;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
+  max-width: 100% !important;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  padding: 1rem;
 }
 
 .research-item:hover img[src^="data:image/svg+xml"] {
   filter: none;
-  transform: scale(1.05) translateY(-5px) translateZ(0);
-  -webkit-transform: scale(1.05) translateY(-5px) translateZ(0);
+  transform: scale(1.02) translateY(-3px) translateZ(0);
+  -webkit-transform: scale(1.02) translateY(-3px) translateZ(0);
   box-shadow: 0 15px 30px rgba(0, 173, 181, 0.3);
+  padding: 0.5rem;
 }
 
 .research-item:hover img {
@@ -410,6 +416,18 @@ classes: wide
 .research-item .details a {
   text-decoration: none !important;
   border-bottom: none !important;
+}
+
+/* Enhanced SVG display for complex visualizations */
+.research-item img[src*="svg+xml"] {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  padding: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
 }
 </style>
 
