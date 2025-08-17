@@ -45,8 +45,8 @@ layout: default
                 <!-- Background rectangle with rounded corners (matching other cards) -->
                 <rect x="10" y="10" width="180" height="180" rx="20" fill="url(#grad)"/>
                 
-                <!-- 3D Grid (scaled up to fill the background) -->
-                <g opacity="0.9" transform="translate(15, 15) scale(1.2)">
+                <!-- 3D Grid (significantly scaled up to fill the background) -->
+                <g opacity="0.9" transform="translate(10, 10) scale(2.5)">
                   <rect x="40" y="60" width="25" height="25" fill="#00adb5"/>
                   <rect x="65" y="60" width="25" height="25" fill="#ffffff"/>
                   <rect x="90" y="60" width="25" height="25" fill="#ff3300"/>
@@ -61,10 +61,10 @@ layout: default
                   <rect x="115" y="110" width="25" height="25" fill="#ff3300"/>
                 </g>
                 
-                <!-- Animated Circle (scaled up and adjusted to move across the full background) -->
+                <!-- Animated Circle (significantly scaled up to match the larger grid) -->
                 <g opacity="0.7">
-                  <circle cx="100" cy="100" r="20" fill="url(#gradient1)" stroke="white" stroke-width="3">
-                    <animate attributeName="cx" values="25;175;25" dur="4s" repeatCount="indefinite"/>
+                  <circle cx="100" cy="100" r="35" fill="url(#gradient1)" stroke="white" stroke-width="4">
+                    <animate attributeName="cx" values="20;180;20" dur="4s" repeatCount="indefinite"/>
                     <animate attributeName="cy" values="100;100;100" dur="4s" repeatCount="indefinite"/>
                   </circle>
                 </g>
