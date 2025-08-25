@@ -208,7 +208,7 @@ classes: wide
   width: 100%;
   height: auto;
   object-fit: contain;
-  padding: 1rem;
+  padding: 0;
 }
 
 .research-item:hover img[src^="data:image/svg+xml"] {
@@ -216,7 +216,7 @@ classes: wide
   transform: scale(1.02) translateY(-3px) translateZ(0);
   -webkit-transform: scale(1.02) translateY(-3px) translateZ(0);
   box-shadow: 0 15px 30px rgba(0, 173, 181, 0.3);
-  padding: 0.5rem;
+  padding: 0;
 }
 
 .research-item:hover img {
